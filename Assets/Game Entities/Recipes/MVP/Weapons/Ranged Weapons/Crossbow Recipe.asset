@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a4c4d89bf056d4e9b08efd5b29d1aa, type: 3}
+  m_Name: Crossbow Recipe
+  m_EditorClassIdentifier: 
+  recipeIcon: {fileID: 21300000, guid: 41a84999718921d438ef03e592e88d9b, type: 3}
+  category: 0
+  title: "\u0410\u0440\u0431\u0430\u043B\u0435\u0442"
+  description: 
+  requiredEnergyCount: 0
+  ingredientCellsTemplate: {fileID: 6212849724995988448, guid: c56e20db6ed8f19498c6149befca1a05,
+    type: 3}
+  templateCellsIcons: []
+  recipeVariants:
+  - ingredients:
+    - item: {fileID: 11400000, guid: aacb9e218d3d60f4a9d49048123fc0d0, type: 2}
+      count: 5
+    resultItem:
+      item: {fileID: 11400000, guid: dc1949acfc9a4814e9016bf12f818108, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: 4a98d6e2769efe447b6435545a09e37f, type: 2}
+      count: 5
+    resultItem:
+      item: {fileID: 11400000, guid: e5e46a140ccccfa40af16d4be74caa59, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+      count: 5
+    resultItem:
+      item: {fileID: 11400000, guid: 5a79b10061572964ba181874827d6e7a, type: 2}
+      count: 1

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70950a6557d5b145811455e8e1249d5, type: 3}
+  m_Name: Spawn Chances Table 1
+  m_EditorClassIdentifier: 
+  possibleItems:
+  - item: {fileID: 11400000, guid: 9c64919071972b24582f371dc63528c1, type: 2}
+    spawnChance: 100
+    minCount: 1
+    maxCount: 3
+    itemsCountDistributionGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+    spawnChance: 100
+    minCount: 1
+    maxCount: 5
+    itemsCountDistributionGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - item: {fileID: 11400000, guid: fd728c071a002804ab90139b7635e954, type: 2}
+    spawnChance: 100
+    minCount: 1
+    maxCount: 5
+    itemsCountDistributionGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - item: {fileID: 11400000, guid: f1869e2908e57dd4296a40c34426ab3e, type: 2}
+    spawnChance: 100
+    minCount: 1
+    maxCount: 3
+    itemsCountDistributionGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - item: {fileID: 11400000, guid: 4bae50979672ae940bab30b0439cb675, type: 2}
+    spawnChance: 100
+    minCount: 1
+    maxCount: 1
+    itemsCountDistributionGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - item: {fileID: 11400000, guid: 7f8a1a09604c2384ea3fd7d4a43ae1ef, type: 2}
+    spawnChance: 100
+    minCount: 0
+    maxCount: 6
+    itemsCountDistributionGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a4c4d89bf056d4e9b08efd5b29d1aa, type: 3}
+  m_Name: Sword Recipe
+  m_EditorClassIdentifier: 
+  recipeIcon: {fileID: 21300000, guid: 0bb296a0ae7593142bd0fe9ed5391a29, type: 3}
+  category: 0
+  title: "\u041C\u0435\u0447"
+  description: 
+  requiredEnergyCount: 0
+  ingredientCellsTemplate: {fileID: 6030528293772129230, guid: 3f6bbe2cb8c2af34b8598a8b2124c263,
+    type: 3}
+  templateCellsIcons:
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  recipeVariants:
+  - ingredients:
+    - item: {fileID: 11400000, guid: 9c64919071972b24582f371dc63528c1, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: aacb9e218d3d60f4a9d49048123fc0d0, type: 2}
+      count: 1
+    resultItem:
+      item: {fileID: 11400000, guid: 9b37bd3486c33a54596a4032d74ef9bc, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: 9c64919071972b24582f371dc63528c1, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: fd728c071a002804ab90139b7635e954, type: 2}
+      count: 1
+    resultItem:
+      item: {fileID: 11400000, guid: ff361f57b4be30947aaafc5bb6b0fcce, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: 9c64919071972b24582f371dc63528c1, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+      count: 1
+    resultItem:
+      item: {fileID: 11400000, guid: dd77c8c609e5f49449afda431a3a103f, type: 2}
+      count: 0
+  - ingredients:
+    - item: {fileID: 11400000, guid: fd728c071a002804ab90139b7635e954, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+      count: 1
+    resultItem:
+      item: {fileID: 11400000, guid: 839fb017dd79cef418d0503ef76cc74d, type: 2}
+      count: 1

@@ -1,0 +1,550 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41887b1546f5c44ab54e7e65aad3bc, type: 3}
+  m_Name: Items
+  m_EditorClassIdentifier: 
+  version: 3252
+  resultType: 0
+  materialsAndUVRects:
+  - material: {fileID: -3303849591716033583, guid: 3219d66adfabbf64dab416ea5be6ccf4,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29614258
+      y: 0.00048828125
+      width: 0.140625
+      height: 0.28125
+    srcObjName: SM_Item_Canteen_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5170688201887238132, guid: bda55b21f2507da4284b8837f5dd856b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.70288086
+      y: 0.00048828125
+      width: 0.13061523
+      height: 0.26123047
+    srcObjName: SM_Item_Fruit_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6769352360591717454, guid: a1e0f274659d43b44b307a421bcf5bd8,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.57177734
+      y: 0.00048828125
+      width: 0.13061523
+      height: 0.26123047
+    srcObjName: SM_Item_Fruit_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 9122466550169988304, guid: 6ce98f100a5664f4c8cb0044571f5072,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.00048828125
+      width: 0.15136719
+      height: 0.30273438
+    srcObjName: SM_Item_Fruit_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8835237073921637285, guid: 70e62e7f0cd09ab41a53c06e391d7c3d,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29614258
+      y: 0.55615234
+      width: 0.13476562
+      height: 0.26953125
+    srcObjName: SM_Item_Gourd_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -8887204196034143077, guid: 67ebdc8d623998242a61fb014c384dcf,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43725586
+      y: 0.5341797
+      width: 0.1315918
+      height: 0.2631836
+    srcObjName: SM_Item_Lantern_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1795803026462961550, guid: 2bae8cd18d110c24b8a6ea426898613c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.57177734
+      y: 0.52246094
+      width: 0.12890625
+      height: 0.2578125
+    srcObjName: SM_Item_Lantern_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5772941647663408219, guid: 1de825fcec815b0409f354ec40b5a81b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.30419922
+      width: 0.14526367
+      height: 0.29052734
+    srcObjName: SM_Item_Potion_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4957184569700784216, guid: a16cd84db4bf4f649bdb36cdc1f04fc6,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.5957031
+      width: 0.14355469
+      height: 0.28710938
+    srcObjName: SM_Item_Potion_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6066814742322308079, guid: f39ad15dfea768e46b491f05b2226525,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8339844
+      y: 0.00048828125
+      width: 0.12988281
+      height: 0.25976562
+    srcObjName: SM_Item_Potion_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5648506050671101011, guid: 16e432e561a364b4ab9decaf7211ddee,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.15209961
+      y: 0.28857422
+      width: 0.140625
+      height: 0.28125
+    srcObjName: SM_Item_Potion_04 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4791231084025260125, guid: 9ca5a2fc49ce1f441abf559538c1deec,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43725586
+      y: 0.26953125
+      width: 0.13183594
+      height: 0.26367188
+    srcObjName: SM_Item_Potion_05 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3990487291936375991, guid: 0a74c9605bffb1949bcbdeb1d90fbd7b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.57177734
+      y: 0.2626953
+      width: 0.12939453
+      height: 0.25878906
+    srcObjName: SM_Item_Potion_06 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8937523151950253880, guid: 18874a51c16e76a4f9ab2cabc0bf8b6b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.15209961
+      y: 0.00048828125
+      width: 0.14355469
+      height: 0.28710938
+    srcObjName: SM_Item_Pouch_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4407082024178830801, guid: 1034048f199e2cf479de71f603b3f9cc,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43725586
+      y: 0.00048828125
+      width: 0.1340332
+      height: 0.2680664
+    srcObjName: SM_Item_Waterskin_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -2820917196908191082, guid: 04c664319aa492f44849c7db0cb511cd,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.15209961
+      y: 0.5708008
+      width: 0.140625
+      height: 0.28125
+    srcObjName: SM_Item_Wine_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4941834357221653739, guid: 44565ab22e5484842a12fa466dd7a8a9,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29614258
+      y: 0.28271484
+      width: 0.13623047
+      height: 0.27246094
+    srcObjName: SM_Item_Wine_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  resultMaterials:
+  - combinedMaterial: {fileID: 2100000, guid: cd17417e8169f534fb8287a2d4daa7e0, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: 1795803026462961550, guid: 2bae8cd18d110c24b8a6ea426898613c, type: 3}
+    - {fileID: 3990487291936375991, guid: 0a74c9605bffb1949bcbdeb1d90fbd7b, type: 3}
+    - {fileID: -6066814742322308079, guid: f39ad15dfea768e46b491f05b2226525, type: 3}
+    - {fileID: 5170688201887238132, guid: bda55b21f2507da4284b8837f5dd856b, type: 3}
+    - {fileID: -6769352360591717454, guid: a1e0f274659d43b44b307a421bcf5bd8, type: 3}
+    - {fileID: 4791231084025260125, guid: 9ca5a2fc49ce1f441abf559538c1deec, type: 3}
+    - {fileID: 4407082024178830801, guid: 1034048f199e2cf479de71f603b3f9cc, type: 3}
+    - {fileID: 8835237073921637285, guid: 70e62e7f0cd09ab41a53c06e391d7c3d, type: 3}
+    - {fileID: 4941834357221653739, guid: 44565ab22e5484842a12fa466dd7a8a9, type: 3}
+    - {fileID: -3303849591716033583, guid: 3219d66adfabbf64dab416ea5be6ccf4, type: 3}
+    - {fileID: -8887204196034143077, guid: 67ebdc8d623998242a61fb014c384dcf, type: 3}
+    - {fileID: -2820917196908191082, guid: 04c664319aa492f44849c7db0cb511cd, type: 3}
+    - {fileID: 5648506050671101011, guid: 16e432e561a364b4ab9decaf7211ddee, type: 3}
+    - {fileID: 8937523151950253880, guid: 18874a51c16e76a4f9ab2cabc0bf8b6b, type: 3}
+    - {fileID: 4957184569700784216, guid: a16cd84db4bf4f649bdb36cdc1f04fc6, type: 3}
+    - {fileID: 5772941647663408219, guid: 1de825fcec815b0409f354ec40b5a81b, type: 3}
+    - {fileID: 9122466550169988304, guid: 6ce98f100a5664f4c8cb0044571f5072, type: 3}
+  resultMaterialsTexArray: []
+  doMultiMaterial: 1

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc23ded55e91a4449070e21ac3411c9, type: 3}
+  m_Name: Raincoat
+  m_EditorClassIdentifier: 
+  id: 1
+  prefab: {fileID: 4889008954342857961, guid: 1fb48c3a80f0bb848947fe0feaeafd9d, type: 3}
+  icon: {fileID: 21300000, guid: 7d444265c659c9a449589c323f17e68a, type: 3}
+  title: "\u041F\u043B\u0430\u0449"
+  description: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u043F\u043B\u0430\u0449"
+  castingDamage: 0
+  containedAspects: []
+  effects: []
+  endurance: 9
+  maxEndurance: 10
+  maxRuneSize: 0
+  poweredEnergyCount: 0
+  energyCapacity: 0
+  componentParts: []
+  clothesType: 1
+  bigIcon: {fileID: 0}
+  defence: 0

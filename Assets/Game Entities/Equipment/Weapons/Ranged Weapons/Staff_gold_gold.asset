@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b41e0cd9a9001e408c5ec4cdbf40d8b, type: 3}
+  m_Name: Staff_gold_gold
+  m_EditorClassIdentifier: 
+  id: 25
+  icon: {fileID: 21300000, guid: 57ee38157e0bf4e41b91c60425fe0334, type: 3}
+  physicalRepresentation: {fileID: -8556258135058599849, guid: 34617f920c6375045b9ac0414a1a92e6,
+    type: 3}
+  title: "\u041F\u043E\u0441\u043E\u0445"
+  description: "\u041D\u0430\u0432\u0435\u0440\u0448\u0438\u0435: \u0437\u043E\u043B\u043E\u0442\u043E\n\u0416\u0435\u0437\u043B:
+    \u0437\u043E\u043B\u043E\u0442\u043E"
+  castingDamage: 0
+  containedAspects: []
+  effects: []
+  bigIcon: {fileID: 0}
+  endurance: 40
+  maxRuneSize: 0
+  poweredEnergyCount: 0
+  energyCapacity: 0
+  componentParts: []
+  damage: 0
+  range: 0
+  accuracy: 0
+  attackSpeed: 0
+  cooldownTime: 0
+  penetratingPower: 0
+  isBlocking: 0
+  isCombable: 0
+  animations: {fileID: 22100000, guid: 8aeaf22fccfc2034fb1059cb10b07b59, type: 2}
+  missileFlightSpeed: 0
+  projectile: {fileID: 0}
+  effect: {fileID: 0}
+  shootEffect: {fileID: 0}
+  destroyOnCollision: 0
+  attackType: 0

@@ -1,0 +1,1815 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &870116211924800157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4096714550642458503}
+  - component: {fileID: 4080318587984007000}
+  - component: {fileID: 2036047179359671938}
+  m_Layer: 0
+  m_Name: Input Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4096714550642458503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870116211924800157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5087269888003773115}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4080318587984007000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870116211924800157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2036047179359671938}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: UpdateCurrentControlsTips
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ABC_MovementController, Assembly-CSharp
+        m_MethodName: EnableMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6bc1aaf4-b110-4ff7-891e-5b9fe6f32c4d
+    m_ActionName: Player/Move
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 980e881e-182c-404c-8cbf-3d09fdb48fef
+    m_ActionName: Player/Sprint
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6343008975365442289}
+        m_TargetAssemblyTypeName: EnvironmentInteractionsManager, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1e75a940-d96d-4654-85b7-82752b61f46b
+    m_ActionName: Player/Interact[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6343008975365442289}
+        m_TargetAssemblyTypeName: EnvironmentInteractionsManager, Assembly-CSharp
+        m_MethodName: PickItems
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 301481eb-5aec-4f30-aa13-fbbbb088ca56
+    m_ActionName: Player/Pick Item[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 51be5e39-b232-4060-96ce-1c2017683152
+    m_ActionName: Player/Atack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 35df61f9-d31d-4a97-9539-4f05ca33b68d
+    m_ActionName: Player/Block[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: HidePlayerMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fa4a64c2-49eb-4262-9996-c745d26e3bb7
+    m_ActionName: UI (Inventory)/Close Inventory[/Keyboard/tab,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: NavigateCurrentSubsection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 51aeb0ec-2ae4-4301-878f-c7ac10b8a3f8
+    m_ActionName: UI (Inventory)/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: PressSelectedElement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 93c25848-255e-4523-9010-dea131a5ba00
+    m_ActionName: UI (Inventory)/Press Item Cell[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2982024817856348958}
+        m_TargetAssemblyTypeName: InventoryItemMovingManager, Assembly-CSharp
+        m_MethodName: StartItemMoving
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3a18fbb9-ec81-40da-9c2c-2c012816c452
+    m_ActionName: UI (Inventory)/Start Moving Item Cell[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2691131436043217754}
+        m_TargetAssemblyTypeName: ItemsContainersManager, Assembly-CSharp
+        m_MethodName: ChangeSelectedContainedItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 894ff6ff-fb44-45b8-b22d-e292414d9331
+    m_ActionName: UI (Items Container)/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2691131436043217754}
+        m_TargetAssemblyTypeName: ItemsContainersManager, Assembly-CSharp
+        m_MethodName: PickItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 63acb7df-87f4-474e-9566-27def35764be
+    m_ActionName: UI (Items Container)/Take[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2691131436043217754}
+        m_TargetAssemblyTypeName: ItemsContainersManager, Assembly-CSharp
+        m_MethodName: PickAllItems
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b63ade1c-0be1-419f-91a8-ecea372c7496
+    m_ActionName: UI (Items Container)/Take All[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2691131436043217754}
+        m_TargetAssemblyTypeName: ItemsContainersManager, Assembly-CSharp
+        m_MethodName: CloseContainer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ff2a625d-c600-46e4-bf4e-63f264dd4fa7
+    m_ActionName: UI (Items Container)/Close Container[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3969478296484743678}
+        m_TargetAssemblyTypeName: InventoryItemsInteractionsManager, Assembly-CSharp
+        m_MethodName: QuitActionMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 55948617-4731-49d8-afd4-9681f1117b5f
+    m_ActionName: UI (Item Cell Actions Menu)/Quit Item Cell Actions Menu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3969478296484743678}
+        m_TargetAssemblyTypeName: InventoryItemsInteractionsManager, Assembly-CSharp
+        m_MethodName: NavigateActionsMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bb985127-f51f-4edc-9707-5a89cc12c95f
+    m_ActionName: UI (Item Cell Actions Menu)/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3969478296484743678}
+        m_TargetAssemblyTypeName: InventoryItemsInteractionsManager, Assembly-CSharp
+        m_MethodName: PressSelectedButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e2add2ab-7a70-4eb0-8290-cd70f64444fa
+    m_ActionName: UI (Item Cell Actions Menu)/Press[/Keyboard/e,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: NavigateCurrentSubsection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 08438bae-8d4e-4ad4-8aee-875438b405ab
+    m_ActionName: UI (Item Cell Moving)/Move Cell[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2982024817856348958}
+        m_TargetAssemblyTypeName: InventoryItemMovingManager, Assembly-CSharp
+        m_MethodName: FinishItemMoving
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e302a326-45fb-4343-9cae-58cb07f4da5f
+    m_ActionName: UI (Item Cell Moving)/Put Cell Down[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3610723791368092284}
+        m_TargetAssemblyTypeName: ItemsCountChoiceManager, Assembly-CSharp
+        m_MethodName: InvokeConfirmAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 81e69ffb-a023-4473-bd58-dcb2ecf1b433
+    m_ActionName: UI (Choose Items Count Panel)/Split Items Up[/Keyboard/end,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3610723791368092284}
+        m_TargetAssemblyTypeName: ItemsCountChoiceManager, Assembly-CSharp
+        m_MethodName: ChangeItemsCounterValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 336d657e-035b-4a98-a8f6-edb30c2ecf57
+    m_ActionName: UI (Choose Items Count Panel)/Change Items Count[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3610723791368092284}
+        m_TargetAssemblyTypeName: ItemsCountChoiceManager, Assembly-CSharp
+        m_MethodName: InvokeCancelAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9eb1c803-2429-45cc-9db6-ac23199ac971
+    m_ActionName: UI (Choose Items Count Panel)/Close Panel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: HidePlayerMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 98046700-d5b8-465e-9da0-e896da12a02b
+    m_ActionName: UI (Craft Section (Recipes))/Close Section[/Keyboard/escape,/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: NavigateCurrentSubsection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5a4fe537-fbf2-462e-8cb7-8cd52560a812
+    m_ActionName: UI (Craft Section (Recipes))/Navigate[/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: PressSelectedElement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cd66219c-f40d-4376-b042-5935312ac91b
+    m_ActionName: UI (Craft Section (Recipes))/Select[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ChangePlayerMenuSection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e3c688b5-9f38-416a-903d-90dd1ccb7841
+    m_ActionName: Player Menu (Inventory)/Navigate Player Menu[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ChangePlayerMenuSection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 05eae9ee-08a2-46ec-88b0-0131d49cfa7d
+    m_ActionName: Player Menu (Craft Section (Recipes))/Navigate Player Menu[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ChangePlayerMenuSection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f78f6875-389c-43f9-b0c6-5ab670f60a66
+    m_ActionName: Player Menu (Settings)/Navigate Player Menu[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ChangePlayerMenuSection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 468b06ca-8050-4823-9f22-d3f06e13fce6
+    m_ActionName: Player Menu (Alchemistry Section (Recipes))/Navigate Player Menu[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: HidePlayerMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2586c97e-43f8-46ee-9208-9b4033156afb
+    m_ActionName: Player Menu (Alchemistry Section (Recipes))/Close Section[/Keyboard/escape,/Keyboard/tab,/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: HidePlayerMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1b7db5f7-fb88-46bb-a6c5-ab668ec24a18
+    m_ActionName: Player Menu (Settings)/Close Settings[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0ec408a5-01c6-4f5d-bb55-937a482cd140
+    m_ActionName: Player/Reload[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4708735028516818901}
+        m_TargetAssemblyTypeName: QuickAccessToolbarManager, Assembly-CSharp
+        m_MethodName: SelectNeighboringQuickAccessCell
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e921f39a-ebfa-418f-b728-88d03dbc23c9
+    m_ActionName: Player/Change Quick Access Cell[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4708735028516818901}
+        m_TargetAssemblyTypeName: QuickAccessToolbarManager, Assembly-CSharp
+        m_MethodName: SelectQuickAccessCell
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d63b8b3b-9846-4e60-adeb-3d85f4a02439
+    m_ActionName: Player/Select First Quick Access Cell[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: NavigateCurrentSubsection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f74502e6-8331-4c2e-8268-4095ab2c8f9e
+    m_ActionName: Player Menu (Craft Section (Energy Cells))/Close Section[/Keyboard/escape,/Keyboard/tab,/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: PressSelectedElement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7433954d-8c19-4ca9-8366-8af1f0f8201e
+    m_ActionName: Player Menu (Craft Section (Energy Cells))/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ChangePlayerMenuSection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9f6db34c-7a0e-4279-afe0-4a295f9a22e0
+    m_ActionName: Player Menu (Craft Section (Energy Cells))/Select[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ChangePlayerMenuSection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 006d0aa5-6cd4-4e49-a950-82652ef47ee5
+    m_ActionName: Player Menu (Craft Section (Energy Cells))/Navigate Player Menu[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5745370258390640784}
+        m_TargetAssemblyTypeName: CraftManager, Assembly-CSharp
+        m_MethodName: StartCraftingProcess
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 37e12971-a16d-41ec-9e2f-bf0bc4f0705b
+    m_ActionName: Player Menu (Craft Section (Energy Cells))/Go To Crafting Item
+      Template[/Keyboard/g]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ItemCreationSectionPointer, Assembly-CSharp
+        m_MethodName: CreateItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b91d9370-8afc-4155-823e-504600542bf8
+    m_ActionName: Player Menu (Craft Section (Energy Cells))/Create Item[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: NavigateCurrentSubsection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c01f41e9-27be-40f8-bcba-0000fac82344
+    m_ActionName: Player Menu (Craft Section (Crafting Item Template))/Return To
+      Energy Cells[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: PressSelectedElement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8c8b2d62-8be0-44f9-8be1-bf324ce81db7
+    m_ActionName: Player Menu (Craft Section (Crafting Item Template))/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5745370258390640784}
+        m_TargetAssemblyTypeName: CraftManager, Assembly-CSharp
+        m_MethodName: StartCraftingProcess
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6da44022-f34e-4d76-a7f9-5c930cf599a4
+    m_ActionName: Player Menu (Craft Section (Crafting Item Template))/Select[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5745370258390640784}
+        m_TargetAssemblyTypeName: CraftManager, Assembly-CSharp
+        m_MethodName: StartCraftingProcess
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 072d128a-d06e-4f63-89ce-bb012478a7c0
+    m_ActionName: Player Menu (Craft Section (Crafting Item Template))/Create Item[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: HidePlayerMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 53255159-dc96-4ef5-810a-1f4696d3f829
+    m_ActionName: Player Menu (Craft Section (Crafting Item Template))/Return Item
+      To Inventory[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: NavigateCurrentSubsection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a6bc3050-d8f9-404e-bf70-7e86423ccab1
+    m_ActionName: Player Menu (Craft Section (Inventory))/Close Section[/Keyboard/escape,/Keyboard/tab,/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: PressSelectedElement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a48fb8f0-318b-4bc0-909c-61ea2d4f365e
+    m_ActionName: Player Menu (Craft Section (Inventory))/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ChangePlayerMenuSection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 41f270e2-b9bf-4dcb-8ec8-56adf77d68a3
+    m_ActionName: Player Menu (Craft Section (Inventory))/Select[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ChangePlayerMenuSection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0ef86edf-167f-488d-9803-74ee39fcf4b6
+    m_ActionName: Player Menu (Craft Section (Inventory))/Navigate Player Menu[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3610723791368092284}
+        m_TargetAssemblyTypeName: ItemsCountChoiceManager, Assembly-CSharp
+        m_MethodName: InvokeConfirmAllAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 58b8584e-63a7-424b-833f-00fa6357b535
+    m_ActionName: Player Menu (Craft Section (Inventory (Ingredient Selection)))/Return
+      To Item Creation Subsection[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4716552910515513001}
+        m_TargetAssemblyTypeName: CraftInventoryCategoriesManager, Assembly-CSharp
+        m_MethodName: ChangeItemsCategory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9ff449ed-214c-4543-9103-cebf6f10588d
+    m_ActionName: Player Menu (Craft Section (Inventory (Ingredient Selection)))/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4716552910515513001}
+        m_TargetAssemblyTypeName: CraftInventoryCategoriesManager, Assembly-CSharp
+        m_MethodName: ChangeItemsCategory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7e2c2f40-9446-435c-8f1c-2bdf66a487ef
+    m_ActionName: Player Menu (Craft Section (Inventory (Ingredient Selection)))/Select[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4716552910515513001}
+        m_TargetAssemblyTypeName: CraftInventoryCategoriesManager, Assembly-CSharp
+        m_MethodName: ChangeItemsCategory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c45b165b-b31c-4301-b617-e732d287c704
+    m_ActionName: Player Menu (Choose Items Count Panel)/Confirm All[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: NavigateCurrentSubsection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b379b813-6d4d-4696-852c-20ade9a79c94
+    m_ActionName: Player Menu (Craft Section (Inventory))/Change Items Category[/Keyboard/1,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3969478296484743678}
+        m_TargetAssemblyTypeName: InventoryItemsInteractionsManager, Assembly-CSharp
+        m_MethodName: ExecuteInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ea919e61-ffb7-42eb-b200-b459e7ede01e
+    m_ActionName: Player Menu (Craft Section (Recipes))/Change Inventory Items Category[/Keyboard/1,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3969478296484743678}
+        m_TargetAssemblyTypeName: InventoryItemsInteractionsManager, Assembly-CSharp
+        m_MethodName: CancelInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 62453257-0f9c-42f0-9eb6-a6b15184a023
+    m_ActionName: Player Menu (Craft Section (Energy Cells))/Change Inventory Items
+      Category[/Keyboard/1,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3969478296484743678}
+        m_TargetAssemblyTypeName: InventoryItemsInteractionsManager, Assembly-CSharp
+        m_MethodName: ExecuteInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 84f71e61-7388-4b1a-b83f-191ebacf7164
+    m_ActionName: Player Menu (Inventory (Items Concatination))/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3969478296484743678}
+        m_TargetAssemblyTypeName: InventoryItemsInteractionsManager, Assembly-CSharp
+        m_MethodName: CancelInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d3e90b08-c372-4a04-9bab-1a3e72c24623
+    m_ActionName: Player Menu (Inventory (Items Concatination))/Select Cell[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4716552910515513001}
+        m_TargetAssemblyTypeName: CraftInventoryCategoriesManager, Assembly-CSharp
+        m_MethodName: ChangeItemsCategory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f3663b57-79ae-4b21-a917-7173a7a85ae0
+    m_ActionName: Player Menu (Inventory (Items Concatination))/Finish Cell Selection[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e28df7f4-c72c-48cc-8c4b-7d9ffe8715e4
+    m_ActionName: Player Menu (Craft Section (Crafting Item Template))/Change Inventory
+      Items Category[/Keyboard/1,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e1d7b229-cb98-4421-8190-23c0b58fee14
+    m_ActionName: Player Menu (Craft Section (Inventory (Item Selection)))/Change
+      Inventory Items Category[/Keyboard/1,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0d90085e-af03-47f6-896a-a13cc61961f0
+    m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8714115156442780315}
+        m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
+        m_MethodName: ShowQuestProgress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 16950e18-9593-4dfa-a7a7-5e03ea1cb2ac
+    m_ActionName: Player/Select Left Hand Weapon[/Keyboard/1,/DualSenseGamepadHID/dpad/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ShowPlayerMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b64ac8d5-a3b8-4e0a-b610-2824e5cb0105
+    m_ActionName: Death Screen/Return To Hub[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3328291819407308940}
+        m_TargetAssemblyTypeName: RunEndingManager, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 38562655-f524-461f-ac1f-bcab977ccbac
+    m_ActionName: Death Screen/Exit To Main Menu[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PotionApplyer, Assembly-CSharp
+        m_MethodName: ApplyCurrentPotion
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e01516c4-e61a-4e25-b7b9-bfd982b53376
+    m_ActionName: Player/Apply Item[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestProgressSection, Assembly-CSharp
+        m_MethodName: ShowQuestProgress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 09314cd6-ce67-49db-9fc2-c7b61c971ca7
+    m_ActionName: Player/Show Quest Progress[/Keyboard/alt]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242604367710802321}
+        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
+        m_MethodName: ShowPlayerMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: eb165f70-e946-4f32-bc09-45f52ec1ca50
+    m_ActionName: Player/Show Player Menu[/Keyboard/tab,/Keyboard/j,/Keyboard/escape]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &2036047179359671938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870116211924800157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea332d4da04c213488b88efb977f25f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 4080318587984007000}
+  gamepadButtonsIcons: {fileID: 11400000, guid: 87ebe6586fda9b346b3bcaa6c82b8461,
+    type: 2}
+  playerMenuControlsTipsSectionView: {fileID: 0}
+--- !u!1 &2112113516153556502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5087269888003773115}
+  - component: {fileID: 7798457773956707207}
+  - component: {fileID: 6193551178095944882}
+  - component: {fileID: 3328291819407308940}
+  m_Layer: 0
+  m_Name: Game Management Asset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5087269888003773115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112113516153556502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4096714550642458503}
+  - {fileID: 7897303090798738455}
+  - {fileID: 8218996220443439446}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7798457773956707207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112113516153556502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5192493f5cd60a7428b64d0e491e6bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 6603067858326094833}
+  questManager: {fileID: 8714115156442780315}
+  inputManager: {fileID: 2036047179359671938}
+  hudManager: {fileID: 0}
+  levelLoadingManager: {fileID: 6193551178095944882}
+  runEndingManager: {fileID: 0}
+--- !u!114 &6193551178095944882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112113516153556502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9368058769a3440bc656e0f4286bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreenViewPrefab: {fileID: 3626415247346299864, guid: a6ec0805c8e52f74e9c834dec8ff2b4e,
+    type: 3}
+  loadingScreenViewContainer: {fileID: 0}
+  inputManager: {fileID: 2036047179359671938}
+--- !u!114 &3328291819407308940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112113516153556502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd9e6663739e0b448729f7f47306a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runEndingStatusDatas:
+  - status: 0
+    statusIcon: {fileID: 21300000, guid: 9cee55b2389657044ad96cd6e4c77dfc, type: 3}
+    statusDescription: "\u0418\u0433\u0440\u0430 \u043E\u043A\u043E\u043D\u0447\u0435\u043D\u0430!"
+  - status: 1
+    statusIcon: {fileID: 21300000, guid: 97aca5cfd8a0b884eb457728aadccac7, type: 3}
+    statusDescription: "\u0417\u0430\u0431\u0435\u0433 \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043D!"
+  runEndingViewPrefab: {fileID: 3213188030074919994, guid: 5d2fbfdcfb6011c42a2c994b52c00cd9,
+    type: 3}
+  runEndingViewContainer: {fileID: 0}
+  inputManager: {fileID: 2036047179359671938}
+  levelLoadingManager: {fileID: 6193551178095944882}
+--- !u!1 &2221992245514988832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3710097049681740729}
+  - component: {fileID: 3969478296484743678}
+  - component: {fileID: 5529831435046070168}
+  - component: {fileID: 317727207830651247}
+  - component: {fileID: 2274040291946828668}
+  - component: {fileID: 7999196188633965118}
+  - component: {fileID: 1535512377605205146}
+  - component: {fileID: 768686827376954574}
+  - component: {fileID: 8673178053228122657}
+  m_Layer: 0
+  m_Name: Inventory Items Interactions Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3710097049681740729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9137915076563642316}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3969478296484743678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a7ad903d74378478485aaf92c9e055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionModules:
+  - {fileID: 5529831435046070168}
+  - {fileID: 317727207830651247}
+  - {fileID: 2274040291946828668}
+  - {fileID: 7999196188633965118}
+  - {fileID: 1535512377605205146}
+  - {fileID: 768686827376954574}
+  - {fileID: 8673178053228122657}
+  itemCellActionsViewPrefab: {fileID: 5110288082645998721, guid: 2c050efabc343254cb96d8e23959634d,
+    type: 3}
+  interactionProcessBackgroundPrefab: {fileID: 3293099257242793277, guid: 9175f389f2d003a4e9a677432526b3fe,
+    type: 3}
+  interactionProcessBackgroundContainer: {fileID: 0}
+  itemsCountChoiceManager: {fileID: 3610723791368092284}
+  inputManager: {fileID: 2036047179359671938}
+--- !u!114 &5529831435046070168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7c2d4d1ce36304ca4c0f14d425806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: 1
+  displayedName: "\u041E\u0431\u044A\u0435\u0434\u0438\u043D\u0438\u0442\u044C"
+  icon: {fileID: 21300000, guid: ef2607d23e78e39488f827ac502d16c7, type: 3}
+  playerMenuManager: {fileID: 1242604367710802321}
+--- !u!114 &317727207830651247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8214be376e9dc46bfab185c9daa2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: 4
+  displayedName: "\u0421\u043D\u0430\u0440\u044F\u0434\u0438\u0442\u044C"
+  icon: {fileID: 21300000, guid: 80c34ae915d102a47a492b005d495c08, type: 3}
+  inventoryManager: {fileID: 6603067858326094833}
+--- !u!114 &2274040291946828668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdfc0facbc3cd945b1f89d3316e0d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: 2
+  displayedName: "\u0420\u0430\u0437\u0434\u0435\u043B\u0438\u0442\u044C"
+  icon: {fileID: 21300000, guid: 6938a9fe0bb4aa043966f061ea9ef87c, type: 3}
+  itemsCountChoiceManager: {fileID: 3610723791368092284}
+  inventoryManager: {fileID: 6603067858326094833}
+--- !u!114 &7999196188633965118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0315f109204c74b8cc55c962a5f9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: 3
+  displayedName: "\u0412\u044B\u0431\u0440\u043E\u0441\u0438\u0442\u044C"
+  icon: {fileID: 21300000, guid: 2d48624b5c4f56a4c997def1e1e2f289, type: 3}
+  itemsCountChoiceManager: {fileID: 3610723791368092284}
+  inventoryManager: {fileID: 6603067858326094833}
+--- !u!114 &1535512377605205146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83720af6ca10e840b56df19708361ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: 0
+  displayedName: "\u0411\u044B\u0441\u0442\u0440\u044B\u0439 \u0434\u043E\u0441\u0442\u0443\u043F"
+  icon: {fileID: 21300000, guid: 22216642446357f4484fdcf135eebb2e, type: 3}
+--- !u!114 &768686827376954574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c0aab29711aa745ae500f948a9c32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: 8
+  displayedName: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432 \u0438\u043D\u0433\u0440\u0435\u0434\u0438\u0435\u043D\u0442\u044B"
+  icon: {fileID: 21300000, guid: 78db9a042454f1a4096e48f2a502ed48, type: 3}
+--- !u!114 &8673178053228122657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221992245514988832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003cb767538b463438e40e6e05f2da7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: 7
+  displayedName: "\u0412\u042B\u0434\u0435\u043B\u0438\u0442\u044C \u044D\u043D\u0435\u0440\u0433\u0438\u044E"
+  icon: {fileID: 21300000, guid: 78db9a042454f1a4096e48f2a502ed48, type: 3}
+--- !u!1 &2854284885892721046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4743003781120819859}
+  - component: {fileID: 6343008975365442289}
+  - component: {fileID: 2691131436043217754}
+  m_Layer: 0
+  m_Name: Environment Exploration Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4743003781120819859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854284885892721046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7897303090798738455}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6343008975365442289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854284885892721046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d0f23bc149ed745b0067eaef0ac089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveObjectInfoViewPrefab: {fileID: 6056667545715682398, guid: 80441aff7e2617f4495653b60fd7a68f,
+    type: 3}
+  interactiveObjectInfoViewContainer: {fileID: 0}
+  playerItemPicker: {fileID: 0}
+  playerInteractor: {fileID: 0}
+  itemsContainersManager: {fileID: 2691131436043217754}
+  gameManager: {fileID: 7798457773956707207}
+  inventoryManager: {fileID: 6603067858326094833}
+  inputManager: {fileID: 2036047179359671938}
+--- !u!114 &2691131436043217754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854284885892721046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32fbeb407558cb54babc7fad3e21eb8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsContainerContentViewPrefab: {fileID: 8178525987719559129, guid: 5ca5071a10645f74e956c2b062970bb7,
+    type: 3}
+  itemsContainerContentViewContainer: {fileID: 0}
+  inventoryManager: {fileID: 6603067858326094833}
+  inputManager: {fileID: 2036047179359671938}
+  itemPickingMessagesManager: {fileID: 4002637374728261544}
+--- !u!1 &3120101434810351808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9137915076563642316}
+  - component: {fileID: 6603067858326094833}
+  - component: {fileID: 2819043622100233669}
+  - component: {fileID: 4708735028516818901}
+  - component: {fileID: 2982024817856348958}
+  m_Layer: 0
+  m_Name: Inventory Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9137915076563642316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120101434810351808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3710097049681740729}
+  m_Father: {fileID: 7897303090798738455}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6603067858326094833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120101434810351808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a68aa5425001349ba51b1691cb6410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryCellsCount: 36
+  quickAccessCellsCount: 6
+  weaponItems:
+  - weaponHandPosition: 0
+  - weaponHandPosition: 1
+  clothesItems:
+  - clothesType: 0
+  - clothesType: 1
+  - clothesType: 2
+  - clothesType: 3
+  - clothesType: 4
+  droppedItemsSpawnPoint: {fileID: 0}
+  equipmentManager: {fileID: 2819043622100233669}
+  quickAccessToolbarManager: {fileID: 4708735028516818901}
+  itemDescriptionsManager: {fileID: 7822113685916255815}
+  inventoryItemsInteractionsManager: {fileID: 3969478296484743678}
+--- !u!114 &2819043622100233669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120101434810351808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e939b6fdd0e2a43bc85fd0b0182ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+--- !u!114 &4708735028516818901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120101434810351808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed8bb2fb88bdd647aba15bada36e9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudItemCellViewPrefab: {fileID: 8616858842807475380, guid: f9a10e3647bc4de4b9acf311331e40e0,
+    type: 3}
+  hudQuickAccessCellsContainer: {fileID: 0}
+  hudLeftWeaponItemCellsContainer: {fileID: 0}
+  hudRightWeaponItemCellsContainer: {fileID: 0}
+--- !u!114 &2982024817856348958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120101434810351808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f27ac8682f80746af649f23dc38ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingItemContainer: {fileID: 0}
+  movingItemCellScale: 1.15
+  inputManager: {fileID: 2036047179359671938}
+  playerMenuManager: {fileID: 1242604367710802321}
+--- !u!1 &4190309539048902575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7897303090798738455}
+  - component: {fileID: 3610723791368092284}
+  - component: {fileID: 8714115156442780315}
+  m_Layer: 0
+  m_Name: Gameplay Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7897303090798738455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190309539048902575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4743003781120819859}
+  - {fileID: 9137915076563642316}
+  - {fileID: 4019967155194115048}
+  m_Father: {fileID: 5087269888003773115}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3610723791368092284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190309539048902575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb393a00941b8c4483901b625483524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsCountChoiceViewPrefab: {fileID: 6903242675168498747, guid: 42cdb35b2763934488a1546161f2959b,
+    type: 3}
+  itemsCountChoiceViewContainer: {fileID: 0}
+  inputManager: {fileID: 2036047179359671938}
+--- !u!114 &8714115156442780315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190309539048902575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ccc6be4d6e83a4796fc497ba89cca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questProgressView: {fileID: 0}
+  requiredStabilizerPartsCount: 7
+  stabilizerPartDataTemplate: {fileID: 0}
+  stabilizerDataTemplate: {fileID: 0}
+--- !u!1 &7789330750529029381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8218996220443439446}
+  - component: {fileID: 7919828064836258063}
+  - component: {fileID: 1242604367710802321}
+  - component: {fileID: 4002637374728261544}
+  - component: {fileID: 7822113685916255815}
+  m_Layer: 0
+  m_Name: UI Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8218996220443439446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789330750529029381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5087269888003773115}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7919828064836258063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789330750529029381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bab6a1cc35ddc0488553cfe94aae71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudView: {fileID: 0}
+--- !u!114 &1242604367710802321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789330750529029381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0febe2776fe8b1479ab8c1d17b3b6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMenuView: {fileID: 0}
+  playerMenuNavigationSectionView: {fileID: 0}
+  playerMenuMechanicsDatas:
+  - mechanicsManager: {fileID: 6603067858326094833}
+    mechanicsViewPrefab: {fileID: 1500816374161655073, guid: 72646a0569de2bd4bb0b137618363a54,
+      type: 3}
+    sectionIcon: {fileID: 21300000, guid: 2deeaa1c4f193694b8689ec6438c2dba, type: 3}
+  - mechanicsManager: {fileID: 5745370258390640784}
+    mechanicsViewPrefab: {fileID: 136484993392923239, guid: 3edbb714beff11b4ea71a13a7fd67f6f,
+      type: 3}
+    sectionIcon: {fileID: 21300000, guid: d58db6a624a31fb4da63286ec539709e, type: 3}
+  - mechanicsManager: {fileID: 0}
+    mechanicsViewPrefab: {fileID: 7171789827346665889, guid: 283e89c1e270635489fe4cbfc3ba6a9b,
+      type: 3}
+    sectionIcon: {fileID: 21300000, guid: afa085d878927bb489738b2f586d7053, type: 3}
+  - mechanicsManager: {fileID: 0}
+    mechanicsViewPrefab: {fileID: 1582240908107756101, guid: b6eeffe31a3600947830ec11c89eae76,
+      type: 3}
+    sectionIcon: {fileID: 21300000, guid: 1e5b9ebc606822f4387aa624ea89bc9c, type: 3}
+  playerMenuSectionsContainer: {fileID: 0}
+  playerInputManager: {fileID: 2036047179359671938}
+--- !u!114 &4002637374728261544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789330750529029381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f4459d1185ce349a15c613e4560b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMessagesCount: 5
+  messagesShowingTimeInSeconds: 5
+  itemPickingMessagePrefab: {fileID: 1107420729204432522, guid: 695906c943766f342aa28f05cfde251e,
+    type: 3}
+  itemPickingMessagesContainer: {fileID: 0}
+--- !u!114 &7822113685916255815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789330750529029381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 249337cbca384054f84bc4ba4586ee0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDescriptionViewPrefab: {fileID: 2290167567978384361, guid: b33d8cf126c0a6e4182d11b6bfd60652,
+    type: 3}
+  itemDescriptionViewContainer: {fileID: 0}
+  viewAppearanceLatencyInSeconds: 1
+--- !u!1 &8400844909467162119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4019967155194115048}
+  - component: {fileID: 5745370258390640784}
+  - component: {fileID: 4716552910515513001}
+  m_Layer: 0
+  m_Name: Craft Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4019967155194115048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400844909467162119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7897303090798738455}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5745370258390640784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400844909467162119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacb73c6f8735f24bb9faf849abaad5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableCraftRecipes:
+  - {fileID: 11400000, guid: dd660697a097d3543bedb93ffcf034bb, type: 2}
+  - {fileID: 11400000, guid: d2b08aa6e3862144d8194d9c69829fab, type: 2}
+  - {fileID: 11400000, guid: b2bda3c939bfab0478970055f1a9c0e2, type: 2}
+  - {fileID: 11400000, guid: 6f6bf0be06410c54e81922c8c4a5744f, type: 2}
+  craftingTimeInSecond: 1.5
+  craftingStepTimeInSecond: 0.01
+  inventoryCategoriesManager: {fileID: 4716552910515513001}
+  inventoryManager: {fileID: 6603067858326094833}
+--- !u!114 &4716552910515513001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400844909467162119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b473d61879ba142a5499f177a86ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryDatas:
+  - categoryIcon: {fileID: 21300000, guid: 4fa60c07a0f54104a8c6662fc366b6ac, type: 3}
+    categoryViewPrefab: {fileID: 7878984870078078095, guid: e27df094d9659264fa32be11677c475e,
+      type: 3}
+  - categoryIcon: {fileID: 21300000, guid: de141fdc76822d94ca0356eaf9ac28cb, type: 3}
+    categoryViewPrefab: {fileID: 3805300304710118501, guid: ad10265cc16913c4cb56de3cfad4b763,
+      type: 3}
+  inventoryManager: {fileID: 6603067858326094833}

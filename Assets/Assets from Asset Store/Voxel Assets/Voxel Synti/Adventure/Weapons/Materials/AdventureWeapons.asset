@@ -1,0 +1,426 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41887b1546f5c44ab54e7e65aad3bc, type: 3}
+  m_Name: AdventureWeapons
+  m_EditorClassIdentifier: 
+  version: 3252
+  resultType: 0
+  materialsAndUVRects:
+  - material: {fileID: 4832388489283843325, guid: 86ca147590c4feb43a9bd0056c1aad2a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5419922
+      y: 0.00048828125
+      width: 0.12524414
+      height: 0.25048828
+    srcObjName: SM_Wep_Axe_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5284995873723539896, guid: d4f0103cd04a11d4ebf4156c036d1f11,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.41333008
+      y: 0.5136719
+      width: 0.12597656
+      height: 0.25195312
+    srcObjName: SM_Wep_Dagger_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5109340062011551818, guid: e5a8cd0bf118b3143bbbcae5eceaba0e,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14135742
+      y: 0.27978516
+      width: 0.13330078
+      height: 0.26660156
+    srcObjName: SM_Wep_GreatAxe_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 989378108994039981, guid: cd0aac71898599f488a0b72bdb5a8993,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.41333008
+      y: 0.2578125
+      width: 0.1274414
+      height: 0.2548828
+    srcObjName: SM_Wep_MusketPistol_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 7863088036773411487, guid: 81f545bfc617e504293684acae6d6b84,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28100586
+      y: 0.5239258
+      width: 0.12817383
+      height: 0.25634766
+    srcObjName: SM_Wep_Pickaxe_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3385953256578771750, guid: 74558988528a2804db00f95ac038c0c0,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14135742
+      y: 0.5473633
+      width: 0.13183594
+      height: 0.26367188
+    srcObjName: SM_Wep_Pitchfork_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2827065907700798310, guid: 4ff0a98a3f3ec6f4db99d9c66a67c6ba,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.41333008
+      y: 0.00048828125
+      width: 0.12817383
+      height: 0.25634766
+    srcObjName: SM_Wep_Scythe_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8934461879795666524, guid: 1edb9cd3be7509d47a95c625644bab6c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.00048828125
+      width: 0.140625
+      height: 0.28125
+    srcObjName: SM_Wep_Sheild_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8599866031560127467, guid: 0fbff79b2b1b11345883e2c3527151c5,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.28271484
+      width: 0.140625
+      height: 0.28125
+    srcObjName: SM_Wep_Sheild_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3596226017200183628, guid: 64b0a18bda840e6489134f1a4385fba7,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.5649414
+      width: 0.140625
+      height: 0.28125
+    srcObjName: SM_Wep_Sheild_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -7861842842835746474, guid: 183e029ca7d8b4f4c9142d2950ea687f,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28100586
+      y: 0.26513672
+      width: 0.12890625
+      height: 0.2578125
+    srcObjName: SM_Wep_Staff_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4089190801247814840, guid: c8272de9f3c9caa4a84fa0e8de05a6b1,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28100586
+      y: 0.00048828125
+      width: 0.13183594
+      height: 0.26367188
+    srcObjName: SM_Wep_Staff_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5170849961454850292, guid: 1cb3c827f51534a4081cd4b376f1edb2,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14135742
+      y: 0.00048828125
+      width: 0.13916016
+      height: 0.2783203
+    srcObjName: SM_Wep_Sword_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  resultMaterials:
+  - combinedMaterial: {fileID: 2100000, guid: 8fa74a8d71c60084585e402d0d56e6d4, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: 4832388489283843325, guid: 86ca147590c4feb43a9bd0056c1aad2a, type: 3}
+    - {fileID: 5284995873723539896, guid: d4f0103cd04a11d4ebf4156c036d1f11, type: 3}
+    - {fileID: 989378108994039981, guid: cd0aac71898599f488a0b72bdb5a8993, type: 3}
+    - {fileID: 2827065907700798310, guid: 4ff0a98a3f3ec6f4db99d9c66a67c6ba, type: 3}
+    - {fileID: 7863088036773411487, guid: 81f545bfc617e504293684acae6d6b84, type: 3}
+    - {fileID: -7861842842835746474, guid: 183e029ca7d8b4f4c9142d2950ea687f, type: 3}
+    - {fileID: 4089190801247814840, guid: c8272de9f3c9caa4a84fa0e8de05a6b1, type: 3}
+    - {fileID: 3385953256578771750, guid: 74558988528a2804db00f95ac038c0c0, type: 3}
+    - {fileID: 5109340062011551818, guid: e5a8cd0bf118b3143bbbcae5eceaba0e, type: 3}
+    - {fileID: 5170849961454850292, guid: 1cb3c827f51534a4081cd4b376f1edb2, type: 3}
+    - {fileID: -3596226017200183628, guid: 64b0a18bda840e6489134f1a4385fba7, type: 3}
+    - {fileID: 8599866031560127467, guid: 0fbff79b2b1b11345883e2c3527151c5, type: 3}
+    - {fileID: 8934461879795666524, guid: 1edb9cd3be7509d47a95c625644bab6c, type: 3}
+  resultMaterialsTexArray: []
+  doMultiMaterial: 1

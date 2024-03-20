@@ -1,0 +1,519 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41887b1546f5c44ab54e7e65aad3bc, type: 3}
+  m_Name: DungeonFantasyKingdomBuildingsPropsPreset
+  m_EditorClassIdentifier: 
+  version: 3252
+  resultType: 0
+  materialsAndUVRects:
+  - material: {fileID: -7829045640016534423, guid: 454d82f71d5fbc04da58afbe00ade5ba,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8183594
+      y: 0.00048828125
+      width: 0.1274414
+      height: 0.2548828
+    srcObjName: SM_Item_Candlestick_01_Preset Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -330273992385153236, guid: 5b824290504a5d143abeb752a2f19a37,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.68896484
+      y: 0.00048828125
+      width: 0.12890625
+      height: 0.2578125
+    srcObjName: SM_Item_Candlestick_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5499288908222818928, guid: eecca38e9aa4b744d8d0f3610208db3d,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.42236328
+      y: 0.2709961
+      width: 0.13427734
+      height: 0.2685547
+    srcObjName: SM_Item_Candlestick_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -5944642058980776063, guid: fd69dc4c775a6a04fb15a10600289f26,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14428711
+      y: 0.56347656
+      width: 0.13671875
+      height: 0.2734375
+    srcObjName: SM_Item_Candlestick_04 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3133132975510058794, guid: 906eaceb5439fe646a02d2c60586cc49,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.57470703
+      width: 0.140625
+      height: 0.28125
+    srcObjName: SM_Item_Candlestick_05 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4024458908345825677, guid: 609f897af2565ed45b30ce1ba96ee5e9,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.42236328
+      y: 0.54052734
+      width: 0.13085938
+      height: 0.26171875
+    srcObjName: SM_Item_Candlestick_06_Preset Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4820124758485088796, guid: b4d029ef0cfab164988e239fddbaf8ec,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28515625
+      y: 0.00048828125
+      width: 0.13671875
+      height: 0.2734375
+    srcObjName: SM_Prop_Candle_Melted_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -9004366014340264894, guid: 837e421faf565254896b10e44e5ad0c3,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28515625
+      y: 0.5493164
+      width: 0.13476562
+      height: 0.26953125
+    srcObjName: SM_Prop_Candle_Melted_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -4638900987645506079, guid: 7e49403d153da344bb21ddd0cadc8479,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.28857422
+      width: 0.14257812
+      height: 0.28515625
+    srcObjName: SM_Prop_Candle_Melted_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 175481298976434476, guid: 0066b676d5951264b9130282813b5694,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14428711
+      y: 0.28222656
+      width: 0.14013672
+      height: 0.28027344
+    srcObjName: SM_Prop_Candle_Melted_04 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -2943356748345744385, guid: 524cf4029d863c349a6b20f72f05fafe,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.42236328
+      y: 0.00048828125
+      width: 0.13476562
+      height: 0.26953125
+    srcObjName: SM_Prop_Candle_Melted_Group_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8202688570892225127, guid: 8efe37b69ea597e46a8d3980f441edb0,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14428711
+      y: 0.00048828125
+      width: 0.14038086
+      height: 0.28076172
+    srcObjName: SM_Prop_Candle_Skull_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2454096335058583129, guid: 4fe2954472156694b9f1155b8885233c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28515625
+      y: 0.27490234
+      width: 0.13671875
+      height: 0.2734375
+    srcObjName: SM_Prop_Chandelier_01_Preset Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -2516130677626145950, guid: 45dd0e456c270e847aa91e01a961c361,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5576172
+      y: 0.00048828125
+      width: 0.13085938
+      height: 0.26171875
+    srcObjName: SM_Prop_Chandelier_02_Preset Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3960692219115042348, guid: cfd91b2649b20d040b8a04295fa549b9,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.00048828125
+      width: 0.14355469
+      height: 0.28710938
+    srcObjName: SM_Prop_Chandelier_03_Preset Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -1202882856395344920, guid: 661e1f9a5d6d49c48b7367e700dcec61,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5576172
+      y: 0.2631836
+      width: 0.1274414
+      height: 0.2548828
+    srcObjName: SM_Prop_Chandelier_04_Preset Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  resultMaterials:
+  - combinedMaterial: {fileID: 2100000, guid: 4144a0f2ab5deec48901af5ddc9b0dd4, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: -1202882856395344920, guid: 661e1f9a5d6d49c48b7367e700dcec61, type: 3}
+    - {fileID: -7829045640016534423, guid: 454d82f71d5fbc04da58afbe00ade5ba, type: 3}
+    - {fileID: -330273992385153236, guid: 5b824290504a5d143abeb752a2f19a37, type: 3}
+    - {fileID: -2516130677626145950, guid: 45dd0e456c270e847aa91e01a961c361, type: 3}
+    - {fileID: 4024458908345825677, guid: 609f897af2565ed45b30ce1ba96ee5e9, type: 3}
+    - {fileID: 5499288908222818928, guid: eecca38e9aa4b744d8d0f3610208db3d, type: 3}
+    - {fileID: -2943356748345744385, guid: 524cf4029d863c349a6b20f72f05fafe, type: 3}
+    - {fileID: -9004366014340264894, guid: 837e421faf565254896b10e44e5ad0c3, type: 3}
+    - {fileID: 2454096335058583129, guid: 4fe2954472156694b9f1155b8885233c, type: 3}
+    - {fileID: 4820124758485088796, guid: b4d029ef0cfab164988e239fddbaf8ec, type: 3}
+    - {fileID: -5944642058980776063, guid: fd69dc4c775a6a04fb15a10600289f26, type: 3}
+    - {fileID: 175481298976434476, guid: 0066b676d5951264b9130282813b5694, type: 3}
+    - {fileID: 8202688570892225127, guid: 8efe37b69ea597e46a8d3980f441edb0, type: 3}
+    - {fileID: -3133132975510058794, guid: 906eaceb5439fe646a02d2c60586cc49, type: 3}
+    - {fileID: -4638900987645506079, guid: 7e49403d153da344bb21ddd0cadc8479, type: 3}
+    - {fileID: 3960692219115042348, guid: cfd91b2649b20d040b8a04295fa549b9, type: 3}
+  resultMaterialsTexArray: []
+  doMultiMaterial: 1

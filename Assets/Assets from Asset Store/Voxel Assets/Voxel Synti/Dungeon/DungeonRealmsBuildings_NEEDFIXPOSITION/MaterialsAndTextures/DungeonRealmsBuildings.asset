@@ -1,0 +1,1886 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41887b1546f5c44ab54e7e65aad3bc, type: 3}
+  m_Name: DungeonRealmsBuildings
+  m_EditorClassIdentifier: 
+  version: 3252
+  resultType: 0
+  materialsAndUVRects:
+  - material: {fileID: 5361792255158428548, guid: 8942f97d7dbf87c41bcfd4f250cd2f10,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7050781
+      y: 0.7109375
+      width: 0.13085938
+      height: 0.13085938
+    srcObjName: SM_Bld_Camp_Tent_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1134544189358142116, guid: f5e2ae1f97cabc2449990449a3014536,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.15112305
+      y: 0.16577148
+      width: 0.14501953
+      height: 0.14501953
+    srcObjName: SM_Bld_Camp_Tent_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5373694404571544807, guid: af677b6d33b77b3478225a4dbdff95e0,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29663086
+      y: 0.16577148
+      width: 0.140625
+      height: 0.140625
+    srcObjName: SM_Bld_Camp_Tent_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -7919465215662404159, guid: 5e473cf2d707968418cb48108a721382,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5715332
+      y: 0.7121582
+      width: 0.13183594
+      height: 0.13183594
+    srcObjName: SM_Bld_Camp_Tent_05 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -1504725720185841018, guid: 008e8a65ed5f9904688dd26d6b4dfd84,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.71972656
+      y: 0.16577148
+      width: 0.14013672
+      height: 0.14013672
+    srcObjName: SM_Bld_Camp_Tent_06 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4281177801306430498, guid: ae23c76d555df1c4cb169f5fabf51e85,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8364258
+      y: 0.7109375
+      width: 0.12939453
+      height: 0.12939453
+    srcObjName: SM_Bld_Camp_Tent_Cover_Rough_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6834503546011646137, guid: 8b9008b9c64b6854e9a02ad38714ca8f,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43676758
+      y: 0.5788574
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Bld_Camp_Tent_Cover_Rough_05 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2750745263897581606, guid: 8678be2d1ee9cee449df86a7db8197f1,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7050781
+      y: 0.84228516
+      width: 0.12988281
+      height: 0.12988281
+    srcObjName: SM_Bld_Camp_Tent_Cover_Top_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -7459340419854052078, guid: f6dbe86b009dcf24eacdcd6408a6c714,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43676758
+      y: 0.71362305
+      width: 0.1340332
+      height: 0.1340332
+    srcObjName: SM_Bld_Camp_Tent_Cover_Top_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -7957052603572886840, guid: 2271e5bc3c33b8a46beca41ec1341800,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7060547
+      y: 0.4440918
+      width: 0.13330078
+      height: 0.13330078
+    srcObjName: SM_Bld_Camp_Tent_Cover_Top_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6404473046132572336, guid: a96569027cbb7ed439b4d30caa507fe8,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43676758
+      y: 0.4440918
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Bld_Camp_Tent_Cover_Top_04 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1135454015112214994, guid: 2a2a91ba17eb9a14fb2a146ffa649db7,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.84643555
+      y: 0.30688477
+      width: 0.13476562
+      height: 0.13476562
+    srcObjName: SM_Bld_Camp_Tent_Cover_Top_05 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 921004718280710555, guid: 093e78129a64e0a4bace7dae2890bcaa,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5715332
+      y: 0.4440918
+      width: 0.1340332
+      height: 0.1340332
+    srcObjName: SM_Bld_Camp_Tent_Cover_Top_07 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6936476130603841897, guid: 4e46f6eb886e7c74b80f227c6a3a5c2f,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.71118164
+      y: 0.30688477
+      width: 0.13476562
+      height: 0.13476562
+    srcObjName: SM_Bld_Camp_Tent_Round_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3897075731625834502, guid: 42f26670f8748da4dbef07e5dfb0a81d,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.3166504
+      width: 0.15014648
+      height: 0.15014648
+    srcObjName: SM_Bld_Camp_Tent_Round_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1850730705005744136, guid: 891eda2dc5f5618438e2e0c6d3edcc6a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.15112305
+      y: 0.5969238
+      width: 0.14160156
+      height: 0.14160156
+    srcObjName: SM_Bld_Dwarf_Building_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 7391471085577710092, guid: 1357e8a75da97c14d9da68d26038cb5b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.16577148
+      width: 0.15039062
+      height: 0.15039062
+    srcObjName: SM_Bld_Dwarf_Building_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -7455164910511093914, guid: d1e5bea5e2de5cd4299b69db2b81b6d6,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7824707
+      y: 0.00024414062
+      width: 0.15039062
+      height: 0.15039062
+    srcObjName: SM_Bld_Dwarf_Building_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6969601971578407684, guid: b0e085f0bfff28c42b0e68ecd7d5fc1f,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.15112305
+      y: 0.7390137
+      width: 0.140625
+      height: 0.140625
+    srcObjName: SM_Bld_Ruin_Arch_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1809770510452683870, guid: 05d7d1f1617d20c4191f294b88b8d856,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8364258
+      y: 0.8408203
+      width: 0.12939453
+      height: 0.12939453
+    srcObjName: SM_Bld_Ruin_Bridge_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -8357090484612149516, guid: 5e53d4a60e21d2f448d669ebbd8ff806,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5715332
+      y: 0.5786133
+      width: 0.13305664
+      height: 0.13305664
+    srcObjName: SM_Bld_Ruin_Bridge_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3059770256142430632, guid: 84ef2291d11b3c744bf6c8810e513d16,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29663086
+      y: 0.86376953
+      width: 0.13549805
+      height: 0.13549805
+    srcObjName: SM_Bld_Ruin_Bridge_04 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -4896099283927072262, guid: d4d464647cf571e4abd1f91398310ef4,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29663086
+      y: 0.44702148
+      width: 0.13916016
+      height: 0.13916016
+    srcObjName: SM_Bld_Ruin_Bridge_Pillar_Large_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5147379329658839698, guid: fccaff83aafd1b14ab194ef25a918a32,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5715332
+      y: 0.8444824
+      width: 0.13183594
+      height: 0.13183594
+    srcObjName: SM_Bld_Ruin_Bridge_Pillar_Large_Base_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -394954321003950378, guid: 317618091ab0f69448a592eb14b4b6de,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43676758
+      y: 0.84814453
+      width: 0.1340332
+      height: 0.1340332
+    srcObjName: SM_Bld_Ruin_Pillar_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4227534079430053509, guid: e2532e41562247a4e948391440af6eff,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43676758
+      y: 0.30688477
+      width: 0.13671875
+      height: 0.13671875
+    srcObjName: SM_Bld_Ruin_Pillar_Arch_Broken_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6015648104883747820, guid: 463e213595ea14a42a20a1017581ff3c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.3244629
+      y: 0.00024414062
+      width: 0.1538086
+      height: 0.1538086
+    srcObjName: SM_Bld_Ruin_Pillar_Arches_Round_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -7669793373293398167, guid: 810ef9e6c4d06484cbf7f9a357a1437d,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.763916
+      width: 0.14526367
+      height: 0.14526367
+    srcObjName: SM_Bld_Ruin_Pillar_Broken_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 13258953592499618, guid: a43f63be9de3f2d4382b565a60c3846a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.47875977
+      y: 0.00024414062
+      width: 0.15136719
+      height: 0.15136719
+    srcObjName: SM_Bld_Ruin_Pillar_Broken_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -4336632752999331701, guid: 839c003f031c4df499099ce56e6f6980,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.16577148
+      y: 0.00024414062
+      width: 0.15820312
+      height: 0.15820312
+    srcObjName: SM_Bld_Ruin_Pillar_Broken_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -7771157023869013859, guid: 8df616231edab7d40918f9fe4ef985fe,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43774414
+      y: 0.16577148
+      width: 0.140625
+      height: 0.140625
+    srcObjName: SM_Bld_Ruin_Pillar_Round_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1337286022948270356, guid: 3d7fc8a1b98beee45a14292dad1607c8,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29663086
+      y: 0.30688477
+      width: 0.13964844
+      height: 0.13964844
+    srcObjName: SM_Bld_Ruin_Stairs_Straight_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1691263889602840232, guid: f04b0257c8a2d0f42ac27f267a808b42,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.00024414062
+      width: 0.16503906
+      height: 0.16503906
+    srcObjName: SM_Bld_Ruin_Tiles_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4476876635646805554, guid: c48242c2f865a3546853f9054fc740ae,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.46728516
+      width: 0.14794922
+      height: 0.14794922
+    srcObjName: SM_Bld_Ruin_Tiles_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4266629739696194062, guid: d58372d904abd52419b3faea739c7741,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.86035156
+      y: 0.16577148
+      width: 0.13916016
+      height: 0.13916016
+    srcObjName: SM_Bld_Ruin_Tiles_04 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2204155873061313417, guid: d1e7a6d619c7dc5408d1d71631f24b77,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7050781
+      y: 0.5786133
+      width: 0.13183594
+      height: 0.13183594
+    srcObjName: SM_Bld_Ruin_Tower_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6244548463982382651, guid: bcac5f4a263ee90488b68e8cb1ccb651,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5739746
+      y: 0.30688477
+      width: 0.13671875
+      height: 0.13671875
+    srcObjName: SM_Bld_Ruin_Tower_Round_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6527927897306614468, guid: fb4d31ee7d6a5534fab07e1f8af55113,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5788574
+      y: 0.16577148
+      width: 0.14038086
+      height: 0.14038086
+    srcObjName: SM_Bld_Ruin_Tower_Round_Broken_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6558235492092664770, guid: 3668a7d8055ac2746b21eb05baa9fb41,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.63061523
+      y: 0.00024414062
+      width: 0.15136719
+      height: 0.15136719
+    srcObjName: SM_Bld_Ruin_Tower_Round_Short_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3154851373998113060, guid: 3a600e5471e869e4d9f8fcd72bab0654,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.83984375
+      y: 0.4440918
+      width: 0.13330078
+      height: 0.13330078
+    srcObjName: SM_Bld_Ruin_Tower_Round_Stairs_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -180375900393339533, guid: 05102c683bea94044a198b4300bf873d,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29663086
+      y: 0.72558594
+      width: 0.13769531
+      height: 0.13769531
+    srcObjName: SM_Bld_Ruin_Tower_Round_Tall_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -5138499500456007282, guid: f6c9d6cf7b2035a489023b8ed18a97f8,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29663086
+      y: 0.5866699
+      width: 0.13842773
+      height: 0.13842773
+    srcObjName: SM_Bld_Ruin_Tower_Small_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -1303677328312913286, guid: a0d2e57ce0bab2f47bc2900e94ef3c2f,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.15112305
+      y: 0.3112793
+      width: 0.14257812
+      height: 0.14257812
+    srcObjName: SM_Bld_Ruin_Wall_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8647661525240382549, guid: a2faf0249ab11c142a2c8dcf9e01ae83,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.61572266
+      width: 0.14770508
+      height: 0.14770508
+    srcObjName: SM_Bld_Ruin_Wall_Broken_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -7333669789182269990, guid: 646cf291bbb23b948bf038fb7fb510c0,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.83740234
+      y: 0.5786133
+      width: 0.13085938
+      height: 0.13085938
+    srcObjName: SM_Bld_Ruin_Wall_Cap_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5585937313811050546, guid: 19a99890372abfb439d291a8f6f56f9c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.15112305
+      y: 0.4543457
+      width: 0.14208984
+      height: 0.14208984
+    srcObjName: SM_Bld_Ruin_Wall_Cap_Broken_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 368024933574451348, guid: c0f6310506293854ba083df1277ee6ff,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.25952148
+      y: 0.2578125
+      width: 0.1274414
+      height: 0.2548828
+    srcObjName: SM_Bld_Camp_Tent_04 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -8810332257571277019, guid: bee84d71e6f55ca498a5e92092dc6cc2,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.25952148
+      y: 0.5136719
+      width: 0.1274414
+      height: 0.2548828
+    srcObjName: SM_Bld_Camp_Tent_Cover_Rough_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -548547704911261701, guid: 763636fb1dd48524cbb503907142f04a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.2602539
+      width: 0.12890625
+      height: 0.2578125
+    srcObjName: SM_Bld_Camp_Tent_Cover_Rough_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2573969147840987818, guid: a4a0ee2fdc1fb5e45951a61805a042a9,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.6413574
+      y: 0.00048828125
+      width: 0.12451172
+      height: 0.24902344
+    srcObjName: SM_Bld_Camp_Tent_Cover_Rough_04 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3635892083166383699, guid: c95a4a76f697ace40b204410426ff495,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.3881836
+      y: 0.00048828125
+      width: 0.12695312
+      height: 0.25390625
+    srcObjName: SM_Bld_Camp_Tent_Cover_Side_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5972947439671985948, guid: 1b473910cb24da14d855613720642e2d,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.5180664
+      width: 0.12817383
+      height: 0.25634766
+    srcObjName: SM_Bld_Camp_Tent_Cover_Side_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5230817700611723940, guid: 35b2916b879df004eb043e2d7b7e6262,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.51904297
+      width: 0.12890625
+      height: 0.2578125
+    srcObjName: SM_Bld_Camp_Tent_Cover_Side_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -8240542889018007083, guid: 7d972c27b23911f4e831fb66257f7778,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.515625
+      y: 0.00048828125
+      width: 0.12524414
+      height: 0.25048828
+    srcObjName: SM_Bld_Camp_Tent_Cover_Top_06 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -5633948976880211856, guid: 2bf18e68b57d79e48a190e0a3069c53b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.3881836
+      y: 0.2553711
+      width: 0.12597656
+      height: 0.25195312
+    srcObjName: SM_Bld_Ruin_Arch_Broken_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3515096668466449948, guid: e6bd29556d332b746a4f80618de3b87f,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.3881836
+      y: 0.5083008
+      width: 0.12597656
+      height: 0.25195312
+    srcObjName: SM_Bld_Ruin_Bridge_03 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 818413546009387902, guid: 3ec675f046090ab438891577c87a9bbd,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.25952148
+      y: 0.00048828125
+      width: 0.12817383
+      height: 0.25634766
+    srcObjName: SM_Bld_Ruin_Bridge_Pillar_Large_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4060840494892106564, guid: 207f9d050a14c3e46b388637469eb44b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.00048828125
+      width: 0.12890625
+      height: 0.2578125
+    srcObjName: SM_Bld_Ruin_Pillar_Arch_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3839553283626321652, guid: 7ff2c83515eb5274ba3fc8b80cd87717,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.25927734
+      width: 0.12890625
+      height: 0.2578125
+    srcObjName: SM_Bld_Ruin_Tiles_02 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 9012059562226967214, guid: 822bfa450d60ed54a960c11bbfaf0599,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.00048828125
+      width: 0.12939453
+      height: 0.25878906
+    srcObjName: SM_Bld_Ruin_Tower_Broken_01 Voxelized 2
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  resultMaterials:
+  - combinedMaterial: {fileID: 2100000, guid: f0ccc84582e72b8418e86b26eedd6b69, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: 4281177801306430498, guid: ae23c76d555df1c4cb169f5fabf51e85, type: 3}
+    - {fileID: 1809770510452683870, guid: 05d7d1f1617d20c4191f294b88b8d856, type: 3}
+    - {fileID: 2750745263897581606, guid: 8678be2d1ee9cee449df86a7db8197f1, type: 3}
+    - {fileID: 5361792255158428548, guid: 8942f97d7dbf87c41bcfd4f250cd2f10, type: 3}
+    - {fileID: -7333669789182269990, guid: 646cf291bbb23b948bf038fb7fb510c0, type: 3}
+    - {fileID: 2204155873061313417, guid: d1e7a6d619c7dc5408d1d71631f24b77, type: 3}
+    - {fileID: -7919465215662404159, guid: 5e473cf2d707968418cb48108a721382, type: 3}
+    - {fileID: 5147379329658839698, guid: fccaff83aafd1b14ab194ef25a918a32, type: 3}
+    - {fileID: -8357090484612149516, guid: 5e53d4a60e21d2f448d669ebbd8ff806, type: 3}
+    - {fileID: 3154851373998113060, guid: 3a600e5471e869e4d9f8fcd72bab0654, type: 3}
+    - {fileID: -7957052603572886840, guid: 2271e5bc3c33b8a46beca41ec1341800, type: 3}
+    - {fileID: -7459340419854052078, guid: f6dbe86b009dcf24eacdcd6408a6c714, type: 3}
+    - {fileID: -394954321003950378, guid: 317618091ab0f69448a592eb14b4b6de, type: 3}
+    - {fileID: 921004718280710555, guid: 093e78129a64e0a4bace7dae2890bcaa, type: 3}
+    - {fileID: 6834503546011646137, guid: 8b9008b9c64b6854e9a02ad38714ca8f, type: 3}
+    - {fileID: 6404473046132572336, guid: a96569027cbb7ed439b4d30caa507fe8, type: 3}
+    - {fileID: 1135454015112214994, guid: 2a2a91ba17eb9a14fb2a146ffa649db7, type: 3}
+    - {fileID: -6936476130603841897, guid: 4e46f6eb886e7c74b80f227c6a3a5c2f, type: 3}
+    - {fileID: 6244548463982382651, guid: bcac5f4a263ee90488b68e8cb1ccb651, type: 3}
+    - {fileID: 4227534079430053509, guid: e2532e41562247a4e948391440af6eff, type: 3}
+    - {fileID: 3059770256142430632, guid: 84ef2291d11b3c744bf6c8810e513d16, type: 3}
+    - {fileID: -180375900393339533, guid: 05102c683bea94044a198b4300bf873d, type: 3}
+    - {fileID: -5138499500456007282, guid: f6c9d6cf7b2035a489023b8ed18a97f8, type: 3}
+    - {fileID: -4896099283927072262, guid: d4d464647cf571e4abd1f91398310ef4, type: 3}
+    - {fileID: 1337286022948270356, guid: 3d7fc8a1b98beee45a14292dad1607c8, type: 3}
+    - {fileID: 4266629739696194062, guid: d58372d904abd52419b3faea739c7741, type: 3}
+    - {fileID: -1504725720185841018, guid: 008e8a65ed5f9904688dd26d6b4dfd84, type: 3}
+    - {fileID: 6527927897306614468, guid: fb4d31ee7d6a5534fab07e1f8af55113, type: 3}
+    - {fileID: 5373694404571544807, guid: af677b6d33b77b3478225a4dbdff95e0, type: 3}
+    - {fileID: 6969601971578407684, guid: b0e085f0bfff28c42b0e68ecd7d5fc1f, type: 3}
+    - {fileID: -7771157023869013859, guid: 8df616231edab7d40918f9fe4ef985fe, type: 3}
+    - {fileID: 1850730705005744136, guid: 891eda2dc5f5618438e2e0c6d3edcc6a, type: 3}
+    - {fileID: 5585937313811050546, guid: 19a99890372abfb439d291a8f6f56f9c, type: 3}
+    - {fileID: -1303677328312913286, guid: a0d2e57ce0bab2f47bc2900e94ef3c2f, type: 3}
+    - {fileID: 1134544189358142116, guid: f5e2ae1f97cabc2449990449a3014536, type: 3}
+    - {fileID: -7669793373293398167, guid: 810ef9e6c4d06484cbf7f9a357a1437d, type: 3}
+    - {fileID: 8647661525240382549, guid: a2faf0249ab11c142a2c8dcf9e01ae83, type: 3}
+    - {fileID: 4476876635646805554, guid: c48242c2f865a3546853f9054fc740ae, type: 3}
+    - {fileID: 3897075731625834502, guid: 42f26670f8748da4dbef07e5dfb0a81d, type: 3}
+    - {fileID: -7455164910511093914, guid: d1e5bea5e2de5cd4299b69db2b81b6d6, type: 3}
+    - {fileID: 7391471085577710092, guid: 1357e8a75da97c14d9da68d26038cb5b, type: 3}
+    - {fileID: -6558235492092664770, guid: 3668a7d8055ac2746b21eb05baa9fb41, type: 3}
+    - {fileID: 13258953592499618, guid: a43f63be9de3f2d4382b565a60c3846a, type: 3}
+    - {fileID: 6015648104883747820, guid: 463e213595ea14a42a20a1017581ff3c, type: 3}
+    - {fileID: -4336632752999331701, guid: 839c003f031c4df499099ce56e6f6980, type: 3}
+    - {fileID: 1691263889602840232, guid: f04b0257c8a2d0f42ac27f267a808b42, type: 3}
+  - combinedMaterial: {fileID: 2100000, guid: af1274922ee4da24584a50ac97a223b4, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: 2573969147840987818, guid: a4a0ee2fdc1fb5e45951a61805a042a9, type: 3}
+    - {fileID: -8240542889018007083, guid: 7d972c27b23911f4e831fb66257f7778, type: 3}
+    - {fileID: -5633948976880211856, guid: 2bf18e68b57d79e48a190e0a3069c53b, type: 3}
+    - {fileID: -3515096668466449948, guid: e6bd29556d332b746a4f80618de3b87f, type: 3}
+    - {fileID: 3635892083166383699, guid: c95a4a76f697ace40b204410426ff495, type: 3}
+    - {fileID: -8810332257571277019, guid: bee84d71e6f55ca498a5e92092dc6cc2, type: 3}
+    - {fileID: 368024933574451348, guid: c0f6310506293854ba083df1277ee6ff, type: 3}
+    - {fileID: 818413546009387902, guid: 3ec675f046090ab438891577c87a9bbd, type: 3}
+    - {fileID: 5972947439671985948, guid: 1b473910cb24da14d855613720642e2d, type: 3}
+    - {fileID: -548547704911261701, guid: 763636fb1dd48524cbb503907142f04a, type: 3}
+    - {fileID: 4060840494892106564, guid: 207f9d050a14c3e46b388637469eb44b, type: 3}
+    - {fileID: 5230817700611723940, guid: 35b2916b879df004eb043e2d7b7e6262, type: 3}
+    - {fileID: -3839553283626321652, guid: 7ff2c83515eb5274ba3fc8b80cd87717, type: 3}
+    - {fileID: 9012059562226967214, guid: 822bfa450d60ed54a960c11bbfaf0599, type: 3}
+  resultMaterialsTexArray: []
+  doMultiMaterial: 1

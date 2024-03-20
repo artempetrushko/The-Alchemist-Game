@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 826085b2d28424f488dbd55ddaf3e1d2, type: 3}
+  m_Name: Gamepad Buttons Icons
+  m_EditorClassIdentifier: 
+  northButtonIcon: {fileID: 21300000, guid: 5c54892fc97589647861fea383d28c3a, type: 3}
+  southButtonIcon: {fileID: 21300000, guid: 83deb343e9f1ab6478bd71c1761d62f5, type: 3}
+  westButtonIcon: {fileID: 21300000, guid: b181703e1424dfb438b0b97d27fe96f9, type: 3}
+  eastButtonIcon: {fileID: 21300000, guid: 8e4ad8a8a3dacbd41a2639a12ece19af, type: 3}
+  dPadUpButtonIcon: {fileID: 0}
+  dPadDownButtonIcon: {fileID: 0}
+  dPadLeftButtonIcon: {fileID: 0}
+  dPadRightButtonIcon: {fileID: 0}

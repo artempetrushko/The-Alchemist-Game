@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41887b1546f5c44ab54e7e65aad3bc, type: 3}
+  m_Name: DungeonRealmsVehicles
+  m_EditorClassIdentifier: 
+  version: 3252
+  resultType: 0
+  materialsAndUVRects:
+  - material: {fileID: -8641851874193354847, guid: 72d2e8bcce58f55488721068c0d7484c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00048828125
+      y: 0.0009765625
+      width: 0.27539062
+      height: 0.55078125
+    srcObjName: SM_Veh_SandBoat_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -8769104463740368234, guid: ab45d61f88f4bd14bbd9e980de1a0a49,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.27685547
+      y: 0.0009765625
+      width: 0.27539062
+      height: 0.55078125
+    srcObjName: SM_Veh_SandBoat_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  resultMaterials:
+  - combinedMaterial: {fileID: 2100000, guid: 8210e595424437e47b2b86fad8eca7f6, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: -8769104463740368234, guid: ab45d61f88f4bd14bbd9e980de1a0a49, type: 3}
+    - {fileID: -8641851874193354847, guid: 72d2e8bcce58f55488721068c0d7484c, type: 3}
+  resultMaterialsTexArray: []
+  doMultiMaterial: 1

@@ -1,0 +1,2258 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41887b1546f5c44ab54e7e65aad3bc, type: 3}
+  m_Name: DungeonFantasyKingdomBuildingsWeaponsModular
+  m_EditorClassIdentifier: 
+  version: 3252
+  resultType: 0
+  materialsAndUVRects:
+  - material: {fileID: -3799258096294138521, guid: 69d99f378f9e79c45ab62b45c5fb9b18,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14331055
+      y: 0.8342285
+      width: 0.13671875
+      height: 0.13671875
+    srcObjName: SM_Wep_Mod_Dagger_Blade_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 7152810268804614988, guid: 4310b9e89b449e247bd78279f2bd0a52,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.55249023
+      y: 0.68725586
+      width: 0.13183594
+      height: 0.13183594
+    srcObjName: SM_Wep_Mod_Dagger_Blade_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 9063013437389177809, guid: d99d07d302e85f4478173a701bb364de,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8171387
+      y: 0.68725586
+      width: 0.1315918
+      height: 0.1315918
+    srcObjName: SM_Wep_Mod_Dagger_Blade_04 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3950907073913850620, guid: 9f87253f38c76a74a9e4852b7da4f927,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.69384766
+      y: 0.14575195
+      width: 0.13671875
+      height: 0.13671875
+    srcObjName: SM_Wep_Mod_Dagger_Blade_05 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -5352867793136883425, guid: b396bbdacd6530f44b6988f444e2cb75,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.28881836
+      width: 0.140625
+      height: 0.140625
+    srcObjName: SM_Wep_Mod_Dagger_Blade_06 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5073529936317913588, guid: 9ae5a85531d41154db85c5d9de2caf11,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.7092285
+      width: 0.13867188
+      height: 0.13867188
+    srcObjName: SM_Wep_Mod_Dagger_Blade_07 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 7162965616341743963, guid: 9c8d0669ef78e1842869eab1931fbd67,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28222656
+      y: 0.14575195
+      width: 0.13671875
+      height: 0.13671875
+    srcObjName: SM_Wep_Mod_Dagger_Hilt_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -2329041339315133975, guid: e6444a5273ac19e48b26635ba4b03094,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14331055
+      y: 0.28466797
+      width: 0.13696289
+      height: 0.13696289
+    srcObjName: SM_Wep_Mod_Dagger_Hilt_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -8676914672466883624, guid: b1912a6199e3d824e8b6500ff3b1edc4,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.68481445
+      y: 0.8195801
+      width: 0.1315918
+      height: 0.1315918
+    srcObjName: SM_Wep_Mod_Dagger_Hilt_04 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2670452770701035078, guid: d7e999f6b472c6a40baeff052122ff09,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14331055
+      y: 0.5595703
+      width: 0.13696289
+      height: 0.13696289
+    srcObjName: SM_Wep_Mod_Dagger_Hilt_05 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3910594548612732179, guid: 4d01f84af65e9c141b6f204b067ac90e,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.55249023
+      y: 0.28295898
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Spear_Handle_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -4849952174709684447, guid: 54e4330be88f2994f95fb403063b34c5,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.4177246
+      y: 0.28295898
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Spear_Handle_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -4790443829599828304, guid: 0bc59820f4fc63144983be8135d486fd,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28222656
+      y: 0.82373047
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Spear_Handle_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -746440922845635120, guid: 960367fad76b35a43b154164b8d8643d,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.4177246
+      y: 0.4177246
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Spear_Handle_04 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6492422795161112869, guid: 0b4c87c271b3ca94380e630f6862cc03,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5566406
+      y: 0.14575195
+      width: 0.13671875
+      height: 0.13671875
+    srcObjName: SM_Wep_Mod_Spear_Handle_05 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6430860646361161088, guid: 660ac870026d97e4fada857729c03752,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.55249023
+      y: 0.4177246
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Spear_Handle_06 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3206425708259325585, guid: 3133558d562e2944f8604e1ec3c82a87,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.4194336
+      y: 0.14575195
+      width: 0.13671875
+      height: 0.13671875
+    srcObjName: SM_Wep_Mod_Spear_Head_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6153874624477962226, guid: eef0b6712eb96814ebb8231ac6f44924,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14331055
+      y: 0.14575195
+      width: 0.13842773
+      height: 0.13842773
+    srcObjName: SM_Wep_Mod_Spear_Head_04 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6198765241580307614, guid: a3edfbe55b55ab94d9b57280cd35be8b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28222656
+      y: 0.28295898
+      width: 0.13500977
+      height: 0.13500977
+    srcObjName: SM_Wep_Mod_Spear_Head_05 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6305563768345684711, guid: 9f54ffea4a71c6c43a4e8d56e9bdc00a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28222656
+      y: 0.55371094
+      width: 0.13476562
+      height: 0.13476562
+    srcObjName: SM_Wep_Mod_Spear_Head_10 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6589981848572494962, guid: 824f9bb6033adf44c9575805e216509c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.68725586
+      y: 0.4177246
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4101636884268928170, guid: 7ba0544b1810a2b4dafdbbc84bf1d14b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5822754
+      y: 0.00024414062
+      width: 0.14501953
+      height: 0.14501953
+    srcObjName: SM_Wep_Mod_Sword_Blade_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -4270491996543971051, guid: d71193727ac0deb42beaa8e04e544091,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14575195
+      y: 0.00024414062
+      width: 0.14501953
+      height: 0.14501953
+    srcObjName: SM_Wep_Mod_Sword_Blade_04 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6902339555482954010, guid: 0efb436836b1b2b40a8aab625b9be622,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.00024414062
+      width: 0.14501953
+      height: 0.14501953
+    srcObjName: SM_Wep_Mod_Sword_Blade_05 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8356981515223109367, guid: 01fb7e007a16da947a0c97a0af7ded29,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.55249023
+      y: 0.55249023
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_06 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 7097129074244051579, guid: ec18c1170aa340c4cacb3303f8c00b4c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28222656
+      y: 0.68896484
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_07 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8431555338804962191, guid: 355509cbf1ebf4f41b46b497e0aa60a3,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.29125977
+      y: 0.00024414062
+      width: 0.14501953
+      height: 0.14501953
+    srcObjName: SM_Wep_Mod_Sword_Blade_08 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -1812063668803156382, guid: 4be8cf934d0489b49ba3c45c68d39f0a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.42993164
+      width: 0.13916016
+      height: 0.13916016
+    srcObjName: SM_Wep_Mod_Sword_Blade_09 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4475725020127836652, guid: d6462801f4cb105499bffb4c17d3ec45,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.43676758
+      y: 0.00024414062
+      width: 0.14501953
+      height: 0.14501953
+    srcObjName: SM_Wep_Mod_Sword_Blade_10 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 400099260151937177, guid: 86caacd1a7a82014793ab169e2e156f8,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.68725586
+      y: 0.55249023
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_12 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4925707454655544874, guid: 1f1d4f2c55d5ca14e9b87849f3280ff6,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8220215
+      y: 0.28295898
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_13 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6373256865340566534, guid: d25795ad46350b14e953bf03193152f7,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.5695801
+      width: 0.13916016
+      height: 0.13916016
+    srcObjName: SM_Wep_Mod_Sword_Blade_14 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4089528469324127215, guid: 88d46582121dddc46b48d440a60b876e,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8220215
+      y: 0.55249023
+      width: 0.13330078
+      height: 0.13330078
+    srcObjName: SM_Wep_Mod_Sword_Blade_16 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6214110485867324795, guid: 7a9dfa30a250cb946a9dbf37a6e8e849,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.8483887
+      width: 0.13842773
+      height: 0.13842773
+    srcObjName: SM_Wep_Mod_Sword_Blade_17 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 5716458601048952019, guid: 9cc1ede74a3705f4795c5f33d8f97c16,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8220215
+      y: 0.4177246
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_18 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3826358870951663227, guid: c91b81a24e0109c47832d89c06065e46,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.4177246
+      y: 0.55249023
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_19 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6896908877618590739, guid: 46521832475d2d349bca2b09efc8c551,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.4177246
+      y: 0.68725586
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_20 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -1794444205370791287, guid: 21a009c9448fbfb479d2d51c39edfea4,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.4177246
+      y: 0.8220215
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Blade_21 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3865661505151216045, guid: d29b494f2e08ee146b8d66160006d8cc,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8310547
+      y: 0.14575195
+      width: 0.13623047
+      height: 0.13623047
+    srcObjName: SM_Wep_Mod_Sword_Hilt_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -1173405626491446298, guid: 07b5cf2d3389d854f934a2d4b626ac1f,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.68725586
+      y: 0.28295898
+      width: 0.13427734
+      height: 0.13427734
+    srcObjName: SM_Wep_Mod_Sword_Hilt_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -2463202432791724494, guid: 0583fde7a1f67694b87c520398a62c00,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.55249023
+      y: 0.8195801
+      width: 0.13183594
+      height: 0.13183594
+    srcObjName: SM_Wep_Mod_Sword_Hilt_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3686658475184255523, guid: 36464ae8629b292439a14c5d63d3260d,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.28222656
+      y: 0.41845703
+      width: 0.13476562
+      height: 0.13476562
+    srcObjName: SM_Wep_Mod_Sword_Hilt_04 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -2815034622107294764, guid: 45684c72cd77f734e95c52d2e5a5bed1,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.8171387
+      y: 0.81933594
+      width: 0.13085938
+      height: 0.13085938
+    srcObjName: SM_Wep_Mod_Sword_Hilt_06 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -2476833496037960795, guid: 1af86fbee2fecc44e9f98b8e09acfaa1,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14331055
+      y: 0.6970215
+      width: 0.13671875
+      height: 0.13671875
+    srcObjName: SM_Wep_Mod_Sword_Hilt_09 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -4369956914036058933, guid: f0c0230d50d050f488d98b91e4089c18,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.14331055
+      y: 0.42211914
+      width: 0.13696289
+      height: 0.13696289
+    srcObjName: SM_Wep_Mod_Sword_Hilt_10 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4220498896083286345, guid: cae4a04952e67ae47b6ce7aefbb02a36,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7277832
+      y: 0.00024414062
+      width: 0.14257812
+      height: 0.14257812
+    srcObjName: SM_Wep_Mod_Sword_Hilt_11 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -4735344827013096600, guid: 1d1c66f60cba23a4996c17266b038f9a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.14575195
+      width: 0.14257812
+      height: 0.14257812
+    srcObjName: SM_Wep_Mod_Sword_Hilt_12 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -274999274637820930, guid: 2848e9e46fac5d749979ffb578d1252e,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.68481445
+      y: 0.68725586
+      width: 0.13183594
+      height: 0.13183594
+    srcObjName: SM_Wep_Mod_Sword_Hilt_16 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1398549968265513876, guid: ac32b7a16e0c7eb4d929f65c3169916f,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.5144043
+      width: 0.12695312
+      height: 0.12695312
+    srcObjName: SM_Wep_Mod_Dagger_Blade_02 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 3817469131105874575, guid: 48a5601f3759f43499a16b0243c8f7eb,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.39135742
+      width: 0.12939453
+      height: 0.12939453
+    srcObjName: SM_Wep_Mod_Dagger_Hilt_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -362269515847387638, guid: 176f52d6a3a138543a9a956aae359f59,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.1315918
+      width: 0.1274414
+      height: 0.1274414
+    srcObjName: SM_Wep_Mod_Dagger_Hilt_06 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6664033538553543094, guid: a05c02598887341488df0e11f014ef59,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.2614746
+      width: 0.12939453
+      height: 0.12939453
+    srcObjName: SM_Wep_Mod_Dagger_Hilt_07 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -1722188681578155290, guid: f2226469c89b61f42ae00b7b82e43a7a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.65063477
+      width: 0.1274414
+      height: 0.1274414
+    srcObjName: SM_Wep_Mod_Spear_Head_01 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3164702289076788774, guid: ec4677ac8e576184491fe5fd60098a21,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.7687988
+      width: 0.12646484
+      height: 0.12646484
+    srcObjName: SM_Wep_Mod_Spear_Head_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3676123483580488223, guid: e1724e2339a54c14cad1daccce371a0a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.38452148
+      y: 0.1315918
+      width: 0.12524414
+      height: 0.12524414
+    srcObjName: SM_Wep_Mod_Spear_Head_06 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6166534542790979329, guid: e5533de8252805f448f7f55f2f41b125,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.6359863
+      y: 0.1315918
+      width: 0.12524414
+      height: 0.12524414
+    srcObjName: SM_Wep_Mod_Spear_Head_07 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4034306255490100830, guid: b1915727364a50542a0d967380a96868,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7858887
+      y: 0.00024414062
+      width: 0.12939453
+      height: 0.12939453
+    srcObjName: SM_Wep_Mod_Spear_Head_08 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4266375201189728187, guid: fac06b50b2f1a6c4e916ad6c3d4cbff3,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.25805664
+      y: 0.1315918
+      width: 0.12597656
+      height: 0.12597656
+    srcObjName: SM_Wep_Mod_Spear_Head_09 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8557895697545809472, guid: 8aaea35604e66364b95ef1b49835d757,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.6418457
+      width: 0.12646484
+      height: 0.12646484
+    srcObjName: SM_Wep_Mod_Sword_Blade_03 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -1316818816589581881, guid: 07e393937d92ec243b7e1977fb15be31,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.1315918
+      width: 0.12939453
+      height: 0.12939453
+    srcObjName: SM_Wep_Mod_Sword_Blade_11 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6334469656311675572, guid: 849ad458fc778864a8f30da8de809ca0,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.52563477
+      y: 0.00024414062
+      width: 0.12988281
+      height: 0.12988281
+    srcObjName: SM_Wep_Mod_Sword_Blade_15 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -8017223930958132752, guid: fabe0719ad5c7394080ccfb03747eedf,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.76171875
+      y: 0.1315918
+      width: 0.12451172
+      height: 0.12451172
+    srcObjName: SM_Wep_Mod_Sword_Hilt_05 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 6084713033397911920, guid: b50d24fd045abc8428aacb781d7b31e6,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.25952148
+      width: 0.12695312
+      height: 0.12695312
+    srcObjName: SM_Wep_Mod_Sword_Hilt_07 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 4506400447788934946, guid: b581c0f06e14f3b40b5a57051a64957a,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.65600586
+      y: 0.00024414062
+      width: 0.12939453
+      height: 0.12939453
+    srcObjName: SM_Wep_Mod_Sword_Hilt_08 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2261784998284435491, guid: a516a2d19e3320f4789ca2e050ecdbe8,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.77856445
+      width: 0.1274414
+      height: 0.1274414
+    srcObjName: SM_Wep_Mod_Sword_Hilt_13 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -3961450366364805326, guid: da1bd34de6fdea84e881f381bf54c057,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.5102539
+      y: 0.1315918
+      width: 0.12524414
+      height: 0.12524414
+    srcObjName: SM_Wep_Mod_Sword_Hilt_14 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1007945188104722019, guid: 3719485c8f4ae87468433b8893653806,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.52124023
+      width: 0.12890625
+      height: 0.12890625
+    srcObjName: SM_Wep_Mod_Sword_Hilt_15 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 8024818994910761047, guid: 9c55cafa5d723784280bc4981f5e564e,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.13012695
+      y: 0.3869629
+      width: 0.12695312
+      height: 0.12695312
+    srcObjName: SM_Wep_Mod_Sword_Hilt_17 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -6801674213860647783, guid: f33a24d4d5258dd479183818bda5d07c,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.26293945
+      y: 0.00024414062
+      width: 0.13085938
+      height: 0.13085938
+    srcObjName: SM_Wep_Mod_Sword_Hilt_18 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1878341248455736775, guid: b98b5f8dff7b6e74b9437483171a8cfe,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.1315918
+      y: 0.00024414062
+      width: 0.13085938
+      height: 0.13085938
+    srcObjName: SM_Wep_Mod_Sword_Hilt_19 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: -5108163709960295177, guid: 96b84f558132f354aa89e8146f4b660b,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.3942871
+      y: 0.00024414062
+      width: 0.13085938
+      height: 0.13085938
+    srcObjName: SM_Wep_Mod_Sword_Hilt_20 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 1263840694865962049, guid: a1400ae056de5a343af099deae74bbd8,
+      type: 3}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00024414062
+      y: 0.00024414062
+      width: 0.13085938
+      height: 0.13085938
+    srcObjName: SM_Wep_Mod_Sword_Hilt_21 Voxelized
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  resultMaterials:
+  - combinedMaterial: {fileID: 2100000, guid: 632c9018812c70142b48addfdf2ae961, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: -2815034622107294764, guid: 45684c72cd77f734e95c52d2e5a5bed1, type: 3}
+    - {fileID: -8676914672466883624, guid: b1912a6199e3d824e8b6500ff3b1edc4, type: 3}
+    - {fileID: 9063013437389177809, guid: d99d07d302e85f4478173a701bb364de, type: 3}
+    - {fileID: -2463202432791724494, guid: 0583fde7a1f67694b87c520398a62c00, type: 3}
+    - {fileID: 7152810268804614988, guid: 4310b9e89b449e247bd78279f2bd0a52, type: 3}
+    - {fileID: -274999274637820930, guid: 2848e9e46fac5d749979ffb578d1252e, type: 3}
+    - {fileID: 4089528469324127215, guid: 88d46582121dddc46b48d440a60b876e, type: 3}
+    - {fileID: 8356981515223109367, guid: 01fb7e007a16da947a0c97a0af7ded29, type: 3}
+    - {fileID: -4849952174709684447, guid: 54e4330be88f2994f95fb403063b34c5, type: 3}
+    - {fileID: -4790443829599828304, guid: 0bc59820f4fc63144983be8135d486fd, type: 3}
+    - {fileID: -746440922845635120, guid: 960367fad76b35a43b154164b8d8643d, type: 3}
+    - {fileID: -6430860646361161088, guid: 660ac870026d97e4fada857729c03752, type: 3}
+    - {fileID: -3826358870951663227, guid: c91b81a24e0109c47832d89c06065e46, type: 3}
+    - {fileID: 3910594548612732179, guid: 4d01f84af65e9c141b6f204b067ac90e, type: 3}
+    - {fileID: 5716458601048952019, guid: 9cc1ede74a3705f4795c5f33d8f97c16, type: 3}
+    - {fileID: 6589981848572494962, guid: 824f9bb6033adf44c9575805e216509c, type: 3}
+    - {fileID: 400099260151937177, guid: 86caacd1a7a82014793ab169e2e156f8, type: 3}
+    - {fileID: -1173405626491446298, guid: 07b5cf2d3389d854f934a2d4b626ac1f, type: 3}
+    - {fileID: 4925707454655544874, guid: 1f1d4f2c55d5ca14e9b87849f3280ff6, type: 3}
+    - {fileID: -1794444205370791287, guid: 21a009c9448fbfb479d2d51c39edfea4, type: 3}
+    - {fileID: -6896908877618590739, guid: 46521832475d2d349bca2b09efc8c551, type: 3}
+    - {fileID: 7097129074244051579, guid: ec18c1170aa340c4cacb3303f8c00b4c, type: 3}
+    - {fileID: -6305563768345684711, guid: 9f54ffea4a71c6c43a4e8d56e9bdc00a, type: 3}
+    - {fileID: -3686658475184255523, guid: 36464ae8629b292439a14c5d63d3260d, type: 3}
+    - {fileID: -6198765241580307614, guid: a3edfbe55b55ab94d9b57280cd35be8b, type: 3}
+    - {fileID: -3865661505151216045, guid: d29b494f2e08ee146b8d66160006d8cc, type: 3}
+    - {fileID: -2476833496037960795, guid: 1af86fbee2fecc44e9f98b8e09acfaa1, type: 3}
+    - {fileID: -3950907073913850620, guid: 9f87253f38c76a74a9e4852b7da4f927, type: 3}
+    - {fileID: 7162965616341743963, guid: 9c8d0669ef78e1842869eab1931fbd67, type: 3}
+    - {fileID: 3206425708259325585, guid: 3133558d562e2944f8604e1ec3c82a87, type: 3}
+    - {fileID: -3799258096294138521, guid: 69d99f378f9e79c45ab62b45c5fb9b18, type: 3}
+    - {fileID: 6492422795161112869, guid: 0b4c87c271b3ca94380e630f6862cc03, type: 3}
+    - {fileID: -4369956914036058933, guid: f0c0230d50d050f488d98b91e4089c18, type: 3}
+    - {fileID: 2670452770701035078, guid: d7e999f6b472c6a40baeff052122ff09, type: 3}
+    - {fileID: -2329041339315133975, guid: e6444a5273ac19e48b26635ba4b03094, type: 3}
+    - {fileID: 6153874624477962226, guid: eef0b6712eb96814ebb8231ac6f44924, type: 3}
+    - {fileID: -6214110485867324795, guid: 7a9dfa30a250cb946a9dbf37a6e8e849, type: 3}
+    - {fileID: 5073529936317913588, guid: 9ae5a85531d41154db85c5d9de2caf11, type: 3}
+    - {fileID: 6373256865340566534, guid: d25795ad46350b14e953bf03193152f7, type: 3}
+    - {fileID: -1812063668803156382, guid: 4be8cf934d0489b49ba3c45c68d39f0a, type: 3}
+    - {fileID: -5352867793136883425, guid: b396bbdacd6530f44b6988f444e2cb75, type: 3}
+    - {fileID: 4220498896083286345, guid: cae4a04952e67ae47b6ce7aefbb02a36, type: 3}
+    - {fileID: -4735344827013096600, guid: 1d1c66f60cba23a4996c17266b038f9a, type: 3}
+    - {fileID: 4475725020127836652, guid: d6462801f4cb105499bffb4c17d3ec45, type: 3}
+    - {fileID: -6902339555482954010, guid: 0efb436836b1b2b40a8aab625b9be622, type: 3}
+    - {fileID: 8431555338804962191, guid: 355509cbf1ebf4f41b46b497e0aa60a3, type: 3}
+    - {fileID: 4101636884268928170, guid: 7ba0544b1810a2b4dafdbbc84bf1d14b, type: 3}
+    - {fileID: -4270491996543971051, guid: d71193727ac0deb42beaa8e04e544091, type: 3}
+  - combinedMaterial: {fileID: 2100000, guid: 3bbe185bd87375a4b96edc29e214129b, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: -8017223930958132752, guid: fabe0719ad5c7394080ccfb03747eedf, type: 3}
+    - {fileID: -3676123483580488223, guid: e1724e2339a54c14cad1daccce371a0a, type: 3}
+    - {fileID: -6166534542790979329, guid: e5533de8252805f448f7f55f2f41b125, type: 3}
+    - {fileID: -3961450366364805326, guid: da1bd34de6fdea84e881f381bf54c057, type: 3}
+    - {fileID: 4266375201189728187, guid: fac06b50b2f1a6c4e916ad6c3d4cbff3, type: 3}
+    - {fileID: -3164702289076788774, guid: ec4677ac8e576184491fe5fd60098a21, type: 3}
+    - {fileID: 8557895697545809472, guid: 8aaea35604e66364b95ef1b49835d757, type: 3}
+    - {fileID: 6084713033397911920, guid: b50d24fd045abc8428aacb781d7b31e6, type: 3}
+    - {fileID: 8024818994910761047, guid: 9c55cafa5d723784280bc4981f5e564e, type: 3}
+    - {fileID: 1398549968265513876, guid: ac32b7a16e0c7eb4d929f65c3169916f, type: 3}
+    - {fileID: -362269515847387638, guid: 176f52d6a3a138543a9a956aae359f59, type: 3}
+    - {fileID: 2261784998284435491, guid: a516a2d19e3320f4789ca2e050ecdbe8, type: 3}
+    - {fileID: -1722188681578155290, guid: f2226469c89b61f42ae00b7b82e43a7a, type: 3}
+    - {fileID: 1007945188104722019, guid: 3719485c8f4ae87468433b8893653806, type: 3}
+    - {fileID: 6664033538553543094, guid: a05c02598887341488df0e11f014ef59, type: 3}
+    - {fileID: -1316818816589581881, guid: 07e393937d92ec243b7e1977fb15be31, type: 3}
+    - {fileID: 4506400447788934946, guid: b581c0f06e14f3b40b5a57051a64957a, type: 3}
+    - {fileID: 3817469131105874575, guid: 48a5601f3759f43499a16b0243c8f7eb, type: 3}
+    - {fileID: 4034306255490100830, guid: b1915727364a50542a0d967380a96868, type: 3}
+    - {fileID: 6334469656311675572, guid: 849ad458fc778864a8f30da8de809ca0, type: 3}
+    - {fileID: 1263840694865962049, guid: a1400ae056de5a343af099deae74bbd8, type: 3}
+    - {fileID: -6801674213860647783, guid: f33a24d4d5258dd479183818bda5d07c, type: 3}
+    - {fileID: 1878341248455736775, guid: b98b5f8dff7b6e74b9437483171a8cfe, type: 3}
+    - {fileID: -5108163709960295177, guid: 96b84f558132f354aa89e8146f4b660b, type: 3}
+  resultMaterialsTexArray: []
+  doMultiMaterial: 1

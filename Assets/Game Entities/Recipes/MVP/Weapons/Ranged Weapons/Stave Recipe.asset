@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a4c4d89bf056d4e9b08efd5b29d1aa, type: 3}
+  m_Name: Stave Recipe
+  m_EditorClassIdentifier: 
+  recipeIcon: {fileID: 21300000, guid: 891dbf88bc43a6c499e58f4e523862b3, type: 3}
+  category: 0
+  title: "\u041F\u043E\u0441\u043E\u0445"
+  description: 
+  requiredEnergyCount: 0
+  ingredientCellsTemplate: {fileID: 5819965640695127384, guid: 2d9a8fc12b366964684e269ce0dcb480,
+    type: 3}
+  templateCellsIcons:
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  recipeVariants:
+  - ingredients:
+    - item: {fileID: 11400000, guid: 4bae50979672ae940bab30b0439cb675, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: fd728c071a002804ab90139b7635e954, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: 2a419fe9fce9f01448810b2051b06cf1, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: aacb9e218d3d60f4a9d49048123fc0d0, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: aacb9e218d3d60f4a9d49048123fc0d0, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: ee44636cda7d43a4cac4f8346c46ac35, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: aacb9e218d3d60f4a9d49048123fc0d0, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: 9c64919071972b24582f371dc63528c1, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: 15f6e0b1a52c3964e8bcc8a806b18c77, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: 9c64919071972b24582f371dc63528c1, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: 9c64919071972b24582f371dc63528c1, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: 41cd7b6a2521fd8479f1f702dfe5fc05, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: 9c64919071972b24582f371dc63528c1, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: 89db9364a9a196045af5477b450ee088, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: 3804940daf701cc40bba8404abc77b23, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: 664dc91722f4cf54db2fe9fed6e603ab, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: fd728c071a002804ab90139b7635e954, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: fd728c071a002804ab90139b7635e954, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: 9222f30428ce88645a832c8da36ac0a1, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: fd728c071a002804ab90139b7635e954, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: 2886fe4829ea86844b80e621ab817a4d, type: 2}
+      count: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+      count: 3
+    - item: {fileID: 11400000, guid: b777412f4c5fc864f9af7d30016b4aca, type: 2}
+      count: 2
+    resultItem:
+      item: {fileID: 11400000, guid: 41d6c15cfa4c7e94c8327bf9c9fa706b, type: 2}
+      count: 1
