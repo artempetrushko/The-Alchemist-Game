@@ -8,41 +8,18 @@ public class EnvironmentInteractionsManager : MonoBehaviour
     [SerializeField]
     private InteractiveObjectInfoView interactiveObjectInfoViewPrefab;
     [SerializeField]
-    private GameObject interactiveObjectInfoViewContainer;
-    [Space, SerializeField]
-    private PlayerItemPicker playerItemPicker;
+    private GameObject interactiveObjectInfoViewContainer;    
     [SerializeField]
     private PlayerInteractor playerInteractor;
     [SerializeField]
-    private ItemsContainersManager itemsContainersManager;
-    [Space, SerializeField]
-    private GameManager gameManager;
-    [SerializeField]
-    private InventoryManager inventoryManager;
-    [SerializeField]
     private InputManager inputManager;
+    [Space, SerializeField]
+    private ItemsContainersManager itemsContainersManager;
+    [SerializeField]
+    private PortalsManager portalsManager; 
 
     private InteractiveObjectInfoView currentInteractiveObjectInfoView;
     private InteractiveObject currentInteractiveObject;
-
-    public void PickItems(InputAction.CallbackContext context)
-    {
-        if (context.performed && playerItemPicker != null)
-        {
-            var pickableItems = playerItemPicker.PickableItems;
-            if (pickableItems.Count > 0)
-            {
-                foreach (var item in pickableItems)
-                {
-                    if (inventoryManager.AddNewItemState(item.CurrentItemState))
-                    {
-                        Destroy(item.gameObject);
-                    }
-                }
-                pickableItems.Clear();
-            }
-        }      
-    }
 
     public void Interact(InputAction.CallbackContext context)
     {
@@ -54,54 +31,12 @@ public class EnvironmentInteractionsManager : MonoBehaviour
                     itemsContainersManager.OpenContainer(itemsContainer);
                     break;
 
-                case Workbench:
-                    //playerMenuManager.ShowCraftSection(context);
-                    break;
-
                 case DungeonPortal dungeonPortal:
-                    InteractDungeonPortal(dungeonPortal);
+                    portalsManager.InteractDungeonPortal(dungeonPortal);
                     break;
             }
         }
     }
-
-    private IEnumerator StabilizePortal_COR()
-    {
-        yield return null;
-        //StartCoroutine(portalStabilizationProgressSection.FillProgressBar_COR(stabilizationTimeInSeconds));
-    }
-
-    
-
-    private void InteractDungeonPortal(DungeonPortal portal)
-    {
-        switch (portal.PortalState)
-        {
-            case PortalState.Unstable:
-                /*if (gameManager.StabilizerCreatedAndAvailable)
-                {
-                    inventoryManager.RemoveItem("Стабилизатор портала");
-                    GetComponent<Collider>().enabled = false;
-                    //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
-                    StartCoroutine(StabilizePortal_COR());
-                    //PortalState = PortalState.Stabilizing;
-                }
-                else
-                {
-                    GetComponent<Collider>().enabled = false;
-                    //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
-                    //levelFinisher.Activate();
-                }
-                break;*/
-                break;
-
-            case PortalState.Stable:
-                GetComponent<Collider>().enabled = false;
-                //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
-                //levelFinisher.FinishGame();
-                break;
-        }
-    } 
 
     private void OnEnable()
     {
@@ -134,20 +69,13 @@ public class EnvironmentInteractionsManager : MonoBehaviour
         Destroy(currentInteractiveObjectInfoView.gameObject);
     }
 
-    //private void DisableI
-
     private void ShowCurrentInteractiveObjectControlsTips()
     {
         if (currentInteractiveObject != null)
         {
-            var actionName = currentInteractiveObject switch
-            {
-                ItemsContainer or Vault => "Открыть",
-                Workbench or DungeonPortal => "Использовать"
-            };
             inputManager.ShowCurrentControlsTips(currentInteractiveObjectInfoView.ControlsTipsSectionView, new[]
             {
-                (actionName, inputManager.PlayerActions.Player.Interact)
+                (currentInteractiveObject.InteractionDescription, inputManager.PlayerActions.Player.Interact)
             });
         }      
     }

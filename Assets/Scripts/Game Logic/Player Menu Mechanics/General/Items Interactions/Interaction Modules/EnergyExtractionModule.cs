@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyExtractionModule : ItemsInteractionModule, IInteractionExecutable
+public class EnergyExtractionModule : ItemsInteractionModule, IInteractionExecutable, IInteractionCancelable
 {
+    [SerializeField]
+    private PlayerMenuManager playerMenuManager;
+
     public override void StartInteraction(ItemSlot selectedItemSlot)
     {
-        throw new System.NotImplementedException();
+        startItemSlot = selectedItemSlot;
     }
 
     public void Execute()
@@ -14,7 +17,7 @@ public class EnergyExtractionModule : ItemsInteractionModule, IInteractionExecut
         throw new System.NotImplementedException();
     }
 
-    public override void CancelInteraction()
+    public void CancelInteraction()
     {
         throw new System.NotImplementedException();
     }

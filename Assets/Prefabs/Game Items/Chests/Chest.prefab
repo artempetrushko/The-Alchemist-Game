@@ -72,12 +72,12 @@ PrefabInstance:
     - target: {fileID: 6733841947924373114, guid: 2adf907189ccf954d8d542865d62ed02,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1899986
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6733841947924373114, guid: 2adf907189ccf954d8d542865d62ed02,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.9990005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6733841947924373114, guid: 2adf907189ccf954d8d542865d62ed02,
         type: 3}
@@ -148,7 +148,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: "\u0421\u0443\u043D\u0434\u0443\u043A"
+  interactionDescription: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C"
   spawnChancesTable: {fileID: 11400000, guid: ac40fceeac3dc354bb4e8cb089c5fdc1, type: 2}
+  filledContainerEffect: {fileID: 6218124845986391472, guid: 2c4020167a937ca4da14ad00c56d2c62,
+    type: 3}
 --- !u!4 &4635417222666882726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6733841947924373114, guid: 2adf907189ccf954d8d542865d62ed02,

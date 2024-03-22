@@ -14,7 +14,7 @@ public class WeaponItemSlot : ItemSlot<WeaponState>
     public override WeaponState ItemState
     {
         get => base.ItemState;
-        set
+        protected set
         {
             base.ItemState = value;
             WeaponStateChanged?.Invoke(base.ItemState, WeaponHandPosition);        

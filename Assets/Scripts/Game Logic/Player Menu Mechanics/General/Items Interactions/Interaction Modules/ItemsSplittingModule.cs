@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemsSplittingModule : ItemsInteractionModule
+public class ItemsSplittingModule : ItemsInteractionModule, IInteractionCancelable
 {
     [Space, SerializeField]
     private ItemsCountChoiceManager itemsCountChoiceManager;
@@ -27,7 +27,7 @@ public class ItemsSplittingModule : ItemsInteractionModule
         }
     }
 
-    public override void CancelInteraction()
+    public void CancelInteraction()
     {
         throw new System.NotImplementedException();
     }

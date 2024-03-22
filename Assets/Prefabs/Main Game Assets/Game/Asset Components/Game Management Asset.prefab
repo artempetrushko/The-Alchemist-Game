@@ -1102,7 +1102,6 @@ MonoBehaviour:
   playerInput: {fileID: 4080318587984007000}
   gamepadButtonsIcons: {fileID: 11400000, guid: 87ebe6586fda9b346b3bcaa6c82b8461,
     type: 2}
-  playerMenuControlsTipsSectionView: {fileID: 0}
 --- !u!1 &2112113516153556502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,9 +1154,9 @@ MonoBehaviour:
   inventoryManager: {fileID: 6603067858326094833}
   questManager: {fileID: 8714115156442780315}
   inputManager: {fileID: 2036047179359671938}
-  hudManager: {fileID: 0}
+  hudManager: {fileID: 7919828064836258063}
   levelLoadingManager: {fileID: 6193551178095944882}
-  runEndingManager: {fileID: 0}
+  runEndingManager: {fileID: 3328291819407308940}
 --- !u!114 &6193551178095944882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,6 +1385,7 @@ GameObject:
   - component: {fileID: 4743003781120819859}
   - component: {fileID: 6343008975365442289}
   - component: {fileID: 2691131436043217754}
+  - component: {fileID: 6760117667353080690}
   m_Layer: 0
   m_Name: Environment Exploration Management
   m_TagString: Untagged
@@ -1423,12 +1423,10 @@ MonoBehaviour:
   interactiveObjectInfoViewPrefab: {fileID: 6056667545715682398, guid: 80441aff7e2617f4495653b60fd7a68f,
     type: 3}
   interactiveObjectInfoViewContainer: {fileID: 0}
-  playerItemPicker: {fileID: 0}
   playerInteractor: {fileID: 0}
-  itemsContainersManager: {fileID: 2691131436043217754}
-  gameManager: {fileID: 7798457773956707207}
-  inventoryManager: {fileID: 6603067858326094833}
   inputManager: {fileID: 2036047179359671938}
+  itemsContainersManager: {fileID: 2691131436043217754}
+  portalsManager: {fileID: 6760117667353080690}
 --- !u!114 &2691131436043217754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,6 +1445,19 @@ MonoBehaviour:
   inventoryManager: {fileID: 6603067858326094833}
   inputManager: {fileID: 2036047179359671938}
   itemPickingMessagesManager: {fileID: 4002637374728261544}
+--- !u!114 &6760117667353080690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854284885892721046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29fb666af5b95524cadacffd44693f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!1 &3120101434810351808
 GameObject:
   m_ObjectHideFlags: 0

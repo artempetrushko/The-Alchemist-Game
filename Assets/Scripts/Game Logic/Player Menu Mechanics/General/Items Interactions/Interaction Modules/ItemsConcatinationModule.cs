@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemsConcatinationModule : ItemsInteractionModule, IInteractionExecutable
+public class ItemsConcatinationModule : ItemsInteractionModule, IInteractionExecutable, IInteractionCancelable
 {
     [SerializeField]
     private PlayerMenuManager playerMenuManager;
@@ -11,11 +11,6 @@ public class ItemsConcatinationModule : ItemsInteractionModule, IInteractionExec
     public override void StartInteraction(ItemSlot selectedItemSlot)
     {
         startItemSlot = selectedItemSlot;
-    }
-
-    public override void CancelInteraction()
-    {
-        throw new System.NotImplementedException();
     }
 
     public void Execute()
@@ -30,5 +25,10 @@ public class ItemsConcatinationModule : ItemsInteractionModule, IInteractionExec
                 OnInteractionExecuted();
             }
         }
+    }
+
+    public void CancelInteraction()
+    {
+        throw new System.NotImplementedException();
     }
 }

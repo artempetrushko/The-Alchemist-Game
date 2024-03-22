@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemsDroppingModule : ItemsInteractionModule
+public class ItemsDroppingModule : ItemsInteractionModule, IInteractionCancelable
 {
     [Space, SerializeField]
     private ItemsCountChoiceManager itemsCountChoiceManager;
@@ -27,7 +27,7 @@ public class ItemsDroppingModule : ItemsInteractionModule
         }
     }
 
-    public override void CancelInteraction()
+    public void CancelInteraction()
     {
         throw new NotImplementedException();
     }

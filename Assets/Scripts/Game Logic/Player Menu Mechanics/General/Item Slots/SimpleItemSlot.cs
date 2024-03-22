@@ -43,7 +43,7 @@ public class SimpleItemSlot : ItemSlot<ItemState>
                     containedStackableItem.ItemsCount += draggingStackableItem.ItemsCount;
                     if (containedStackableItem.ItemsCount <= containedStackableItem.MaxStackItemsCount)
                     {
-                        previousInventorySlot.ItemState = null;
+                        previousInventorySlot.ClearItemState();
                     }
                     else
                     {

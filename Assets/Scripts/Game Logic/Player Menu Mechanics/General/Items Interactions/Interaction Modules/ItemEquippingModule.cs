@@ -12,9 +12,4 @@ public class ItemEquippingModule : ItemsInteractionModule
         inventoryManager.TryEquipInventoryItem(selectedItemSlot);
         OnInteractionExecuted();
     }
-
-    public override void CancelInteraction()
-    {
-        throw new System.NotImplementedException();
-    }
 }

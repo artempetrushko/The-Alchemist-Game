@@ -101,9 +101,9 @@ public class InventoryItemsInteractionsManager : MonoBehaviour
 
     public void CancelInteraction(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && currentItemsInteraction is IInteractionCancelable cancelableInteraction)
         {
-            currentItemsInteraction.CancelInteraction();
+            cancelableInteraction.CancelInteraction();
         }
     }
 

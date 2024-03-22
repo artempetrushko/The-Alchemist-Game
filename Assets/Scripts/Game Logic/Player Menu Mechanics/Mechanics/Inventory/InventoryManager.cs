@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,13 +6,13 @@ using UnityEngine.EventSystems;
 public class InventoryManager : PlayerMenuMechanicsManager
 {
     [SerializeField]
-    private int inventoryCellsCount;
+    private int inventorySlotsCount;
     [SerializeField]
-    private int quickAccessCellsCount;
+    private int quickAccessSlotsCount;
     [SerializeField]
-    private WeaponItemSlot[] weaponItems;
+    private WeaponItemSlot[] weaponSlots;
     [SerializeField]
-    private ClothesItemSlot[] clothesItems;
+    private ClothesItemSlot[] clothesSlots;
     [Space, SerializeField]
     private Transform droppedItemsSpawnPoint;
     [Space, SerializeField]
@@ -25,17 +24,25 @@ public class InventoryManager : PlayerMenuMechanicsManager
     [SerializeField]
     private InventoryItemsInteractionsManager inventoryItemsInteractionsManager;
 
-    private SimpleItemSlot[] inventoryItems;
-    private QuickAccessItemSlot[] quickAccessItems;
+    private SimpleItemSlot[] mainInventorySlots;
+    private QuickAccessItemSlot[] quickAccessSlots;
     private InventorySectionView currentInventoryView;
+
+    public void Initialize()
+    {
+        mainInventorySlots = new SimpleItemSlot[inventorySlotsCount].Select(x => new SimpleItemSlot()).ToArray();
+        quickAccessSlots = new QuickAccessItemSlot[quickAccessSlotsCount].Select(x => new QuickAccessItemSlot()).ToArray();
+        quickAccessToolbarManager.CreateHUDItemCells(quickAccessSlots, weaponSlots);
+        equipmentManager.SubscribeWeaponItemDatas(weaponSlots);
+    }
 
     public override void InitializeLinkedView(PlayerMenuSectionView mechanicsLinkedView)
     {
         if (mechanicsLinkedView is InventorySectionView inventoryView)
         {
             currentInventoryView = inventoryView;
-            currentInventoryView.InventorySubsectionView.GetCategoryView<MainInventoryCategoryView>()?.FillItemCellsContainer(inventoryCellsCount);
-            currentInventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>()?.FillItemCellsContainer(quickAccessCellsCount);
+            currentInventoryView.InventorySubsectionView.GetCategoryView<MainInventoryCategoryView>()?.FillItemCellsContainer(inventorySlotsCount);
+            currentInventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>()?.FillItemCellsContainer(quickAccessSlotsCount);
             AttachInventoryItemCellsToItems(currentInventoryView);
 
             foreach (var items in currentInventoryView.InventorySubsectionView.AllInventoryCells)
@@ -50,32 +57,16 @@ public class InventoryManager : PlayerMenuMechanicsManager
         switch (categoryView)
         {
             case MainInventoryCategoryView mainInventoryCategoryView:
-                mainInventoryCategoryView.FillItemCellsContainer(inventoryCellsCount);
-                AttachItemCellsToItems(mainInventoryCategoryView.MainItemCells, inventoryItems);
+                mainInventoryCategoryView.FillItemCellsContainer(inventorySlotsCount);
+                AttachItemCellsToItems(mainInventoryCategoryView.MainItemCells, mainInventorySlots);
                 break;
 
             case EquipmentCategoryView equipmentCategoryView:
-                equipmentCategoryView.FillItemCellsContainer(quickAccessCellsCount);
-                AttachItemCellsToItems(equipmentCategoryView.MainItemCells, quickAccessItems);
-                AttachItemCellsToItems(equipmentCategoryView.WeaponCells, weaponItems);
-                AttachItemCellsToItems(equipmentCategoryView.ClothesCells, clothesItems);
+                equipmentCategoryView.FillItemCellsContainer(quickAccessSlotsCount);
+                AttachItemCellsToItems(equipmentCategoryView.MainItemCells, quickAccessSlots);
+                AttachItemCellsToItems(equipmentCategoryView.WeaponCells, weaponSlots);
+                AttachItemCellsToItems(equipmentCategoryView.ClothesCells, clothesSlots);
                 break;
-        }
-    }
-
-    public void Initialize()
-    {
-        inventoryItems = new SimpleItemSlot[inventoryCellsCount].Select(x => new SimpleItemSlot()).ToArray();
-        quickAccessItems = new QuickAccessItemSlot[quickAccessCellsCount].Select(x => new QuickAccessItemSlot()).ToArray();
-        quickAccessToolbarManager.CreateHUDItemCells(quickAccessItems, weaponItems);
-        equipmentManager.SubscribeWeaponItemDatas(weaponItems);
-    }
-
-    public void AddSomeItems(List<ItemState> items)
-    {
-        foreach (var item in items)
-        {
-            AddNewItemState(item);
         }
     }
 
@@ -115,79 +106,26 @@ public class InventoryManager : PlayerMenuMechanicsManager
         CreateDroppedItem(droppedItemState);
     }
 
-    public void CreateDroppedItem(ItemState itemState)
+    public void ChangeWeaponHandPosition(WeaponItemSlot currentWeaponSlot, WeaponHandPosition newWeaponPosition)
     {
-        var physicalItem = Instantiate(itemState.BaseParams.PhysicalRepresentation);
-        physicalItem.transform.position = droppedItemsSpawnPoint.position;
-        physicalItem.CurrentItemState = itemState;
+        var newWeaponSlot = weaponSlots.FirstOrDefault(weaponSlot => weaponSlot.WeaponHandPosition == newWeaponPosition);
+        newWeaponSlot?.TryPlaceOrSwapItem(currentWeaponSlot);
     }
 
-    /*public void RemoveAttachedItem()
-    {
-        var freeInventoryCells = inventorySection.GetComponentsInChildren<SimpleItemCellContainer>().Where(container => container.IsItemPlaceEmpty).ToList();
-        if (freeInventoryCells.Count > 0)
-        {
-            freeInventoryCells[0].PlaceItem(ContainedItem);
-        }
-    }*/
-
-    public void RemoveItem(ItemState itemState) { }
-
-    public void RemoveItem(string itemName) { }
-
-    public void EquipWeaponInOtherHand(ItemState item)
-    {
-        /*var otherWeaponCell = CurrentInteractingItemCellContainer.transform.parent.GetComponentsInChildren<WeaponSetItemCellContainer>()
-            .Where(container => container != CurrentInteractingItemCellContainer)
-            .First();
-        otherWeaponCell.SwapAndPlaceItem(CurrentInteractingItemCellContainer);*/
-    }
+    public void TakeEquipmentOff(EquipmentState equipment) => TryAddItem(equipment);
 
     public bool TryEquipInventoryItem(ItemSlot previousItemSlot)
     {
-        if (previousItemSlot.BaseItemState is not EquipmentState)
+        if (previousItemSlot.BaseItemState is EquipmentState equipment)
         {
-            return false;
+            return TryEquipItem(equipment);
         }
-        switch (previousItemSlot.BaseItemState)
-        {
-            case WeaponState:
-                var freeWeaponCells = weaponItems.Where(weaponData => weaponData.ItemState == null).ToList();
-                if (freeWeaponCells.Count > 1)
-                {
-                    var rightWeaponCell = freeWeaponCells.Where(cell => cell.WeaponHandPosition == WeaponHandPosition.Right).First();
-                    rightWeaponCell.TryPlaceOrSwapItem(previousItemSlot);
-                    return true;
-                }
-                else if (freeWeaponCells.Count == 1)
-                {
-                    freeWeaponCells[0].TryPlaceOrSwapItem(previousItemSlot);
-                    return true;
-                }
-                goto default;
-
-            case ClothesState clothes:
-                var freeClothesCell = clothesItems.Where(clothesData => clothesData.ItemState == null && clothesData.ClothesType == (clothes.BaseParams as ClothesData).ClothesType).FirstOrDefault();
-                if (freeClothesCell != null)
-                {
-                    freeClothesCell.TryPlaceOrSwapItem(previousItemSlot);
-                    return true;
-                }
-                goto default;
-
-            default:
-                return false;
-        }
-    }
-
-    public void TakeEquipmentOff(ItemState item)
-    {
-        //(CurrentInteractingItemCellContainer as PlayerSetItemCellContainer).RemoveAttachedItem();       
+        return false;
     }
 
     private bool TryAddStackableItem(StackableItemState stackableItem)
     {
-        var inventoryItemDatas = inventoryItems.Select(item => item as ItemSlot).Concat(quickAccessItems.Select(item => item as ItemSlot));
+        var inventoryItemDatas = mainInventorySlots.Select(item => item as ItemSlot).Concat(quickAccessSlots.Select(item => item as ItemSlot));
         var partialFilledStacks = inventoryItemDatas
             .Where(itemData => itemData.BaseItemState is StackableItemState stackableItemData 
                     && stackableItemData.BaseParams.ID == stackableItem.BaseParams.ID 
@@ -229,61 +167,39 @@ public class InventoryManager : PlayerMenuMechanicsManager
         return true;
     }
 
-    private bool TryEquipOrAddItem(EquipmentState equipment)
+    private bool TryEquipOrAddItem(EquipmentState equipment) => TryEquipItem(equipment) || TryAddItem(equipment);
+
+    private bool TryEquipItem(EquipmentState equipment)
     {
-        switch (equipment)
+        return equipment switch
         {
-            case WeaponState weapon:
-                var freeWeaponCells = weaponItems.Where(weaponData => weaponData.ItemState == null).ToList();
-                if (freeWeaponCells.Count > 1)
-                {
-                    var rightWeaponCell = freeWeaponCells.Where(cell => cell.WeaponHandPosition == WeaponHandPosition.Right).First();
-                    rightWeaponCell.ItemState = weapon;
-                    return true;
-                }
-                else if (freeWeaponCells.Count == 1)
-                {
-                    freeWeaponCells[0].ItemState = weapon;
-                    return true;
-                }
-                goto default;
-
-            case ClothesState clothes:
-                var freeClothesCell = clothesItems.Where(clothesData => clothesData.ItemState == null && clothesData.ClothesType == (clothes.BaseParams as ClothesData).ClothesType).FirstOrDefault();
-                if (freeClothesCell != null)
-                {
-                    freeClothesCell.ItemState = clothes;
-                    return true;                    
-                }
-                goto default;
-
-            default:
-                return TryAddItem(equipment);
-        }
+            WeaponState weapon => TryAddItemToCollection(weaponSlots, weapon, (weaponSlot) => weaponSlot.ItemState == null),
+            ClothesState clothes => TryAddItemToCollection(clothesSlots, clothes, (clothesSlot) => clothesSlot.ItemState == null && clothesSlot.ClothesType == (clothes.BaseParams as ClothesData).ClothesType)
+        };
     }
 
-    private bool TryAddItem(ItemState item)
-    {
-        return TryAddItemToCollection(quickAccessItems, item) || TryAddItemToCollection(inventoryItems, item);
-    }
+    private bool TryAddItem(ItemState item) => 
+        TryAddItemToCollection(quickAccessSlots, item, (slot) => slot.ItemState == null) 
+        || TryAddItemToCollection(mainInventorySlots, item, (slot) => slot.ItemState == null);
 
-    private bool TryAddItemToCollection<T>(T[] itemDatas, ItemState item) where T : ItemSlot<ItemState>
+    private bool TryAddItemToCollection<T, P>(T[] itemSlots, P item, Func<T, bool> itemAddingCondition) 
+        where T : ItemSlot<P> 
+        where P : ItemState
     {
-        var freeItemCells = itemDatas.Where(itemData => itemData.BaseItemState == null).ToList();
-        if (freeItemCells.Count > 0)
+        var freeItemSlot = itemSlots.FirstOrDefault(itemSlot => itemAddingCondition(itemSlot));
+        if (freeItemSlot != null)
         {
-            freeItemCells[0].ItemState = item;
-            return true;
+            return freeItemSlot.TryPlaceItem(item);
         }
         return false;
     }
 
     private void AttachInventoryItemCellsToItems(InventorySectionView inventoryView)
     {
-        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<MainInventoryCategoryView>().MainItemCells, inventoryItems);
-        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().MainItemCells, quickAccessItems);
-        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().WeaponCells, weaponItems);
-        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().ClothesCells, clothesItems);
+        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<MainInventoryCategoryView>().MainItemCells, mainInventorySlots);
+        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().MainItemCells, quickAccessSlots);
+        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().WeaponCells, weaponSlots);
+        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().ClothesCells, clothesSlots);
     }
 
     private void AttachItemCellsToItems(ItemCellView[] itemCells, ItemSlot[] inventoryItems)
@@ -321,5 +237,12 @@ public class InventoryManager : PlayerMenuMechanicsManager
             });
             itemCell.AddEventTriggerListener(EventTriggerType.Drop, (eventData) => itemCell.LinkedItemSlot.TryPlaceOrSwapItem(ItemViewDraggingModule.DraggingItem.LinkedItem.LinkedItemSlot));
         }
+    }
+
+    private void CreateDroppedItem(ItemState itemState)
+    {
+        var physicalItem = Instantiate(itemState.BaseParams.PhysicalRepresentation);
+        physicalItem.transform.position = droppedItemsSpawnPoint.position;
+        physicalItem.CurrentItemState = itemState;
     }
 }

@@ -39,6 +39,8 @@ public abstract class ItemSlot
         }
     }
 
+    public abstract bool TryPlaceItem(ItemState item);
+
     public abstract bool TryPlaceOrSwapItem(ItemSlot previousInventorySlot);
 
     public abstract List<ItemInteraction> GetItemInteractions();
@@ -89,7 +91,7 @@ public abstract class ItemSlot<T> : ItemSlot where T : ItemState
     public virtual T ItemState
     {
         get => itemState;
-        set
+        protected set
         {
             if (itemState != null && itemState.LinkedItemSlot == this)
             {
@@ -106,13 +108,23 @@ public abstract class ItemSlot<T> : ItemSlot where T : ItemState
         }
     }
 
+    public override bool TryPlaceItem(ItemState item)
+    {
+        if (item is T accordingItem)
+        {
+            ItemState = accordingItem;
+            return true;
+        }
+        return false;
+    }
+
     public override bool TryPlaceOrSwapItem(ItemSlot previousInventorySlot)
     {
         if (previousInventorySlot.BaseItemState is T)
         {
             try
             {
-                return TryPlaceOrSwapItem(previousInventorySlot as ItemSlot<ItemState>);
+                return TryPlaceOrSwapItem(previousInventorySlot as ItemSlot<T>);
             }
             catch
             {

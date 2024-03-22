@@ -213,7 +213,7 @@ public class CraftManager : PlayerMenuMechanicsManager
                     var spentItemsCount = currentRecipeVariant.Ingredients[i].Count;
                     if (stackableItem.ItemsCount == spentItemsCount)
                     {
-                        usedItem.ItemState = null;
+                        usedItem.ClearItemState();
                     }
                     else
                     {
@@ -222,7 +222,7 @@ public class CraftManager : PlayerMenuMechanicsManager
                     break;
 
                 case SingleItemState:
-                    usedItem.ItemState = null;
+                    usedItem.ClearItemState();
                     break; 
             }
         }
@@ -240,14 +240,14 @@ public class CraftManager : PlayerMenuMechanicsManager
                     if (stackableItem.TotalContainedEnergyCount <= requiredEnergyCount)
                     {
                         requiredEnergyCount -= stackableItem.TotalContainedEnergyCount;
-                        energyHolder.ItemState = null;
+                        energyHolder.ClearItemState();
                     }
                     else
                     {
                         stackableItem.ItemsCount -= (int)Mathf.Ceil((float)requiredEnergyCount / stackableItem.ContainedEnergyCount);
                         if (stackableItem.ItemsCount == 0)
                         {
-                            energyHolder.ItemState = null;
+                            energyHolder.ClearItemState();
                         }
                         requiredEnergyCount = 0;                        
                     }
@@ -255,7 +255,7 @@ public class CraftManager : PlayerMenuMechanicsManager
 
                 case SingleItemState:
                     requiredEnergyCount -= energyHolder.ItemState.ContainedEnergyCount;
-                    energyHolder.ItemState = null;
+                    energyHolder.ClearItemState();
                     break;
             }
             if (requiredEnergyCount <= 0)

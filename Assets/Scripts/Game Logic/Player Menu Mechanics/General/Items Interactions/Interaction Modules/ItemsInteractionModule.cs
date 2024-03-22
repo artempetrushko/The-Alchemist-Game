@@ -35,7 +35,5 @@ public abstract class ItemsInteractionModule : MonoBehaviour
 
     public abstract void StartInteraction(ItemSlot selectedItemSlot);
 
-    public abstract void CancelInteraction();
-
     protected void OnInteractionExecuted() => InteractionExecuted?.Invoke();
 }

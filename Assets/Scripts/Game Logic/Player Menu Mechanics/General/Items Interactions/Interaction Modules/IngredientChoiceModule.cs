@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IngredientChoiceModule : ItemsInteractionModule, IInteractionExecutable
+public class IngredientChoiceModule : ItemsInteractionModule, IInteractionExecutable, IInteractionCancelable
 {
     public override void StartInteraction(ItemSlot selectedItemSlot)
     {
@@ -14,7 +14,7 @@ public class IngredientChoiceModule : ItemsInteractionModule, IInteractionExecut
         throw new System.NotImplementedException();
     }
 
-    public override void CancelInteraction()
+    public void CancelInteraction()
     {
         throw new System.NotImplementedException();
     }

@@ -68,7 +68,7 @@ public class QuickAccessToolbarManager : MonoBehaviour
         if (context.performed)
         {
             var inputValue = context.ReadValue<Vector2>().x;
-            if (inputValue == 1 || inputValue == -1)
+            if (Mathf.Abs(inputValue) == 1)
             {
                 CurrentQuickAccessCellNumber += (int)inputValue;
             }
@@ -79,17 +79,17 @@ public class QuickAccessToolbarManager : MonoBehaviour
     {
         foreach (var item in quickAccessItemDatas)
         {
-            var hudItemCell = Instantiate(hudItemCellViewPrefab, hudQuickAccessCellsContainer.transform);
-            item.LinkedHUDCellView = hudItemCell;
+            var hudItemSlot = Instantiate(hudItemCellViewPrefab, hudQuickAccessCellsContainer.transform);
+            item.LinkedHUDCellView = hudItemSlot;
         }
         foreach (var item in weaponItemDatas)
         {
-            var hudItemCell = Instantiate(hudItemCellViewPrefab, item.WeaponHandPosition switch
+            var hudItemSlot = Instantiate(hudItemCellViewPrefab, item.WeaponHandPosition switch
             {
                 WeaponHandPosition.Left => hudLeftWeaponItemCellsContainer.transform,
                 WeaponHandPosition.Right => hudRightWeaponItemCellsContainer.transform,
             });
-            item.LinkedHUDCellView = hudItemCell;
+            item.LinkedHUDCellView = hudItemSlot;
         }
         CurrentQuickAccessCellNumber = 1;
     }
