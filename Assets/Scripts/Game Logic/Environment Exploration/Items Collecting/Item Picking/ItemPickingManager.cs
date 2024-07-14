@@ -1,30 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Controls;
+using System;
 using UnityEngine.InputSystem;
 
-public class ItemPickingManager : MonoBehaviour
+public class ItemPickingManager : IDisposable
 {
-    [SerializeField]
-    private PlayerItemPicker playerItemPicker;
-    [SerializeField]
-    private ItemPickingMessagesManager itemPickingMessagesManager;
-    [Space, SerializeField]
-    private InventoryManager inventoryManager;
+    private PlayerItemPicker _playerItemPicker;
+    private ItemPickingMessagesManager _itemPickingMessagesPanelController;
+    private InventoryManager _inventoryManager;
+    private InputManager _inputManager;
+
+    public ItemPickingManager(PlayerItemPicker playerItemPicker, ItemPickingMessagesManager itemPickingMessagesPanelController, 
+        InventoryManager inventoryManager, InputManager inputManager)
+    {
+        _playerItemPicker = playerItemPicker;
+        _itemPickingMessagesPanelController = itemPickingMessagesPanelController;
+        _inventoryManager = inventoryManager;
+        _inputManager = inputManager;
+
+        _inputManager.PlayerActions.Player.PickItem.performed += PickItems;
+    }
+
+    public void Dispose()
+    {
+        _inputManager.PlayerActions.Player.PickItem.performed -= PickItems;
+    }
 
     public void PickItems(InputAction.CallbackContext context)
     {
-        if (context.performed && playerItemPicker != null)
+        if (context.performed && _playerItemPicker != null)
         {
-            var pickableItems = playerItemPicker.PickableItems;
+            var pickableItems = _playerItemPicker.PickableItems;
             if (pickableItems.Count > 0)
             {
                 foreach (var item in pickableItems)
                 {
-                    if (inventoryManager.AddNewItemState(item.CurrentItemState))
+                    if (_inventoryManager.AddNewItemState(item.CurrentItemState))
                     {
-                        itemPickingMessagesManager.ShowNewMessage(item.CurrentItemState);
-                        Destroy(item.gameObject);
+                        _itemPickingMessagesPanelController.ShowNewMessage(item.CurrentItemState);
+                        //Destroy(item.gameObject);
                     }
                 }
                 pickableItems.Clear();

@@ -1,4 +1,4 @@
-using System.Collections;
+using Controls;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,8 +11,9 @@ public class ItemsContainersManager : MonoBehaviour
     private GameObject itemsContainerContentViewContainer;
     [Space, SerializeField]
     private InventoryManager inventoryManager;
-    [SerializeField]
-    private InputManager inputManager;
+
+    private InputManager _inputManager;
+
     [SerializeField]
     private ItemPickingMessagesManager itemPickingMessagesManager; 
 
@@ -52,6 +53,11 @@ public class ItemsContainersManager : MonoBehaviour
         }
     }
 
+    public ItemsContainersManager(InputManager inputManager)
+    {
+        _inputManager = inputManager;
+    }
+
     public void OpenContainer(ItemsContainer itemsContainer)
     {
         currentItemsContainer = itemsContainer;
@@ -60,9 +66,9 @@ public class ItemsContainersManager : MonoBehaviour
         currentContainingItems = itemsContainerContentView.CreateContainedItemViews(currentItemsContainer.GetContainingItems(), PickItem, (containingItem) => { CurrentSelectedItem = containingItem; });
         CurrentSelectedItemNumber = 1;
 
-        inputManager.CurrentActionMap = PlayerInputActionMap.HUD_ItemsContainer;
+        _inputManager.CurrentActionMap = PlayerInputActionMap.HUD_ItemsContainer;
         ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView);
-        inputManager.SubscribeControlsChangedEvent(() => ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView));
+        _inputManager.SubscribeControlsChangedEvent(() => ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView));
     }
 
     public void CloseContainer(InputAction.CallbackContext context)
@@ -76,8 +82,8 @@ public class ItemsContainersManager : MonoBehaviour
                 Destroy(currentItemsContainer);
             }
 
-            inputManager.UnsubscribeControlsChangedEvent(() => ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView));
-            inputManager.CurrentActionMap = PlayerInputActionMap.Player;
+            _inputManager.UnsubscribeControlsChangedEvent(() => ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView));
+            _inputManager.CurrentActionMap = PlayerInputActionMap.Player;
         }      
     }
 
@@ -127,11 +133,11 @@ public class ItemsContainersManager : MonoBehaviour
 
     private void ShowControlsTips(ControlsTipsSectionView controlsTipsSectionView)
     {
-        inputManager.ShowCurrentControlsTips(controlsTipsSectionView, new[]
+        _inputManager.ShowCurrentControlsTips(controlsTipsSectionView, new[]
         {
-            ("Взять", inputManager.PlayerActions.HUDItemsContainer.Take),
-            ("Взять всё", inputManager.PlayerActions.HUDItemsContainer.TakeAll),
-            ("Закрыть", inputManager.PlayerActions.HUDItemsContainer.CloseContainer)
+            ("Взять", _inputManager.PlayerActions.HUDItemsContainer.Take),
+            ("Взять всё", _inputManager.PlayerActions.HUDItemsContainer.TakeAll),
+            ("Закрыть", _inputManager.PlayerActions.HUDItemsContainer.CloseContainer)
         });
     }
 }

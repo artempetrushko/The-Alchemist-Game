@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class EquipmentManager : MonoBehaviour
+public class EquipmentManager
 {
-    [SerializeField]
-    private ABC_Controller playerController;
+    private ABC_Controller _playerController;
 
-    private (ABC_Controller.Weapon entity, GameObject physicalRepresentation) leftWeapon;
-    private (ABC_Controller.Weapon entity, GameObject physicalRepresentation) rightWeapon;
-    private (ABC_Controller.Weapon entity, GameObject physicalRepresentation) currentWeapon;
+    private (ABC_Controller.Weapon entity, GameObject physicalRepresentation) _leftWeapon;
+    private (ABC_Controller.Weapon entity, GameObject physicalRepresentation) _rightWeapon;
+    private (ABC_Controller.Weapon entity, GameObject physicalRepresentation) _currentWeapon;
+
+    public EquipmentManager(ABC_Controller playerController)
+    {
+        _playerController = playerController;
+    }
 
     public void SelectLeftHandWeapon(InputAction.CallbackContext context) => SelectWeapon(context, WeaponHandPosition.Left);
 
@@ -19,15 +21,15 @@ public class EquipmentManager : MonoBehaviour
 
     public void SelectEquippedWeapon(WeaponHandPosition weaponHandPosition)
     {
-        if (currentWeapon != (null, null))
+        if (_currentWeapon != (null, null))
         {
-            playerController.DisableWeapon(currentWeapon.entity.weaponID);
+            _playerController.DisableWeapon(_currentWeapon.entity.weaponID);
         }
-        currentWeapon = GetWeaponByHandPosition(weaponHandPosition);  
-        if (currentWeapon != (null, null))
+        _currentWeapon = GetWeaponByHandPosition(weaponHandPosition);  
+        if (_currentWeapon != (null, null))
         {
-            playerController.EnableWeapon(currentWeapon.entity.weaponID);
-            UpdateWeaponGraphics(currentWeapon);
+            _playerController.EnableWeapon(_currentWeapon.entity.weaponID);
+            UpdateWeaponGraphics(_currentWeapon);
         }
     }
 
@@ -53,15 +55,15 @@ public class EquipmentManager : MonoBehaviour
         if (weaponState != null)
         {
             weapon = (FindWeaponEntity(weaponState), weaponState.BaseParams.PhysicalRepresentation.gameObject);
-            if (currentWeapon == weapon)
+            if (_currentWeapon == weapon)
             {
-                playerController.EnableWeapon(weapon.entity.weaponID);
+                _playerController.EnableWeapon(weapon.entity.weaponID);
                 UpdateWeaponGraphics(weapon);
             }
         }
         else
         {
-            playerController.DisableWeapon(weapon.entity.weaponID);
+            _playerController.DisableWeapon(weapon.entity.weaponID);
             weapon = (null, null);
         }
     }
@@ -83,7 +85,7 @@ public class EquipmentManager : MonoBehaviour
             var stave when stave.Contains("Посох") => "Stave",
             _ => ""
         };
-        return playerController.CurrentWeapons
+        return _playerController.CurrentWeapons
             .Where(weapon => weapon.weaponName.Contains(weaponTypeName))
             .First();
     }
@@ -99,8 +101,8 @@ public class EquipmentManager : MonoBehaviour
     {
         return weaponHandPosition switch
         {
-            WeaponHandPosition.Left => leftWeapon,
-            WeaponHandPosition.Right => rightWeapon
+            WeaponHandPosition.Left => _leftWeapon,
+            WeaponHandPosition.Right => _rightWeapon
         };
     }
 }

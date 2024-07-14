@@ -1,3 +1,4 @@
+using Controls;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,8 @@ public class LevelLoadingManager : MonoBehaviour
     private LoadingScreenView loadingScreenViewPrefab;
     [SerializeField]
     private GameObject loadingScreenViewContainer;
-    [Space, SerializeField]
-    private InputManager inputManager;
+
+    private InputManager _inputManager;
 
     private LoadingScreenView loadingScreenView;
     private float loadingProgress;
@@ -25,6 +26,11 @@ public class LevelLoadingManager : MonoBehaviour
             loadingProgress = value;
             loadingScreenView.SetProgressBarFillAmount(loadingProgress);
         }
+    }
+
+    public LevelLoadingManager(InputManager inputManager)
+    {
+        _inputManager = inputManager;
     }
 
     public string GetCurrentLevelName()
@@ -54,7 +60,7 @@ public class LevelLoadingManager : MonoBehaviour
     private IEnumerator LoadLevelAsync_COR(int loadingSceneIndex)
     {
         loadingScreenView = Instantiate(loadingScreenViewPrefab, loadingScreenViewContainer.transform);
-        inputManager.CurrentActionMap = PlayerInputActionMap.UI_LoadingScreen;
+        _inputManager.CurrentActionMap = PlayerInputActionMap.UI_LoadingScreen;
 
         var operation = SceneManager.LoadSceneAsync(loadingSceneIndex);
         operation.allowSceneActivation = false;

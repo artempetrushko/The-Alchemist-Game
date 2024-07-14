@@ -1,3 +1,4 @@
+using GameLogic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,12 +22,12 @@ public class ClothesItemSlot : ItemSlot<ClothesState>
         return false;
     }
 
-    public override List<ItemInteraction> GetItemInteractions()
+    public override List<ItemInteractionType> GetItemInteractions()
     {
         return new()
         {
-            ItemInteraction.TakeOff,
-            ItemInteraction.Drop
+            ItemInteractionType.TakeOff,
+            ItemInteractionType.Drop
         };
     }
 }

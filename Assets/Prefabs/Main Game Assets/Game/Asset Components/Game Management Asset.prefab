@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4096714550642458503}
   - component: {fileID: 4080318587984007000}
-  - component: {fileID: 2036047179359671938}
   m_Layer: 0
   m_Name: Input Management
   m_TagString: Untagged
@@ -58,7 +57,7 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036047179359671938}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
         m_MethodName: UpdateCurrentControlsTips
         m_Mode: 1
@@ -341,7 +340,7 @@ MonoBehaviour:
     m_ActionName: UI (Item Cell Moving)/Put Cell Down[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3610723791368092284}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemsCountChoiceManager, Assembly-CSharp
         m_MethodName: InvokeConfirmAction
         m_Mode: 0
@@ -357,7 +356,7 @@ MonoBehaviour:
     m_ActionName: UI (Choose Items Count Panel)/Split Items Up[/Keyboard/end,/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3610723791368092284}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemsCountChoiceManager, Assembly-CSharp
         m_MethodName: ChangeItemsCounterValue
         m_Mode: 0
@@ -373,7 +372,7 @@ MonoBehaviour:
     m_ActionName: UI (Choose Items Count Panel)/Change Items Count[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3610723791368092284}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemsCountChoiceManager, Assembly-CSharp
         m_MethodName: InvokeCancelAction
         m_Mode: 0
@@ -633,7 +632,7 @@ MonoBehaviour:
     m_ActionName: Player Menu (Craft Section (Energy Cells))/Navigate Player Menu[/Keyboard/q,/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5745370258390640784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CraftManager, Assembly-CSharp
         m_MethodName: StartCraftingProcess
         m_Mode: 0
@@ -699,7 +698,7 @@ MonoBehaviour:
     m_ActionName: Player Menu (Craft Section (Crafting Item Template))/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5745370258390640784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CraftManager, Assembly-CSharp
         m_MethodName: StartCraftingProcess
         m_Mode: 0
@@ -715,7 +714,7 @@ MonoBehaviour:
     m_ActionName: Player Menu (Craft Section (Crafting Item Template))/Select[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5745370258390640784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CraftManager, Assembly-CSharp
         m_MethodName: StartCraftingProcess
         m_Mode: 0
@@ -810,55 +809,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0ef86edf-167f-488d-9803-74ee39fcf4b6
     m_ActionName: Player Menu (Craft Section (Inventory))/Navigate Player Menu[/Keyboard/q,/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3610723791368092284}
-        m_TargetAssemblyTypeName: ItemsCountChoiceManager, Assembly-CSharp
-        m_MethodName: InvokeConfirmAllAction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 58b8584e-63a7-424b-833f-00fa6357b535
-    m_ActionName: Player Menu (Craft Section (Inventory (Ingredient Selection)))/Return
-      To Item Creation Subsection[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4716552910515513001}
-        m_TargetAssemblyTypeName: CraftInventoryCategoriesManager, Assembly-CSharp
-        m_MethodName: ChangeItemsCategory
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9ff449ed-214c-4543-9103-cebf6f10588d
-    m_ActionName: Player Menu (Craft Section (Inventory (Ingredient Selection)))/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4716552910515513001}
-        m_TargetAssemblyTypeName: CraftInventoryCategoriesManager, Assembly-CSharp
-        m_MethodName: ChangeItemsCategory
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 7e2c2f40-9446-435c-8f1c-2bdf66a487ef
-    m_ActionName: Player Menu (Craft Section (Inventory (Ingredient Selection)))/Select[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4716552910515513001}
@@ -979,11 +929,6 @@ MonoBehaviour:
       Items Category[/Keyboard/1,/Keyboard/3]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: e1d7b229-cb98-4421-8190-23c0b58fee14
-    m_ActionName: Player Menu (Craft Section (Inventory (Item Selection)))/Change
-      Inventory Items Category[/Keyboard/1,/Keyboard/3]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 0d90085e-af03-47f6-896a-a13cc61961f0
     m_ActionName: Player/New action
   - m_PersistentCalls:
@@ -1087,21 +1032,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2036047179359671938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870116211924800157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea332d4da04c213488b88efb977f25f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInput: {fileID: 4080318587984007000}
-  gamepadButtonsIcons: {fileID: 11400000, guid: 87ebe6586fda9b346b3bcaa6c82b8461,
-    type: 2}
 --- !u!1 &2112113516153556502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,9 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5192493f5cd60a7428b64d0e491e6bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 6603067858326094833}
   questManager: {fileID: 8714115156442780315}
-  inputManager: {fileID: 2036047179359671938}
   hudManager: {fileID: 7919828064836258063}
   levelLoadingManager: {fileID: 6193551178095944882}
   runEndingManager: {fileID: 3328291819407308940}
@@ -1172,7 +1100,6 @@ MonoBehaviour:
   loadingScreenViewPrefab: {fileID: 3626415247346299864, guid: a6ec0805c8e52f74e9c834dec8ff2b4e,
     type: 3}
   loadingScreenViewContainer: {fileID: 0}
-  inputManager: {fileID: 2036047179359671938}
 --- !u!114 &3328291819407308940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,7 +1122,6 @@ MonoBehaviour:
   runEndingViewPrefab: {fileID: 3213188030074919994, guid: 5d2fbfdcfb6011c42a2c994b52c00cd9,
     type: 3}
   runEndingViewContainer: {fileID: 0}
-  inputManager: {fileID: 2036047179359671938}
   levelLoadingManager: {fileID: 6193551178095944882}
 --- !u!1 &2221992245514988832
 GameObject:
@@ -1207,13 +1133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3710097049681740729}
   - component: {fileID: 3969478296484743678}
-  - component: {fileID: 5529831435046070168}
-  - component: {fileID: 317727207830651247}
-  - component: {fileID: 2274040291946828668}
-  - component: {fileID: 7999196188633965118}
-  - component: {fileID: 1535512377605205146}
-  - component: {fileID: 768686827376954574}
-  - component: {fileID: 8673178053228122657}
   m_Layer: 0
   m_Name: Inventory Items Interactions Management
   m_TagString: Untagged
@@ -1248,132 +1167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a7ad903d74378478485aaf92c9e055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionModules:
-  - {fileID: 5529831435046070168}
-  - {fileID: 317727207830651247}
-  - {fileID: 2274040291946828668}
-  - {fileID: 7999196188633965118}
-  - {fileID: 1535512377605205146}
-  - {fileID: 768686827376954574}
-  - {fileID: 8673178053228122657}
   itemCellActionsViewPrefab: {fileID: 5110288082645998721, guid: 2c050efabc343254cb96d8e23959634d,
     type: 3}
   interactionProcessBackgroundPrefab: {fileID: 3293099257242793277, guid: 9175f389f2d003a4e9a677432526b3fe,
     type: 3}
   interactionProcessBackgroundContainer: {fileID: 0}
-  itemsCountChoiceManager: {fileID: 3610723791368092284}
-  inputManager: {fileID: 2036047179359671938}
---- !u!114 &5529831435046070168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221992245514988832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd7c2d4d1ce36304ca4c0f14d425806b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: 1
-  displayedName: "\u041E\u0431\u044A\u0435\u0434\u0438\u043D\u0438\u0442\u044C"
-  icon: {fileID: 21300000, guid: ef2607d23e78e39488f827ac502d16c7, type: 3}
-  playerMenuManager: {fileID: 1242604367710802321}
---- !u!114 &317727207830651247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221992245514988832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8214be376e9dc46bfab185c9daa2dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: 4
-  displayedName: "\u0421\u043D\u0430\u0440\u044F\u0434\u0438\u0442\u044C"
-  icon: {fileID: 21300000, guid: 80c34ae915d102a47a492b005d495c08, type: 3}
-  inventoryManager: {fileID: 6603067858326094833}
---- !u!114 &2274040291946828668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221992245514988832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfdfc0facbc3cd945b1f89d3316e0d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: 2
-  displayedName: "\u0420\u0430\u0437\u0434\u0435\u043B\u0438\u0442\u044C"
-  icon: {fileID: 21300000, guid: 6938a9fe0bb4aa043966f061ea9ef87c, type: 3}
-  itemsCountChoiceManager: {fileID: 3610723791368092284}
-  inventoryManager: {fileID: 6603067858326094833}
---- !u!114 &7999196188633965118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221992245514988832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f0315f109204c74b8cc55c962a5f9d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: 3
-  displayedName: "\u0412\u044B\u0431\u0440\u043E\u0441\u0438\u0442\u044C"
-  icon: {fileID: 21300000, guid: 2d48624b5c4f56a4c997def1e1e2f289, type: 3}
-  itemsCountChoiceManager: {fileID: 3610723791368092284}
-  inventoryManager: {fileID: 6603067858326094833}
---- !u!114 &1535512377605205146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221992245514988832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d83720af6ca10e840b56df19708361ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: 0
-  displayedName: "\u0411\u044B\u0441\u0442\u0440\u044B\u0439 \u0434\u043E\u0441\u0442\u0443\u043F"
-  icon: {fileID: 21300000, guid: 22216642446357f4484fdcf135eebb2e, type: 3}
---- !u!114 &768686827376954574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221992245514988832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c0aab29711aa745ae500f948a9c32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: 8
-  displayedName: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432 \u0438\u043D\u0433\u0440\u0435\u0434\u0438\u0435\u043D\u0442\u044B"
-  icon: {fileID: 21300000, guid: 78db9a042454f1a4096e48f2a502ed48, type: 3}
---- !u!114 &8673178053228122657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221992245514988832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003cb767538b463438e40e6e05f2da7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: 7
-  displayedName: "\u0412\u042B\u0434\u0435\u043B\u0438\u0442\u044C \u044D\u043D\u0435\u0440\u0433\u0438\u044E"
-  icon: {fileID: 21300000, guid: 78db9a042454f1a4096e48f2a502ed48, type: 3}
+  itemsCountChoiceManager: {fileID: 0}
 --- !u!1 &2854284885892721046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1223,6 @@ MonoBehaviour:
     type: 3}
   interactiveObjectInfoViewContainer: {fileID: 0}
   playerInteractor: {fileID: 0}
-  inputManager: {fileID: 2036047179359671938}
   itemsContainersManager: {fileID: 2691131436043217754}
   portalsManager: {fileID: 6760117667353080690}
 --- !u!114 &2691131436043217754
@@ -1442,8 +1240,6 @@ MonoBehaviour:
   itemsContainerContentViewPrefab: {fileID: 8178525987719559129, guid: 5ca5071a10645f74e956c2b062970bb7,
     type: 3}
   itemsContainerContentViewContainer: {fileID: 0}
-  inventoryManager: {fileID: 6603067858326094833}
-  inputManager: {fileID: 2036047179359671938}
   itemPickingMessagesManager: {fileID: 4002637374728261544}
 --- !u!114 &6760117667353080690
 MonoBehaviour:
@@ -1467,8 +1263,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9137915076563642316}
-  - component: {fileID: 6603067858326094833}
-  - component: {fileID: 2819043622100233669}
   - component: {fileID: 4708735028516818901}
   - component: {fileID: 2982024817856348958}
   m_Layer: 0
@@ -1494,47 +1288,6 @@ Transform:
   m_Father: {fileID: 7897303090798738455}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6603067858326094833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3120101434810351808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a68aa5425001349ba51b1691cb6410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryCellsCount: 36
-  quickAccessCellsCount: 6
-  weaponItems:
-  - weaponHandPosition: 0
-  - weaponHandPosition: 1
-  clothesItems:
-  - clothesType: 0
-  - clothesType: 1
-  - clothesType: 2
-  - clothesType: 3
-  - clothesType: 4
-  droppedItemsSpawnPoint: {fileID: 0}
-  equipmentManager: {fileID: 2819043622100233669}
-  quickAccessToolbarManager: {fileID: 4708735028516818901}
-  itemDescriptionsManager: {fileID: 7822113685916255815}
-  inventoryItemsInteractionsManager: {fileID: 3969478296484743678}
---- !u!114 &2819043622100233669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3120101434810351808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e939b6fdd0e2a43bc85fd0b0182ac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
 --- !u!114 &4708735028516818901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,7 +1319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingItemContainer: {fileID: 0}
   movingItemCellScale: 1.15
-  inputManager: {fileID: 2036047179359671938}
   playerMenuManager: {fileID: 1242604367710802321}
 --- !u!1 &4190309539048902575
 GameObject:
@@ -1577,7 +1329,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7897303090798738455}
-  - component: {fileID: 3610723791368092284}
   - component: {fileID: 8714115156442780315}
   m_Layer: 0
   m_Name: Gameplay Management
@@ -1604,22 +1355,6 @@ Transform:
   m_Father: {fileID: 5087269888003773115}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3610723791368092284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4190309539048902575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fb393a00941b8c4483901b625483524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemsCountChoiceViewPrefab: {fileID: 6903242675168498747, guid: 42cdb35b2763934488a1546161f2959b,
-    type: 3}
-  itemsCountChoiceViewContainer: {fileID: 0}
-  inputManager: {fileID: 2036047179359671938}
 --- !u!114 &8714115156442780315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1648,7 +1383,6 @@ GameObject:
   - component: {fileID: 7919828064836258063}
   - component: {fileID: 1242604367710802321}
   - component: {fileID: 4002637374728261544}
-  - component: {fileID: 7822113685916255815}
   m_Layer: 0
   m_Name: UI Management
   m_TagString: Untagged
@@ -1699,24 +1433,19 @@ MonoBehaviour:
   playerMenuView: {fileID: 0}
   playerMenuNavigationSectionView: {fileID: 0}
   playerMenuMechanicsDatas:
-  - mechanicsManager: {fileID: 6603067858326094833}
-    mechanicsViewPrefab: {fileID: 1500816374161655073, guid: 72646a0569de2bd4bb0b137618363a54,
+  - mechanicsViewPrefab: {fileID: 1500816374161655073, guid: 72646a0569de2bd4bb0b137618363a54,
       type: 3}
     sectionIcon: {fileID: 21300000, guid: 2deeaa1c4f193694b8689ec6438c2dba, type: 3}
-  - mechanicsManager: {fileID: 5745370258390640784}
-    mechanicsViewPrefab: {fileID: 136484993392923239, guid: 3edbb714beff11b4ea71a13a7fd67f6f,
+  - mechanicsViewPrefab: {fileID: 136484993392923239, guid: 3edbb714beff11b4ea71a13a7fd67f6f,
       type: 3}
     sectionIcon: {fileID: 21300000, guid: d58db6a624a31fb4da63286ec539709e, type: 3}
-  - mechanicsManager: {fileID: 0}
-    mechanicsViewPrefab: {fileID: 7171789827346665889, guid: 283e89c1e270635489fe4cbfc3ba6a9b,
+  - mechanicsViewPrefab: {fileID: 7171789827346665889, guid: 283e89c1e270635489fe4cbfc3ba6a9b,
       type: 3}
     sectionIcon: {fileID: 21300000, guid: afa085d878927bb489738b2f586d7053, type: 3}
-  - mechanicsManager: {fileID: 0}
-    mechanicsViewPrefab: {fileID: 1582240908107756101, guid: b6eeffe31a3600947830ec11c89eae76,
+  - mechanicsViewPrefab: {fileID: 1582240908107756101, guid: b6eeffe31a3600947830ec11c89eae76,
       type: 3}
     sectionIcon: {fileID: 21300000, guid: 1e5b9ebc606822f4387aa624ea89bc9c, type: 3}
   playerMenuSectionsContainer: {fileID: 0}
-  playerInputManager: {fileID: 2036047179359671938}
 --- !u!114 &4002637374728261544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1734,22 +1463,6 @@ MonoBehaviour:
   itemPickingMessagePrefab: {fileID: 1107420729204432522, guid: 695906c943766f342aa28f05cfde251e,
     type: 3}
   itemPickingMessagesContainer: {fileID: 0}
---- !u!114 &7822113685916255815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7789330750529029381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 249337cbca384054f84bc4ba4586ee0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDescriptionViewPrefab: {fileID: 2290167567978384361, guid: b33d8cf126c0a6e4182d11b6bfd60652,
-    type: 3}
-  itemDescriptionViewContainer: {fileID: 0}
-  viewAppearanceLatencyInSeconds: 1
 --- !u!1 &8400844909467162119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1472,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4019967155194115048}
-  - component: {fileID: 5745370258390640784}
   - component: {fileID: 4716552910515513001}
   m_Layer: 0
   m_Name: Craft Management
@@ -1783,27 +1495,6 @@ Transform:
   m_Father: {fileID: 7897303090798738455}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5745370258390640784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8400844909467162119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dacb73c6f8735f24bb9faf849abaad5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availableCraftRecipes:
-  - {fileID: 11400000, guid: dd660697a097d3543bedb93ffcf034bb, type: 2}
-  - {fileID: 11400000, guid: d2b08aa6e3862144d8194d9c69829fab, type: 2}
-  - {fileID: 11400000, guid: b2bda3c939bfab0478970055f1a9c0e2, type: 2}
-  - {fileID: 11400000, guid: 6f6bf0be06410c54e81922c8c4a5744f, type: 2}
-  craftingTimeInSecond: 1.5
-  craftingStepTimeInSecond: 0.01
-  inventoryCategoriesManager: {fileID: 4716552910515513001}
-  inventoryManager: {fileID: 6603067858326094833}
 --- !u!114 &4716552910515513001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,4 +1514,3 @@ MonoBehaviour:
   - categoryIcon: {fileID: 21300000, guid: de141fdc76822d94ca0356eaf9ac28cb, type: 3}
     categoryViewPrefab: {fileID: 3805300304710118501, guid: ad10265cc16913c4cb56de3cfad4b763,
       type: 3}
-  inventoryManager: {fileID: 6603067858326094833}

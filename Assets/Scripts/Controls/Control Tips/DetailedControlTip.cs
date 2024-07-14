@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DetailedControlTip : ControlTip
 {
-    public string ActionTitle { get; private set; }
+    public readonly string ActionTitle;
 
     public DetailedControlTip(string actionTitle, string keyName) : base(keyName)
     {

@@ -1,3 +1,4 @@
+using Controls;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,16 @@ public class RunEndingManager : MonoBehaviour
     private RunEndingView runEndingViewPrefab;
     [SerializeField]
     private GameObject runEndingViewContainer;
-    [Space, SerializeField]
-    private InputManager inputManager;
+
+    private InputManager _inputManager;
+
     [SerializeField]
     private LevelLoadingManager levelLoadingManager;
+
+    public RunEndingManager(InputManager inputManager)
+    {
+        _inputManager = inputManager;
+    }
 
     public void ShowRunEndingView(RunEndingStatus status)
     {
@@ -56,11 +63,11 @@ public class RunEndingManager : MonoBehaviour
     {
         var actionButtonDatas = new (string description, InputAction inputAction, UnityAction buttonPressedAction)[]
         {
-            ("Вернуться в убежище", inputManager.PlayerActions.RunEndingScreen.ReturnToHub, () => ReturnToHub()),
-            ("В главное меню", inputManager.PlayerActions.RunEndingScreen.ExitToMainMenu, () => ReturnToMainMenu())
+            ("Вернуться в убежище", _inputManager.PlayerActions.RunEndingScreen.ReturnToHub, () => ReturnToHub()),
+            ("В главное меню", _inputManager.PlayerActions.RunEndingScreen.ExitToMainMenu, () => ReturnToMainMenu())
         };
         return actionButtonDatas
-            .Select(actionButtonData => (inputManager.CreateDetailedControlsTip((actionButtonData.description, actionButtonData.inputAction)), actionButtonData.buttonPressedAction))
+            .Select(actionButtonData => (_inputManager.CreateDetailedControlsTip((actionButtonData.description, actionButtonData.inputAction)), actionButtonData.buttonPressedAction))
             .ToArray();
     }
 }

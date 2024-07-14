@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52828ba9d74a7634b8431761039b0389, type: 3}
+  m_Name: Player Input Action Maps Config
+  m_EditorClassIdentifier: 
+  _actionMapDatas:
+  - _actionMap: 1
+    _actionMapName: Player
+  - _actionMap: 2
+    _actionMapName: HUD (Items Container)
+  - _actionMap: 15
+    _actionMapName: Loading Screen
+  - _actionMap: 3
+    _actionMapName: Run Ending Screen
+  - _actionMap: 4
+    _actionMapName: Player Menu (Inventory Section)
+  - _actionMap: 5
+    _actionMapName: Player Menu (Inventory (Special Interaction))
+  - _actionMap: 6
+    _actionMapName: Player Menu (Item Cell Actions Menu)
+  - _actionMap: 7
+    _actionMapName: Player Menu (Inventory Item Moving)
+  - _actionMap: 8
+    _actionMapName: Player Menu (Choose Items Count Panel)
+  - _actionMap: 9
+    _actionMapName: Player Menu (Craft Section (Recipes))
+  - _actionMap: 10
+    _actionMapName: Player Menu (Craft Section (Energy Cells))
+  - _actionMap: 11
+    _actionMapName: Player Menu (Craft Section (Crafting Item Template))
+  - _actionMap: 12
+    _actionMapName: Player Menu (Craft Section (Inventory))
+  - _actionMap: 13
+    _actionMapName: Player Menu (Alchemistry Section (Recipes))

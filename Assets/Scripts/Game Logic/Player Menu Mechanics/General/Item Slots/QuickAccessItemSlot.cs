@@ -1,27 +1,28 @@
+using GameLogic;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class QuickAccessItemSlot : SimpleItemSlot
 {
-    public override List<ItemInteraction> GetItemInteractions()
+    public override List<ItemInteractionType> GetItemInteractions()
     {
-        var itemInteractions = new List<ItemInteraction>() 
+        var itemInteractions = new List<ItemInteractionType>() 
         { 
-            ItemInteraction.TakeOff,
-            ItemInteraction.BindQuickAccess,
-            ItemInteraction.Drop
+            ItemInteractionType.TakeOff,
+            ItemInteractionType.BindQuickAccess,
+            ItemInteractionType.Drop
         };
         if (ItemState is EquipmentState)
         {
-            itemInteractions.Insert(1, ItemInteraction.Equip);
+            itemInteractions.Insert(1, ItemInteractionType.Equip);
         }
         else if (ItemState is StackableItemState)
         {
-            itemInteractions.InsertRange(1, new List<ItemInteraction>()
+            itemInteractions.InsertRange(1, new List<ItemInteractionType>()
             {
-                ItemInteraction.Join,
-                ItemInteraction.Split
+                ItemInteractionType.Join,
+                ItemInteractionType.Split
             });
         }
         return itemInteractions;

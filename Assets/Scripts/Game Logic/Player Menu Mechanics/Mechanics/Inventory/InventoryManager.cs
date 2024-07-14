@@ -1,248 +1,249 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Object = UnityEngine.Object;
 
-public class InventoryManager : PlayerMenuMechanicsManager
+namespace GameLogic.Inventory
 {
-    [SerializeField]
-    private int inventorySlotsCount;
-    [SerializeField]
-    private int quickAccessSlotsCount;
-    [SerializeField]
-    private WeaponItemSlot[] weaponSlots;
-    [SerializeField]
-    private ClothesItemSlot[] clothesSlots;
-    [Space, SerializeField]
-    private Transform droppedItemsSpawnPoint;
-    [Space, SerializeField]
-    private EquipmentManager equipmentManager;
-    [SerializeField]
-    private QuickAccessToolbarManager quickAccessToolbarManager;
-    [SerializeField]
-    private ItemDescriptionsManager itemDescriptionsManager;
-    [SerializeField]
-    private InventoryItemsInteractionsManager inventoryItemsInteractionsManager;
-
-    private SimpleItemSlot[] mainInventorySlots;
-    private QuickAccessItemSlot[] quickAccessSlots;
-    private InventorySectionView currentInventoryView;
-
-    public void Initialize()
+    public class InventoryManager
     {
-        mainInventorySlots = new SimpleItemSlot[inventorySlotsCount].Select(x => new SimpleItemSlot()).ToArray();
-        quickAccessSlots = new QuickAccessItemSlot[quickAccessSlotsCount].Select(x => new QuickAccessItemSlot()).ToArray();
-        quickAccessToolbarManager.CreateHUDItemCells(quickAccessSlots, weaponSlots);
-        equipmentManager.SubscribeWeaponItemDatas(weaponSlots);
-    }
+        [SerializeField] private WeaponItemSlot[] weaponSlots;
+        [SerializeField] private ClothesItemSlot[] clothesSlots;
+        [Space]
+        [SerializeField] private Transform droppedItemsSpawnPoint;
+        
+        private EquipmentManager equipmentManager;
+        private QuickAccessToolbarManager quickAccessToolbarManager;
+        private ItemDescriptionPanelController itemDescriptionsManager;
+        private InventoryItemsInteractionsManager inventoryItemsInteractionsManager;
 
-    public override void InitializeLinkedView(PlayerMenuSectionView mechanicsLinkedView)
-    {
-        if (mechanicsLinkedView is InventorySectionView inventoryView)
+        private SimpleItemSlot[] mainInventorySlots;
+        private QuickAccessItemSlot[] quickAccessSlots;
+        private InventorySectionView currentInventoryView;
+
+        public InventoryManager()
         {
-            currentInventoryView = inventoryView;
-            currentInventoryView.InventorySubsectionView.GetCategoryView<MainInventoryCategoryView>()?.FillItemCellsContainer(inventorySlotsCount);
-            currentInventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>()?.FillItemCellsContainer(quickAccessSlotsCount);
-            AttachInventoryItemCellsToItems(currentInventoryView);
 
-            foreach (var items in currentInventoryView.InventorySubsectionView.AllInventoryCells)
+        }
+
+        public void Initialize()
+        {
+            //mainInventorySlots = new SimpleItemSlot[inventorySlotsCount].Select(x => new SimpleItemSlot()).ToArray();
+            //quickAccessSlots = new QuickAccessItemSlot[quickAccessSlotsCount].Select(x => new QuickAccessItemSlot()).ToArray();
+            quickAccessToolbarManager.CreateHUDItemCells(quickAccessSlots, weaponSlots);
+            equipmentManager.SubscribeWeaponItemDatas(weaponSlots);
+        }
+
+        public void InitializeLinkedView(PlayerMenuSectionView mechanicsLinkedView)
+        {
+            if (mechanicsLinkedView is InventorySectionView inventoryView)
             {
-                SubscribeOnInventoryItemCellsEvents(items);
+                currentInventoryView = inventoryView;
+                //currentInventoryView.InventorySubsectionView.GetCategoryView<MainInventoryCategoryView>()?.FillItemCellsContainer(inventorySlotsCount);
+                //currentInventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>()?.FillItemCellsContainer(quickAccessSlotsCount);
+                AttachInventoryItemCellsToItems(currentInventoryView);
+
+                foreach (var items in currentInventoryView.InventorySubsectionView.AllInventoryCells)
+                {
+                    SubscribeOnInventoryItemCellsEvents(items);
+                }
             }
         }
-    }
 
-    public void InitializeSelectedCategory(InventoryCategoryView categoryView)
-    {
-        switch (categoryView)
+        public void InitializeSelectedCategory(InventoryCategoryView categoryView)
         {
-            case MainInventoryCategoryView mainInventoryCategoryView:
-                mainInventoryCategoryView.FillItemCellsContainer(inventorySlotsCount);
-                AttachItemCellsToItems(mainInventoryCategoryView.MainItemCells, mainInventorySlots);
-                break;
-
-            case EquipmentCategoryView equipmentCategoryView:
-                equipmentCategoryView.FillItemCellsContainer(quickAccessSlotsCount);
-                AttachItemCellsToItems(equipmentCategoryView.MainItemCells, quickAccessSlots);
-                AttachItemCellsToItems(equipmentCategoryView.WeaponCells, weaponSlots);
-                AttachItemCellsToItems(equipmentCategoryView.ClothesCells, clothesSlots);
-                break;
-        }
-    }
-
-    public bool AddNewItemState<T>(T itemState) where T : ItemState
-    {
-        return itemState switch
-        {
-            SingleItemState singleItem => singleItem switch
+            switch (categoryView)
             {
-                EquipmentState equipment => TryEquipOrAddItem(equipment),
-                _ => TryAddItem(singleItem),
-            },
-            StackableItemState stackableItem => TryAddStackableItem(stackableItem),
-            _ => false,
-        };
-    }
+                case MainInventoryCategoryView mainInventoryCategoryView:
+                    // mainInventoryCategoryView.FillItemCellsContainer(inventorySlotsCount);
+                    AttachItemCellsToItems(mainInventoryCategoryView.MainItemCells, mainInventorySlots);
+                    break;
 
-    public bool TryAddStackableItemCopy<T>(T baseItemState, int newItemsCount) where T : StackableItemState
-    {
-        var newItemState = baseItemState.Clone() as T;
-        newItemState.ItemsCount = newItemsCount;
-        return TryAddItem(newItemState);
-    }
-
-    public void DropItem(ItemState item)
-    {
-        CreateDroppedItem(item);
-        item.LinkedItemSlot.ClearItemState();
-    }
-
-    public void DropItem(StackableItemState stackableItem, int itemsCount)
-    {
-        stackableItem.ItemsCount -= itemsCount;
-
-        var droppedItemState = stackableItem.Clone() as StackableItemState;
-        droppedItemState.ItemsCount = itemsCount;
-        CreateDroppedItem(droppedItemState);
-    }
-
-    public void ChangeWeaponHandPosition(WeaponItemSlot currentWeaponSlot, WeaponHandPosition newWeaponPosition)
-    {
-        var newWeaponSlot = weaponSlots.FirstOrDefault(weaponSlot => weaponSlot.WeaponHandPosition == newWeaponPosition);
-        newWeaponSlot?.TryPlaceOrSwapItem(currentWeaponSlot);
-    }
-
-    public void TakeEquipmentOff(EquipmentState equipment) => TryAddItem(equipment);
-
-    public bool TryEquipInventoryItem(ItemSlot previousItemSlot)
-    {
-        if (previousItemSlot.BaseItemState is EquipmentState equipment)
-        {
-            return TryEquipItem(equipment);
+                case EquipmentCategoryView equipmentCategoryView:
+                    //equipmentCategoryView.FillItemCellsContainer(quickAccessSlotsCount);
+                    AttachItemCellsToItems(equipmentCategoryView.MainItemCells, quickAccessSlots);
+                    AttachItemCellsToItems(equipmentCategoryView.WeaponCells, weaponSlots);
+                    AttachItemCellsToItems(equipmentCategoryView.ClothesCells, clothesSlots);
+                    break;
+            }
         }
-        return false;
-    }
 
-    private bool TryAddStackableItem(StackableItemState stackableItem)
-    {
-        var inventoryItemDatas = mainInventorySlots.Select(item => item as ItemSlot).Concat(quickAccessSlots.Select(item => item as ItemSlot));
-        var partialFilledStacks = inventoryItemDatas
-            .Where(itemData => itemData.BaseItemState is StackableItemState stackableItemData 
-                    && stackableItemData.BaseParams.ID == stackableItem.BaseParams.ID 
-                    && stackableItemData.ItemsCount < stackableItemData.MaxStackItemsCount);
-        if (partialFilledStacks.Count() > 0)
+        public bool AddNewItemState<T>(T itemState) where T : ItemState
         {
-            foreach (var containedStackableItem in partialFilledStacks.Select(stack => stack.BaseItemState as StackableItemState).OrderByDescending(item => item.ItemsCount))
+            return itemState switch
             {
-                var itemsCountToFillStack = containedStackableItem.MaxStackItemsCount - containedStackableItem.ItemsCount;
-                if (stackableItem.ItemsCount > itemsCountToFillStack)
+                SingleItemState singleItem => singleItem switch
                 {
-                    containedStackableItem.ItemsCount = containedStackableItem.MaxStackItemsCount;
-                    stackableItem.ItemsCount -= itemsCountToFillStack;
+                    EquipmentState equipment => TryEquipOrAddItem(equipment),
+                    _ => TryAddItem(singleItem),
+                },
+                StackableItemState stackableItem => TryAddStackableItem(stackableItem),
+                _ => false,
+            };
+        }
+
+        public bool TryAddStackableItemCopy<T>(T baseItemState, int newItemsCount) where T : StackableItemState
+        {
+            var newItemState = baseItemState.Clone() as T;
+            newItemState.ItemsCount = newItemsCount;
+            return TryAddItem(newItemState);
+        }
+
+        public void DropItem(ItemState item)
+        {
+            CreateDroppedItem(item);
+            item.LinkedItemSlot.ClearItemState();
+        }
+
+        public void DropItem(StackableItemState stackableItem, int itemsCount)
+        {
+            stackableItem.ItemsCount -= itemsCount;
+
+            var droppedItemState = stackableItem.Clone() as StackableItemState;
+            droppedItemState.ItemsCount = itemsCount;
+            CreateDroppedItem(droppedItemState);
+        }
+
+        public void ChangeWeaponHandPosition(WeaponItemSlot currentWeaponSlot, WeaponHandPosition newWeaponPosition)
+        {
+            var newWeaponSlot = weaponSlots.FirstOrDefault(weaponSlot => weaponSlot.WeaponHandPosition == newWeaponPosition);
+            newWeaponSlot?.TryPlaceOrSwapItem(currentWeaponSlot);
+        }
+
+        public void TakeEquipmentOff(EquipmentState equipment) => TryAddItem(equipment);
+
+        public bool TryEquipInventoryItem(ItemSlot previousItemSlot)
+        {
+            if (previousItemSlot.BaseItemState is EquipmentState equipment)
+            {
+                return TryEquipItem(equipment);
+            }
+            return false;
+        }
+
+        private bool TryAddStackableItem(StackableItemState stackableItem)
+        {
+            var inventoryItemDatas = mainInventorySlots.Select(item => item as ItemSlot).Concat(quickAccessSlots.Select(item => item as ItemSlot));
+            var partialFilledStacks = inventoryItemDatas
+                .Where(itemData => itemData.BaseItemState is StackableItemState stackableItemData
+                        && stackableItemData.BaseParams.ID == stackableItem.BaseParams.ID
+                        && stackableItemData.ItemsCount < stackableItemData.MaxStackItemsCount);
+            if (partialFilledStacks.Count() > 0)
+            {
+                foreach (var containedStackableItem in partialFilledStacks.Select(stack => stack.BaseItemState as StackableItemState).OrderByDescending(item => item.ItemsCount))
+                {
+                    var itemsCountToFillStack = containedStackableItem.MaxStackItemsCount - containedStackableItem.ItemsCount;
+                    if (stackableItem.ItemsCount > itemsCountToFillStack)
+                    {
+                        containedStackableItem.ItemsCount = containedStackableItem.MaxStackItemsCount;
+                        stackableItem.ItemsCount -= itemsCountToFillStack;
+                    }
+                    else
+                    {
+                        containedStackableItem.ItemsCount += stackableItem.ItemsCount;
+                        return true;
+                    }
+                }
+            }
+            while (stackableItem.ItemsCount > 0)
+            {
+                if (stackableItem.ItemsCount <= stackableItem.MaxStackItemsCount)
+                {
+                    return TryAddItem(stackableItem);
+                }
+                var newItemState = stackableItem.Clone() as StackableItemState;
+                newItemState.ItemsCount = stackableItem.MaxStackItemsCount;
+                if (TryAddItem(newItemState))
+                {
+                    stackableItem.ItemsCount -= stackableItem.MaxStackItemsCount;
                 }
                 else
                 {
-                    containedStackableItem.ItemsCount += stackableItem.ItemsCount;
-                    return true;
+                    return false;
                 }
             }
+            return true;
         }
-        while (stackableItem.ItemsCount > 0)
+
+        private bool TryEquipOrAddItem(EquipmentState equipment) => TryEquipItem(equipment) || TryAddItem(equipment);
+
+        private bool TryEquipItem(EquipmentState equipment)
         {
-            if (stackableItem.ItemsCount <= stackableItem.MaxStackItemsCount)
+            return equipment switch
             {
-                return TryAddItem(stackableItem);
-            }
-            var newItemState = stackableItem.Clone() as StackableItemState;
-            newItemState.ItemsCount = stackableItem.MaxStackItemsCount;
-            if (TryAddItem(newItemState))
-            {
-                stackableItem.ItemsCount -= stackableItem.MaxStackItemsCount;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private bool TryEquipOrAddItem(EquipmentState equipment) => TryEquipItem(equipment) || TryAddItem(equipment);
-
-    private bool TryEquipItem(EquipmentState equipment)
-    {
-        return equipment switch
-        {
-            WeaponState weapon => TryAddItemToCollection(weaponSlots, weapon, (weaponSlot) => weaponSlot.ItemState == null),
-            ClothesState clothes => TryAddItemToCollection(clothesSlots, clothes, (clothesSlot) => clothesSlot.ItemState == null && clothesSlot.ClothesType == (clothes.BaseParams as ClothesData).ClothesType)
-        };
-    }
-
-    private bool TryAddItem(ItemState item) => 
-        TryAddItemToCollection(quickAccessSlots, item, (slot) => slot.ItemState == null) 
-        || TryAddItemToCollection(mainInventorySlots, item, (slot) => slot.ItemState == null);
-
-    private bool TryAddItemToCollection<T, P>(T[] itemSlots, P item, Func<T, bool> itemAddingCondition) 
-        where T : ItemSlot<P> 
-        where P : ItemState
-    {
-        var freeItemSlot = itemSlots.FirstOrDefault(itemSlot => itemAddingCondition(itemSlot));
-        if (freeItemSlot != null)
-        {
-            return freeItemSlot.TryPlaceItem(item);
-        }
-        return false;
-    }
-
-    private void AttachInventoryItemCellsToItems(InventorySectionView inventoryView)
-    {
-        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<MainInventoryCategoryView>().MainItemCells, mainInventorySlots);
-        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().MainItemCells, quickAccessSlots);
-        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().WeaponCells, weaponSlots);
-        AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().ClothesCells, clothesSlots);
-    }
-
-    private void AttachItemCellsToItems(ItemCellView[] itemCells, ItemSlot[] inventoryItems)
-    {
-        for (var i = 0; i < inventoryItems.Length; i++)
-        {
-            inventoryItems[i].CellView = itemCells[i];
-        }
-    }
-
-    private void SubscribeOnInventoryItemCellsEvents(ItemCellView[] itemCells)
-    {
-        foreach (var itemCell in itemCells)
-        {
-            itemCell.CellSelected += () =>
-            {
-                var inventoryItemData = itemCell.LinkedItemSlot;
-                if (inventoryItemData.BaseItemState != null)
-                {
-                    itemDescriptionsManager.CreateItemDescriptionView(inventoryItemData.BaseItemState, itemCell);
-                }
+                WeaponState weapon => TryAddItemToCollection(weaponSlots, weapon, (weaponSlot) => weaponSlot.ItemState == null),
+                ClothesState clothes => TryAddItemToCollection(clothesSlots, clothes, (clothesSlot) => clothesSlot.ItemState == null && clothesSlot.ClothesType == (clothes.BaseParams as ClothesData).ClothesType)
             };
-            itemCell.CellDeselected += () => itemDescriptionsManager.ClearItemDescriptionView();
-
-            itemCell.AddEventTriggerListener(EventTriggerType.PointerDown, (eventData) =>
-            {
-                if ((eventData as PointerEventData).button == PointerEventData.InputButton.Right)
-                {
-                    var selectedItemSlot = itemCell.LinkedItemSlot;
-                    if (selectedItemSlot.BaseItemState != null)
-                    {
-                        inventoryItemsInteractionsManager.CreateItemSlotActionsMenu(selectedItemSlot);
-                    }
-                }
-            });
-            itemCell.AddEventTriggerListener(EventTriggerType.Drop, (eventData) => itemCell.LinkedItemSlot.TryPlaceOrSwapItem(ItemViewDraggingModule.DraggingItem.LinkedItem.LinkedItemSlot));
         }
-    }
 
-    private void CreateDroppedItem(ItemState itemState)
-    {
-        var physicalItem = Instantiate(itemState.BaseParams.PhysicalRepresentation);
-        physicalItem.transform.position = droppedItemsSpawnPoint.position;
-        physicalItem.CurrentItemState = itemState;
+        private bool TryAddItem(ItemState item) =>
+            TryAddItemToCollection(quickAccessSlots, item, (slot) => slot.ItemState == null)
+            || TryAddItemToCollection(mainInventorySlots, item, (slot) => slot.ItemState == null);
+
+        private bool TryAddItemToCollection<T, P>(T[] itemSlots, P item, Func<T, bool> itemAddingCondition)
+            where T : ItemSlot<P>
+            where P : ItemState
+        {
+            var freeItemSlot = itemSlots.FirstOrDefault(itemSlot => itemAddingCondition(itemSlot));
+            if (freeItemSlot != null)
+            {
+                return freeItemSlot.TryPlaceItem(item);
+            }
+            return false;
+        }
+
+        private void AttachInventoryItemCellsToItems(InventorySectionView inventoryView)
+        {
+            AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<MainInventoryCategoryView>().MainItemCells, mainInventorySlots);
+            AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().MainItemCells, quickAccessSlots);
+            AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().WeaponCells, weaponSlots);
+            AttachItemCellsToItems(inventoryView.InventorySubsectionView.GetCategoryView<EquipmentCategoryView>().ClothesCells, clothesSlots);
+        }
+
+        private void AttachItemCellsToItems(ItemCellView[] itemCells, ItemSlot[] inventoryItems)
+        {
+            for (var i = 0; i < inventoryItems.Length; i++)
+            {
+                inventoryItems[i].CellView = itemCells[i];
+            }
+        }
+
+        private void SubscribeOnInventoryItemCellsEvents(ItemCellView[] itemCells)
+        {
+            foreach (var itemCell in itemCells)
+            {
+                itemCell.CellSelected += () =>
+                {
+                    var inventoryItemData = itemCell.LinkedItemSlot;
+                    if (inventoryItemData.BaseItemState != null)
+                    {
+                        itemDescriptionsManager.ShowPanel(inventoryItemData.BaseItemState, itemCell).Forget();
+                    }
+                };
+                itemCell.CellDeselected += () => itemDescriptionsManager.HidePanel(); ;
+
+                itemCell.AddEventTriggerListener(EventTriggerType.PointerDown, (eventData) =>
+                {
+                    if ((eventData as PointerEventData).button == PointerEventData.InputButton.Right)
+                    {
+                        var selectedItemSlot = itemCell.LinkedItemSlot;
+                        if (selectedItemSlot.BaseItemState != null)
+                        {
+                            inventoryItemsInteractionsManager.CreateItemSlotActionsMenu(selectedItemSlot);
+                        }
+                    }
+                });
+                itemCell.AddEventTriggerListener(EventTriggerType.Drop, (eventData) => itemCell.LinkedItemSlot.TryPlaceOrSwapItem(ItemViewDraggingModule.DraggingItem.LinkedItem.LinkedItemSlot));
+            }
+        }
+
+        private void CreateDroppedItem(ItemState itemState)
+        {
+            var physicalItem = Object.Instantiate(itemState.BaseParams.PhysicalRepresentation);
+            physicalItem.transform.position = droppedItemsSpawnPoint.position;
+            physicalItem.CurrentItemState = itemState;
+        }
     }
 }

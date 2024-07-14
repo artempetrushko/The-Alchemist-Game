@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Controls;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,8 +10,9 @@ public class EnvironmentInteractionsManager : MonoBehaviour
     private GameObject interactiveObjectInfoViewContainer;    
     [SerializeField]
     private PlayerInteractor playerInteractor;
-    [SerializeField]
-    private InputManager inputManager;
+
+    private InputManager _inputManager;
+
     [Space, SerializeField]
     private ItemsContainersManager itemsContainersManager;
     [SerializeField]
@@ -20,6 +20,11 @@ public class EnvironmentInteractionsManager : MonoBehaviour
 
     private InteractiveObjectInfoView currentInteractiveObjectInfoView;
     private InteractiveObject currentInteractiveObject;
+
+    public EnvironmentInteractionsManager(InputManager inputManager)
+    {
+        _inputManager = inputManager;
+    }
 
     public void Interact(InputAction.CallbackContext context)
     {
@@ -42,14 +47,14 @@ public class EnvironmentInteractionsManager : MonoBehaviour
     {
         playerInteractor.InteractiveObjectDetected += SetCurrentInteractiveObject;
         playerInteractor.InteractiveObjectLost += DeleteCurrentInteractiveObject;
-        inputManager.SubscribeControlsChangedEvent(ShowCurrentInteractiveObjectControlsTips);
+        _inputManager.SubscribeControlsChangedEvent(ShowCurrentInteractiveObjectControlsTips);
     }
 
     private void OnDisable()
     {
         playerInteractor.InteractiveObjectDetected -= SetCurrentInteractiveObject;
         playerInteractor.InteractiveObjectLost -= DeleteCurrentInteractiveObject;
-        inputManager.UnsubscribeControlsChangedEvent(ShowCurrentInteractiveObjectControlsTips);
+        _inputManager.UnsubscribeControlsChangedEvent(ShowCurrentInteractiveObjectControlsTips);
     }
 
     private void SetCurrentInteractiveObject(InteractiveObject interactiveObject)
@@ -73,9 +78,9 @@ public class EnvironmentInteractionsManager : MonoBehaviour
     {
         if (currentInteractiveObject != null)
         {
-            inputManager.ShowCurrentControlsTips(currentInteractiveObjectInfoView.ControlsTipsSectionView, new[]
+            _inputManager.ShowCurrentControlsTips(currentInteractiveObjectInfoView.ControlsTipsSectionView, new[]
             {
-                (currentInteractiveObject.InteractionDescription, inputManager.PlayerActions.Player.Interact)
+                (currentInteractiveObject.InteractionDescription, _inputManager.PlayerActions.Player.Interact)
             });
         }      
     }

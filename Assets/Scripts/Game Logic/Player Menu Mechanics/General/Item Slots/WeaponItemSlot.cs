@@ -1,3 +1,4 @@
+using GameLogic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,13 +23,13 @@ public class WeaponItemSlot : ItemSlot<WeaponState>
     }
     public WeaponHandPosition WeaponHandPosition => weaponHandPosition;
 
-    public override List<ItemInteraction> GetItemInteractions()
+    public override List<ItemInteractionType> GetItemInteractions()
     {
         return new()
         {
-            ItemInteraction.ChangeHand,
-            ItemInteraction.TakeOff,
-            ItemInteraction.Drop
+            ItemInteractionType.ChangeHand,
+            ItemInteractionType.TakeOff,
+            ItemInteractionType.Drop
         };
     }
 }

@@ -8,12 +8,6 @@ using UnityEngine.InputSystem;
 
 public class CraftManager : PlayerMenuMechanicsManager
 {
-    [SerializeField]
-    private RecipeData[] availableCraftRecipes;
-    [SerializeField]
-    private float craftingTimeInSecond;
-    [SerializeField]
-    private float craftingStepTimeInSecond;
     [Space, SerializeField]
     private CraftInventoryCategoriesManager inventoryCategoriesManager;
     [Space, SerializeField]
@@ -92,12 +86,18 @@ public class CraftManager : PlayerMenuMechanicsManager
         }
     }
 
+
+    public CraftManager()
+    {
+
+    }
+
     public override void InitializeLinkedView(PlayerMenuSectionView mechanicsLinkedView)
     {
         if (mechanicsLinkedView is CraftSectionView craftSectionView)
         {
             craftSection = craftSectionView;
-            craftSection.RecipesSectionView.CreateRecipeCategories(availableCraftRecipes, (recipe) => CurrentRecipe = recipe);
+            //craftSection.RecipesSectionView.CreateRecipeCategories(availableCraftRecipes, (recipe) => CurrentRecipe = recipe);
             craftSection.ItemCreationSectionView.AddEventTriggerListener(EventTriggerType.PointerDown, (eventData) => StartCraftingProcess());
             craftSection.ItemCreationSectionView.AddEventTriggerListener(EventTriggerType.PointerUp, (eventData) => StopCraftingProcess());
             inventoryCategoriesManager.Initialize(craftSection.InventorySubsectionView, craftSection.SectionNavigation);
@@ -142,7 +142,7 @@ public class CraftManager : PlayerMenuMechanicsManager
         if (isCreationAvailable && !isCraftingStarted)
         {
             isCraftingStarted = true;
-            StartCoroutine(CraftNewItem_COR());
+            //StartCoroutine(CraftNewItem_COR());
         }
     }
 
@@ -155,12 +155,12 @@ public class CraftManager : PlayerMenuMechanicsManager
     private IEnumerator CraftNewItem_COR()
     {
         var craftProgressBarFillAmount = 0f;
-        var craftProgressFillStep = 1f / (craftingTimeInSecond / craftingStepTimeInSecond);
+        var craftProgressFillStep = 1f;/// (craftingTimeInSecond / craftingStepTimeInSecond);
         while (isCraftingStarted && craftProgressBarFillAmount < 1)
         {
             craftProgressBarFillAmount += craftProgressFillStep;
             craftSection.ItemCreationSectionView.FillCraftProgressBar(craftProgressBarFillAmount);
-            yield return new WaitForSecondsRealtime(craftingStepTimeInSecond);
+            yield return new WaitForSecondsRealtime(0);// craftingStepTimeInSecond);
         }
         if (isCraftingStarted)
         {

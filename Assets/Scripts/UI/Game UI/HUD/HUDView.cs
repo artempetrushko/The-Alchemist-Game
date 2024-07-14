@@ -4,22 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUDView : MonoBehaviour
+namespace UI.Hud
 {
-    [SerializeField]
-    private LocationTitleView locationTitleView;
-    [SerializeField]
-    private Image startBlackScreen;
-
-    public IEnumerator ShowLocationName_COR(string locationName)
+    public class HUDView : MonoBehaviour
     {
-        yield return StartCoroutine(locationTitleView.ShowLocationName_COR(locationName));
-    }
+        [SerializeField] private LocationTitleView _locationTitleView;
+        [SerializeField] private QuestProgressView _questProgressView;
+        [SerializeField] private Image startBlackScreen;
 
-    public IEnumerator HideStartBlackScreen_COR()
-    {
-        startBlackScreen.gameObject.SetActive(true);
-        var hideBlackScreenTween = startBlackScreen.DOFade(0f, 2f);
-        yield return hideBlackScreenTween.WaitForCompletion();
+        public LocationTitleView LocationTitleView => _locationTitleView;
+        public QuestProgressView QuestProgressView => _questProgressView;
+
+        public IEnumerator ShowLocationName_COR(string locationName)
+        {
+            yield return StartCoroutine(_locationTitleView.ShowLocationName_COR(locationName));
+        }
+
+        public IEnumerator HideStartBlackScreen_COR()
+        {
+            startBlackScreen.gameObject.SetActive(true);
+            var hideBlackScreenTween = startBlackScreen.DOFade(0f, 2f);
+            yield return hideBlackScreenTween.WaitForCompletion();
+        }
     }
 }

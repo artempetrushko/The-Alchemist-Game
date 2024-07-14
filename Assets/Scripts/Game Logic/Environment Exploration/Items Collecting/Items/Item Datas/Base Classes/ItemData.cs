@@ -5,24 +5,17 @@ using UnityEngine;
 public abstract class ItemData : ScriptableObject
 {
     [Header("Общие параметры")]
-    [SerializeField]
-    protected int id;
-    [SerializeField]
-    protected Sprite icon;
-    [SerializeField]
-    protected PickableItem physicalRepresentation;
-    [SerializeField]
-    protected string title;
-    [SerializeField, Multiline]
-    protected string description;
-    [SerializeField]
-    protected int castingDamage;
-    [SerializeField]
-    protected List<AspectData> containedAspects = new();
-    [SerializeField]
-    protected List<ItemEffect> effects = new();
+    [SerializeField] protected string id;
+    [SerializeField] protected Sprite icon;
+    [SerializeField] protected PickableItem physicalRepresentation;
+    [SerializeField] protected string title;
+    [Multiline]
+    [SerializeField] protected string description;
+    [SerializeField] protected int castingDamage;
+    [SerializeField] protected List<AspectData> containedAspects = new();
+    [SerializeField] protected List<ItemEffect> effects = new();
 
-    public int ID => id;
+    public string ID => id;
     public Sprite Icon => icon;
     public PickableItem PhysicalRepresentation => physicalRepresentation;
     public string Title => title;

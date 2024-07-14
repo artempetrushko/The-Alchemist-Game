@@ -1,3 +1,4 @@
+using GameLogic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ public abstract class ItemSlot
 
     protected ItemCellView cellView;
     protected ItemCellView linkedHUDCellView;
-    protected Func<List<ItemInteraction>> getItemInteractionsFunc;
+    protected Func<List<ItemInteractionType>> getItemInteractionsFunc;
 
     public abstract ItemState BaseItemState { get; } 
     public ItemCellView CellView
@@ -43,7 +44,7 @@ public abstract class ItemSlot
 
     public abstract bool TryPlaceOrSwapItem(ItemSlot previousInventorySlot);
 
-    public abstract List<ItemInteraction> GetItemInteractions();
+    public abstract List<ItemInteractionType> GetItemInteractions();
 
     public abstract void ClearItemState();
 

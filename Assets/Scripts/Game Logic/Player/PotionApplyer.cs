@@ -57,6 +57,6 @@ public class PotionApplyer : MonoBehaviour
     private void Start()
     {
         playerStateManager = GetComponent<ABC_StateManager>();
-        inventoryManager = FindObjectOfType<InventoryManager>();
+        //inventoryManager = FindObjectOfType<InventoryManager>();
     }
 }
