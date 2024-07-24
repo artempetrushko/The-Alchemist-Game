@@ -1,6 +1,5 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -26,18 +25,19 @@ public class RunEndingView : MonoBehaviour
         }
     }
 
-    public IEnumerator Show_COR()
+    public async UniTask ShowAsync()
     {
         SetDefaultState();
 
         var tweenSequence = DOTween.Sequence();
-        tweenSequence.Append(background.DOFade(0.75f, 1f));
-        tweenSequence.AppendInterval(0.75f);
-        tweenSequence.Append(runEndingMessageView.GetShowMessageTween(1f));
-        tweenSequence.AppendInterval(0.5f);
-        tweenSequence.Append(actionButtonsContainer.DOFade(1f, 1f));
+        tweenSequence
+            .Append(background.DOFade(0.75f, 1f))
+            .AppendInterval(0.75f)
+            .Append(runEndingMessageView.GetShowMessageTween(1f))
+            .AppendInterval(0.5f)
+            .Append(actionButtonsContainer.DOFade(1f, 1f));
         tweenSequence.Play();
-        yield return tweenSequence.WaitForCompletion();
+        await tweenSequence.AsyncWaitForCompletion();
     }
 
     private void SetDefaultState()

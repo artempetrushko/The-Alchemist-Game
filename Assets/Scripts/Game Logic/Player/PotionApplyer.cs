@@ -1,24 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
+using Controls;
+using Cysharp.Threading.Tasks;
 
-public class PotionApplyer : MonoBehaviour
+public class PotionApplyer
 {
     private ABC_StateManager playerStateManager;
     private InventoryManager inventoryManager;
     private EquipmentManager playerSetItems;
 
-    public void ApplyCurrentPotion(InputAction.CallbackContext context)
+    private InputManager _inputManager;
+
+    public PotionApplyer()
     {
-        if (context.performed)
-        {
-            ApplyCurrentPotion();
-        }
+        playerStateManager = GetComponent<ABC_StateManager>();
+        //inventoryManager = FindObjectOfType<InventoryManager>();
     }
 
-    public void ApplyCurrentPotion()
+    private void ApplyCurrentPotion()
     {
         /*var currentPotion = playerSetItems.SelectedQuickAccessItem as PotionState;
         if (currentPotion != null)
@@ -32,7 +29,7 @@ public class PotionApplyer : MonoBehaviour
             var potionEffectApplyingActions = currentPotion.GetEffectApplyingActions(playerStateManager);
             if (currentPotion.EffectDuration > 0)
             {
-                StartCoroutine(ApplyEffect_COR(currentPotion, potionEffectApplyingActions));
+                ApplyEffectAsync(currentPotion, potionEffectApplyingActions)).Forget();
             }
             else
             {
@@ -41,7 +38,7 @@ public class PotionApplyer : MonoBehaviour
         }*/
     }
 
-    private IEnumerator ApplyEffect_COR(PotionState currentPotion, EffectApplyingActions effectApplyingActions)
+    private async UniTask ApplyEffectAsync(PotionState currentPotion, EffectApplyingActions effectApplyingActions)
     {
         effectApplyingActions.TimerStartAction?.Invoke(currentPotion);
         var effectRemainingTime = (currentPotion.BaseParams as PotionData).EffectDurationInSeconds;
@@ -49,14 +46,8 @@ public class PotionApplyer : MonoBehaviour
         {
             effectApplyingActions.TimerProceedAction?.Invoke(currentPotion);
             effectRemainingTime--;
-            yield return new WaitForSeconds(1f);
+            await UniTask.WaitForSeconds(1f);
         }
         effectApplyingActions.TimerEndAction?.Invoke(currentPotion);
-    }
-
-    private void Start()
-    {
-        playerStateManager = GetComponent<ABC_StateManager>();
-        //inventoryManager = FindObjectOfType<InventoryManager>();
     }
 }

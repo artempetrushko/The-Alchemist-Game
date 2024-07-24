@@ -3,7 +3,7 @@ using DG.Tweening;
 
 namespace UI.Hud
 {
-    public class HudController
+    public class HUDController
     {
         private HUDView _hudView;
 
@@ -12,19 +12,9 @@ namespace UI.Hud
         private float _titleShowingTime = 5f;
         private float _questDescriptionShowingTime = 5f;
 
-        public HudController(HUDView hudView)
+        public HUDController(HUDView hudView)
         {
             _hudView = hudView;
-        }
-
-        public async UniTask ShowLocationName_COR(string locationName)
-        {
-            await _hudView.ShowLocationName_COR(locationName);
-        }
-
-        public async UniTask HideStartBlackScreen_COR()
-        {
-            await _hudView.HideStartBlackScreen_COR();
         }
 
         public async UniTask ShowLocationNameAsync(string locationTitle)
@@ -49,6 +39,14 @@ namespace UI.Hud
             }
 
             _hudView.LocationTitleView.SetTitleShadowEnable(false);
+        }
+
+        public async UniTask HideStartBlackScreenAsync()
+        {
+            _hudView.SetStartBlackScreenActive(true);
+            await _hudView.StartBlackScreen
+                .DOFade(0f, 2f)
+                .AsyncWaitForCompletion();
         }
 
         public async UniTaskVoid SetQuestDescription(string questDescription)

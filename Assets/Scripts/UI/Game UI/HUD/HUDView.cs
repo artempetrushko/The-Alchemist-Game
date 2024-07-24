@@ -1,6 +1,3 @@
-using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,21 +7,12 @@ namespace UI.Hud
     {
         [SerializeField] private LocationTitleView _locationTitleView;
         [SerializeField] private QuestProgressView _questProgressView;
-        [SerializeField] private Image startBlackScreen;
+        [SerializeField] private Image _startBlackScreen;
 
         public LocationTitleView LocationTitleView => _locationTitleView;
         public QuestProgressView QuestProgressView => _questProgressView;
+        public Image StartBlackScreen => _startBlackScreen;
 
-        public IEnumerator ShowLocationName_COR(string locationName)
-        {
-            yield return StartCoroutine(_locationTitleView.ShowLocationName_COR(locationName));
-        }
-
-        public IEnumerator HideStartBlackScreen_COR()
-        {
-            startBlackScreen.gameObject.SetActive(true);
-            var hideBlackScreenTween = startBlackScreen.DOFade(0f, 2f);
-            yield return hideBlackScreenTween.WaitForCompletion();
-        }
+        public void SetStartBlackScreenActive(bool isActive) => _startBlackScreen.gameObject.SetActive(isActive);
     }
 }
