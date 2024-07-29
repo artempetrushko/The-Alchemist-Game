@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ItemParameterView : MonoBehaviour
+namespace UI.PlayerMenu
 {
-    [SerializeField]
-    private TMP_Text parameterTitleText;
-    [SerializeField]
-    private TMP_Text parameterValueText;
-
-    public void SetInfo(string parameterTitle, string parameterValue)
+    public class ItemParameterView : MonoBehaviour
     {
-        parameterTitleText.text = parameterTitle;
-        parameterValueText.text = parameterValue;
+        [SerializeField] private TMP_Text _parameterTitleText;
+        [SerializeField] private TMP_Text _parameterValueText;
+
+        public void SetParameterTitleText(string text) => _parameterTitleText.text = text;
+
+        public void SetParameterValueText(string text) => _parameterValueText.text = text;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UI.PlayerMenu;
 using UnityEngine;
 
 public class DetailedControlTipView : ControlTipView
@@ -17,13 +18,13 @@ public class DetailedControlTipView : ControlTipView
     public void ChangeContentColor(Color newColor)
     {
         actionTitle.color = newColor;
-        if (keyIconContainer.isActiveAndEnabled)
+        if (_keyIconContainer.isActiveAndEnabled)
         {
-            keyIconContainer.color = newColor;
+            _keyIconContainer.color = newColor;
         }
-        if (keyName.isActiveAndEnabled)
+        if (_keyName.isActiveAndEnabled)
         {
-            keyName.color = newColor;
+            _keyName.color = newColor;
         }
     }
 }

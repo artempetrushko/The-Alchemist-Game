@@ -1,69 +1,70 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class OrderedCellsSubsectionNavigation : CellsSubsectionNavigation
+namespace UI.PlayerMenu
 {
-    [Space, SerializeField]
-    private ItemCellNavigationModule leftStartItemCell;
-    [SerializeField]
-    private ItemCellNavigationModule rightStartItemCell;
-    [SerializeField]
-    private ItemCellNavigationModule topStartItemCell;
-    [SerializeField]
-    private ItemCellNavigationModule bottomStartItemCell;
-
-    private ItemCellNavigationModule SelectedOrderedItemCell
+    public class OrderedCellsSubsectionNavigation : CellsSubsectionNavigation
     {
-        get => SelectedCell.GetComponent<ItemCellNavigationModule>();
-        set => SelectedCell = value.GetComponent<ItemCellView>();
-    }
+        [Space, SerializeField]
+        private ItemCellNavigationModule leftStartItemCell;
+        [SerializeField]
+        private ItemCellNavigationModule rightStartItemCell;
+        [SerializeField]
+        private ItemCellNavigationModule topStartItemCell;
+        [SerializeField]
+        private ItemCellNavigationModule bottomStartItemCell;
 
-    public override void StartNavigation(SubsectionNavigationStartCondition condition = SubsectionNavigationStartCondition.Default)
-    {
-        SelectedOrderedItemCell = condition switch
+        private ItemCellNavigationModule SelectedOrderedItemCell
         {
-            SubsectionNavigationStartCondition.TransitionFromLeftSubsection => leftStartItemCell,
-            SubsectionNavigationStartCondition.TransitionFromRightSubsection => rightStartItemCell,
-            SubsectionNavigationStartCondition.TransitionFromTopSubsection => topStartItemCell,
-            SubsectionNavigationStartCondition.TransitionFromBottomSubsection => bottomStartItemCell,
-            SubsectionNavigationStartCondition.Default => topStartItemCell
-        };
-    }
-
-    public override void Navigate(Vector2 inputValue)
-    {
-        switch (inputValue.x)
-        {
-            case 1:
-                SelectNewItemCellOrSubsection(SelectedOrderedItemCell.RightNeighboringCell, (rightNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromLeftSubsection));
-                break;
-
-            case -1:
-                SelectNewItemCellOrSubsection(SelectedOrderedItemCell.LeftNeighboringCell, (leftNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromRightSubsection));
-                break;
+            get => SelectedCell.GetComponent<ItemCellNavigationModule>();
+            set => SelectedCell = value.GetComponent<ItemCellView>();
         }
-        switch (inputValue.y)
-        {
-            case 1:
-                SelectNewItemCellOrSubsection(SelectedOrderedItemCell.TopNeighboringCell, (topNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromBottomSubsection));
-                break;
 
-            case -1:
-                SelectNewItemCellOrSubsection(SelectedOrderedItemCell.BottomNeighboringCell, (bottomNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromTopSubsection));
-                break;
+        public override void StartNavigation(SubsectionNavigationStartCondition condition = SubsectionNavigationStartCondition.Default)
+        {
+            SelectedOrderedItemCell = condition switch
+            {
+                SubsectionNavigationStartCondition.TransitionFromLeftSubsection => leftStartItemCell,
+                SubsectionNavigationStartCondition.TransitionFromRightSubsection => rightStartItemCell,
+                SubsectionNavigationStartCondition.TransitionFromTopSubsection => topStartItemCell,
+                SubsectionNavigationStartCondition.TransitionFromBottomSubsection => bottomStartItemCell,
+                SubsectionNavigationStartCondition.Default => topStartItemCell
+            };
         }
-    }
 
-    private void SelectNewItemCellOrSubsection(ItemCellNavigationModule newItemCell, (PlayerMenuSubsectionNavigation newSubsection, SubsectionNavigationStartCondition transitionCondition) subsectionChangingData)
-    {
-        if (newItemCell != null)
+        public override void Navigate(Vector2 inputValue)
         {
-            SelectedOrderedItemCell = newItemCell;
+            switch (inputValue.x)
+            {
+                case 1:
+                    SelectNewItemCellOrSubsection(SelectedOrderedItemCell.RightNeighboringCell, (rightNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromLeftSubsection));
+                    break;
+
+                case -1:
+                    SelectNewItemCellOrSubsection(SelectedOrderedItemCell.LeftNeighboringCell, (leftNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromRightSubsection));
+                    break;
+            }
+            switch (inputValue.y)
+            {
+                case 1:
+                    SelectNewItemCellOrSubsection(SelectedOrderedItemCell.TopNeighboringCell, (topNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromBottomSubsection));
+                    break;
+
+                case -1:
+                    SelectNewItemCellOrSubsection(SelectedOrderedItemCell.BottomNeighboringCell, (bottomNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromTopSubsection));
+                    break;
+            }
         }
-        else if (subsectionChangingData.newSubsection != null)
+
+        private void SelectNewItemCellOrSubsection(ItemCellNavigationModule newItemCell, (PlayerMenuSubsectionNavigation newSubsection, SubsectionNavigationStartCondition transitionCondition) subsectionChangingData)
         {
-            parentSection.SetCurrentSubsection(subsectionChangingData.newSubsection, subsectionChangingData.transitionCondition);
+            if (newItemCell != null)
+            {
+                SelectedOrderedItemCell = newItemCell;
+            }
+            else if (subsectionChangingData.newSubsection != null)
+            {
+                parentSection.SetCurrentSubsection(subsectionChangingData.newSubsection, subsectionChangingData.transitionCondition);
+            }
         }
     }
 }

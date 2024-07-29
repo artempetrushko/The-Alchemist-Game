@@ -1,59 +1,27 @@
 using TMPro;
 using UnityEngine;
 
-public class ItemDescriptionPanelView : MonoBehaviour
+namespace UI.PlayerMenu
 {
-    [SerializeField] private TMP_Text itemTitleText;
-    [SerializeField] private TMP_Text itemDescriptionText;
-    [SerializeField] private GameObject parametersSection;
-    [SerializeField] private ItemParameterView parameterViewPrefab;
-    [Space]
-    [SerializeField] private CanvasGroup viewCanvasGroup;
-
-    public void Show() => viewCanvasGroup.alpha = 1f;
-
-    public void Hide() => viewCanvasGroup.alpha = 0f;
-
-    public void SetItemTitleText(string text) => itemDescriptionText.text = text;
-
-    public void SetItemDescriptionText(string text) => itemDescriptionText.text = text;
-
-    public void SetInfo(ItemState itemState)
+    public class ItemDescriptionPanelView : MonoBehaviour
     {
-        SetItemTitleText(itemState.BaseParams.Title);
-        SetItemDescriptionText(itemState.Description);
+        [SerializeField] private CanvasGroup _canvasGroup;
+        [SerializeField] private TMP_Text _itemTitleText;
+        [SerializeField] private TMP_Text _itemDescriptionText;
+        [SerializeField] private GameObject _parametersContainer;
 
-        foreach (var param in itemState.GetItemParams())
-        {
-            var parameterView = Instantiate(parameterViewPrefab, parametersSection.transform);
-            parameterView.SetInfo(param.Key, param.Value);
-        }
-    }
+        public GameObject ParametersContainer => _parametersContainer;
 
-    public void SetPosition(Transform linkedItemCell, Vector2 maxOffsetVector)
-    {
-        Canvas.ForceUpdateCanvases();
-        var itemCellPosition = linkedItemCell.position;
-        var itemCellRect = linkedItemCell.GetComponent<RectTransform>().rect;
-        var viewRect = GetComponent<RectTransform>().rect;
+        public Rect Rect => GetComponent<RectTransform>().rect;
 
-        Vector2 offsetVector;
-        if (Screen.width - (itemCellPosition.x + itemCellRect.width / 2) > viewRect.width + maxOffsetVector.x)
-        {
-            offsetVector = new Vector2(maxOffsetVector.x, itemCellRect.height);
-        }
-        else if ((itemCellPosition.x - itemCellRect.width / 2) > viewRect.width + maxOffsetVector.x)
-        {
-            offsetVector = new Vector2(-maxOffsetVector.x, itemCellRect.height);
-        }
-        else if (Screen.height - (itemCellPosition.y + itemCellRect.height / 2) > viewRect.height + maxOffsetVector.y)
-        {
-            offsetVector = new Vector2(0, maxOffsetVector.y);
-        }
-        else
-        {
-            offsetVector = new Vector2(0, -maxOffsetVector.y);
-        }
-        transform.position = itemCellPosition + (Vector3)offsetVector;
+        public void Show() => _canvasGroup.alpha = 1f;
+
+        public void Hide() => _canvasGroup.alpha = 0f;
+
+        public void SetPosition(Vector3 position) => transform.position = position;
+
+        public void SetItemTitleText(string text) => _itemTitleText.text = text;
+
+        public void SetItemDescriptionText(string text) => _itemDescriptionText.text = text;
     }
 }

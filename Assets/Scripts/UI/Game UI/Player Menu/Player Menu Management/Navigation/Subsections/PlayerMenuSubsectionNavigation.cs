@@ -1,42 +1,21 @@
-using Controls;
+using System;
 using UnityEngine;
 
-public enum SubsectionNavigationStartCondition
+namespace UI.PlayerMenu
 {
-    Default,
-    TransitionFromLeftSubsection,
-    TransitionFromRightSubsection,
-    TransitionFromTopSubsection,
-    TransitionFromBottomSubsection
-}
-
-public abstract class PlayerMenuSubsectionNavigation : MonoBehaviour
-{
-    [SerializeField]
-    protected PlayerInputActionMap playerInputActionMap;
-    [SerializeField]
-    protected PlayerMenuSectionNavigation parentSection;  
-    [Space, SerializeField]
-    protected PlayerMenuSubsectionNavigation leftNeighboringSubsection;
-    [SerializeField]
-    protected PlayerMenuSubsectionNavigation rightNeighboringSubsection;
-    [SerializeField]
-    protected PlayerMenuSubsectionNavigation topNeighboringSubsection;
-    [SerializeField]
-    protected PlayerMenuSubsectionNavigation bottomNeighboringSubsection;
-
-    public PlayerInputActionMap PlayerInputActionMap => playerInputActionMap;
-    public PlayerMenuSectionNavigation ParentSection
+    public abstract class PlayerMenuSubsectionNavigation
     {
-        get => parentSection;
-        set => parentSection = value;
+        public event Action LeftSubsectionSelected;
+        public event Action RightSubsectionSelected;
+        public event Action TopSubsectionSelected;
+        public event Action BottomSubsectionSelected;
+
+        public abstract void StartNavigation(SubsectionNavigationStartCondition condition = SubsectionNavigationStartCondition.Default);
+
+        public abstract void Navigate(Vector2 inputValue);
+
+        public abstract void StopNavigation();
+
+        public abstract void PressSelectedElement();
     }
-
-    public abstract void StartNavigation(SubsectionNavigationStartCondition condition = SubsectionNavigationStartCondition.Default);
-
-    public abstract void Navigate(Vector2 inputValue);
-
-    public abstract void StopNavigation();
-
-    public abstract void PressSelectedElement();
 }

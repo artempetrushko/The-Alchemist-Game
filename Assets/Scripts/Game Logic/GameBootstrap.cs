@@ -1,5 +1,6 @@
 using Controls;
 using Cysharp.Threading.Tasks;
+using GameLogic;
 using GameLogic.Inventory;
 using UI.Hud;
 using UnityEngine;

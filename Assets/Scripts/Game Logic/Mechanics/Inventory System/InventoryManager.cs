@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System;
 using System.Linq;
+using UI.PlayerMenu;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Object = UnityEngine.Object;
@@ -9,10 +10,10 @@ namespace GameLogic.Inventory
 {
     public class InventoryManager
     {
-        [SerializeField] private WeaponItemSlot[] weaponSlots;
-        [SerializeField] private ClothesItemSlot[] clothesSlots;
-        [Space]
-        [SerializeField] private Transform droppedItemsSpawnPoint;
+        private WeaponItemSlot[] weaponSlots;
+        private ClothesItemSlot[] clothesSlots;
+        
+        private Transform droppedItemsSpawnPoint;
         
         private EquipmentManager equipmentManager;
         private QuickAccessToolbarManager quickAccessToolbarManager;
@@ -222,7 +223,7 @@ namespace GameLogic.Inventory
                         itemDescriptionsManager.ShowPanel(inventoryItemData.BaseItemState, itemCell).Forget();
                     }
                 };
-                itemCell.CellDeselected += () => itemDescriptionsManager.HidePanel(); ;
+                itemCell.CellDeselected += () => itemDescriptionsManager.HidePanel();
 
                 itemCell.AddEventTriggerListener(EventTriggerType.PointerDown, (eventData) =>
                 {

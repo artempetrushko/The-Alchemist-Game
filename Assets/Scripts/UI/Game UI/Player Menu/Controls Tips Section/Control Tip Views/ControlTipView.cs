@@ -1,34 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControlTipView : MonoBehaviour
+namespace UI.PlayerMenu
 {
-    [SerializeField]
-    protected TMP_Text keyName;
-    [SerializeField]
-    protected GameObject gamepadKeyIconContainer;
-    [SerializeField]
-    protected Image keyIconContainer;
-
-    public void SetInfo(ControlTip actionTip)
+    public class ControlTipView : MonoBehaviour
     {
-        ToggleViewElements(actionTip.KeyIcon != null);
-        if (actionTip.KeyIcon != null)
-        {
-            gamepadKeyIconContainer.GetComponentInChildren<Image>().sprite = actionTip.KeyIcon;
-        }
-        else
-        {
-            keyName.text = actionTip.KeyName;
-        }
-    }
+        [SerializeField] protected TMP_Text _keyName;
+        [SerializeField] protected GameObject _gamepadKeyIconContainer;
+        [SerializeField] protected Image _gamepadKeyIcon;
+        [SerializeField] protected Image _keyIconContainer;
 
-    protected void ToggleViewElements(bool isKeyIconAvailable)
-    {        
-        keyIconContainer.gameObject.SetActive(!isKeyIconAvailable);
-        gamepadKeyIconContainer.SetActive(isKeyIconAvailable);
+        public void SetKeyIconContainerActive(bool isActive) => _keyIconContainer.gameObject.SetActive(isActive);
+
+        public void SetGamepadKeyIconContainerActive(bool isActive) => _gamepadKeyIconContainer.gameObject.SetActive(isActive);
+
+        public void SetGamepadKeyIcon(Sprite icon) => _gamepadKeyIcon.sprite = icon;
+
+        public void SetKeyNameText(string text) => _keyName.text = text;
+
+        public void SetInfo(ControlTip actionTip)
+        {
+            ToggleViewElements(actionTip.KeyIcon != null);
+            if (actionTip.KeyIcon != null)
+            {
+                _gamepadKeyIconContainer.GetComponentInChildren<Image>().sprite = actionTip.KeyIcon;
+            }
+            else
+            {
+                _keyName.text = actionTip.KeyName;
+            }
+        }
+
+        protected void ToggleViewElements(bool isKeyIconAvailable)
+        {
+            _keyIconContainer.gameObject.SetActive(!isKeyIconAvailable);
+            _gamepadKeyIconContainer.SetActive(isKeyIconAvailable);
+        }
     }
 }

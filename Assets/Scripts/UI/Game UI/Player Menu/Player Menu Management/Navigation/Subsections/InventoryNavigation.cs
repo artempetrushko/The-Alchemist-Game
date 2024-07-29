@@ -1,33 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryNavigation : CellsSubsectionNavigation
+namespace UI.PlayerMenu
 {
-    [Space, SerializeField]
-    private GridLayoutGroup gridLayout;
-
-    private int CellsGridConstraintCount => gridLayout.constraintCount;
-
-    public override void Navigate(Vector2 inputValue)
+    public class InventoryNavigation : CellsSubsectionNavigation
     {
-        if (Mathf.Abs(inputValue.x) == 1)
+        private GridLayoutGroup gridLayout;
+
+        private int CellsGridConstraintCount => gridLayout.constraintCount;
+
+        public override void Navigate(Vector2 inputValue)
         {
-            if (inputValue.x == -1 && (SelectedCellNumber - 1) % CellsGridConstraintCount == 0 && !InventoryItemMovingManager.IsMovingStarted)
+            if (Mathf.Abs(inputValue.x) == 1)
             {
-                parentSection.SetCurrentSubsection(leftNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromRightSubsection);
+                if (inputValue.x == -1 && (SelectedCellNumber - 1) % CellsGridConstraintCount == 0 && !InventoryItemMovingManager.IsMovingStarted)
+                {
+                    parentSection.SetCurrentSubsection(leftNeighboringSubsection, SubsectionNavigationStartCondition.TransitionFromRightSubsection);
+                }
+                else
+                {
+                    SelectedCellNumber = Mathf.Clamp(SelectedCellNumber + (int)inputValue.x, 1, transform.childCount);
+                    OnSelectedCellChanged(SelectedCell);
+                }
             }
-            else
+            else if (Mathf.Abs(inputValue.y) == 1)
             {
-                SelectedCellNumber = Mathf.Clamp(SelectedCellNumber + (int)inputValue.x, 1, transform.childCount);
+                SelectedCellNumber = Mathf.Clamp(SelectedCellNumber - CellsGridConstraintCount * (int)inputValue.y, 1, transform.childCount);
                 OnSelectedCellChanged(SelectedCell);
             }
-        }
-        else if (Mathf.Abs(inputValue.y) == 1)
-        {
-            SelectedCellNumber = Mathf.Clamp(SelectedCellNumber - CellsGridConstraintCount * (int)inputValue.y, 1, transform.childCount);
-            OnSelectedCellChanged(SelectedCell);
         }
     }
 }

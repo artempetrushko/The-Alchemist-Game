@@ -2,14 +2,13 @@ using Controls;
 using GameLogic.Inventory;
 using System;
 using System.Linq;
+using UI.PlayerMenu;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CraftInventoryCategoriesManager : IDisposable
 {
-    [SerializeField]
     private InventoryCategoryData[] categoryDatas;
-    [SerializeField]
     private InventoryManager inventoryManager;
 
     private CraftInventorySubsectionView craftInventorySubsectionView;

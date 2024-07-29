@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ItemEquippingModule : ItemsInteractionModule
+namespace GameLogic.Inventory
 {
-    [SerializeField]
-    private InventoryManager inventoryManager;
-
-    public override void StartInteraction(ItemSlot selectedItemSlot)
+    public class ItemEquippingModule : ItemsInteractionModule
     {
-        inventoryManager.TryEquipInventoryItem(selectedItemSlot);
-        OnInteractionExecuted();
+        private InventoryManager inventoryManager;
+
+        public override void StartInteraction(ItemSlot selectedItemSlot)
+        {
+            inventoryManager.TryEquipInventoryItem(selectedItemSlot);
+            OnInteractionExecuted();
+        }
     }
 }

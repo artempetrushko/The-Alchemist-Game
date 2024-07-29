@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UI.PlayerMenu;
 using UnityEngine;
 
 public abstract class InventoryCategoryView : MonoBehaviour

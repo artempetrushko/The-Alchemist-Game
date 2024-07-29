@@ -1,34 +1,32 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class ItemsDroppingModule : ItemsInteractionModule, IInteractionCancelable
+namespace GameLogic.Inventory
 {
-    [Space, SerializeField]
-    private ItemsCountSelectPanelController itemsCountChoiceManager;
-    [SerializeField]
-    private InventoryManager inventoryManager;
-
-    public override void StartInteraction(ItemSlot selectedItemSlot)
+    public class ItemsDroppingModule : ItemsInteractionModule, IInteractionCancelable
     {
-        if (selectedItemSlot.BaseItemState is StackableItemState stackableItem)
+        private ItemsCountSelectPanelController itemsCountChoiceManager;
+        private InventoryManager inventoryManager;
+
+        public override void StartInteraction(ItemSlot selectedItemSlot)
         {
-            itemsCountChoiceManager.CreateItemsCountChoiceView("Выберите количество предметов", stackableItem, 1, stackableItem.ItemsCount, new ItemsCountChoiceData()
+            if (selectedItemSlot.BaseItemState is StackableItemState stackableItem)
             {
-                ConfirmAction = new ItemsCountChoiceAction("Выбросить", () => inventoryManager.DropItem(stackableItem, itemsCountChoiceManager.SelectedItemsCount)),
-                ConfirmAllAction = new ItemsCountChoiceAction("Выбросить всё", () => inventoryManager.DropItem(stackableItem)),
-                CancelAction = new ItemsCountChoiceAction("Отменить", () => CancelInteraction())
-            });
+                itemsCountChoiceManager.CreateItemsCountChoiceView("Выберите количество предметов", stackableItem, 1, stackableItem.ItemsCount, new ItemsCountChoiceData()
+                {
+                    ConfirmAction = new ItemsCountChoiceAction("Выбросить", () => inventoryManager.DropItem(stackableItem, itemsCountChoiceManager.SelectedItemsCount)),
+                    ConfirmAllAction = new ItemsCountChoiceAction("Выбросить всё", () => inventoryManager.DropItem(stackableItem)),
+                    CancelAction = new ItemsCountChoiceAction("Отменить", () => CancelInteraction())
+                });
+            }
+            else
+            {
+                inventoryManager.DropItem(selectedItemSlot.BaseItemState);
+            }
         }
-        else
-        {
-            inventoryManager.DropItem(selectedItemSlot.BaseItemState);
-        }
-    }
 
-    public void CancelInteraction()
-    {
-        throw new NotImplementedException();
+        public void CancelInteraction()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

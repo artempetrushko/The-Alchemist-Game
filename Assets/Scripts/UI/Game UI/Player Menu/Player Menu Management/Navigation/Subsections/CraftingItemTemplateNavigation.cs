@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftingItemTemplateNavigation : CellsSubsectionNavigation
+namespace UI.PlayerMenu
 {
-    public override void Navigate(Vector2 inputValue)
+    public class CraftingItemTemplateNavigation : CellsSubsectionNavigation
     {
-        if (Mathf.Abs(inputValue.x) == 1)
+        public override void Navigate(Vector2 inputValue)
         {
-           SelectedCellNumber += (int)inputValue.x;
-        }
-        else if (Mathf.Abs(inputValue.y) == 1)
-        {
-            SelectedCellNumber -= (int)inputValue.y;
+            if (Mathf.Abs(inputValue.x) == 1)
+            {
+                SelectedCellNumber += (int)inputValue.x;
+            }
+            else if (Mathf.Abs(inputValue.y) == 1)
+            {
+                SelectedCellNumber -= (int)inputValue.y;
+            }
         }
     }
 }
