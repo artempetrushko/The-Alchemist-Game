@@ -1,9 +1,4 @@
-# The-Alchemist
+The Alchemist is the isometric rouge-lite game about alchemistry and dungeons. It was started as a student team project, and now it's my current pet project.
+I'm making most of the gameplay mechanics and UI by myself, including the loot system, inventory, and crafting to improve my programming and software architecture skills.
 
-The Alchemist - изометрическая игра в жанре Roguelite про алхимика, который застрял в созданных им подземельях и пытается выбраться из них. Она сочетает в себе ближний бой, исследование окружения и создание предметов (в том числе с помощью алхимии).
-Проект разрабатывался изначально как дипломная работа нескольких студентов (был готов рабочий прототип), а также для выхода на рынок (ПК и консоли), но впоследствии работа над ним была прекращена. Моя основная роль в проекте - программирование геймплея и интерфейса, но также я участвовал в проработке концепции игровых механик.
-
-Для игры мной был реализован UI (вёрстка + скрипты), а также механики собирательства, инвентаря и крафта.
-С февраля 2024 года занимаюсь доработкой архитектуры имеющегося прототипа в качестве пет-проекта, который пополнит моё портфолио, и просто чтобы прокачать навыки разработки хорошей архитектуры ПО.
-
-Видео-демо работы UI и механик, реализованных мной: https://youtu.be/SwyBPySOIkM
+Gameplay demo: https://youtu.be/SwyBPySOIkM (https://drive.google.com/file/d/1GLTBuPz5lOGR6Rq2oqQW4byJ62vu5O1k/view?usp=sharing)
