@@ -350,7 +350,6 @@ GameObject:
   - component: {fileID: 5988010127620648726}
   - component: {fileID: 2840234536642260633}
   - component: {fileID: 3587140803392580872}
-  - component: {fileID: 2559686684966033749}
   - component: {fileID: 7458463419282317927}
   m_Layer: 5
   m_Name: Action Button
@@ -505,22 +504,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
---- !u!114 &2559686684966033749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807990861848765770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc2ae5a31a0072a4cbbaf3fe2e91a495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyName: {fileID: 7645471534776343215}
-  gamepadKeyIconContainer: {fileID: 2744844854532799566}
-  keyIconContainer: {fileID: 883053211419475827}
-  actionTitle: {fileID: 8815071505957383543}
 --- !u!114 &7458463419282317927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,10 +516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b040a154940d114f85405071969e401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonComponent: {fileID: 5988010127620648726}
-  tipView: {fileID: 2559686684966033749}
-  normalStateContentColor: {r: 0.7411765, g: 0.8784314, b: 0.21960784, a: 1}
-  selectedStateContentColor: {r: 0, g: 0, b: 0, a: 1}
+  _buttonComponent: {fileID: 0}
+  _controlTipView: {fileID: 0}
+  _normalStateContentColor: {r: 0, g: 0, b: 0, a: 0}
+  _selectedStateContentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7976197734313624691
 GameObject:
   m_ObjectHideFlags: 0

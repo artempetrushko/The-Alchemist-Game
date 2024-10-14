@@ -1,22 +1,14 @@
-﻿namespace Controls
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
+
+namespace Controls
 {
-    public enum PlayerInputActionMap
+    public abstract class PlayerInputActionMap : ScriptableObject
     {
-        None,
-        Player,
-        HUD_ItemsContainer,
-        UI_RunEndingScreen,
-        PlayerMenu_Inventory,
-        PlayerMenu_Inventory_SpecialInteraction,
-        PlayerMenu_ItemCellActionsMenu,
-        PlayerMenu_InventoryItemMoving,
-        PlayerMenu_ItemsCountChoiceView,
-        PlayerMenu_CraftSection_Recipes,
-        PlayerMenu_CraftSection_EnergyCells,
-        PlayerMenu_CraftSection_CraftingItemTemplate,
-        PlayerMenu_CraftSection_Inventory,
-        PlayerMenu_AlchemistrySection_Recipes,
-        PlayerMenu_Settings,
-        UI_LoadingScreen
+        [SerializeField] private string _name;
+
+        public string Name => _name;
+
+        public abstract (string name, InputAction inputAction)[] GetActionInfos();
     }
 }

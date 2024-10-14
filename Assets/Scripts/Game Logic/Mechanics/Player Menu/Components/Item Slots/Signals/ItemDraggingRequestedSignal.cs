@@ -1,0 +1,12 @@
+﻿namespace GameLogic.PlayerMenu
+{
+    public class ItemDraggingRequestedSignal
+    {
+        public readonly ItemSlot SelectedSlot;
+
+        public ItemDraggingRequestedSignal(ItemSlot selectedSlot)
+        {
+            SelectedSlot = selectedSlot;
+        }
+    }
+}

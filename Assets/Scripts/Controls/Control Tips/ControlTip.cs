@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class ControlTip
+namespace Controls
 {
-    public readonly string KeyName;
-    public readonly Sprite KeyIcon;
+	public class ControlTip
+	{
+		public readonly string KeyName;
+		public readonly Sprite KeyIcon;
 
-    public ControlTip(string keyName) 
-    {
-        KeyName = keyName;
-    }
+		public ControlTip(string keyName)
+		{
+			KeyName = keyName;
+		}
 
-    public ControlTip(Sprite keyIcon)
-    {
-        KeyIcon = keyIcon;
-    }
+		public ControlTip(Sprite keyIcon)
+		{
+			KeyIcon = keyIcon;
+		}
+	}
 }

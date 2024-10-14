@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using GameLogic.LootSystem;
 
 namespace GameLogic
 {
@@ -6,7 +8,9 @@ namespace GameLogic
     public class GameProgress
     {
         public bool PlayerFinishedLevelEver;
+        public bool PlayerFinishedLevelThrowStabilizedPortal;
         public bool StabilizerCreatedAndAvailable;
         public int StabilizerPartsCount;
+        public List<ItemState> QuestItems = new();
     }
 }

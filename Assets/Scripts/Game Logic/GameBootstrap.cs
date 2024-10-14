@@ -1,56 +1,22 @@
-using Controls;
-using Cysharp.Threading.Tasks;
-using GameLogic;
-using GameLogic.Inventory;
-using UI.Hud;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Zenject;
 
-public class GameBootstrap : MonoBehaviour
+namespace GameLogic
 {
-    private InventoryManager inventoryManager;
-    private QuestManager questManager;
-
-    private InputManager inputManager;
-
-    private HUDController hudManager;
-    private LevelLoadingManager levelLoadingManager;
-    private RunEndingManager runEndingManager;
-
-    public GameProgress GameProgress { get; private set; }
-
-    public void GoToNextLocation() => levelLoadingManager.LoadNextLocation();
-
-    public void FinishRun()
+    public class GameBootstrap : MonoBehaviour
     {
-        if (!GameProgress.PlayerFinishedLevelEver)
+        private GameManager _gameManager;
+
+        [Inject]
+        public void Construct(GameManager gameManager)
         {
-            GameProgress.PlayerFinishedLevelEver = true;
+            _gameManager = gameManager;
         }
-        runEndingManager.ShowRunEndingView(RunEndingStatus.Completion);
-        //SavePlayerProgress();
-        Destroy(GetComponent<Collider>());
-    }
 
-    private void Start()
-    {
-        InitializeGameSystems();
-        ShowStartGameInfoAsync().Forget();
-    }
-
-    private void InitializeGameSystems()
-    {
-        inputManager.Initialize();
-        inventoryManager.Initialize();
-        questManager.Initialize(GameProgress);
-    }
-
-    private async UniTask ShowStartGameInfoAsync()
-    {
-        await hudManager.HideStartBlackScreenAsync();
-
-        var locationName = levelLoadingManager.GetCurrentLevelName();
-        await hudManager.ShowLocationNameAsync(locationName);
-
-        questManager.UpdateQuestDescription();
+        private void Start()
+        {
+            _gameManager.StartGameAsync().Forget();
+        }
     }
 }

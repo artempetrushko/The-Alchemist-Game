@@ -1,18 +1,11 @@
-using System;
 using UnityEngine;
 
-public abstract class InteractiveObject : MonoBehaviour
+namespace GameLogic.EnvironmentExploration
 {
-    public event Action ObjectDestroyed; 
+	public abstract class InteractiveObject : MonoBehaviour
+	{
+		[SerializeField] protected InteractiveObjectConfig _baseParams;
 
-    [SerializeField] protected string title;
-    [SerializeField] protected string interactionDescription;
-
-    public string Title => title;
-    public string InteractionDescription => interactionDescription;
-
-    private void OnDestroy()
-    {
-        ObjectDestroyed?.Invoke();
-    }
+		public InteractiveObjectConfig BaseParams => _baseParams;
+	}
 }

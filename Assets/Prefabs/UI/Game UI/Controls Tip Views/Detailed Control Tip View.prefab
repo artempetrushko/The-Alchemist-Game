@@ -334,13 +334,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3845621674144069163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc2ae5a31a0072a4cbbaf3fe2e91a495, type: 3}
+  m_Script: {fileID: 11500000, guid: a8d5e588186ce18488fbc3e56244d247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyName: {fileID: 1182370961900744504}
-  gamepadKeyIconContainer: {fileID: 3563767210309195098}
-  keyIconContainer: {fileID: 4201519020948876495}
-  actionTitle: {fileID: 8772062511842544479}
+  _keyIconContainer: {fileID: 0}
+  _keyName: {fileID: 0}
+  _gamepadKeyIconContainer: {fileID: 0}
+  _gamepadKeyIcon: {fileID: 0}
+  _actionTitleText: {fileID: 0}
 --- !u!1 &3923805712154001329
 GameObject:
   m_ObjectHideFlags: 0

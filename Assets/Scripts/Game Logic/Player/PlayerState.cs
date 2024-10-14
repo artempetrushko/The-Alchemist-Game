@@ -1,46 +1,49 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState : MonoBehaviour
+namespace GameLogic.Player
 {
-    public event Action<(int health, int maxHealth)> HealthParamsChanged;
-
-    [SerializeField]
-    private ABC_StateManager stateManager;
-    private int health;
-    private int maxHealth;
-
-    private int Health
+    public class PlayerState : MonoBehaviour
     {
-        get => health;
-        set
+        public event Action<(int health, int maxHealth)> HealthParamsChanged;
+
+        [SerializeField] private ABC_StateManager _stateManager;
+
+        private int health;
+        private int maxHealth;
+
+        public ABC_StateManager StateManager => _stateManager;
+
+        private int Health
         {
-            if (health != value)
+            get => health;
+            set
             {
-                health = value;
-                HealthParamsChanged?.Invoke((Health, MaxHealth));
+                if (health != value)
+                {
+                    health = value;
+                    HealthParamsChanged?.Invoke((Health, MaxHealth));
+                }
             }
         }
-    }
 
-    private int MaxHealth
-    {
-        get => maxHealth;
-        set
+        private int MaxHealth
         {
-            if (maxHealth != value)
+            get => maxHealth;
+            set
             {
-                maxHealth = value;
-                HealthParamsChanged?.Invoke((Health, MaxHealth));
+                if (maxHealth != value)
+                {
+                    maxHealth = value;
+                    HealthParamsChanged?.Invoke((Health, MaxHealth));
+                }
             }
         }
-    }
 
-    private void Update()
-    {
-        Health = (int)stateManager.currentHealth;
-        MaxHealth = (int)stateManager.currentMaxHealth;
+        private void Update()
+        {
+            Health = (int)_stateManager.currentHealth;
+            MaxHealth = (int)_stateManager.currentMaxHealth;
+        }
     }
 }

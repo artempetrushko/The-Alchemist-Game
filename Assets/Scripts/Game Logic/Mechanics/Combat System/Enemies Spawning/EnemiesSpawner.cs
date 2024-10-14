@@ -2,54 +2,53 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemiesSpawner : MonoBehaviour
+namespace GameLogic.CombatSystem
 {
-    [SerializeField] private Transform spawnPoint;
-    [SerializeField] private ABC_StateManager enemyPrefab;
-    [SerializeField] private int maxSpawningEnemiesCount;
-    [SerializeField] private int spawnDelayInSeconds;
-
-    private BoxCollider spawnArea;
-    private bool enemiesSpawning = false; 
-
-    private void OnEnable()
+    public class EnemiesSpawner : MonoBehaviour
     {
-        spawnArea = spawnPoint.GetComponent<BoxCollider>();
-        SpawnEnemiesAsync().Forget();
-    }
+        [SerializeField] private SpawnConfig _spawnConfig;
+        [SerializeField] private Collider _spawnArea;
 
-    private void OnDisable()
-    {
-        spawnPoint.transform.DetachChildren();
-        foreach (var enemy in spawnPoint.GetComponentsInChildren<ABC_StateManager>())
+        private bool _areEnemiesSpawning = false;
+
+        private void OnEnable()
         {
-            enemy.KillEnemy();
+            SpawnEnemiesAsync().Forget();
         }
-    }
 
-    private void Update()
-    {
-        if (!enemiesSpawning)
+        private void OnDisable()
         {
-            if (spawnPoint.GetComponentsInChildren<ABC_StateManager>().Length < maxSpawningEnemiesCount)
+            _spawnArea.transform.DetachChildren();
+            foreach (var enemy in _spawnArea.GetComponentsInChildren<ABC_StateManager>())
             {
-                SpawnEnemiesAsync().Forget();
+                enemy.KillEnemy();
             }
         }
-    }
 
-    private async UniTask SpawnEnemiesAsync()
-    {
-        enemiesSpawning = true;
-        while (spawnPoint.GetComponentsInChildren<ABC_StateManager>().Length < maxSpawningEnemiesCount)
+        private void Update()
         {
-            var spawnedEnemy = Instantiate(enemyPrefab, spawnPoint);
-            spawnedEnemy.GetComponent<NavMeshAgent>().Warp(spawnPoint.transform.position + new Vector3(Random.Range(-spawnArea.size.x / 2, spawnArea.size.x / 2),
-                                                                                                       0,
-                                                                                                       Random.Range(-spawnArea.size.z / 2, spawnArea.size.z / 2)));
-            spawnedEnemy.GetComponent<NavMeshAgent>().enabled = true;
-            await UniTask.WaitForSeconds(spawnDelayInSeconds);
+            if (!_areEnemiesSpawning)
+            {
+                if (_spawnArea.GetComponentsInChildren<ABC_StateManager>().Length < _spawnConfig.MaxSpawningEnemiesCount)
+                {
+                    SpawnEnemiesAsync().Forget();
+                }
+            }
         }
-        enemiesSpawning = false;
+
+        private async UniTask SpawnEnemiesAsync()
+        {
+            _areEnemiesSpawning = true;
+            while (_spawnArea.GetComponentsInChildren<ABC_StateManager>().Length < _spawnConfig.MaxSpawningEnemiesCount)
+            {
+                var spawnedEnemy = Instantiate(_spawnConfig.EnemyPrefab, _spawnArea.transform);
+                spawnedEnemy.GetComponent<NavMeshAgent>().Warp(_spawnArea.transform.position + new Vector3(Random.Range(-_spawnArea.bounds.size.x / 2, _spawnArea.bounds.size.x / 2),
+                                                                                                           0,
+                                                                                                           Random.Range(-_spawnArea.bounds.size.z / 2, _spawnArea.bounds.size.z / 2)));
+                spawnedEnemy.GetComponent<NavMeshAgent>().enabled = true;
+                await UniTask.WaitForSeconds(_spawnConfig.SpawnDelayInSeconds);
+            }
+            _areEnemiesSpawning = false;
+        }
     }
 }

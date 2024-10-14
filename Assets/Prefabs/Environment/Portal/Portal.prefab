@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 1072463361006612461}
   - component: {fileID: 1072463361006612448}
   - component: {fileID: 1072463361006612451}
-  - component: {fileID: 1072463361006612450}
   m_Layer: 6
   m_Name: Portal
   m_TagString: Untagged
@@ -145,25 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce7cac6ffb26274ba3245efe38a127d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: "\u041F\u043E\u0440\u0442\u0430\u043B"
-  stabilizationEffect: {fileID: 0}
-  stabilizationTimeInSeconds: 20
-  enemiesSpawner: {fileID: 7316729806077387294}
-  spawnerAppearanceDelayInSeconds: 2
---- !u!114 &1072463361006612450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072463361006612460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27ac677a9bcca047adb856c7a7e085a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneIndex: 0
-  isLastLevel: 1
+  _baseParams: {fileID: 0}
+  _config: {fileID: 0}
+  _enemiesSpawner: {fileID: 0}
 --- !u!1 &1072463361822428731
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,11 +322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88b2aae5554d57498c6d7d73d2cf7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1072463361822428728}
-  enemyPrefab: {fileID: 664295326687317059, guid: fda92f9e52dd0584aabae34331b999c8,
-    type: 3}
-  maxSpawningEnemiesCount: 5
-  spawnDelayInSeconds: 3
+  _spawnConfig: {fileID: 0}
+  _spawnArea: {fileID: 0}
 --- !u!1001 &1072463360963140139
 PrefabInstance:
   m_ObjectHideFlags: 0

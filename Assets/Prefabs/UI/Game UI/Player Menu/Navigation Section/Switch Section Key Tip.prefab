@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 1158048271278767144}
   - component: {fileID: 8955827674406615598}
   - component: {fileID: 2713675961339030607}
-  - component: {fileID: 6169579382262403684}
+  - component: {fileID: 7953980305032717174}
   m_Layer: 5
   m_Name: Switch Section Key Tip
   m_TagString: Untagged
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 10
---- !u!114 &6169579382262403684
+--- !u!114 &7953980305032717174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,12 +135,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1340182722677720911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a51aa18da9cb941bc31156c3c81d12, type: 3}
+  m_Script: {fileID: 11500000, guid: e528cde8975102a4f866a51fd08a6b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyName: {fileID: 4324136629425145987}
-  keyIconContainer: {fileID: 95020090453736054}
-  keyIconBorder: {fileID: 1394444821687010375}
+  _keyIconContainer: {fileID: 0}
+  _keyName: {fileID: 0}
+  _gamepadKeyIconContainer: {fileID: 0}
+  _gamepadKeyIcon: {fileID: 0}
 --- !u!1 &3523886227573936862
 GameObject:
   m_ObjectHideFlags: 0
