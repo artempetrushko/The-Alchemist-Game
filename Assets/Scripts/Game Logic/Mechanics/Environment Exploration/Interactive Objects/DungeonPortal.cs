@@ -23,8 +23,6 @@ public class DungeonPortal : InteractiveObject
     private GameObject stabilizationEffect;
     [SerializeField]
     private int stabilizationTimeInSeconds;
-    [Space, SerializeField]
-    private EnemiesSpawner enemiesSpawner;
     [SerializeField]
     private int spawnerAppearanceDelayInSeconds;
 
@@ -48,17 +46,9 @@ public class DungeonPortal : InteractiveObject
     private IEnumerator StabilizePortal_COR()
     {
         stabilizationEffect.SetActive(true);
-        yield return StartCoroutine(ActivateEnemiesSpawner_COR());
+        yield return new WaitForSeconds(stabilizationTimeInSeconds);
         stabilizationEffect.SetActive(false);
         PortalState = PortalState.Stable;
         SetInteractionAvailability(true);
-    }
-
-    private IEnumerator ActivateEnemiesSpawner_COR()
-    {
-        yield return new WaitForSeconds(spawnerAppearanceDelayInSeconds);
-        enemiesSpawner.gameObject.SetActive(true);
-        yield return new WaitForSeconds(stabilizationTimeInSeconds - spawnerAppearanceDelayInSeconds);
-        enemiesSpawner.gameObject.SetActive(false);
     }
 }
