@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AspectSlotView : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private Image border;
-    [SerializeField]
-    private Image innerArea;
-
-    public void SetAppearance(Sprite innerAreaIcon, float innerAreaFillAmount)
+    public class AspectSlotView : MonoBehaviour
     {
-        innerArea.sprite = innerAreaIcon;
-        innerArea.fillAmount = innerAreaFillAmount;
+        [SerializeField]
+        private Image border;
+        [SerializeField]
+        private Image innerArea;
+
+        public void SetAppearance(Sprite innerAreaIcon, float innerAreaFillAmount)
+        {
+            innerArea.sprite = innerAreaIcon;
+            innerArea.fillAmount = innerAreaFillAmount;
+        }
     }
 }

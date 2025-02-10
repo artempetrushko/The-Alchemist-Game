@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticlesParams
+namespace GameLogic.LootSystem
 {
-    [SerializeField]
-    private Color color;
-    [SerializeField]
-    private int brightness;
-    [SerializeField]
-    private int glow;
+    public class ParticlesParams
+    {
+        [SerializeField]
+        private Color color;
+        [SerializeField]
+        private int brightness;
+        [SerializeField]
+        private int glow;
+    }
 }

@@ -1,155 +1,157 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using GameLogic.LootSystem;
 
-public abstract class ItemSlot
+namespace GameLogic.PlayerMenu
 {
-    public event Action ItemStateChanged;
-
-    protected ItemCellView cellView;
-    protected ItemCellView linkedHUDCellView;
-    protected Func<List<ItemInteraction>> getItemInteractionsFunc;
-
-    public abstract ItemState BaseItemState { get; } 
-    public ItemCellView CellView
+    public abstract class ItemSlot
     {
-        get => cellView;
-        set
+        public event Action ItemStateChanged;
+
+        protected ItemCellView cellView;
+        protected ItemCellView linkedHUDCellView;
+        protected Func<List<ItemInteraction>> getItemInteractionsFunc;
+
+        public abstract ItemState BaseItemState { get; }
+        public ItemCellView CellView
         {
-            cellView = value;
+            get => cellView;
+            set
+            {
+                cellView = value;
+                if (cellView != null)
+                {
+                    cellView.LinkedItemSlot = this;
+                }
+                UpdateCellView(cellView);
+            }
+        }
+        public ItemCellView LinkedHUDCellView
+        {
+            get => linkedHUDCellView;
+            set
+            {
+                linkedHUDCellView = value;
+                if (linkedHUDCellView != null)
+                {
+                    linkedHUDCellView.LinkedItemSlot = this;
+                }
+                UpdateHUDCellView(linkedHUDCellView);
+            }
+        }
+
+        public abstract bool TryPlaceOrSwapItem(ItemSlot previousInventorySlot);
+
+        public abstract List<ItemInteraction> GetItemInteractions();
+
+        public abstract void ClearItemState();
+
+        protected void OnItemStateChanged() => ItemStateChanged?.Invoke();
+
+        protected void UpdateCellView(ItemCellView cellView)
+        {
             if (cellView != null)
             {
-                cellView.LinkedItemSlot = this;
+                if (BaseItemState != null)
+                {
+                    cellView.PlaceItemView(BaseItemState);
+                    cellView.EnableAndUpdateCellModules(BaseItemState);
+                }
+                else
+                {
+                    cellView.DisableCellModules();
+                }
             }
-            UpdateCellView(cellView);
+        }
+
+        protected void UpdateHUDCellView(ItemCellView cellView)
+        {
+            if (cellView != null)
+            {
+                if (BaseItemState != null)
+                {
+                    cellView.PlaceItemViewCopy(BaseItemState);
+                    cellView.EnableAndUpdateCellModules(BaseItemState);
+                }
+                else
+                {
+                    cellView.DisableCellModules();
+                    cellView.ClearItemView();
+                }
+            }
         }
     }
-    public ItemCellView LinkedHUDCellView
+
+    public abstract class ItemSlot<T> : ItemSlot where T : ItemState
     {
-        get => linkedHUDCellView;
-        set
+        protected T itemState;
+
+        public override ItemState BaseItemState => ItemState;
+        public virtual T ItemState
         {
-            linkedHUDCellView = value;
-            if (linkedHUDCellView != null)
+            get => itemState;
+            set
             {
-                linkedHUDCellView.LinkedItemSlot = this;
+                if (itemState != null && itemState.LinkedItemSlot == this)
+                {
+                    itemState.LinkedItemSlot = null;
+                }
+                itemState = value;
+                if (itemState != null)
+                {
+                    itemState.LinkedItemSlot = this;
+                }
+                UpdateCellView(CellView);
+                UpdateHUDCellView(LinkedHUDCellView);
+                OnItemStateChanged();
             }
-            UpdateHUDCellView(linkedHUDCellView);
         }
-    }
 
-    public abstract bool TryPlaceOrSwapItem(ItemSlot previousInventorySlot);
-
-    public abstract List<ItemInteraction> GetItemInteractions();
-
-    public abstract void ClearItemState();
-
-    protected void OnItemStateChanged() => ItemStateChanged?.Invoke();
-
-    protected void UpdateCellView(ItemCellView cellView)
-    {
-        if (cellView != null)
+        public override bool TryPlaceOrSwapItem(ItemSlot previousInventorySlot)
         {
-            if (BaseItemState != null)
+            if (previousInventorySlot.BaseItemState is T)
             {
-                cellView.PlaceItemView(BaseItemState);
-                cellView.EnableAndUpdateCellModules(BaseItemState);
+                try
+                {
+                    return TryPlaceOrSwapItem(previousInventorySlot as ItemSlot<ItemState>);
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        public override void ClearItemState() => ItemState = null;
+
+        protected virtual bool TryPlaceOrSwapItem<P>(ItemSlot<P> previousInventorySlot) where P : ItemState
+        {
+            PlaceOrSwapItem(previousInventorySlot);
+            return true;
+        }
+
+        protected void PlaceOrSwapItem<P>(ItemSlot<P> previousInventorySlot) where P : ItemState
+        {
+            if (previousInventorySlot.ItemState != null)
+            {
+                SwapItems(previousInventorySlot);
             }
             else
             {
-                cellView.DisableCellModules();
+                PlaceItem(previousInventorySlot);
             }
         }
-    } 
 
-    protected void UpdateHUDCellView(ItemCellView cellView)
-    {
-        if (cellView != null)
+        protected void SwapItems<P>(ItemSlot<P> otherInventorySlot) where P : ItemState
         {
-            if (BaseItemState != null)
-            {
-                cellView.PlaceItemViewCopy(BaseItemState);
-                cellView.EnableAndUpdateCellModules(BaseItemState);
-            }
-            else
-            {
-                cellView.DisableCellModules();
-                cellView.ClearItemView();
-            }
+            (ItemState, otherInventorySlot.ItemState) = (otherInventorySlot.ItemState as T, ItemState as P);
         }
-    }
-}
 
-public abstract class ItemSlot<T> : ItemSlot where T : ItemState
-{
-    protected T itemState;
-
-    public override ItemState BaseItemState => ItemState;
-    public virtual T ItemState
-    {
-        get => itemState;
-        set
+        protected void PlaceItem<P>(ItemSlot<P> previousInventorySlot) where P : ItemState
         {
-            if (itemState != null && itemState.LinkedItemSlot == this)
-            {
-                itemState.LinkedItemSlot = null;
-            }         
-            itemState = value;
-            if (itemState != null)
-            {
-                itemState.LinkedItemSlot = this;
-            }
-            UpdateCellView(CellView);
-            UpdateHUDCellView(LinkedHUDCellView);
-            OnItemStateChanged();
+            ItemState = previousInventorySlot.ItemState as T;
+            previousInventorySlot.ItemState = null;
         }
-    }
-
-    public override bool TryPlaceOrSwapItem(ItemSlot previousInventorySlot)
-    {
-        if (previousInventorySlot.BaseItemState is T)
-        {
-            try
-            {
-                return TryPlaceOrSwapItem(previousInventorySlot as ItemSlot<ItemState>);
-            }
-            catch
-            {
-                return false;
-            }
-        }
-        return false;
-    }
-
-    public override void ClearItemState() => ItemState = null;
-
-    protected virtual bool TryPlaceOrSwapItem<P>(ItemSlot<P> previousInventorySlot) where P : ItemState
-    {
-        PlaceOrSwapItem(previousInventorySlot);
-        return true;
-    }
-
-    protected void PlaceOrSwapItem<P>(ItemSlot<P> previousInventorySlot) where P : ItemState
-    {
-        if (previousInventorySlot.ItemState != null)
-        {
-            SwapItems(previousInventorySlot);
-        }
-        else
-        {
-            PlaceItem(previousInventorySlot);
-        }
-    }
-
-    protected void SwapItems<P>(ItemSlot<P> otherInventorySlot) where P : ItemState
-    {
-        (ItemState, otherInventorySlot.ItemState) = (otherInventorySlot.ItemState as T, ItemState as P);
-    }
-
-    protected void PlaceItem<P>(ItemSlot<P> previousInventorySlot) where P : ItemState
-    {
-        ItemState = previousInventorySlot.ItemState as T;
-        previousInventorySlot.ItemState = null;
     }
 }

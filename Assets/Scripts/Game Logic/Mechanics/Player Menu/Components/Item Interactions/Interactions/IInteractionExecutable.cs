@@ -1,4 +1,7 @@
-public interface IInteractionExecutable
+namespace GameLogic.PlayerMenu
 {
-    void Execute();
+    public interface IInteractionExecutable
+    {
+        void Execute();
+    }
 }

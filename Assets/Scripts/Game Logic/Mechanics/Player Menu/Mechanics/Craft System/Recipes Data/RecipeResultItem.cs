@@ -1,18 +1,19 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using GameLogic.LootSystem;
 
-[Serializable]
-public class RecipeResultItem : RecipeItem
+namespace GameLogic.PlayerMenu
 {
-    public ItemState GetResultItemState()
+    [Serializable]
+    public class RecipeResultItem : RecipeItem
     {
-        var resultItemState = item.GetItemState();
-        if (resultItemState is StackableItemState)
+        public ItemState GetResultItemState()
         {
-            (resultItemState as StackableItemState).ItemsCount = count;
+            var resultItemState = item.GetItemState();
+            if (resultItemState is StackableItemState)
+            {
+                (resultItemState as StackableItemState).ItemsCount = count;
+            }
+            return resultItemState;
         }
-        return resultItemState;
     }
 }

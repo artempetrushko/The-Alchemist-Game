@@ -1,23 +1,24 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using GameLogic.LootSystem;
 
-[Serializable]
-public class RecipeIngredient : RecipeItem
+namespace GameLogic.PlayerMenu
 {
-    public int Count => count;
-
-    public bool CheckSelectedItemMatching(ItemState selectedItem, bool isCountMatchingRequired = false)
+    [Serializable]
+    public class RecipeIngredient : RecipeItem
     {
-        if (isCountMatchingRequired)
+        public int Count => count;
+
+        public bool CheckSelectedItemMatching(ItemState selectedItem, bool isCountMatchingRequired = false)
         {
-            return selectedItem switch
+            if (isCountMatchingRequired)
             {
-                StackableItemState => selectedItem.BaseParams.Equals(item) && (selectedItem as StackableItemState).ItemsCount >= count,
-                _ => selectedItem.BaseParams.Equals(item)
-            };
+                return selectedItem switch
+                {
+                    StackableItemState => selectedItem.BaseParams.Equals(item) && (selectedItem as StackableItemState).ItemsCount >= count,
+                    _ => selectedItem.BaseParams.Equals(item)
+                };
+            }
+            return selectedItem.BaseParams.Equals(item);
         }
-        return selectedItem.BaseParams.Equals(item);
     }
 }

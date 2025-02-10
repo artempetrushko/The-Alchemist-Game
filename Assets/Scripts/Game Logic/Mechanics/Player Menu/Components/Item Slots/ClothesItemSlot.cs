@@ -1,32 +1,35 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using GameLogic.LootSystem;
 using UnityEngine;
 
-[Serializable]
-public class ClothesItemSlot : ItemSlot<ClothesState>
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private ClothesType clothesType;
-
-    public ClothesType ClothesType => clothesType;
-
-    protected override bool TryPlaceOrSwapItem<P>(ItemSlot<P> previousInventorySlot)
+    [Serializable]
+    public class ClothesItemSlot : ItemSlot<ClothesState>
     {
-        if (((previousInventorySlot.ItemState as ClothesState).BaseParams as ClothesData).ClothesType == ClothesType)
+        [SerializeField]
+        private ClothesType clothesType;
+
+        public ClothesType ClothesType => clothesType;
+
+        protected override bool TryPlaceOrSwapItem<P>(ItemSlot<P> previousInventorySlot)
         {
-            PlaceOrSwapItem(previousInventorySlot);
-            return true;
+            if (((previousInventorySlot.ItemState as ClothesState).BaseParams as ClothesData).ClothesType == ClothesType)
+            {
+                PlaceOrSwapItem(previousInventorySlot);
+                return true;
+            }
+            return false;
         }
-        return false;
-    }
 
-    public override List<ItemInteraction> GetItemInteractions()
-    {
-        return new()
+        public override List<ItemInteraction> GetItemInteractions()
+        {
+            return new()
         {
             ItemInteraction.TakeOff,
             ItemInteraction.Drop
         };
+        }
     }
 }

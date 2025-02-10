@@ -1,29 +1,30 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public class HealthBarState
+namespace GameLogic.HUD
 {
-    [SerializeField]
-    private float minHealthPercentage;
-    [SerializeField] 
-    private float maxHealthPercentage;
-    [Space, SerializeField]
-    private Sprite healthBarSprite;
-    [SerializeField]
-    private Sprite healthBarFillingAreaSprite;
-
-    public bool TrySetHealthBarState(float healthPercentage, Image healthbar, Image healthBarFillingArea)
+    [Serializable]
+    public class HealthBarState
     {
-        if (healthPercentage >= minHealthPercentage && healthPercentage <= maxHealthPercentage)
+        [SerializeField]
+        private float minHealthPercentage;
+        [SerializeField]
+        private float maxHealthPercentage;
+        [Space, SerializeField]
+        private Sprite healthBarSprite;
+        [SerializeField]
+        private Sprite healthBarFillingAreaSprite;
+
+        public bool TrySetHealthBarState(float healthPercentage, Image healthbar, Image healthBarFillingArea)
         {
-            healthbar.sprite = healthBarSprite;
-            healthBarFillingArea.sprite = healthBarFillingAreaSprite;
-            return true;
+            if (healthPercentage >= minHealthPercentage && healthPercentage <= maxHealthPercentage)
+            {
+                healthbar.sprite = healthBarSprite;
+                healthBarFillingArea.sprite = healthBarFillingAreaSprite;
+                return true;
+            }
+            return false;
         }
-        return false;
     }
 }

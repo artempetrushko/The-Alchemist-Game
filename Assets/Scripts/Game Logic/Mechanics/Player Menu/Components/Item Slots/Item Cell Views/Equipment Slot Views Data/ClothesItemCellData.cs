@@ -1,16 +1,18 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using GameLogic.LootSystem;
 using UnityEngine;
 
-[Serializable]
-public class ClothesItemCellData
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private ClothesType clothesType;
-    [SerializeField]
-    private ItemCellView clothesCellView;
+    [Serializable]
+    public class ClothesItemCellData
+    {
+        [SerializeField]
+        private ClothesType clothesType;
+        [SerializeField]
+        private ItemCellView clothesCellView;
 
-    public ClothesType ClothesType => clothesType;
-    public ItemCellView ClothesCellView => clothesCellView;
+        public ClothesType ClothesType => clothesType;
+        public ItemCellView ClothesCellView => clothesCellView;
+    }
 }

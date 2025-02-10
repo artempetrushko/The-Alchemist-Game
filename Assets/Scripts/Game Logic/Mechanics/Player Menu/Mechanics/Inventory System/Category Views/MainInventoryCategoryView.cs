@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
 
-public class MainInventoryCategoryView : InventoryCategoryView
+namespace GameLogic.PlayerMenu
 {
-    public override void FillItemCellsContainer(int cellsCount)
+    public class MainInventoryCategoryView : InventoryCategoryView
     {
-        base.FillItemCellsContainer(cellsCount);
-        itemCellsContainer.GetComponentInParent<ScrollRect>().verticalNormalizedPosition = 1;
+        public override void FillItemCellsContainer(int cellsCount)
+        {
+            base.FillItemCellsContainer(cellsCount);
+            itemCellsContainer.GetComponentInParent<ScrollRect>().verticalNormalizedPosition = 1;
+        }
     }
 }

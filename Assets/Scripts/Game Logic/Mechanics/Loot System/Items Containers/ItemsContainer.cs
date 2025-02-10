@@ -1,35 +1,38 @@
-using System.Collections;
 using System.Collections.Generic;
+using GameLogic.EnvironmentExploration;
 using UnityEngine;
 
-public class ItemsContainer : InteractiveObject
+namespace GameLogic.LootSystem
 {
-    [SerializeField]
-    private ItemsSpawnChancesTable spawnChancesTable;
-    [SerializeField]
-    private GameObject filledContainerEffect;
-
-    private List<ItemState> spawnedItems = new();
-
-    public List<ItemState> GetContainingItems()
+    public class ItemsContainer : InteractiveObject
     {
-        if (spawnedItems.Count == 0)
+        [SerializeField]
+        private ItemsSpawnChancesTable spawnChancesTable;
+        [SerializeField]
+        private GameObject filledContainerEffect;
+
+        private List<ItemState> spawnedItems = new();
+
+        public List<ItemState> GetContainingItems()
         {
-            spawnedItems = spawnChancesTable.SpawnItems();
+            if (spawnedItems.Count == 0)
+            {
+                spawnedItems = spawnChancesTable.SpawnItems();
+            }
+            return spawnedItems;
         }
-        return spawnedItems;
-    }
 
-    public void SetFilledContainerEffectActive(bool isActive)
-    {
-        if (filledContainerEffect != null)
+        public void SetFilledContainerEffectActive(bool isActive)
         {
-            filledContainerEffect.SetActive(isActive);
-        }      
-    }
+            if (filledContainerEffect != null)
+            {
+                filledContainerEffect.SetActive(isActive);
+            }
+        }
 
-    private void OnEnable()
-    {
-        SetFilledContainerEffectActive(true);
+        private void OnEnable()
+        {
+            SetFilledContainerEffectActive(true);
+        }
     }
 }

@@ -1,137 +1,142 @@
-using System.Collections;
 using System.Collections.Generic;
+using Controls;
+using GameLogic.HUD;
+using GameLogic.PlayerMenu;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ItemsContainersManager : MonoBehaviour
+namespace GameLogic.LootSystem
 {
-    [SerializeField]
-    private ItemsContainerContentView itemsContainerContentViewPrefab;
-    [SerializeField]
-    private GameObject itemsContainerContentViewContainer;
-    [Space, SerializeField]
-    private InventoryManager inventoryManager;
-    [SerializeField]
-    private InputManager inputManager;
-    [SerializeField]
-    private ItemPickingMessagesManager itemPickingMessagesManager; 
-
-    private ItemsContainerContentView itemsContainerContentView;
-    private ItemsContainer currentItemsContainer;
-    private List<(ItemState item, ContainedItemView itemView)> currentContainingItems;
-    private (ItemState item, ContainedItemView itemView) currentSelectedItem;
-    private int currentSelectedItemNumber;
-
-    private (ItemState item, ContainedItemView itemView) CurrentSelectedItem
+    public class ItemsContainersManager : MonoBehaviour
     {
-        get => currentSelectedItem;
-        set
+        [SerializeField]
+        private ItemsContainerContentView itemsContainerContentViewPrefab;
+        [SerializeField]
+        private GameObject itemsContainerContentViewContainer;
+        [Space, SerializeField]
+        private InventoryManager inventoryManager;
+        [SerializeField]
+        private InputManager inputManager;
+        [SerializeField]
+        private ItemPickingMessagesManager itemPickingMessagesManager;
+
+        private ItemsContainerContentView itemsContainerContentView;
+        private ItemsContainer currentItemsContainer;
+        private List<(ItemState item, ContainedItemView itemView)> currentContainingItems;
+        private (ItemState item, ContainedItemView itemView) currentSelectedItem;
+        private int currentSelectedItemNumber;
+
+        private (ItemState item, ContainedItemView itemView) CurrentSelectedItem
         {
-            if (currentSelectedItem != value)
+            get => currentSelectedItem;
+            set
             {
-                currentSelectedItem = value;
-                var selectedItemNumber = currentContainingItems.IndexOf(currentSelectedItem) + 1;
-                if (selectedItemNumber != CurrentSelectedItemNumber)
+                if (currentSelectedItem != value)
                 {
-                    currentSelectedItemNumber = selectedItemNumber;
+                    currentSelectedItem = value;
+                    var selectedItemNumber = currentContainingItems.IndexOf(currentSelectedItem) + 1;
+                    if (selectedItemNumber != CurrentSelectedItemNumber)
+                    {
+                        currentSelectedItemNumber = selectedItemNumber;
+                    }
+                    itemsContainerContentView.SelectContainedItemView(currentSelectedItem.itemView, 1 - (float)CurrentSelectedItemNumber / currentContainingItems.Count);
                 }
-                itemsContainerContentView.SelectContainedItemView(currentSelectedItem.itemView, 1 - (float)CurrentSelectedItemNumber / currentContainingItems.Count);          
             }
         }
-    }
-    private int CurrentSelectedItemNumber
-    {
-        get => currentSelectedItemNumber;
-        set
+        private int CurrentSelectedItemNumber
         {
-            if (currentSelectedItemNumber != value)
+            get => currentSelectedItemNumber;
+            set
             {
-                currentSelectedItemNumber = Mathf.Clamp(value, 1, currentContainingItems.Count);
-                CurrentSelectedItem = currentContainingItems[currentSelectedItemNumber - 1];
+                if (currentSelectedItemNumber != value)
+                {
+                    currentSelectedItemNumber = Mathf.Clamp(value, 1, currentContainingItems.Count);
+                    CurrentSelectedItem = currentContainingItems[currentSelectedItemNumber - 1];
+                }
             }
         }
-    }
 
-    public void OpenContainer(ItemsContainer itemsContainer)
-    {
-        currentItemsContainer = itemsContainer;
-        itemsContainerContentView = Instantiate(itemsContainerContentViewPrefab, itemsContainerContentViewContainer.transform);
-        itemsContainerContentView.SetInfo(currentItemsContainer.Title);
-        currentContainingItems = itemsContainerContentView.CreateContainedItemViews(currentItemsContainer.GetContainingItems(), PickItem, (containingItem) => { CurrentSelectedItem = containingItem; });
-        CurrentSelectedItemNumber = 1;
-
-        inputManager.CurrentActionMap = PlayerInputActionMap.HUD_ItemsContainer;
-        ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView);
-        inputManager.SubscribeControlsChangedEvent(() => ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView));
-    }
-
-    public void CloseContainer(InputAction.CallbackContext context)
-    {      
-        if (context.performed)
+        public void OpenContainer(ItemsContainer itemsContainer)
         {
-            Destroy(itemsContainerContentView.gameObject);
-            if (currentContainingItems.Count == 0)
+            currentItemsContainer = itemsContainer;
+            itemsContainerContentView = Instantiate(itemsContainerContentViewPrefab, itemsContainerContentViewContainer.transform);
+            itemsContainerContentView.SetInfo(currentItemsContainer.Title);
+            currentContainingItems = itemsContainerContentView.CreateContainedItemViews(currentItemsContainer.GetContainingItems(), PickItem, (containingItem) => { CurrentSelectedItem = containingItem; });
+            CurrentSelectedItemNumber = 1;
+
+            inputManager.CurrentActionMap = PlayerInputActionMap.HUD_ItemsContainer;
+            ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView);
+            inputManager.SubscribeControlsChangedEvent(() => ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView));
+        }
+
+        public void CloseContainer(InputAction.CallbackContext context)
+        {
+            if (context.performed)
             {
-                currentItemsContainer.SetFilledContainerEffectActive(false);
-                Destroy(currentItemsContainer);
+                Destroy(itemsContainerContentView.gameObject);
+                if (currentContainingItems.Count == 0)
+                {
+                    currentItemsContainer.SetFilledContainerEffectActive(false);
+                    Destroy(currentItemsContainer);
+                }
+
+                inputManager.UnsubscribeControlsChangedEvent(() => ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView));
+                inputManager.CurrentActionMap = PlayerInputActionMap.Player;
             }
-
-            inputManager.UnsubscribeControlsChangedEvent(() => ShowControlsTips(itemsContainerContentView.ControlsTipsSectionView));
-            inputManager.CurrentActionMap = PlayerInputActionMap.Player;
-        }      
-    }
-
-    public void ChangeSelectedContainedItem(InputAction.CallbackContext context)
-    {
-        var inputValue = context.ReadValue<Vector2>().y;
-        CurrentSelectedItemNumber = Mathf.Clamp(CurrentSelectedItemNumber - (int)inputValue, 1, currentContainingItems.Count);
-    } 
-
-    public void PickItem(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            PickItem(CurrentSelectedItem);
         }
-    }
 
-    public void PickAllItems(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        public void ChangeSelectedContainedItem(InputAction.CallbackContext context)
         {
-            PickAllItems();
+            var inputValue = context.ReadValue<Vector2>().y;
+            CurrentSelectedItemNumber = Mathf.Clamp(CurrentSelectedItemNumber - (int)inputValue, 1, currentContainingItems.Count);
         }
-    }
 
-    private void PickItem((ItemState item, ContainedItemView itemView) containingItem)
-    {
-        if (inventoryManager.AddNewItemState(containingItem.item))
+        public void PickItem(InputAction.CallbackContext context)
         {
-            itemPickingMessagesManager.ShowNewMessage(containingItem.item);
-            Destroy(containingItem.itemView.gameObject);
-            currentContainingItems.Remove(containingItem);
-            if (currentContainingItems.Count > 0)
+            if (context.performed)
             {
-                CurrentSelectedItemNumber--;
-            }         
-        }      
-    }
-
-    private void PickAllItems()
-    {
-        for (var i = currentContainingItems.Count - 1; i >= 0; i--)
-        {
-            PickItem(currentContainingItems[i]);
+                PickItem(CurrentSelectedItem);
+            }
         }
-    }
 
-    private void ShowControlsTips(ControlsTipsSectionView controlsTipsSectionView)
-    {
-        inputManager.ShowCurrentControlsTips(controlsTipsSectionView, new[]
+        public void PickAllItems(InputAction.CallbackContext context)
         {
+            if (context.performed)
+            {
+                PickAllItems();
+            }
+        }
+
+        private void PickItem((ItemState item, ContainedItemView itemView) containingItem)
+        {
+            if (inventoryManager.AddNewItemState(containingItem.item))
+            {
+                itemPickingMessagesManager.ShowNewMessage(containingItem.item);
+                Destroy(containingItem.itemView.gameObject);
+                currentContainingItems.Remove(containingItem);
+                if (currentContainingItems.Count > 0)
+                {
+                    CurrentSelectedItemNumber--;
+                }
+            }
+        }
+
+        private void PickAllItems()
+        {
+            for (var i = currentContainingItems.Count - 1; i >= 0; i--)
+            {
+                PickItem(currentContainingItems[i]);
+            }
+        }
+
+        private void ShowControlsTips(ControlsTipsSectionView controlsTipsSectionView)
+        {
+            inputManager.ShowCurrentControlsTips(controlsTipsSectionView, new[]
+            {
             ("Взять", inputManager.PlayerActions.HUDItemsContainer.Take),
             ("Взять всё", inputManager.PlayerActions.HUDItemsContainer.TakeAll),
             ("Закрыть", inputManager.PlayerActions.HUDItemsContainer.CloseContainer)
         });
+        }
     }
 }

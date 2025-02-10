@@ -1,32 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InventoryCategoryView : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private ItemCellView itemCellPrefab;
-    [SerializeField]
-    protected GameObject itemCellsContainer;
-
-    public virtual ItemCellView[][] AllItemCells => new ItemCellView[][] { MainItemCells };
-    public ItemCellView[] MainItemCells => itemCellsContainer.GetComponentsInChildren<ItemCellView>();
-
-    public virtual void FillItemCellsContainer(int cellsCount)
+    public abstract class InventoryCategoryView : MonoBehaviour
     {
-        for (var i = 0; i < cellsCount; i++)
-        {
-            Instantiate(itemCellPrefab, itemCellsContainer.transform);
-        }
-    }
+        [SerializeField]
+        private ItemCellView itemCellPrefab;
+        [SerializeField]
+        protected GameObject itemCellsContainer;
 
-    public void SetParentSectionNavigation(PlayerMenuSectionNavigation parentSection)
-    {
-        var subsections = GetComponentsInChildren<PlayerMenuSubsectionNavigation>();
-        foreach (var subsection in subsections)
+        public virtual ItemCellView[][] AllItemCells => new ItemCellView[][] { MainItemCells };
+        public ItemCellView[] MainItemCells => itemCellsContainer.GetComponentsInChildren<ItemCellView>();
+
+        public virtual void FillItemCellsContainer(int cellsCount)
         {
-            subsection.ParentSection = parentSection;
+            for (var i = 0; i < cellsCount; i++)
+            {
+                Instantiate(itemCellPrefab, itemCellsContainer.transform);
+            }
         }
-        parentSection.SetCurrentSubsection(subsections[0]);
+
+        public void SetParentSectionNavigation(PlayerMenuSectionNavigation parentSection)
+        {
+            var subsections = GetComponentsInChildren<PlayerMenuSubsectionNavigation>();
+            foreach (var subsection in subsections)
+            {
+                subsection.ParentSection = parentSection;
+            }
+            parentSection.SetCurrentSubsection(subsections[0]);
+        }
     }
 }

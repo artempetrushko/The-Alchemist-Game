@@ -1,34 +1,37 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using GameLogic.LootSystem;
 using UnityEngine;
 
-[Serializable]
-public class WeaponItemSlot : ItemSlot<WeaponState>
+namespace GameLogic.PlayerMenu
 {
-    public event Action<WeaponState, WeaponHandPosition> WeaponStateChanged;
-
-    [SerializeField]
-    private WeaponHandPosition weaponHandPosition;
-
-    public override WeaponState ItemState
+    [Serializable]
+    public class WeaponItemSlot : ItemSlot<WeaponState>
     {
-        get => base.ItemState;
-        set
+        public event Action<WeaponState, WeaponHandPosition> WeaponStateChanged;
+
+        [SerializeField]
+        private WeaponHandPosition weaponHandPosition;
+
+        public override WeaponState ItemState
         {
-            base.ItemState = value;
-            WeaponStateChanged?.Invoke(base.ItemState, WeaponHandPosition);        
+            get => base.ItemState;
+            set
+            {
+                base.ItemState = value;
+                WeaponStateChanged?.Invoke(base.ItemState, WeaponHandPosition);
+            }
         }
-    }
-    public WeaponHandPosition WeaponHandPosition => weaponHandPosition;
+        public WeaponHandPosition WeaponHandPosition => weaponHandPosition;
 
-    public override List<ItemInteraction> GetItemInteractions()
-    {
-        return new()
+        public override List<ItemInteraction> GetItemInteractions()
+        {
+            return new()
         {
             ItemInteraction.ChangeHand,
             ItemInteraction.TakeOff,
             ItemInteraction.Drop
         };
+        }
     }
 }

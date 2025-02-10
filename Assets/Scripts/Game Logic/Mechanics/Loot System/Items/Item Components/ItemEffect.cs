@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ItemEffect
+namespace GameLogic.LootSystem
 {
-   
+    public class ItemEffect
+    {
+
+    }
 }

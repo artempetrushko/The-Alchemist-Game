@@ -1,22 +1,25 @@
 using System;
 using System.Collections.Generic;
 
-public class CrossbowMissileState : StackableItemState
+namespace GameLogic.LootSystem
 {
-    public float PenetratingPowerCoefficient { get; set; }
-
-    public CrossbowMissileState(CrossbowMissileData missileData) : base(missileData)
+    public class CrossbowMissileState : StackableItemState
     {
+        public float PenetratingPowerCoefficient { get; set; }
 
-    }
+        public CrossbowMissileState(CrossbowMissileData missileData) : base(missileData)
+        {
 
-    public override object Clone()
-    {
-        throw new NotImplementedException();
-    }
+        }
 
-    public override Dictionary<string, string> GetItemParams()
-    {
-        return new();
+        public override object Clone()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Dictionary<string, string> GetItemParams()
+        {
+            return new();
+        }
     }
 }

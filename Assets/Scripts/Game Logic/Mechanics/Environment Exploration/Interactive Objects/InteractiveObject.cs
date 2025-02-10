@@ -1,19 +1,20 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InteractiveObject : MonoBehaviour
+namespace GameLogic.EnvironmentExploration
 {
-    public event Action ObjectDestroyed; 
-
-    [SerializeField]
-    protected string title;
-
-    public string Title => title;
-
-    private void OnDestroy()
+    public abstract class InteractiveObject : MonoBehaviour
     {
-        ObjectDestroyed?.Invoke();
+        public event Action ObjectDestroyed;
+
+        [SerializeField]
+        protected string title;
+
+        public string Title => title;
+
+        private void OnDestroy()
+        {
+            ObjectDestroyed?.Invoke();
+        }
     }
 }

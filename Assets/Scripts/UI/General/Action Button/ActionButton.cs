@@ -1,39 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
+using Controls;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ActionButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+namespace UI
 {
-    [SerializeField]
-    private Button buttonComponent;
-    [SerializeField]
-    private DetailedControlTipView tipView;
-    [SerializeField]
-    private Color normalStateContentColor;
-    [SerializeField]
-    private Color selectedStateContentColor;    
-
-    public void SetInfo(DetailedControlTip detailedControlTip, UnityAction buttonPressedAction)
+    public class ActionButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        buttonComponent.onClick.AddListener(buttonPressedAction);
-        tipView.SetInfo(detailedControlTip);
-    }
+        [SerializeField]
+        private Button buttonComponent;
+        [SerializeField]
+        private DetailedControlTipView tipView;
+        [SerializeField]
+        private Color normalStateContentColor;
+        [SerializeField]
+        private Color selectedStateContentColor;
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        tipView.ChangeContentColor(selectedStateContentColor);
-    }
+        public void SetInfo(DetailedControlTip detailedControlTip, UnityAction buttonPressedAction)
+        {
+            buttonComponent.onClick.AddListener(buttonPressedAction);
+            tipView.SetInfo(detailedControlTip);
+        }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        tipView.ChangeContentColor(normalStateContentColor);
-    }
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            tipView.ChangeContentColor(selectedStateContentColor);
+        }
 
-    private void OnEnable()
-    {
-        tipView.ChangeContentColor(normalStateContentColor);
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            tipView.ChangeContentColor(normalStateContentColor);
+        }
+
+        private void OnEnable()
+        {
+            tipView.ChangeContentColor(normalStateContentColor);
+        }
     }
 }

@@ -1,33 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ItemsConcatinationModule : ItemsInteractionModule, IInteractionExecutable
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private PlayerMenuManager playerMenuManager;
-
-    public override void StartInteraction(ItemSlot selectedItemSlot)
+    public class ItemsConcatinationModule : ItemsInteractionModule, IInteractionExecutable
     {
-        startItemSlot = selectedItemSlot;
-    }
+        [SerializeField]
+        private PlayerMenuManager playerMenuManager;
 
-    public override void CancelInteraction()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Execute()
-    {
-        var currentSubsection = playerMenuManager.CurrentSectionView.SectionNavigation.CurrentSubsection;
-        if (currentSubsection is CellsSubsectionNavigation cellsSubsection)
+        public override void StartInteraction(ItemSlot selectedItemSlot)
         {
-            var concatinatingItemSlot = cellsSubsection.SelectedCell.LinkedItemSlot;
-            if (concatinatingItemSlot.BaseItemState.BaseParams.Equals(startItemSlot.BaseItemState.BaseParams))
+            startItemSlot = selectedItemSlot;
+        }
+
+        public override void CancelInteraction()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Execute()
+        {
+            var currentSubsection = playerMenuManager.CurrentSectionView.SectionNavigation.CurrentSubsection;
+            if (currentSubsection is CellsSubsectionNavigation cellsSubsection)
             {
-                concatinatingItemSlot.TryPlaceOrSwapItem(startItemSlot);
-                OnInteractionExecuted();
+                var concatinatingItemSlot = cellsSubsection.SelectedCell.LinkedItemSlot;
+                if (concatinatingItemSlot.BaseItemState.BaseParams.Equals(startItemSlot.BaseItemState.BaseParams))
+                {
+                    concatinatingItemSlot.TryPlaceOrSwapItem(startItemSlot);
+                    OnInteractionExecuted();
+                }
             }
         }
     }

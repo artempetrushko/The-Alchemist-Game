@@ -1,76 +1,77 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CraftInventoryCategoriesManager : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private InventoryCategoryData[] categoryDatas;
-    [SerializeField]
-    private InventoryManager inventoryManager;
-
-    private CraftInventorySubsectionView craftInventorySubsectionView;
-    private PlayerMenuSectionNavigation categoriesParentSection;
-    private InventoryItemsCategoryButton[] categoryButtons;
-    private InventoryCategoryView currentInventoryCategoryView;
-    private int currentItemCellsCategoryNumber;
-
-    private InventoryCategoryView CurrentInventoryCategoryView
+    public class CraftInventoryCategoriesManager : MonoBehaviour
     {
-        get => currentInventoryCategoryView;
-        set
+        [SerializeField]
+        private InventoryCategoryData[] categoryDatas;
+        [SerializeField]
+        private InventoryManager inventoryManager;
+
+        private CraftInventorySubsectionView craftInventorySubsectionView;
+        private PlayerMenuSectionNavigation categoriesParentSection;
+        private InventoryItemsCategoryButton[] categoryButtons;
+        private InventoryCategoryView currentInventoryCategoryView;
+        private int currentItemCellsCategoryNumber;
+
+        private InventoryCategoryView CurrentInventoryCategoryView
         {
-            if (currentInventoryCategoryView != value)
+            get => currentInventoryCategoryView;
+            set
             {
-                if (currentInventoryCategoryView != null)
+                if (currentInventoryCategoryView != value)
                 {
-                   craftInventorySubsectionView.ClearCategoryView();
+                    if (currentInventoryCategoryView != null)
+                    {
+                        craftInventorySubsectionView.ClearCategoryView();
+                    }
+                    currentInventoryCategoryView = craftInventorySubsectionView.CreateCategoryView(value);
+                    inventoryManager.InitializeSelectedCategory(currentInventoryCategoryView);
+                    currentInventoryCategoryView.SetParentSectionNavigation(categoriesParentSection);
                 }
-                currentInventoryCategoryView = craftInventorySubsectionView.CreateCategoryView(value);
-                inventoryManager.InitializeSelectedCategory(currentInventoryCategoryView);
-                currentInventoryCategoryView.SetParentSectionNavigation(categoriesParentSection);
             }
         }
-    }
-    private int CurrentItemCellsCategoryNumber
-    {
-        get => currentItemCellsCategoryNumber;
-        set
+        private int CurrentItemCellsCategoryNumber
         {
-            if (value >= 1 && value <= categoryButtons.Length)
+            get => currentItemCellsCategoryNumber;
+            set
             {
-                if (currentItemCellsCategoryNumber != 0)
+                if (value >= 1 && value <= categoryButtons.Length)
                 {
-                    categoryButtons[currentItemCellsCategoryNumber - 1].SetButtonState(false);
-                }               
-                currentItemCellsCategoryNumber = value;
-                if (currentItemCellsCategoryNumber != 0)
-                {
-                    categoryButtons[currentItemCellsCategoryNumber - 1].SetButtonState(true);
+                    if (currentItemCellsCategoryNumber != 0)
+                    {
+                        categoryButtons[currentItemCellsCategoryNumber - 1].SetButtonState(false);
+                    }
+                    currentItemCellsCategoryNumber = value;
+                    if (currentItemCellsCategoryNumber != 0)
+                    {
+                        categoryButtons[currentItemCellsCategoryNumber - 1].SetButtonState(true);
+                    }
+                    CurrentInventoryCategoryView = categoryDatas[currentItemCellsCategoryNumber - 1].CategoryViewPrefab;
                 }
-                CurrentInventoryCategoryView = categoryDatas[currentItemCellsCategoryNumber - 1].CategoryViewPrefab;
             }
         }
-    }
 
-    public void Initialize(CraftInventorySubsectionView inventorySubsectionView, PlayerMenuSectionNavigation parentSection)
-    {
-        craftInventorySubsectionView = inventorySubsectionView;
-        categoriesParentSection = parentSection;
-        categoryButtons = craftInventorySubsectionView.CreateCategoryButtons(categoryDatas, (categoryView) =>
+        public void Initialize(CraftInventorySubsectionView inventorySubsectionView, PlayerMenuSectionNavigation parentSection)
         {
-            CurrentItemCellsCategoryNumber = categoryDatas.Select(categoryData => categoryData.CategoryViewPrefab).ToList().IndexOf(categoryView) + 1;
-        });
-        CurrentItemCellsCategoryNumber = 1;
-    }
+            craftInventorySubsectionView = inventorySubsectionView;
+            categoriesParentSection = parentSection;
+            categoryButtons = craftInventorySubsectionView.CreateCategoryButtons(categoryDatas, (categoryView) =>
+            {
+                CurrentItemCellsCategoryNumber = categoryDatas.Select(categoryData => categoryData.CategoryViewPrefab).ToList().IndexOf(categoryView) + 1;
+            });
+            CurrentItemCellsCategoryNumber = 1;
+        }
 
-    public void ChangeItemsCategory(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        public void ChangeItemsCategory(InputAction.CallbackContext context)
         {
-            CurrentItemCellsCategoryNumber += (int)context.ReadValue<Vector2>().x;
+            if (context.performed)
+            {
+                CurrentItemCellsCategoryNumber += (int)context.ReadValue<Vector2>().x;
+            }
         }
     }
 }

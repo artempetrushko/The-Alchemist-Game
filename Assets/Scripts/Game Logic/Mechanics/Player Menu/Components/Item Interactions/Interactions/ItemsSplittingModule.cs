@@ -1,34 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using GameLogic.LootSystem;
 using UnityEngine;
 
-public class ItemsSplittingModule : ItemsInteractionModule
+namespace GameLogic.PlayerMenu
 {
-    [Space, SerializeField]
-    private ItemsCountChoiceManager itemsCountChoiceManager;
-    [SerializeField]
-    private InventoryManager inventoryManager;
-
-    public override void StartInteraction(ItemSlot selectedItemSlot)
+    public class ItemsSplittingModule : ItemsInteractionModule
     {
-        if (selectedItemSlot.BaseItemState is StackableItemState stackableItem)
+        [Space, SerializeField]
+        private ItemsCountChoiceManager itemsCountChoiceManager;
+        [SerializeField]
+        private InventoryManager inventoryManager;
+
+        public override void StartInteraction(ItemSlot selectedItemSlot)
         {
-            itemsCountChoiceManager.CreateItemsCountChoiceView("Выберите количество предметов", stackableItem, 1, stackableItem.ItemsCount - 1, new ItemsCountChoiceData()
+            if (selectedItemSlot.BaseItemState is StackableItemState stackableItem)
             {
-                ConfirmAction = new ItemsCountChoiceAction("Отделить", () =>
+                itemsCountChoiceManager.CreateItemsCountChoiceView("Выберите количество предметов", stackableItem, 1, stackableItem.ItemsCount - 1, new ItemsCountChoiceData()
                 {
-                    if (inventoryManager.TryAddStackableItemCopy(stackableItem, itemsCountChoiceManager.SelectedItemsCount))
+                    ConfirmAction = new ItemsCountChoiceAction("Отделить", () =>
                     {
-                        stackableItem.ItemsCount -= itemsCountChoiceManager.SelectedItemsCount;
-                    }
-                }),
-                CancelAction = new ItemsCountChoiceAction("Отменить", () => CancelInteraction())
-            });
+                        if (inventoryManager.TryAddStackableItemCopy(stackableItem, itemsCountChoiceManager.SelectedItemsCount))
+                        {
+                            stackableItem.ItemsCount -= itemsCountChoiceManager.SelectedItemsCount;
+                        }
+                    }),
+                    CancelAction = new ItemsCountChoiceAction("Отменить", () => CancelInteraction())
+                });
+            }
         }
-    }
 
-    public override void CancelInteraction()
-    {
-        throw new System.NotImplementedException();
+        public override void CancelInteraction()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

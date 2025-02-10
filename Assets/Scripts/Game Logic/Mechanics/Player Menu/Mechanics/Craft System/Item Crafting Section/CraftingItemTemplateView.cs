@@ -1,45 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CraftingItemTemplateView : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private Image craftingItemIcon;
-    [SerializeField]
-    private GameObject ingredientCellsContainer;
-    [SerializeField]
-    private CraftingItemTemplateNavigation subsectionNavigation;
-
-    public IngredientCellView[] IngredientCells => ingredientCellsContainer.GetComponentsInChildren<IngredientCellView>();
-    public CraftingItemTemplateNavigation SubsectionNavigation => subsectionNavigation;
-
-    public void SetInfo(Sprite craftingItemIcon, IngredientCellsTemplateView ingredientCellsTemplatePrefab)
+    public class CraftingItemTemplateView : MonoBehaviour
     {
-        this.craftingItemIcon.gameObject.SetActive(true);
-        this.craftingItemIcon.sprite = craftingItemIcon;
-        var ingredientCellsTemplate = Instantiate(ingredientCellsTemplatePrefab, ingredientCellsContainer.transform);
-        foreach (var ingredientCell in ingredientCellsTemplate.IngredientCells)
+        [SerializeField]
+        private Image craftingItemIcon;
+        [SerializeField]
+        private GameObject ingredientCellsContainer;
+        [SerializeField]
+        private CraftingItemTemplateNavigation subsectionNavigation;
+
+        public IngredientCellView[] IngredientCells => ingredientCellsContainer.GetComponentsInChildren<IngredientCellView>();
+        public CraftingItemTemplateNavigation SubsectionNavigation => subsectionNavigation;
+
+        public void SetInfo(Sprite craftingItemIcon, IngredientCellsTemplateView ingredientCellsTemplatePrefab)
         {
-            ingredientCell.transform.SetParent(ingredientCellsContainer.transform);
+            this.craftingItemIcon.gameObject.SetActive(true);
+            this.craftingItemIcon.sprite = craftingItemIcon;
+            var ingredientCellsTemplate = Instantiate(ingredientCellsTemplatePrefab, ingredientCellsContainer.transform);
+            foreach (var ingredientCell in ingredientCellsTemplate.IngredientCells)
+            {
+                ingredientCell.transform.SetParent(ingredientCellsContainer.transform);
+            }
+            Destroy(ingredientCellsTemplate);
         }
-        Destroy(ingredientCellsTemplate);
-    }
 
-    public void Clear()
-    {
-        craftingItemIcon.sprite = null;
-        craftingItemIcon.gameObject.SetActive(false);
-        for (var i = ingredientCellsContainer.transform.childCount - 1; i >= 0; i--)
+        public void Clear()
         {
-            Destroy(ingredientCellsContainer.transform.GetChild(i).gameObject);
+            craftingItemIcon.sprite = null;
+            craftingItemIcon.gameObject.SetActive(false);
+            for (var i = ingredientCellsContainer.transform.childCount - 1; i >= 0; i--)
+            {
+                Destroy(ingredientCellsContainer.transform.GetChild(i).gameObject);
+            }
+            ingredientCellsContainer.transform.DetachChildren();
         }
-        ingredientCellsContainer.transform.DetachChildren();
-    }
 
-    private void OnEnable()
-    {
-        craftingItemIcon.gameObject.SetActive(false);
+        private void OnEnable()
+        {
+            craftingItemIcon.gameObject.SetActive(false);
+        }
     }
 }

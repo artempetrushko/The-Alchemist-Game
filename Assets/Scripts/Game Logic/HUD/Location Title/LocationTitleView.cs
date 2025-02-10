@@ -3,31 +3,34 @@ using LeTai.TrueShadow;
 using TMPro;
 using UnityEngine;
 
-public class LocationTitleView : MonoBehaviour
+namespace GameLogic.HUD
 {
-    [SerializeField]
-    private TMP_Text locationTitleText;
-    [SerializeField]
-    private TrueShadow titleShadow;
-    [Space, SerializeField]
-    private float titleAppearanceTime = 1f;
-
-    public async UniTask ShowLocationNameAsync(string locationTitle)
+    public class LocationTitleView : MonoBehaviour
     {
-        locationTitleText.text = "";
-        titleShadow.enabled = true;
-        var textAppearanceLatency = titleAppearanceTime / locationTitle.Length;
-        for (var i = 0; i < locationTitle.Length; i++)
+        [SerializeField]
+        private TMP_Text locationTitleText;
+        [SerializeField]
+        private TrueShadow titleShadow;
+        [Space, SerializeField]
+        private float titleAppearanceTime = 1f;
+
+        public async UniTask ShowLocationNameAsync(string locationTitle)
         {
-            locationTitleText.text += locationTitle[i];
-            await UniTask.WaitForSeconds(textAppearanceLatency);
+            locationTitleText.text = "";
+            titleShadow.enabled = true;
+            var textAppearanceLatency = titleAppearanceTime / locationTitle.Length;
+            for (var i = 0; i < locationTitle.Length; i++)
+            {
+                locationTitleText.text += locationTitle[i];
+                await UniTask.WaitForSeconds(textAppearanceLatency);
+            }
+            await UniTask.WaitForSeconds(5f);
+            for (var i = 0; i < locationTitle.Length; i++)
+            {
+                locationTitleText.text = locationTitleText.text[..^1];
+                await UniTask.WaitForSeconds(textAppearanceLatency / 2);
+            }
+            titleShadow.enabled = false;
         }
-        await UniTask.WaitForSeconds(5f);
-        for (var i = 0; i < locationTitle.Length; i++)
-        {
-            locationTitleText.text = locationTitleText.text[..^1];
-            await UniTask.WaitForSeconds(textAppearanceLatency / 2);
-        }
-        titleShadow.enabled = false;
     }
 }

@@ -1,33 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+using GameLogic.LootSystem;
 using TMPro;
 using UnityEngine;
 
-public class ItemsCounterModuleView : ItemCellModuleView
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private TMP_Text itemsCounter;
-
-    public override void SetActive(bool isActive)
+    public class ItemsCounterModuleView : ItemCellModuleView
     {
-        itemsCounter.gameObject.SetActive(isActive);
-    }
+        [SerializeField]
+        private TMP_Text itemsCounter;
 
-    public override bool TryEnableWithNewItem(ItemState newItem)
-    {
-        if (newItem is StackableItemState)
+        public override void SetActive(bool isActive)
         {
-            SetActive(true);
-            return true;
+            itemsCounter.gameObject.SetActive(isActive);
         }
-        return false;
-    }
 
-    public override void UpdateContent(ItemState attachedItem)
-    {
-        if (attachedItem is StackableItemState stackableItem)
+        public override bool TryEnableWithNewItem(ItemState newItem)
         {
-            itemsCounter.text = "x" + stackableItem.ItemsCount.ToString();
-        }      
+            if (newItem is StackableItemState)
+            {
+                SetActive(true);
+                return true;
+            }
+            return false;
+        }
+
+        public override void UpdateContent(ItemState attachedItem)
+        {
+            if (attachedItem is StackableItemState stackableItem)
+            {
+                itemsCounter.text = "x" + stackableItem.ItemsCount.ToString();
+            }
+        }
     }
 }

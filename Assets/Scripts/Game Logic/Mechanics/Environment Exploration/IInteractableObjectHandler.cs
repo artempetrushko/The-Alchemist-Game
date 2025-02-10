@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface IInteractableObjectHandler
+namespace GameLogic.EnvironmentExploration
 {
-    void HandleInteraction<T>(T interactiveObject) where T : InteractiveObject;
+    public interface IInteractableObjectHandler
+    {
+        void HandleInteraction<T>(T interactiveObject) where T : InteractiveObject;
+    }
 }

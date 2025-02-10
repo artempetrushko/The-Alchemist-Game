@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using GameLogic.LootSystem;
 
-public class CraftingInnerBackgroundModuleView : InnerBackgroundModuleView
+namespace GameLogic.PlayerMenu
 {
-    public override void UpdateContent(ItemState attachedItem)
+    public class CraftingInnerBackgroundModuleView : InnerBackgroundModuleView
     {
-        //backgroundIcon.sprite = attachedItem.
+        public override void UpdateContent(ItemState attachedItem)
+        {
+            //backgroundIcon.sprite = attachedItem.
+        }
     }
 }

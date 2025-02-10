@@ -1,23 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Endurance Bar Data", menuName = "UI/Item Cell/Endurance Bar Data", order = 51)]
-public class EnduranceBarData : ScriptableObject
+namespace UI
 {
-    [SerializeField]
-    private List<EnduranceBarState> enduranceBarStates = new();
-
-    public Color GetEnduranceBarColor(float barFillAmount)
+    [CreateAssetMenu(fileName = "New Endurance Bar Data", menuName = "UI/Item Cell/Endurance Bar Data", order = 51)]
+    public class EnduranceBarData : ScriptableObject
     {
-        foreach (var state in enduranceBarStates)
+        [SerializeField]
+        private List<EnduranceBarState> enduranceBarStates = new();
+
+        public Color GetEnduranceBarColor(float barFillAmount)
         {
-            if (barFillAmount >= state.BarStateMinPercentage
-                && barFillAmount <= state.BarStateMaxPercentage)
+            foreach (var state in enduranceBarStates)
             {
-                return state.BarColor;
+                if (barFillAmount >= state.BarStateMinPercentage
+                    && barFillAmount <= state.BarStateMaxPercentage)
+                {
+                    return state.BarColor;
+                }
             }
+            return enduranceBarStates[0].BarColor;
         }
-        return enduranceBarStates[0].BarColor;
-    }    
+    }
 }

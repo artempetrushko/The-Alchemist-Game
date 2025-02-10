@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMenuSectionNavigation))]
-public abstract class PlayerMenuSectionView : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private PlayerMenuSectionNavigation sectionNavigation;
+    [RequireComponent(typeof(PlayerMenuSectionNavigation))]
+    public abstract class PlayerMenuSectionView : MonoBehaviour
+    {
+        [SerializeField]
+        private PlayerMenuSectionNavigation sectionNavigation;
 
-    public PlayerMenuSectionNavigation SectionNavigation => sectionNavigation;
+        public PlayerMenuSectionNavigation SectionNavigation => sectionNavigation;
+    }
 }

@@ -1,40 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PickableItem : MonoBehaviour
+namespace GameLogic.LootSystem
 {
-    [SerializeField]
-    private ItemData itemData;
-
-    private ItemState currentItemState;
-
-    public ItemState CurrentItemState 
-    { 
-        get => currentItemState ?? itemData.GetItemState();
-        set
-        {
-            if (value.BaseParams.Equals(itemData))
-            {
-                currentItemState = value;
-            }
-        }   
-    }
-
-    private void OnEnable()
+    public class PickableItem : MonoBehaviour
     {
-        if (GetComponentInParent<PlayerInput>() != null)
+        [SerializeField]
+        private ItemData itemData;
+
+        private ItemState currentItemState;
+
+        public ItemState CurrentItemState
         {
-            var particleSystem = GetComponentInChildren<ParticleSystem>();
-            if (particleSystem != null)
+            get => currentItemState ?? itemData.GetItemState();
+            set
             {
-                particleSystem.gameObject.SetActive(false);
+                if (value.BaseParams.Equals(itemData))
+                {
+                    currentItemState = value;
+                }
             }
-            if (GetComponent<SphereCollider>() != null)
+        }
+
+        private void OnEnable()
+        {
+            if (GetComponentInParent<PlayerInput>() != null)
             {
-                Destroy(GetComponent<SphereCollider>());
-            }          
+                var particleSystem = GetComponentInChildren<ParticleSystem>();
+                if (particleSystem != null)
+                {
+                    particleSystem.gameObject.SetActive(false);
+                }
+                if (GetComponent<SphereCollider>() != null)
+                {
+                    Destroy(GetComponent<SphereCollider>());
+                }
+            }
         }
     }
 }

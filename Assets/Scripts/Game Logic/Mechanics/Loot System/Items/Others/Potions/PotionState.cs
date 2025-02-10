@@ -1,30 +1,31 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class PotionState : StackableItemState
+namespace GameLogic.LootSystem
 {
-    public PotionState(PotionData potionData) : base(potionData) { }
-
-    public override object Clone() => new PotionState(BaseParams as PotionData)
+    public class PotionState : StackableItemState
     {
-        //ItemData = ItemData,
-        ItemsCount = ItemsCount,
-        MaxStackItemsCount = MaxStackItemsCount,
-        Description = Description,
-        Aspects = Aspects,
-        CastingDamage = CastingDamage,
-        Effects = Effects,
-    };
+        public PotionState(PotionData potionData) : base(potionData) { }
 
-    public override Dictionary<string, string> GetItemParams()
-    {
-        return new Dictionary<string, string>()
+        public override object Clone() => new PotionState(BaseParams as PotionData)
+        {
+            //ItemData = ItemData,
+            ItemsCount = ItemsCount,
+            MaxStackItemsCount = MaxStackItemsCount,
+            Description = Description,
+            Aspects = Aspects,
+            CastingDamage = CastingDamage,
+            Effects = Effects,
+        };
+
+        public override Dictionary<string, string> GetItemParams()
+        {
+            return new Dictionary<string, string>()
         {
             { "Сила действия", (BaseParams as PotionData).EffectPower.ToString() },
             { "Продолжительность", (BaseParams as PotionData).EffectDurationInSeconds + " сек." }
         };
-    }
+        }
 
-    public EffectApplyingActions GetEffectApplyingActions(ABC_StateManager effectReceiver) => PotionEffects.GetEffectApplyingActions(this, effectReceiver);
+        public EffectApplyingActions GetEffectApplyingActions(ABC_StateManager effectReceiver) => PotionEffects.GetEffectApplyingActions(this, effectReceiver);
+    }
 }

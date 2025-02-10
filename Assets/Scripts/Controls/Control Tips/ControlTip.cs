@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class ControlTip
+namespace Controls
 {
-    public string KeyName { get; private set; }
-    public Sprite KeyIcon { get; private set; }
-
-    public ControlTip(string keyName) 
+    public class ControlTip
     {
-        KeyName = keyName;
-    }
+        public string KeyName { get; private set; }
+        public Sprite KeyIcon { get; private set; }
 
-    public ControlTip(Sprite keyIcon)
-    {
-        KeyIcon = keyIcon;
+        public ControlTip(string keyName)
+        {
+            KeyName = keyName;
+        }
+
+        public ControlTip(Sprite keyIcon)
+        {
+            KeyIcon = keyIcon;
+        }
     }
 }

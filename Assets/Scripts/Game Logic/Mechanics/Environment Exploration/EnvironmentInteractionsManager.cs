@@ -1,150 +1,157 @@
 using System.Collections;
 using System.Collections.Generic;
+using Controls;
+using GameLogic.LootSystem;
+using GameLogic.Player;
+using GameLogic.PlayerMenu;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class EnvironmentInteractionsManager : MonoBehaviour
+namespace GameLogic.EnvironmentExploration
 {
-    [SerializeField]
-    private InteractiveObjectInfoView interactiveObjectInfoViewPrefab;
-    [SerializeField]
-    private GameObject interactiveObjectInfoViewContainer;
-    [Space, SerializeField]
-    private PlayerItemPicker playerItemPicker;
-    [SerializeField]
-    private PlayerInteractor playerInteractor;
-    [SerializeField]
-    private ItemsContainersManager itemsContainersManager;
-    [Space, SerializeField]
-    private GameManager gameManager;
-    [SerializeField]
-    private InventoryManager inventoryManager;
-    [SerializeField]
-    private InputManager inputManager;
-
-    private InteractiveObjectInfoView currentInteractiveObjectInfoView;
-    private InteractiveObject currentInteractiveObject;
-
-    public void PickItems(InputAction.CallbackContext context)
+    public class EnvironmentInteractionsManager : MonoBehaviour
     {
-        if (context.performed && playerItemPicker != null)
+        [SerializeField]
+        private InteractiveObjectInfoView interactiveObjectInfoViewPrefab;
+        [SerializeField]
+        private GameObject interactiveObjectInfoViewContainer;
+        [Space, SerializeField]
+        private PlayerItemPicker playerItemPicker;
+        [SerializeField]
+        private PlayerInteractor playerInteractor;
+        [SerializeField]
+        private ItemsContainersManager itemsContainersManager;
+        [Space, SerializeField]
+        private GameManager gameManager;
+        [SerializeField]
+        private InventoryManager inventoryManager;
+        [SerializeField]
+        private InputManager inputManager;
+
+        private InteractiveObjectInfoView currentInteractiveObjectInfoView;
+        private InteractiveObject currentInteractiveObject;
+
+        public void PickItems(InputAction.CallbackContext context)
         {
-            var pickableItems = playerItemPicker.PickableItems;
-            if (pickableItems.Count > 0)
+            if (context.performed && playerItemPicker != null)
             {
-                foreach (var item in pickableItems)
+                var pickableItems = playerItemPicker.PickableItems;
+                if (pickableItems.Count > 0)
                 {
-                    if (inventoryManager.AddNewItemState(item.CurrentItemState))
+                    foreach (var item in pickableItems)
                     {
-                        Destroy(item.gameObject);
+                        if (inventoryManager.AddNewItemState(item.CurrentItemState))
+                        {
+                            Destroy(item.gameObject);
+                        }
                     }
+                    pickableItems.Clear();
                 }
-                pickableItems.Clear();
             }
-        }      
-    }
+        }
 
-    public void Interact(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        public void Interact(InputAction.CallbackContext context)
         {
-            switch (currentInteractiveObject)
+            if (context.performed)
             {
-                case ItemsContainer itemsContainer:
-                    itemsContainersManager.OpenContainer(itemsContainer);
+                switch (currentInteractiveObject)
+                {
+                    case ItemsContainer itemsContainer:
+                        itemsContainersManager.OpenContainer(itemsContainer);
+                        break;
+
+                    case DungeonPortal dungeonPortal:
+                        InteractDungeonPortal(dungeonPortal);
+                        break;
+                }
+            }
+        }
+
+        private IEnumerator StabilizePortal_COR()
+        {
+            yield return null;
+            //StartCoroutine(portalStabilizationProgressSection.FillProgressBar_COR(stabilizationTimeInSeconds));
+        }
+
+
+
+        private void InteractDungeonPortal(DungeonPortal portal)
+        {
+            switch (portal.PortalState)
+            {
+                case PortalState.Unstable:
+                    /*if (gameManager.StabilizerCreatedAndAvailable)
+                    {
+                        inventoryManager.RemoveItem("Стабилизатор портала");
+                        GetComponent<Collider>().enabled = false;
+                        //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
+                        StartCoroutine(StabilizePortal_COR());
+                        //PortalState = PortalState.Stabilizing;
+                    }
+                    else
+                    {
+                        GetComponent<Collider>().enabled = false;
+                        //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
+                        //levelFinisher.Activate();
+                    }
+                    break;*/
                     break;
 
-                case DungeonPortal dungeonPortal:
-                    InteractDungeonPortal(dungeonPortal);
+                case PortalState.Stable:
+                    GetComponent<Collider>().enabled = false;
+                    //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
+                    //levelFinisher.FinishGame();
                     break;
             }
         }
-    }
 
-    private IEnumerator StabilizePortal_COR()
-    {
-        yield return null;
-        //StartCoroutine(portalStabilizationProgressSection.FillProgressBar_COR(stabilizationTimeInSeconds));
-    }
-
-    
-
-    private void InteractDungeonPortal(DungeonPortal portal)
-    {
-        switch (portal.PortalState)
+        private void OnEnable()
         {
-            case PortalState.Unstable:
-                /*if (gameManager.StabilizerCreatedAndAvailable)
-                {
-                    inventoryManager.RemoveItem("Стабилизатор портала");
-                    GetComponent<Collider>().enabled = false;
-                    //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
-                    StartCoroutine(StabilizePortal_COR());
-                    //PortalState = PortalState.Stabilizing;
-                }
-                else
-                {
-                    GetComponent<Collider>().enabled = false;
-                    //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
-                    //levelFinisher.Activate();
-                }
-                break;*/
-                break;
-
-            case PortalState.Stable:
-                GetComponent<Collider>().enabled = false;
-                //FindObjectOfType<InteractiveObjectPanel>().DisableUI();
-                //levelFinisher.FinishGame();
-                break;
+            playerInteractor.InteractiveObjectDetected += SetCurrentInteractiveObject;
+            playerInteractor.InteractiveObjectLost += DeleteCurrentInteractiveObject;
+            inputManager.SubscribeControlsChangedEvent(ShowCurrentInteractiveObjectControlsTips);
         }
-    } 
 
-    private void OnEnable()
-    {
-        playerInteractor.InteractiveObjectDetected += SetCurrentInteractiveObject;
-        playerInteractor.InteractiveObjectLost += DeleteCurrentInteractiveObject;
-        inputManager.SubscribeControlsChangedEvent(ShowCurrentInteractiveObjectControlsTips);
-    }
-
-    private void OnDisable()
-    {
-        playerInteractor.InteractiveObjectDetected -= SetCurrentInteractiveObject;
-        playerInteractor.InteractiveObjectLost -= DeleteCurrentInteractiveObject;
-        inputManager.UnsubscribeControlsChangedEvent(ShowCurrentInteractiveObjectControlsTips);
-    }
-
-    private void SetCurrentInteractiveObject(InteractiveObject interactiveObject)
-    {
-        if (currentInteractiveObject != interactiveObject)
+        private void OnDisable()
         {
-            currentInteractiveObject = interactiveObject;
-            currentInteractiveObjectInfoView = Instantiate(interactiveObjectInfoViewPrefab, interactiveObjectInfoViewContainer.transform);
-            currentInteractiveObjectInfoView.SetInfo(currentInteractiveObject.Title, currentInteractiveObject.transform);
-            ShowCurrentInteractiveObjectControlsTips();
-        }      
-    }
+            playerInteractor.InteractiveObjectDetected -= SetCurrentInteractiveObject;
+            playerInteractor.InteractiveObjectLost -= DeleteCurrentInteractiveObject;
+            inputManager.UnsubscribeControlsChangedEvent(ShowCurrentInteractiveObjectControlsTips);
+        }
 
-    private void DeleteCurrentInteractiveObject()
-    {
-        currentInteractiveObject = null;
-        Destroy(currentInteractiveObjectInfoView.gameObject);
-    }
-
-    //private void DisableI
-
-    private void ShowCurrentInteractiveObjectControlsTips()
-    {
-        if (currentInteractiveObject != null)
+        private void SetCurrentInteractiveObject(InteractiveObject interactiveObject)
         {
-            var actionName = currentInteractiveObject switch
+            if (currentInteractiveObject != interactiveObject)
             {
-                ItemsContainer => "Открыть",
-                DungeonPortal => "Использовать"
-            };
-            inputManager.ShowCurrentControlsTips(currentInteractiveObjectInfoView.ControlsTipsSectionView, new[]
+                currentInteractiveObject = interactiveObject;
+                currentInteractiveObjectInfoView = Instantiate(interactiveObjectInfoViewPrefab, interactiveObjectInfoViewContainer.transform);
+                currentInteractiveObjectInfoView.SetInfo(currentInteractiveObject.Title, currentInteractiveObject.transform);
+                ShowCurrentInteractiveObjectControlsTips();
+            }
+        }
+
+        private void DeleteCurrentInteractiveObject()
+        {
+            currentInteractiveObject = null;
+            Destroy(currentInteractiveObjectInfoView.gameObject);
+        }
+
+        //private void DisableI
+
+        private void ShowCurrentInteractiveObjectControlsTips()
+        {
+            if (currentInteractiveObject != null)
             {
+                var actionName = currentInteractiveObject switch
+                {
+                    ItemsContainer => "Открыть",
+                    DungeonPortal => "Использовать"
+                };
+                inputManager.ShowCurrentControlsTips(currentInteractiveObjectInfoView.ControlsTipsSectionView, new[]
+                {
                 (actionName, inputManager.PlayerActions.Player.Interact)
             });
-        }      
+            }
+        }
     }
 }

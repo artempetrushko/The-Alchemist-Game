@@ -1,64 +1,66 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[Serializable]
-public class PossibleItem
+namespace GameLogic.LootSystem
 {
-    [SerializeField]
-    private ItemData item;
-    [SerializeField, Range(0, 100)]
-    private float spawnChance;   
-    [SerializeField]
-    private int minCount;
-    [SerializeField]
-    private int maxCount;
-    [SerializeField]
-    private AnimationCurve itemsCountDistributionGraph;
-
-    private int ItemsCount
+    [Serializable]
+    public class PossibleItem
     {
-        get
+        [SerializeField]
+        private ItemData item;
+        [SerializeField, Range(0, 100)]
+        private float spawnChance;
+        [SerializeField]
+        private int minCount;
+        [SerializeField]
+        private int maxCount;
+        [SerializeField]
+        private AnimationCurve itemsCountDistributionGraph;
+
+        private int ItemsCount
         {
-            if (itemsCountDistributionGraph.length == 0)
+            get
             {
-                return Random.Range(minCount, maxCount);
+                if (itemsCountDistributionGraph.length == 0)
+                {
+                    return Random.Range(minCount, maxCount);
+                }
+                var chance = Random.Range(0f, 100f);
+                var maxCountPercentage = itemsCountDistributionGraph.Evaluate(chance) / 100;
+                return Random.Range((int)MathF.Floor(minCount + (maxCount - minCount) * maxCountPercentage), maxCount);
             }
-            var chance = Random.Range(0f, 100f);
-            var maxCountPercentage = itemsCountDistributionGraph.Evaluate(chance) / 100;
-            return Random.Range((int)MathF.Floor(minCount + (maxCount - minCount) * maxCountPercentage), maxCount);
         }
-    }
 
-    public List<ItemState> TrySpawn()
-    {
-        var spawnedItems = new List<ItemState>();
-        switch (item)
+        public List<ItemState> TrySpawn()
         {
-            case StackableItemData:
-                if (IsItemWillSpawned())
-                {
-                    var itemState = item.GetItemState() as StackableItemState;
-                    itemState.ItemsCount = ItemsCount;
-                    spawnedItems.Add(itemState);
-                }
-                break;
-
-            default:
-                if (IsItemWillSpawned())
-                {
-                    var generatedItemsCount = ItemsCount;
-                    for (var i = 0; i < generatedItemsCount; i++)
+            var spawnedItems = new List<ItemState>();
+            switch (item)
+            {
+                case StackableItemData:
+                    if (IsItemWillSpawned())
                     {
-                        spawnedItems.Add(item.GetItemState());
+                        var itemState = item.GetItemState() as StackableItemState;
+                        itemState.ItemsCount = ItemsCount;
+                        spawnedItems.Add(itemState);
                     }
-                }
-                break;
-        }
-        return spawnedItems;
-    }
+                    break;
 
-    private bool IsItemWillSpawned() => Random.Range(1f, 100f) > 100 - spawnChance;
+                default:
+                    if (IsItemWillSpawned())
+                    {
+                        var generatedItemsCount = ItemsCount;
+                        for (var i = 0; i < generatedItemsCount; i++)
+                        {
+                            spawnedItems.Add(item.GetItemState());
+                        }
+                    }
+                    break;
+            }
+            return spawnedItems;
+        }
+
+        private bool IsItemWillSpawned() => Random.Range(1f, 100f) > 100 - spawnChance;
+    }
 }

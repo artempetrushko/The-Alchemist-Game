@@ -1,26 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CraftingItemsCounterModuleView : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private Image counterProgressBar;
-    [SerializeField]
-    private TMP_Text counterText;
-    [Space, SerializeField]
-    private Color normalProgressBarColor;
-    [SerializeField]
-    private Color filledProgressBarColor;
-
-    public void UpdateItemsCounter(int currentItemsCount, int? requiredItemsCount)
+    public class CraftingItemsCounterModuleView : MonoBehaviour
     {
-        counterText.text = string.Format("{0}/{1}", currentItemsCount, requiredItemsCount != null ? requiredItemsCount : "?");
-        counterProgressBar.fillAmount = requiredItemsCount != null
-            ? Mathf.Clamp01(((float)currentItemsCount / requiredItemsCount).Value)
-            : 0;
-        counterProgressBar.color = counterProgressBar.fillAmount == 1 ? filledProgressBarColor : normalProgressBarColor;
+        [SerializeField]
+        private Image counterProgressBar;
+        [SerializeField]
+        private TMP_Text counterText;
+        [Space, SerializeField]
+        private Color normalProgressBarColor;
+        [SerializeField]
+        private Color filledProgressBarColor;
+
+        public void UpdateItemsCounter(int currentItemsCount, int? requiredItemsCount)
+        {
+            counterText.text = string.Format("{0}/{1}", currentItemsCount, requiredItemsCount != null ? requiredItemsCount : "?");
+            counterProgressBar.fillAmount = requiredItemsCount != null
+                ? Mathf.Clamp01(((float)currentItemsCount / requiredItemsCount).Value)
+                : 0;
+            counterProgressBar.color = counterProgressBar.fillAmount == 1 ? filledProgressBarColor : normalProgressBarColor;
+        }
     }
 }

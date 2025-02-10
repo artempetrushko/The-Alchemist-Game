@@ -1,25 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using GameLogic.LootSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RemoveItemButtonModuleView : ItemCellModuleView
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private Button removeItemButton;
-
-    public override void SetActive(bool isActive)
+    public class RemoveItemButtonModuleView : ItemCellModuleView
     {
-        removeItemButton.gameObject.SetActive(isActive);
-    }
+        [SerializeField]
+        private Button removeItemButton;
 
-    public override bool TryEnableWithNewItem(ItemState newItem)
-    {
-        return false;
-    }
+        public override void SetActive(bool isActive)
+        {
+            removeItemButton.gameObject.SetActive(isActive);
+        }
 
-    public override void UpdateContent(ItemState attachedItem)
-    {
-        
+        public override bool TryEnableWithNewItem(ItemState newItem)
+        {
+            return false;
+        }
+
+        public override void UpdateContent(ItemState attachedItem)
+        {
+
+        }
     }
 }

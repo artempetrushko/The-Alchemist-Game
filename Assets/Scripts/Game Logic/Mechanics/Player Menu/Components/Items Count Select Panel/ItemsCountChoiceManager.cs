@@ -2,90 +2,95 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Controls;
+using GameLogic.LootSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class ItemsCountChoiceManager : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private ChooseItemsCountView itemsCountChoiceViewPrefab;
-    [SerializeField]
-    private GameObject itemsCountChoiceViewContainer;
-    [Space, SerializeField]
-    private InputManager inputManager;
-
-    private ChooseItemsCountView itemsCountChoiceView;
-    private ItemsCountChoiceData itemsCountChoiceData;
-    private int selectedItemsCount;
-
-    public int SelectedItemsCount
+    public class ItemsCountChoiceManager : MonoBehaviour
     {
-        get => selectedItemsCount;
-        private set
+        [SerializeField]
+        private ChooseItemsCountView itemsCountChoiceViewPrefab;
+        [SerializeField]
+        private GameObject itemsCountChoiceViewContainer;
+        [Space, SerializeField]
+        private InputManager inputManager;
+
+        private ChooseItemsCountView itemsCountChoiceView;
+        private ItemsCountChoiceData itemsCountChoiceData;
+        private int selectedItemsCount;
+
+        public int SelectedItemsCount
         {
-            selectedItemsCount = value;
-            itemsCountChoiceView.SetItemsCounterText(selectedItemsCount);
+            get => selectedItemsCount;
+            private set
+            {
+                selectedItemsCount = value;
+                itemsCountChoiceView.SetItemsCounterText(selectedItemsCount);
+            }
         }
-    }
 
-    public void CreateItemsCountChoiceView(string interactionDescription, StackableItemState stackableItem, int minItemsCount, int maxItemsCount, ItemsCountChoiceData possibleActions)
-    {
-        itemsCountChoiceView = Instantiate(itemsCountChoiceViewPrefab, itemsCountChoiceViewContainer.transform);
-        itemsCountChoiceView.StartItemsCountChoosing(stackableItem.BaseParams.Icon, minItemsCount, maxItemsCount, interactionDescription, GetActionButtonsParams(possibleActions));
-        itemsCountChoiceView.SetSliderValueChangedAction((value) => SelectedItemsCount = (int)value);
-        inputManager.CurrentActionMap = PlayerInputActionMap.PlayerMenu_ItemsCountChoiceView;
-    }
-
-    public void ClearItemsCountChoiceView() => Destroy(itemsCountChoiceView.gameObject);
-
-    public void InvokeConfirmAction(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        public void CreateItemsCountChoiceView(string interactionDescription, StackableItemState stackableItem, int minItemsCount, int maxItemsCount, ItemsCountChoiceData possibleActions)
         {
-            itemsCountChoiceData.ConfirmAction.Action.Invoke();
+            itemsCountChoiceView = Instantiate(itemsCountChoiceViewPrefab, itemsCountChoiceViewContainer.transform);
+            itemsCountChoiceView.StartItemsCountChoosing(stackableItem.BaseParams.Icon, minItemsCount, maxItemsCount, interactionDescription, GetActionButtonsParams(possibleActions));
+            itemsCountChoiceView.SetSliderValueChangedAction((value) => SelectedItemsCount = (int)value);
+            inputManager.CurrentActionMap = PlayerInputActionMap.PlayerMenu_ItemsCountChoiceView;
         }
-    }
 
-    public void InvokeConfirmAllAction(InputAction.CallbackContext context)
-    {
-        if (context.performed && itemsCountChoiceData.ConfirmAllAction != null)
+        public void ClearItemsCountChoiceView() => Destroy(itemsCountChoiceView.gameObject);
+
+        public void InvokeConfirmAction(InputAction.CallbackContext context)
         {
-            itemsCountChoiceData.ConfirmAllAction.Action.Invoke();
+            if (context.performed)
+            {
+                itemsCountChoiceData.ConfirmAction.Action.Invoke();
+            }
         }
-    }
 
-    public void InvokeCancelAction(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        public void InvokeConfirmAllAction(InputAction.CallbackContext context)
         {
-            itemsCountChoiceData.CancelAction.Action.Invoke();
+            if (context.performed && itemsCountChoiceData.ConfirmAllAction != null)
+            {
+                itemsCountChoiceData.ConfirmAllAction.Action.Invoke();
+            }
         }
-    }
 
-    public void ChangeItemsCounterValue(InputAction.CallbackContext context)
-    {
-        var inputValue = context.ReadValue<Vector2>().x;
-        if (Mathf.Abs(inputValue) == 1)
+        public void InvokeCancelAction(InputAction.CallbackContext context)
         {
-            SelectedItemsCount += (int)inputValue;
+            if (context.performed)
+            {
+                itemsCountChoiceData.CancelAction.Action.Invoke();
+            }
         }
-    }
 
-    public List<(DetailedControlTip controlTip, UnityAction buttonAction)> GetActionButtonsParams(ItemsCountChoiceData possibleActions)
-    {
-        var itemsCountChoiceInputActions = inputManager.PlayerActions.PlayerMenuChooseItemsCountView;
-        var actionButtonParams = new List<(string name, InputAction inputAction, UnityAction buttonPressedAction)>()
+        public void ChangeItemsCounterValue(InputAction.CallbackContext context)
+        {
+            var inputValue = context.ReadValue<Vector2>().x;
+            if (Mathf.Abs(inputValue) == 1)
+            {
+                SelectedItemsCount += (int)inputValue;
+            }
+        }
+
+        public List<(DetailedControlTip controlTip, UnityAction buttonAction)> GetActionButtonsParams(ItemsCountChoiceData possibleActions)
+        {
+            var itemsCountChoiceInputActions = inputManager.PlayerActions.PlayerMenuChooseItemsCountView;
+            var actionButtonParams = new List<(string name, InputAction inputAction, UnityAction buttonPressedAction)>()
         {
             (possibleActions.ConfirmAction.Description, itemsCountChoiceInputActions.Confirm, possibleActions.ConfirmAction.Action),
             (possibleActions.CancelAction.Description, itemsCountChoiceInputActions.Cancel, possibleActions.CancelAction.Action)
         };
-        if (possibleActions.ConfirmAllAction != null)
-        {
-            actionButtonParams.Insert(1, (possibleActions.ConfirmAllAction.Description, itemsCountChoiceInputActions.ConfirmAll, possibleActions.ConfirmAllAction.Action));
+            if (possibleActions.ConfirmAllAction != null)
+            {
+                actionButtonParams.Insert(1, (possibleActions.ConfirmAllAction.Description, itemsCountChoiceInputActions.ConfirmAll, possibleActions.ConfirmAllAction.Action));
+            }
+            return actionButtonParams
+                .Select(actionButtonData => (inputManager.CreateDetailedControlsTip((actionButtonData.name, actionButtonData.inputAction)), actionButtonData.buttonPressedAction))
+                .ToList();
         }
-        return actionButtonParams
-            .Select(actionButtonData => (inputManager.CreateDetailedControlsTip((actionButtonData.name, actionButtonData.inputAction)), actionButtonData.buttonPressedAction))
-            .ToList();
     }
 }

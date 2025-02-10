@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameLogic.PlayerMenu;
 using UnityEngine;
 
 public class OrderedCellsSubsectionNavigation : CellsSubsectionNavigation

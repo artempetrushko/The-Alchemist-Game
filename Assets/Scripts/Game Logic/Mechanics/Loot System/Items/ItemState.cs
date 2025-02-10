@@ -1,59 +1,61 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+using GameLogic.PlayerMenu;
 
-public abstract class ItemState : ICloneable
+namespace GameLogic.LootSystem
 {
-    protected ItemView itemView;
-    protected ItemView hudItemView;
-
-    public ItemData BaseParams { get; protected set; }
-    public string Description { get; set; }
-    public int CastingDamage { get; set; }
-    public List<AspectState> Aspects { get; set; } = new();
-    public List<ItemEffect> Effects { get; set; } = new();
-    public int ContainedEnergyCount => 0;
-    public virtual ItemView ItemView
+    public abstract class ItemState : ICloneable
     {
-        get => itemView;
-        set
+        protected ItemView itemView;
+        protected ItemView hudItemView;
+
+        public ItemData BaseParams { get; protected set; }
+        public string Description { get; set; }
+        public int CastingDamage { get; set; }
+        public List<AspectState> Aspects { get; set; } = new();
+        public List<ItemEffect> Effects { get; set; } = new();
+        public int ContainedEnergyCount => 0;
+        public virtual ItemView ItemView
         {
-            itemView = value;
-            itemView.LinkedItem = this;
-            itemView.SetInfo(BaseParams.Icon);
+            get => itemView;
+            set
+            {
+                itemView = value;
+                itemView.LinkedItem = this;
+                itemView.SetInfo(BaseParams.Icon);
+            }
         }
-    }
-    public virtual ItemView HUDItemView
-    {
-        get => hudItemView;
-        set
+        public virtual ItemView HUDItemView
         {
-            hudItemView = value;
-            hudItemView.LinkedItem = this;
-            hudItemView.SetInfo(BaseParams.Icon);
+            get => hudItemView;
+            set
+            {
+                hudItemView = value;
+                hudItemView.LinkedItem = this;
+                hudItemView.SetInfo(BaseParams.Icon);
+            }
         }
+        public ItemSlot LinkedItemSlot { get; set; }
+
+        public ItemState(ItemData itemData)
+        {
+            BaseParams = itemData;
+            Description = itemData.BaseDescription;
+            CastingDamage = itemData.BaseCastingDamage;
+            Aspects = itemData.BaseContainedAspects.Select(aspect => aspect.GetAspectState()).ToList();
+            Effects = itemData.BaseEffects;
+        }
+
+        protected ItemState() { }
+
+        ~ItemState()
+        {
+            UnityEngine.Object.Destroy(ItemView);
+        }
+
+        public abstract object Clone();
+
+        public abstract Dictionary<string, string> GetItemParams();
     }
-    public ItemSlot LinkedItemSlot { get; set; }
-
-    public ItemState(ItemData itemData)
-    {
-        BaseParams = itemData;
-        Description = itemData.BaseDescription;
-        CastingDamage = itemData.BaseCastingDamage;
-        Aspects = itemData.BaseContainedAspects.Select(aspect => aspect.GetAspectState()).ToList();
-        Effects = itemData.BaseEffects;
-    }
-
-    protected ItemState() { }
-
-    ~ItemState()
-    {
-        UnityEngine.Object.Destroy(ItemView);
-    }
-
-    public abstract object Clone();
-
-    public abstract Dictionary<string, string> GetItemParams();
 }

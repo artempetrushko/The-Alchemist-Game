@@ -1,47 +1,49 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using GameLogic.EnvironmentExploration;
 using UnityEngine;
 
-public class PlayerInteractor : MonoBehaviour
+namespace GameLogic.Player
 {
-    public event Action<InteractiveObject> InteractiveObjectDetected;
-    public event Action InteractiveObjectLost;
-
-    private InteractiveObject currentInteractiveObject;
-
-    private InteractiveObject CurrentInteractiveObject
+    public class PlayerInteractor : MonoBehaviour
     {
-        get => currentInteractiveObject;
-        set
+        public event Action<InteractiveObject> InteractiveObjectDetected;
+        public event Action InteractiveObjectLost;
+
+        private InteractiveObject currentInteractiveObject;
+
+        private InteractiveObject CurrentInteractiveObject
         {
-            if (currentInteractiveObject != value)
+            get => currentInteractiveObject;
+            set
             {
-                if (currentInteractiveObject != null)
+                if (currentInteractiveObject != value)
                 {
-                    InteractiveObjectLost?.Invoke();
-                    currentInteractiveObject.ObjectDestroyed -= ClearCurrentInteractiveObject;
+                    if (currentInteractiveObject != null)
+                    {
+                        InteractiveObjectLost?.Invoke();
+                        currentInteractiveObject.ObjectDestroyed -= ClearCurrentInteractiveObject;
+                    }
+                    currentInteractiveObject = value;
+                    if (currentInteractiveObject != null)
+                    {
+                        InteractiveObjectDetected?.Invoke(currentInteractiveObject);
+                        currentInteractiveObject.ObjectDestroyed += ClearCurrentInteractiveObject;
+                    }
                 }
-                currentInteractiveObject = value;
-                if (currentInteractiveObject != null)
-                {
-                    InteractiveObjectDetected?.Invoke(currentInteractiveObject);
-                    currentInteractiveObject.ObjectDestroyed += ClearCurrentInteractiveObject;
-                }
-            }         
+            }
         }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        var potentialInteractiveObject = other.GetComponent<InteractiveObject>();
-        if (potentialInteractiveObject != null && CurrentInteractiveObject == null)
+        private void OnTriggerStay(Collider other)
         {
-            CurrentInteractiveObject = potentialInteractiveObject;
+            var potentialInteractiveObject = other.GetComponent<InteractiveObject>();
+            if (potentialInteractiveObject != null && CurrentInteractiveObject == null)
+            {
+                CurrentInteractiveObject = potentialInteractiveObject;
+            }
         }
+
+        private void OnTriggerExit(Collider other) => ClearCurrentInteractiveObject();
+
+        private void ClearCurrentInteractiveObject() => CurrentInteractiveObject = null;
     }
-
-    private void OnTriggerExit(Collider other) => ClearCurrentInteractiveObject();
-
-    private void ClearCurrentInteractiveObject() => CurrentInteractiveObject = null;
 }

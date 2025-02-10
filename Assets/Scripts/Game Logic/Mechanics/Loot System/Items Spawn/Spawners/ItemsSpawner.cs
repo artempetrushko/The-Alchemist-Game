@@ -1,21 +1,22 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemsSpawner : MonoBehaviour
+namespace GameLogic.LootSystem
 {
-    [SerializeField]
-    protected ItemsSpawnChancesTable spawnChancesTable;
-
-    protected void SpawnItems(Func<Vector3> setItemPositionFunc)
+    public abstract class ItemsSpawner : MonoBehaviour
     {
-        var spawnedItemStates = spawnChancesTable.SpawnItems();
-        foreach (var itemState in spawnedItemStates)
+        [SerializeField]
+        protected ItemsSpawnChancesTable spawnChancesTable;
+
+        protected void SpawnItems(Func<Vector3> setItemPositionFunc)
         {
-            var spawnedItem = Instantiate(itemState.BaseParams.PhysicalRepresentation);
-            spawnedItem.CurrentItemState = itemState;
-            spawnedItem.transform.position = setItemPositionFunc.Invoke();
+            var spawnedItemStates = spawnChancesTable.SpawnItems();
+            foreach (var itemState in spawnedItemStates)
+            {
+                var spawnedItem = Instantiate(itemState.BaseParams.PhysicalRepresentation);
+                spawnedItem.CurrentItemState = itemState;
+                spawnedItem.transform.position = setItemPositionFunc.Invoke();
+            }
         }
     }
 }

@@ -1,40 +1,42 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Controls;
 using UnityEngine;
 
-public class PlayerMenuSectionNavigation : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    public event Action<PlayerInputActionMap> CurrentSubsectionChanged;
-
-    [SerializeField]
-    private PlayerMenuSubsectionNavigation defaultSubsection;
-
-    public PlayerMenuSubsectionNavigation CurrentSubsection { get; private set; }
-
-    public void SetCurrentSubsection(PlayerMenuSubsectionNavigation subsection, SubsectionNavigationStartCondition navigationStartCondition = SubsectionNavigationStartCondition.Default)
+    public class PlayerMenuSectionNavigation : MonoBehaviour
     {
-        if (CurrentSubsection != null)
+        public event Action<PlayerInputActionMap> CurrentSubsectionChanged;
+
+        [SerializeField]
+        private PlayerMenuSubsectionNavigation defaultSubsection;
+
+        public PlayerMenuSubsectionNavigation CurrentSubsection { get; private set; }
+
+        public void SetCurrentSubsection(PlayerMenuSubsectionNavigation subsection, SubsectionNavigationStartCondition navigationStartCondition = SubsectionNavigationStartCondition.Default)
         {
-            CurrentSubsection.StopNavigation();
+            if (CurrentSubsection != null)
+            {
+                CurrentSubsection.StopNavigation();
+            }
+            CurrentSubsection = subsection;
+            if (CurrentSubsection != null)
+            {
+                CurrentSubsectionChanged?.Invoke(CurrentSubsection.PlayerInputActionMap);
+                CurrentSubsection.StartNavigation(navigationStartCondition);
+            }
         }
-        CurrentSubsection = subsection;
-        if (CurrentSubsection != null)
+
+        public void StartNavigation() => SetCurrentSubsection(defaultSubsection);
+
+        public void NavigateCurrentSubsection(Vector2 inputValue) => CurrentSubsection.Navigate(inputValue);
+
+        public void PressSelectedElement()
         {
-            CurrentSubsectionChanged?.Invoke(CurrentSubsection.PlayerInputActionMap);
-            CurrentSubsection.StartNavigation(navigationStartCondition);
-        }
-    }
-
-    public void StartNavigation() => SetCurrentSubsection(defaultSubsection);
-
-    public void NavigateCurrentSubsection(Vector2 inputValue) => CurrentSubsection.Navigate(inputValue);
-
-    public void PressSelectedElement()
-    {
-        if (CurrentSubsection != null)
-        {
-            CurrentSubsection.PressSelectedElement();
+            if (CurrentSubsection != null)
+            {
+                CurrentSubsection.PressSelectedElement();
+            }
         }
     }
 }

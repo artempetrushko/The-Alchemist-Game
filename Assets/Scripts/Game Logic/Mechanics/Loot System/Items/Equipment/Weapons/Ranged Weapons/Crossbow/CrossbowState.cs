@@ -1,32 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class CrossbowState : RangedWeaponState
+namespace GameLogic.LootSystem
 {
-    public CrossbowState(CrossbowData crossbow) : base(crossbow) { }
-
-    public override object Clone() => new CrossbowState(BaseParams as CrossbowData)
+    public class CrossbowState : RangedWeaponState
     {
-        //ItemData = ItemData,
-        Description = Description,
-        Aspects = Aspects,
-        CastingDamage = CastingDamage,
-        Effects = Effects,
+        public CrossbowState(CrossbowData crossbow) : base(crossbow) { }
 
-        Endurance = Endurance,
-        EnergyCapacity = EnergyCapacity,
-        ImposedRune = ImposedRune,
-        PoweredEnergyCount = PoweredEnergyCount,
-        MaxRuneSize = MaxRuneSize,
+        public override object Clone() => new CrossbowState(BaseParams as CrossbowData)
+        {
+            //ItemData = ItemData,
+            Description = Description,
+            Aspects = Aspects,
+            CastingDamage = CastingDamage,
+            Effects = Effects,
 
-        Damage = Damage,
-        Range = Range,
-        Accuracy = Accuracy,
-        AttackSpeed = AttackSpeed,
-        CooldownTime = CooldownTime,
-        PenetratingPower = PenetratingPower,
+            Endurance = Endurance,
+            EnergyCapacity = EnergyCapacity,
+            ImposedRune = ImposedRune,
+            PoweredEnergyCount = PoweredEnergyCount,
+            MaxRuneSize = MaxRuneSize,
 
-        MissileFlightSpeed = MissileFlightSpeed,
-    };
+            Damage = Damage,
+            Range = Range,
+            Accuracy = Accuracy,
+            AttackSpeed = AttackSpeed,
+            CooldownTime = CooldownTime,
+            PenetratingPower = PenetratingPower,
+
+            MissileFlightSpeed = MissileFlightSpeed,
+        };
+    }
 }

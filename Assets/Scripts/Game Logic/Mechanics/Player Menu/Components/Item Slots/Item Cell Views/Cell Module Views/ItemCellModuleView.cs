@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using GameLogic.LootSystem;
 using UnityEngine;
 
-public abstract class ItemCellModuleView : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    public abstract void SetActive(bool isActive);
+    public abstract class ItemCellModuleView : MonoBehaviour
+    {
+        public abstract void SetActive(bool isActive);
 
-    public abstract bool TryEnableWithNewItem(ItemState newItem);
+        public abstract bool TryEnableWithNewItem(ItemState newItem);
 
-    public abstract void UpdateContent(ItemState attachedItem);
+        public abstract void UpdateContent(ItemState attachedItem);
+    }
 }

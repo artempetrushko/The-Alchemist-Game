@@ -1,44 +1,48 @@
 using System.Collections;
+using GameLogic.LootSystem;
 using UnityEngine;
 
-public class ItemDescriptionsManager : MonoBehaviour
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private ItemDescriptionView itemDescriptionView;
-    [SerializeField]
-    private float viewAppearanceLatencyInSeconds = 1f;
-
-    private bool isViewCreationAvailable;
-    private Vector2 viewPositionOffsetVector = new(Screen.width * 0.15f, Screen.height * 0.3f);
-
-    public void CreateItemDescriptionView(ItemState item, ItemCellView linkedItemCell) => StartCoroutine(CreateItemDescriptionView_COR(item, linkedItemCell));
-
-    public void ClearItemDescriptionView()
+    public class ItemDescriptionsManager : MonoBehaviour
     {
-        isViewCreationAvailable = false;
-        DestroyItemDescriptionView();
-    }
+        [SerializeField]
+        private ItemDescriptionView itemDescriptionView;
+        [SerializeField]
+        private float viewAppearanceLatencyInSeconds = 1f;
 
-    private IEnumerator CreateItemDescriptionView_COR(ItemState item, ItemCellView linkedItemCell)
-    {
-        isViewCreationAvailable = true;
-        DestroyItemDescriptionView();
-        itemDescriptionView.gameObject.SetActive(true);
-        itemDescriptionView.SetInfo(item);
-        itemDescriptionView.SetPosition(linkedItemCell.transform, viewPositionOffsetVector);
+        private bool isViewCreationAvailable;
+        private Vector2 viewPositionOffsetVector = new(Screen.width * 0.15f, Screen.height * 0.3f);
 
-        yield return new WaitForSecondsRealtime(viewAppearanceLatencyInSeconds);
-        if (isViewCreationAvailable)
+        public void CreateItemDescriptionView(ItemState item, ItemCellView linkedItemCell) => StartCoroutine(CreateItemDescriptionView_COR(item, linkedItemCell));
+
+        public void ClearItemDescriptionView()
         {
-            itemDescriptionView.Show();            
-        }      
-    }
+            isViewCreationAvailable = false;
+            DestroyItemDescriptionView();
+        }
 
-    private void DestroyItemDescriptionView()
-    {
-        if (itemDescriptionView != null)
+        private IEnumerator CreateItemDescriptionView_COR(ItemState item, ItemCellView linkedItemCell)
         {
-            Destroy(itemDescriptionView.gameObject);
+            isViewCreationAvailable = true;
+            DestroyItemDescriptionView();
+            itemDescriptionView.gameObject.SetActive(true);
+            itemDescriptionView.SetInfo(item);
+            itemDescriptionView.SetPosition(linkedItemCell.transform, viewPositionOffsetVector);
+
+            yield return new WaitForSecondsRealtime(viewAppearanceLatencyInSeconds);
+            if (isViewCreationAvailable)
+            {
+                itemDescriptionView.Show();
+            }
+        }
+
+        private void DestroyItemDescriptionView()
+        {
+            if (itemDescriptionView != null)
+            {
+                Destroy(itemDescriptionView.gameObject);
+            }
         }
     }
 }

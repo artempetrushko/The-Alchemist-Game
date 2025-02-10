@@ -1,65 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
+using Controls;
+using GameLogic.LevelLoading;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public enum RunEndingStatus
+namespace GameLogic.RunEnding
 {
-    Death,
-    Completion
-}
-
-public class RunEndingManager : MonoBehaviour
-{
-    [SerializeField]
-    private RunEndingStatusData[] runEndingStatusDatas;
-    [Space, SerializeField]
-    private RunEndingView runEndingView;
-    [Space, SerializeField]
-    private InputManager inputManager;
-    [SerializeField]
-    private LevelLoadingManager levelLoadingManager;
-
-    public void ShowRunEndingView(RunEndingStatus status)
+    public enum RunEndingStatus
     {
-        var runEndingStatusData = runEndingStatusDatas.FirstOrDefault(statusData => statusData.Status == status);
-
-        runEndingView.gameObject.SetActive(true);
-        runEndingView.SetInfo(runEndingStatusData.StatusDescription, runEndingStatusData.StatusIcon, GetActionButtonDatas());
-        StartCoroutine(runEndingView.Show_COR());
+        Death,
+        Completion
     }
 
-    public void ReturnToHub(InputAction.CallbackContext context)
+    public class RunEndingManager : MonoBehaviour
     {
-        if (context.performed)
+        [SerializeField]
+        private RunEndingStatusData[] runEndingStatusDatas;
+        [Space, SerializeField]
+        private RunEndingView runEndingView;
+        [Space, SerializeField]
+        private InputManager inputManager;
+        [SerializeField]
+        private LevelLoadingManager levelLoadingManager;
+
+        public void ShowRunEndingView(RunEndingStatus status)
         {
-            ReturnToHub();
+            var runEndingStatusData = runEndingStatusDatas.FirstOrDefault(statusData => statusData.Status == status);
+
+            runEndingView.gameObject.SetActive(true);
+            runEndingView.SetInfo(runEndingStatusData.StatusDescription, runEndingStatusData.StatusIcon, GetActionButtonDatas());
+            StartCoroutine(runEndingView.Show_COR());
         }
-    }
 
-    public void ReturnToMainMenu(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        public void ReturnToHub(InputAction.CallbackContext context)
         {
-            ReturnToMainMenu();
+            if (context.performed)
+            {
+                ReturnToHub();
+            }
         }
-    }
 
-    private void ReturnToHub() => levelLoadingManager.LoadHub();
-
-    private void ReturnToMainMenu() => levelLoadingManager.LoadMainMenu();
-
-    private (DetailedControlTip, UnityAction)[] GetActionButtonDatas()
-    {
-        var actionButtonDatas = new (string description, InputAction inputAction, UnityAction buttonPressedAction)[]
+        public void ReturnToMainMenu(InputAction.CallbackContext context)
         {
+            if (context.performed)
+            {
+                ReturnToMainMenu();
+            }
+        }
+
+        private void ReturnToHub() => levelLoadingManager.LoadHub();
+
+        private void ReturnToMainMenu() => levelLoadingManager.LoadMainMenu();
+
+        private (DetailedControlTip, UnityAction)[] GetActionButtonDatas()
+        {
+            var actionButtonDatas = new (string description, InputAction inputAction, UnityAction buttonPressedAction)[]
+            {
             ("Вернуться в убежище", inputManager.PlayerActions.RunEndingScreen.ReturnToHub, () => ReturnToHub()),
             ("В главное меню", inputManager.PlayerActions.RunEndingScreen.ExitToMainMenu, () => ReturnToMainMenu())
-        };
-        return actionButtonDatas
-            .Select(actionButtonData => (inputManager.CreateDetailedControlsTip((actionButtonData.description, actionButtonData.inputAction)), actionButtonData.buttonPressedAction))
-            .ToArray();
+            };
+            return actionButtonDatas
+                .Select(actionButtonData => (inputManager.CreateDetailedControlsTip((actionButtonData.description, actionButtonData.inputAction)), actionButtonData.buttonPressedAction))
+                .ToArray();
+        }
     }
 }

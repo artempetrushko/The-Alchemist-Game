@@ -1,25 +1,27 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Spawn Chances Table", menuName = "Game Entities/Items Spawn Chances Table", order = 51)]
-public class ItemsSpawnChancesTable : ScriptableObject
+namespace GameLogic.LootSystem
 {
-    [SerializeField]
-    private List<PossibleItem> possibleItems;
-
-    public List<ItemState> SpawnItems()
+    [CreateAssetMenu(fileName = "New Spawn Chances Table", menuName = "Game Entities/Items Spawn Chances Table", order = 51)]
+    public class ItemsSpawnChancesTable : ScriptableObject
     {
-        var itemStates = new List<ItemState>();
-        foreach (var item in possibleItems) 
+        [SerializeField]
+        private List<PossibleItem> possibleItems;
+
+        public List<ItemState> SpawnItems()
         {
-            var spawnedItems = item.TrySpawn();
-            if (spawnedItems.Count > 0)
+            var itemStates = new List<ItemState>();
+            foreach (var item in possibleItems)
             {
-                itemStates = itemStates.Concat(spawnedItems).ToList();
+                var spawnedItems = item.TrySpawn();
+                if (spawnedItems.Count > 0)
+                {
+                    itemStates = itemStates.Concat(spawnedItems).ToList();
+                }
             }
+            return itemStates;
         }
-        return itemStates;
     }
 }

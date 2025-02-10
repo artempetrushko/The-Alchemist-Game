@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Controls;
 using UnityEngine;
 
 public class ControlsTipsSectionView : MonoBehaviour

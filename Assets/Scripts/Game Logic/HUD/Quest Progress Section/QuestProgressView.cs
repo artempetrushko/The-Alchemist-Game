@@ -5,34 +5,37 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class QuestProgressView : MonoBehaviour
+namespace GameLogic.HUD
 {
-    [SerializeField]
-    private CanvasGroup viewCanvasGroup;
-    [SerializeField]
-    private TMP_Text questDescriptionText;
-
-    private bool isVisible;
-
-    public void SetQuestDescription(string questDescription)
+    public class QuestProgressView : MonoBehaviour
     {
-        questDescriptionText.text = questDescription;
-        isVisible = false;
-        StartCoroutine(ShowQuestDescription_COR());
-    }
+        [SerializeField]
+        private CanvasGroup viewCanvasGroup;
+        [SerializeField]
+        private TMP_Text questDescriptionText;
 
-    public IEnumerator ShowQuestDescription_COR()
-    {
-        if (!isVisible)
+        private bool isVisible;
+
+        public void SetQuestDescription(string questDescription)
         {
-            isVisible = true;
-            var tweenSequence = DOTween.Sequence();
-            tweenSequence.Append(viewCanvasGroup.DOFade(1f, 1f));
-            tweenSequence.AppendInterval(5f);
-            tweenSequence.Append(viewCanvasGroup.DOFade(0f, 1f));
-            tweenSequence.Play();
-            yield return tweenSequence.WaitForCompletion();
+            questDescriptionText.text = questDescription;
             isVisible = false;
-        }       
+            StartCoroutine(ShowQuestDescription_COR());
+        }
+
+        public IEnumerator ShowQuestDescription_COR()
+        {
+            if (!isVisible)
+            {
+                isVisible = true;
+                var tweenSequence = DOTween.Sequence();
+                tweenSequence.Append(viewCanvasGroup.DOFade(1f, 1f));
+                tweenSequence.AppendInterval(5f);
+                tweenSequence.Append(viewCanvasGroup.DOFade(0f, 1f));
+                tweenSequence.Play();
+                yield return tweenSequence.WaitForCompletion();
+                isVisible = false;
+            }
+        }
     }
 }

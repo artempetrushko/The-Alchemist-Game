@@ -1,25 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using GameLogic.LootSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InnerBackgroundModuleView : ItemCellModuleView
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    protected Image backgroundIcon;
-
-    public override void SetActive(bool isActive)
-    {   
-        backgroundIcon.gameObject.SetActive(isActive);
-    }
-
-    public override bool TryEnableWithNewItem(ItemState newItem)
+    public class InnerBackgroundModuleView : ItemCellModuleView
     {
-        throw new System.NotImplementedException();
-    }
+        [SerializeField]
+        protected Image backgroundIcon;
 
-    public override void UpdateContent(ItemState attachedItem)
-    {
-        throw new System.NotImplementedException();
+        public override void SetActive(bool isActive)
+        {
+            backgroundIcon.gameObject.SetActive(isActive);
+        }
+
+        public override bool TryEnableWithNewItem(ItemState newItem)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void UpdateContent(ItemState attachedItem)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemEquippingModule : ItemsInteractionModule
+namespace GameLogic.PlayerMenu
 {
-    [SerializeField]
-    private InventoryManager inventoryManager;
-
-    public override void StartInteraction(ItemSlot selectedItemSlot)
+    public class ItemEquippingModule : ItemsInteractionModule
     {
-        inventoryManager.TryEquipInventoryItem(selectedItemSlot);
-        OnInteractionExecuted();
-    }
+        [SerializeField]
+        private InventoryManager inventoryManager;
 
-    public override void CancelInteraction()
-    {
-        throw new System.NotImplementedException();
+        public override void StartInteraction(ItemSlot selectedItemSlot)
+        {
+            inventoryManager.TryEquipInventoryItem(selectedItemSlot);
+            OnInteractionExecuted();
+        }
+
+        public override void CancelInteraction()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
