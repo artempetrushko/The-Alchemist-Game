@@ -16,9 +16,7 @@ public class RunEndingManager : MonoBehaviour
     [SerializeField]
     private RunEndingStatusData[] runEndingStatusDatas;
     [Space, SerializeField]
-    private RunEndingView runEndingViewPrefab;
-    [SerializeField]
-    private GameObject runEndingViewContainer;
+    private RunEndingView runEndingView;
     [Space, SerializeField]
     private InputManager inputManager;
     [SerializeField]
@@ -27,7 +25,8 @@ public class RunEndingManager : MonoBehaviour
     public void ShowRunEndingView(RunEndingStatus status)
     {
         var runEndingStatusData = runEndingStatusDatas.FirstOrDefault(statusData => statusData.Status == status);
-        var runEndingView = Instantiate(runEndingViewPrefab, runEndingViewContainer.transform);
+
+        runEndingView.gameObject.SetActive(true);
         runEndingView.SetInfo(runEndingStatusData.StatusDescription, runEndingStatusData.StatusIcon, GetActionButtonDatas());
         StartCoroutine(runEndingView.Show_COR());
     }

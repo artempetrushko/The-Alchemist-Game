@@ -7,13 +7,10 @@ using UnityEngine.SceneManagement;
 public class LevelLoadingManager : MonoBehaviour
 {
     [SerializeField]
-    private LoadingScreenView loadingScreenViewPrefab;
-    [SerializeField]
-    private GameObject loadingScreenViewContainer;
+    private LoadingScreenView loadingScreenView;
     [Space, SerializeField]
     private InputManager inputManager;
 
-    private LoadingScreenView loadingScreenView;
     private float loadingProgress;
     private bool isContinueButtonPressed;
 
@@ -53,7 +50,7 @@ public class LevelLoadingManager : MonoBehaviour
 
     private IEnumerator LoadLevelAsync_COR(int loadingSceneIndex)
     {
-        loadingScreenView = Instantiate(loadingScreenViewPrefab, loadingScreenViewContainer.transform);
+        loadingScreenView.gameObject.SetActive(true);
         inputManager.CurrentActionMap = PlayerInputActionMap.UI_LoadingScreen;
 
         var operation = SceneManager.LoadSceneAsync(loadingSceneIndex);

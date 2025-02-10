@@ -1102,7 +1102,6 @@ MonoBehaviour:
   playerInput: {fileID: 4080318587984007000}
   gamepadButtonsIcons: {fileID: 11400000, guid: 87ebe6586fda9b346b3bcaa6c82b8461,
     type: 2}
-  playerMenuControlsTipsSectionView: {fileID: 0}
 --- !u!1 &2112113516153556502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,12 +1151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5192493f5cd60a7428b64d0e491e6bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 6603067858326094833}
-  questManager: {fileID: 8714115156442780315}
-  inputManager: {fileID: 2036047179359671938}
-  hudManager: {fileID: 0}
-  levelLoadingManager: {fileID: 6193551178095944882}
-  runEndingManager: {fileID: 0}
+  _inventoryManager: {fileID: 6603067858326094833}
+  _questManager: {fileID: 8714115156442780315}
+  _inputManager: {fileID: 2036047179359671938}
+  _levelLoadingManager: {fileID: 6193551178095944882}
+  _runEndingManager: {fileID: 3328291819407308940}
 --- !u!114 &6193551178095944882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,9 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9368058769a3440bc656e0f4286bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScreenViewPrefab: {fileID: 3626415247346299864, guid: a6ec0805c8e52f74e9c834dec8ff2b4e,
-    type: 3}
-  loadingScreenViewContainer: {fileID: 0}
+  loadingScreenView: {fileID: 0}
   inputManager: {fileID: 2036047179359671938}
 --- !u!114 &3328291819407308940
 MonoBehaviour:
@@ -1193,9 +1189,7 @@ MonoBehaviour:
   - status: 1
     statusIcon: {fileID: 21300000, guid: 97aca5cfd8a0b884eb457728aadccac7, type: 3}
     statusDescription: "\u0417\u0430\u0431\u0435\u0433 \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043D!"
-  runEndingViewPrefab: {fileID: 3213188030074919994, guid: 5d2fbfdcfb6011c42a2c994b52c00cd9,
-    type: 3}
-  runEndingViewContainer: {fileID: 0}
+  runEndingView: {fileID: 0}
   inputManager: {fileID: 2036047179359671938}
   levelLoadingManager: {fileID: 6193551178095944882}
 --- !u!1 &2221992245514988832
@@ -1634,7 +1628,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8218996220443439446}
-  - component: {fileID: 7919828064836258063}
   - component: {fileID: 1242604367710802321}
   - component: {fileID: 4002637374728261544}
   - component: {fileID: 7822113685916255815}
@@ -1660,19 +1653,6 @@ Transform:
   m_Father: {fileID: 5087269888003773115}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7919828064836258063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7789330750529029381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bab6a1cc35ddc0488553cfe94aae71c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hudView: {fileID: 0}
 --- !u!114 &1242604367710802321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,12 +1677,10 @@ MonoBehaviour:
       type: 3}
     sectionIcon: {fileID: 21300000, guid: d58db6a624a31fb4da63286ec539709e, type: 3}
   - mechanicsManager: {fileID: 0}
-    mechanicsViewPrefab: {fileID: 7171789827346665889, guid: 283e89c1e270635489fe4cbfc3ba6a9b,
-      type: 3}
+    mechanicsViewPrefab: {fileID: 0}
     sectionIcon: {fileID: 21300000, guid: afa085d878927bb489738b2f586d7053, type: 3}
   - mechanicsManager: {fileID: 0}
-    mechanicsViewPrefab: {fileID: 1582240908107756101, guid: b6eeffe31a3600947830ec11c89eae76,
-      type: 3}
+    mechanicsViewPrefab: {fileID: 0}
     sectionIcon: {fileID: 21300000, guid: 1e5b9ebc606822f4387aa624ea89bc9c, type: 3}
   playerMenuSectionsContainer: {fileID: 0}
   playerInputManager: {fileID: 2036047179359671938}
@@ -1735,9 +1713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249337cbca384054f84bc4ba4586ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDescriptionViewPrefab: {fileID: 2290167567978384361, guid: b33d8cf126c0a6e4182d11b6bfd60652,
-    type: 3}
-  itemDescriptionViewContainer: {fileID: 0}
+  itemDescriptionView: {fileID: 0}
   viewAppearanceLatencyInSeconds: 1
 --- !u!1 &8400844909467162119
 GameObject:

@@ -1,25 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using GameLogic.HUD;
 using UnityEngine;
+using Zenject;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private InventoryManager inventoryManager;
-    [SerializeField]
-    private QuestManager questManager;
-    [SerializeField]
-    private InputManager inputManager;
-    [SerializeField]
-    private HUDManager hudManager;
-    [SerializeField]
-    private LevelLoadingManager levelLoadingManager;
-    [SerializeField]
-    private RunEndingManager runEndingManager;
+    [SerializeField] private InventoryManager _inventoryManager;
+    [SerializeField] private QuestManager _questManager;
+    [SerializeField] private InputManager _inputManager;
+    [SerializeField] private HUDManager _hudManager;
+    [SerializeField] private LevelLoadingManager _levelLoadingManager;
+    [SerializeField] private RunEndingManager _runEndingManager;
 
     public GameProgress GameProgress { get; private set; }
 
-    public void GoToNextLocation() => levelLoadingManager.LoadNextLocation();
+    [Inject]
+    public void Construct(HUDManager hudManager)
+    {
+        _hudManager = hudManager;
+    }
+
+    public void GoToNextLocation() => _levelLoadingManager.LoadNextLocation();
 
     public void FinishRun()
     {
@@ -27,7 +30,7 @@ public class GameManager : MonoBehaviour
         {
             GameProgress.PlayerFinishedLevelEver = true;
         }
-        runEndingManager.ShowRunEndingView(RunEndingStatus.Completion);
+        _runEndingManager.ShowRunEndingView(RunEndingStatus.Completion);
         //SavePlayerProgress();
         Destroy(GetComponent<Collider>());
     }
@@ -40,21 +43,21 @@ public class GameManager : MonoBehaviour
 
     private void InitializeGameSystems()
     {
-        inputManager.Initialize();
-        inventoryManager.Initialize();
-        questManager.Initialize(GameProgress);
+        _inputManager.Initialize();
+        _inventoryManager.Initialize();
+        _questManager.Initialize(GameProgress);
     }
 
     private IEnumerator ShowStartGameInfo_COR()
     {
-        yield return StartCoroutine(hudManager.HideStartBlackScreen_COR());
+        yield return StartCoroutine(_hudManager.HideStartBlackScreenAsync().ToCoroutine());
         yield return StartCoroutine(ShowLocationTitle_COR());
-        questManager.UpdateQuestDescription();
+        _questManager.UpdateQuestDescription();
     }
 
     private IEnumerator ShowLocationTitle_COR()
     {
-        var locationName = levelLoadingManager.GetCurrentLevelName();
-        yield return StartCoroutine(hudManager.ShowLocationName_COR(locationName));
+        var locationName = _levelLoadingManager.GetCurrentLevelName();
+        yield return StartCoroutine(_hudManager.ShowLocationNameAsync(locationName).ToCoroutine());
     }
 }

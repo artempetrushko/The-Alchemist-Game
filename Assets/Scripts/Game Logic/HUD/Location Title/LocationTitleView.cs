@@ -1,6 +1,5 @@
+using Cysharp.Threading.Tasks;
 using LeTai.TrueShadow;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ public class LocationTitleView : MonoBehaviour
     [Space, SerializeField]
     private float titleAppearanceTime = 1f;
 
-    public IEnumerator ShowLocationName_COR(string locationTitle)
+    public async UniTask ShowLocationNameAsync(string locationTitle)
     {
         locationTitleText.text = "";
         titleShadow.enabled = true;
@@ -21,13 +20,13 @@ public class LocationTitleView : MonoBehaviour
         for (var i = 0; i < locationTitle.Length; i++)
         {
             locationTitleText.text += locationTitle[i];
-            yield return new WaitForSecondsRealtime(textAppearanceLatency);
+            await UniTask.WaitForSeconds(textAppearanceLatency);
         }
-        yield return new WaitForSecondsRealtime(5f);
+        await UniTask.WaitForSeconds(5f);
         for (var i = 0; i < locationTitle.Length; i++)
         {
             locationTitleText.text = locationTitleText.text[..^1];
-            yield return new WaitForSecondsRealtime(textAppearanceLatency / 2);
+            await UniTask.WaitForSeconds(textAppearanceLatency / 2);
         }
         titleShadow.enabled = false;
     }

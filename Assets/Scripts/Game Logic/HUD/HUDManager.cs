@@ -1,19 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Cysharp.Threading.Tasks;
 
-public class HUDManager : MonoBehaviour
+namespace GameLogic.HUD
 {
-    [SerializeField]
-    private HUDView hudView;
-
-    public IEnumerator ShowLocationName_COR(string locationName)
+    public class HUDManager
     {
-        yield return StartCoroutine(hudView.ShowLocationName_COR(locationName));
-    }
+        private HUDView _hudView;
 
-    public IEnumerator HideStartBlackScreen_COR()
-    {
-        yield return StartCoroutine(hudView.HideStartBlackScreen_COR());
+        public HUDManager(HUDView hudView)
+        {
+            _hudView = hudView;
+        }
+
+        public async UniTask ShowLocationNameAsync(string locationName)
+        {
+            await _hudView.ShowLocationNameAsync(locationName);
+        }
+
+        public async UniTask HideStartBlackScreenAsync()
+        {
+            await _hudView.HideStartBlackScreenAsync();
+        }
     }
 }
