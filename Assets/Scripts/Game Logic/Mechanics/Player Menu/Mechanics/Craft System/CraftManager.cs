@@ -194,7 +194,7 @@ public class CraftManager : PlayerMenuMechanicsManager
             var currentItemsCount = ingredients[i].ItemState switch
             {
                 StackableItemState stackableItem => stackableItem.ItemsCount,
-                SingleItemState => 1,
+                ItemState => 1,
                 null => 0,
             };
             int? requiredItemsCount = currentRecipeVariant?.Ingredients[i].Count;
@@ -221,7 +221,7 @@ public class CraftManager : PlayerMenuMechanicsManager
                     }
                     break;
 
-                case SingleItemState:
+                default:
                     usedItem.ItemState = null;
                     break; 
             }
@@ -253,7 +253,7 @@ public class CraftManager : PlayerMenuMechanicsManager
                     }
                     break;
 
-                case SingleItemState:
+                default:
                     requiredEnergyCount -= energyHolder.ItemState.ContainedEnergyCount;
                     energyHolder.ItemState = null;
                     break;

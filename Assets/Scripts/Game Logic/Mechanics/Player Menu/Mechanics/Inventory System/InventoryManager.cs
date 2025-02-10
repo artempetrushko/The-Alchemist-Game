@@ -83,13 +83,9 @@ public class InventoryManager : PlayerMenuMechanicsManager
     {
         return itemState switch
         {
-            SingleItemState singleItem => singleItem switch
-            {
-                EquipmentState equipment => TryEquipOrAddItem(equipment),
-                _ => TryAddItem(singleItem),
-            },
             StackableItemState stackableItem => TryAddStackableItem(stackableItem),
-            _ => false,
+            EquipmentState equipment => TryEquipOrAddItem(equipment),
+            _ => TryAddItem(itemState)
         };
     }
 

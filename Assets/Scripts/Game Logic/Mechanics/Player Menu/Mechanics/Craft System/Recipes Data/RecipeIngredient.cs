@@ -14,8 +14,8 @@ public class RecipeIngredient : RecipeItem
         {
             return selectedItem switch
             {
-                SingleItemState => selectedItem.BaseParams.Equals(item),
-                StackableItemState => selectedItem.BaseParams.Equals(item) && (selectedItem as StackableItemState).ItemsCount >= count
+                StackableItemState => selectedItem.BaseParams.Equals(item) && (selectedItem as StackableItemState).ItemsCount >= count,
+                _ => selectedItem.BaseParams.Equals(item)
             };
         }
         return selectedItem.BaseParams.Equals(item);
