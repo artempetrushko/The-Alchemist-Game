@@ -9,7 +9,7 @@ namespace GameLogic.PlayerMenu.Craft
 
         public IngredientSlot(SignalBus signalBus) : base(signalBus) { }
 
-        public override void PlaceNewItem(ItemState item)
+        public override void PlaceNewItem(Item item)
         {
             base.PlaceNewItem(item);
 

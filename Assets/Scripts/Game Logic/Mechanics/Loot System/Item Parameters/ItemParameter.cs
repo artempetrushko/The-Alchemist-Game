@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using UnityEngine;
 using UnityEngine.Localization;
 
 namespace GameLogic.LootSystem
@@ -6,9 +8,26 @@ namespace GameLogic.LootSystem
     [Serializable]
     public class ItemParameter<T> : IFormattedItemParameter
     {
-        public LocalizedString Name;
-        public T Value;
-        public LocalizedString MeasurementTitle;
+        [JsonProperty]
+        [SerializeField] private LocalizedString _name;
+        [JsonProperty]
+        [SerializeField] private T _value;
+        [JsonProperty]
+        [SerializeField] private LocalizedString _measurementTitle;
+
+        public LocalizedString Name => _name;
+        public LocalizedString MeasurementTitle => _measurementTitle;
+        public T Value
+        {
+            get => _value;
+            set
+            {
+                if (!_value.Equals(value))
+                {
+                    _value = value;
+                }
+            }
+        }
 
         public (string paramName, string formattedParamValue) GetFormattedParamInfo()
         {

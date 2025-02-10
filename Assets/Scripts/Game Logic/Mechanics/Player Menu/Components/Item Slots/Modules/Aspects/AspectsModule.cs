@@ -8,9 +8,9 @@ namespace GameLogic.PlayerMenu
         [SerializeField] private AspectView _aspectViewPrefab;
         [SerializeField] private GameObject _aspectViewsContainer;
 
-        public override void UpdateDisplayedInfo(ItemState item)
+        public override void UpdateDisplayedInfo(Item item)
         {
-            if (item is EquipmentState equipment)
+            if (item is Equipment equipment)
             {
                 var aspects = equipment.ContainedAspects.Value;
                 if (aspects.Count > _aspectViewsContainer.transform.childCount)

@@ -67,19 +67,19 @@ namespace GameLogic.PlayerMenu
             }
         }
 
-        public PlayerMenuPresenter(PlayerMenuView view)
+        public PlayerMenuPresenter(PlayerMenuView view, InputManager inputManager, SignalBus signalBus)
         {
             _view = view;
+            _signalBus = signalBus;
 
+            _inputManager = inputManager;
             _inputManager.PlayerActions.Player.ShowPlayerMenu.performed += ShowPlayerMenu;
             _inputManager.PlayerActions.PlayerMenuInventorySection.NavigatePlayerMenu.performed += OnNavigatePlayerMenuActionPerformed;
             _inputManager.PlayerActions.PlayerMenuInventorySection.NavigateSection.performed += OnNavigateSectionActionPerformed;
             _inputManager.PlayerActions.PlayerMenuInventorySection.ClosePlayerMenu.performed += HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuAlchemistrySectionRecipes.ClosePlayerMenu.performed += HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionEnergyCells.ClosePlayerMenu.performed += HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionInventory.ClosePlayerMenu.performed += HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionRecipes.ClosePlayerMenu.performed += HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuSettings.ClosePlayerMenu.performed += HidePlayerMenu;           
+            _inputManager.PlayerActions.PlayerMenuAlchemistrySection.ClosePlayerMenu.performed += HidePlayerMenu;
+            _inputManager.PlayerActions.PlayerMenuCraftSection.ClosePlayerMenu.performed += HidePlayerMenu;
+            _inputManager.PlayerActions.PlayerMenuSettingsSection.ClosePlayerMenu.performed += HidePlayerMenu;           
         }
 
         public void Dispose()
@@ -88,11 +88,9 @@ namespace GameLogic.PlayerMenu
             _inputManager.PlayerActions.PlayerMenuInventorySection.NavigatePlayerMenu.performed -= OnNavigatePlayerMenuActionPerformed;
             _inputManager.PlayerActions.PlayerMenuInventorySection.NavigateSection.performed -= OnNavigateSectionActionPerformed;
             _inputManager.PlayerActions.PlayerMenuInventorySection.ClosePlayerMenu.performed -= HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuAlchemistrySectionRecipes.ClosePlayerMenu.performed -= HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionEnergyCells.ClosePlayerMenu.performed -= HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionInventory.ClosePlayerMenu.performed -= HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionRecipes.ClosePlayerMenu.performed -= HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuSettings.ClosePlayerMenu.performed -= HidePlayerMenu;       
+            _inputManager.PlayerActions.PlayerMenuAlchemistrySection.ClosePlayerMenu.performed -= HidePlayerMenu;
+            _inputManager.PlayerActions.PlayerMenuCraftSection.ClosePlayerMenu.performed -= HidePlayerMenu;
+            _inputManager.PlayerActions.PlayerMenuSettingsSection.ClosePlayerMenu.performed -= HidePlayerMenu;       
         }
 
         private void ShowPlayerMenu(InputAction.CallbackContext context)

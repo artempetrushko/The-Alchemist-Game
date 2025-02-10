@@ -14,7 +14,6 @@ namespace GameLogic.PlayerMenu
         public event Action<PointerEventData> DraggingObjectDropped;
 
 		[SerializeField] private Image _itemIcon; 
-		[SerializeField] private GameObject _itemViewContainer;
 		[SerializeField] private TrueShadow _backgroundShadow;
 		[Space]
 		[SerializeField] private ItemSlotModule[] _cellModules;

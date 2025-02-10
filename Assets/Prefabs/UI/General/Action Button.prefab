@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 2840234536642260633}
   - component: {fileID: 3587140803392580872}
   - component: {fileID: 7458463419282317927}
+  - component: {fileID: 7485811516671480218}
   m_Layer: 5
   m_Name: Action Button
   m_TagString: Untagged
@@ -516,10 +517,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b040a154940d114f85405071969e401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonComponent: {fileID: 0}
-  _controlTipView: {fileID: 0}
-  _normalStateContentColor: {r: 0, g: 0, b: 0, a: 0}
-  _selectedStateContentColor: {r: 0, g: 0, b: 0, a: 0}
+  _buttonComponent: {fileID: 5988010127620648726}
+  _controlTipView: {fileID: 7485811516671480218}
+  _normalStateContentColor: {r: 0.7411765, g: 0.8784314, b: 0.21960784, a: 1}
+  _selectedStateContentColor: {r: 0.2, g: 0.13725491, b: 0.105882354, a: 1}
+--- !u!114 &7485811516671480218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807990861848765770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d5e588186ce18488fbc3e56244d247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _keyIconContainer: {fileID: 883053211419475827}
+  _keyName: {fileID: 7645471534776343215}
+  _gamepadKeyIconContainer: {fileID: 2744844854532799566}
+  _gamepadKeyIcon: {fileID: 6609516239506464499}
+  _actionTitleText: {fileID: 8815071505957383543}
 --- !u!1 &7976197734313624691
 GameObject:
   m_ObjectHideFlags: 0

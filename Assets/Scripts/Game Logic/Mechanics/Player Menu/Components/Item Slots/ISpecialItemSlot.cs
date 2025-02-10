@@ -4,6 +4,6 @@ namespace GameLogic.PlayerMenu
 {
     public interface ISpecialItemSlot
     {
-        bool CheckItemRequirementsCompliance(ItemState item);
+        bool CheckItemRequirementsCompliance(Item item);
     }
 }

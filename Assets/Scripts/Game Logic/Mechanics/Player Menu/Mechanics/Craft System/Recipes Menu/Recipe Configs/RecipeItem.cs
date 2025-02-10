@@ -5,7 +5,7 @@ using UnityEngine;
 namespace GameLogic.PlayerMenu.Craft
 {
     [Serializable]
-    public abstract class RecipeItem
+    public class RecipeItem
     {
         [SerializeField] private ItemConfig _itemConfig;
         [SerializeField] private int _count;

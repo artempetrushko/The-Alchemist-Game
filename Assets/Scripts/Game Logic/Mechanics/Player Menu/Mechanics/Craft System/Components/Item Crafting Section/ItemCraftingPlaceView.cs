@@ -11,14 +11,13 @@ namespace GameLogic.PlayerMenu.Craft
         public event Action<PointerEventData> PointerUp;
 
         [SerializeField] private Image _craftingItemIcon;
-        [SerializeField] private GameObject _ingredientCellsTemplatesContainer;
+        [SerializeField] private GameObject _ingredientSlotsTemplatesContainer;
 
         public void OnPointerDown(PointerEventData eventData) => PointerDown?.Invoke(eventData);
 
         public void OnPointerUp(PointerEventData eventData) => PointerUp?.Invoke(eventData);
 
-        public IngredientSlotsTemplateView CreateIngredientSlotsTemplate(IngredientSlotsTemplateView ingredientCellsTemplatePrefab) => Instantiate(ingredientCellsTemplatePrefab, _ingredientCellsTemplatesContainer.transform);
-
+        public IngredientSlotsTemplateView CreateIngredientSlotsTemplate(IngredientSlotsTemplateView ingredientCellsTemplatePrefab) => Instantiate(ingredientCellsTemplatePrefab, _ingredientSlotsTemplatesContainer.transform);
 
         public void SetCraftingItemIconActive(bool isActive) => _craftingItemIcon.gameObject.SetActive(isActive);
 

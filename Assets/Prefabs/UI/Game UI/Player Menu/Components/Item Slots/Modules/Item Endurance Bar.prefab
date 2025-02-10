@@ -86,6 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 877267526587413189}
+  - component: {fileID: 1122864445736897779}
   - component: {fileID: 3002162878384084580}
   m_Layer: 5
   m_Name: Item Endurance Bar
@@ -115,6 +116,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 83, y: 7}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!225 &1122864445736897779
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050254602155512006}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &3002162878384084580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0de4995709ffa4fb0bc2759b5a39fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasGroup: {fileID: 0}
-  _fillingArea: {fileID: 0}
+  _canvasGroup: {fileID: 1122864445736897779}
+  _fillingArea: {fileID: 998180945806385728}
   _enduranceBarConfig: {fileID: 0}
 --- !u!1 &9008033274378553385
 GameObject:

@@ -9,9 +9,9 @@ namespace GameLogic.PlayerMenu
         [SerializeField] private Image _fillingArea;
         [SerializeField] private EnduranceBarConfig _enduranceBarConfig;
 
-        public override void UpdateDisplayedInfo(ItemState item)
+        public override void UpdateDisplayedInfo(Item item)
         {
-            if (item is EquipmentState equipment)
+            if (item is Equipment equipment)
             {
                 SetVisible(true);
                 _fillingArea.fillAmount = (float)equipment.Endurance.Value / equipment.Endurance.MaxValue;

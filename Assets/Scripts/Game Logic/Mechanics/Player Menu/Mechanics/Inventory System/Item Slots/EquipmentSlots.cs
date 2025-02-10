@@ -20,7 +20,7 @@ namespace GameLogic.PlayerMenu.Inventory
             throw new System.NotImplementedException();
         }
 
-        public bool TryPlaceItem(ItemState item)
+        public bool TryPlaceItem(Item item)
         {
             return false;
         }

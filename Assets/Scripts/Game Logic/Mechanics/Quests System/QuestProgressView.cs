@@ -14,9 +14,6 @@ namespace GameLogic.QuestSystem
 
 		public void SetQuestDescriptionText(string text) => _questDescriptionText.text = text;
 
-        public async UniTask PlayFadeAnimation(float endValue, float duration)
-        {
-            await _canvasGroup.DOFade(endValue, duration).AsyncWaitForCompletion();
-        }
-	}
+        public async UniTask PlayFadeAnimation(float endValue, float duration) => await _canvasGroup.DOFade(endValue, duration).AsyncWaitForCompletion();
+    }
 }

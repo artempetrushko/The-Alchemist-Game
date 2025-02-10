@@ -11,10 +11,10 @@ namespace GameLogic.PlayerMenu
         private const float PANEL_POSITION_OFFSET_COEF_Y = 0.3f;
 
         private ItemSlotView _view;
-        private ItemState _containedItem;
+        private Item _containedItem;
         private SignalBus _signalBus;
 
-        public ref ItemState ContainedItem => ref _containedItem;
+        public ref Item ContainedItem => ref _containedItem;
         public ItemSlotView View
         {
             get => _view;
@@ -59,7 +59,7 @@ namespace GameLogic.PlayerMenu
             throw new System.NotImplementedException();
         }
 
-        public virtual bool TryPlaceNewItem(ItemState item)
+        public virtual bool TryPlaceNewItem(Item item)
         {
             if (_containedItem != null)
             {
@@ -69,7 +69,7 @@ namespace GameLogic.PlayerMenu
             return true;
         }
 
-        public virtual void PlaceNewItem(ItemState item)
+        public virtual void PlaceNewItem(Item item)
         {
             _containedItem = item;
 
@@ -90,13 +90,13 @@ namespace GameLogic.PlayerMenu
                 otherSlot.Clear();
                 return true;
             }
-            if (otherSlot.ContainedItem is not StackableItemState || ContainedItem.Id != otherSlot.ContainedItem.Id)
+            if (otherSlot.ContainedItem is not StackableItem || ContainedItem.Id != otherSlot.ContainedItem.Id)
             {
                 return TrySwapItems(otherSlot);
             }
             
-            var containedStackableItem = ContainedItem as StackableItemState;
-            var otherStackableItem = otherSlot.ContainedItem as StackableItemState;
+            var containedStackableItem = ContainedItem as StackableItem;
+            var otherStackableItem = otherSlot.ContainedItem as StackableItem;
             if (containedStackableItem.Count.Value == containedStackableItem.Count.MaxValue)
             {
                 return false;

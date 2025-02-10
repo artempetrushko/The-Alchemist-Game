@@ -9,7 +9,7 @@ namespace GameLogic.PlayerMenu.Inventory
         {
         }
 
-        public bool CheckItemRequirementsCompliance(ItemState item)
+        public bool CheckItemRequirementsCompliance(Item item)
         {
             throw new System.NotImplementedException();
         }

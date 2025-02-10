@@ -16,6 +16,6 @@ namespace GameLogic.LootSystem
         public AspectConfig[] ContainedAspects => _containedAspects;
         public int ContainedEnergyCount => _containedEnergyCount;
 
-        public AspectState GetAspectState() => new();
+        public Aspect GetAspectState() => new();
     }
 }

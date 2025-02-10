@@ -42,7 +42,7 @@ namespace GameLogic.PlayerMenu
             _view.SetVisible(true);
         }
 
-        private void SetPanelContent(ItemState item)
+        private void SetPanelContent(Item item)
         {
             _view.SetItemTitleText(item.Title.GetLocalizedString());
             _view.SetItemDescriptionText(item.Description.GetLocalizedString());

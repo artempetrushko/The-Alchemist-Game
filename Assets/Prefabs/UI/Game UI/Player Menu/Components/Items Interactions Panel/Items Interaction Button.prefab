@@ -265,9 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6006668cc7ee4847afbb7eb028cc26c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonComponent: {fileID: 0}
-  _interactionIcon: {fileID: 0}
-  _interactionTitle: {fileID: 0}
+  _buttonComponent: {fileID: 7497475488977927382}
+  _interactionIcon: {fileID: 6399437905534335840}
+  _interactionTitle: {fileID: 5701139812917342936}
 --- !u!1 &6494745124309222790
 GameObject:
   m_ObjectHideFlags: 0

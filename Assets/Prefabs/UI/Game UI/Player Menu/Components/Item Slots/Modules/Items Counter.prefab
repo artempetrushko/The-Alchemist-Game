@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5122956758881873114}
   - component: {fileID: 5574972748902375007}
   - component: {fileID: 8248278496920146150}
+  - component: {fileID: 6650727061890762865}
   - component: {fileID: 2344520978651613591}
   m_Layer: 5
   m_Name: Items Counter
@@ -80,6 +81,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!225 &6650727061890762865
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163216001227789434}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &2344520978651613591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eb2b4e4b9ad6e4fab065186fc14e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasGroup: {fileID: 0}
-  _itemsCounter: {fileID: 0}
+  _canvasGroup: {fileID: 6650727061890762865}
+  _itemsCounter: {fileID: 334211135136876516}
 --- !u!1 &8095114616442554399
 GameObject:
   m_ObjectHideFlags: 0

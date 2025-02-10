@@ -12,7 +12,7 @@ namespace GameLogic.PlayerMenu
         [SerializeField] private Color _progressBarNormalColor;
         [SerializeField] private Color _progressBarFilledColor;
 
-        public override void UpdateDisplayedInfo(ItemState item)
+        public override void UpdateDisplayedInfo(Item item)
         {
             throw new System.NotImplementedException();
         }

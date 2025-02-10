@@ -12,7 +12,7 @@ namespace GameLogic.PlayerMenu
         {
             StartItemSlot = selectedItemSlot;
 
-            _itemsCountSelectPanelPresenter.StartItemsCountSelection(selectedItemSlot.ContainedItem.Icon, 1, (selectedItemSlot.ContainedItem as StackableItemState).Count.Value - 1, false);
+            _itemsCountSelectPanelPresenter.StartItemsCountSelection(selectedItemSlot.ContainedItem.Icon, 1, (selectedItemSlot.ContainedItem as StackableItem).Count.Value - 1, false);
             SubscribeItemsCountSelectPanelEvents();
         }
 
@@ -35,7 +35,7 @@ namespace GameLogic.PlayerMenu
 
         private void OnItemsCountSelected(int itemsCount)
         {
-            var selectedStackableItem = (StartItemSlot.ContainedItem as StackableItemState);
+            var selectedStackableItem = (StartItemSlot.ContainedItem as StackableItem);
             var newStackableItem = selectedStackableItem.Clone();
             newStackableItem.Count.Value = itemsCount;
             selectedStackableItem.Count.Value -= itemsCount;

@@ -38,10 +38,7 @@ namespace GameLogic.PlayerMenu.Craft
 
             _recipesMenuPresenter.RecipeSelected += OnRecipeSelected;
 
-            _inputManager.PlayerActions.PlayerMenuCraftSectionCraftingItemTemplate.CreateItem.performed += OnCreateItemActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionCraftingItemTemplate.CreateItem.canceled += OnCreateItemActionCanceled;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionEnergyCells.CreateItem.performed += OnCreateItemActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionEnergyCells.CreateItem.canceled += OnCreateItemActionCanceled;
+            _inputManager.PlayerActions.PlayerMenuCraftSection.CreateItem.performed += OnCreateItemActionPerformed;
 
             _signalBus.Subscribe<EnergySlotItemChangedSignal>(OnEnergySlotItemChanged);
             _signalBus.Subscribe<IngredientSlotItemChangedSignal>(OnIngredientSlotItemChanged);
@@ -54,10 +51,7 @@ namespace GameLogic.PlayerMenu.Craft
 
             _recipesMenuPresenter.RecipeSelected -= OnRecipeSelected;
 
-            _inputManager.PlayerActions.PlayerMenuCraftSectionCraftingItemTemplate.CreateItem.performed -= OnCreateItemActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionCraftingItemTemplate.CreateItem.canceled -= OnCreateItemActionCanceled;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionEnergyCells.CreateItem.performed -= OnCreateItemActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuCraftSectionEnergyCells.CreateItem.canceled -= OnCreateItemActionCanceled;
+            _inputManager.PlayerActions.PlayerMenuCraftSection.CreateItem.performed -= OnCreateItemActionPerformed;
 
             _signalBus.Unsubscribe<EnergySlotItemChangedSignal>(OnEnergySlotItemChanged);
             _signalBus.Unsubscribe<IngredientSlotItemChangedSignal>(OnIngredientSlotItemChanged);
@@ -160,7 +154,7 @@ namespace GameLogic.PlayerMenu.Craft
                 var ingredientSlot = _craftModel.IngredientSlots.Slots[i];
                 switch (ingredientSlot.ContainedItem)
                 {
-                    case StackableItemState stackableItem:
+                    case StackableItem stackableItem:
                         var spentItemsCount = _craftModel.CurrentRecipeVariant.Ingredients[i].Count;
                         if (stackableItem.Count.Value > spentItemsCount)
                         {
@@ -184,7 +178,7 @@ namespace GameLogic.PlayerMenu.Craft
             {
                 switch (energySlot.ContainedItem)
                 {
-                    case StackableItemState stackableItem:
+                    case StackableItem stackableItem:
                         if (stackableItem.TotalContainedEnergyCount <= requiredEnergyCount)
                         {
                             requiredEnergyCount -= stackableItem.TotalContainedEnergyCount;
@@ -219,7 +213,7 @@ namespace GameLogic.PlayerMenu.Craft
             _craftModel.CurrentExtractedEnergyCount = _craftModel.EnergySlots.Slots
                 .Sum(energyHolder => energyHolder.ContainedItem switch
                 {
-                    StackableItemState stackableItem => stackableItem.TotalContainedEnergyCount,
+                    StackableItem stackableItem => stackableItem.TotalContainedEnergyCount,
                     _ => energyHolder.ContainedItem.ContainedEnergyCount.Value
                 });
             _craftView.ItemCraftingStatusPanelView.SetEnergyCounterText($"{_itemCraftingStatusPanelConfig.EnergyCounterLabelText.GetLocalizedString()}: {_craftModel.CurrentExtractedEnergyCount}/{_craftModel.CurrentRecipe.RequiredEnergyCount}");
@@ -233,14 +227,14 @@ namespace GameLogic.PlayerMenu.Craft
 
 
 
-        public RecipeVariant TryGetMatchingRecipeVariant(ItemState[] selectedItems)
+        public RecipeVariant TryGetMatchingRecipeVariant(Item[] selectedItems)
         {
             return _craftModel.CurrentRecipe.RecipeVariants.FirstOrDefault(variant => CheckIngredientsRequirements(variant, selectedItems));
         }
 
-        public bool CheckCraftingAvailability(RecipeVariant recipeVariant, ItemState[] selectedIngredients) => CheckIngredientsRequirements(recipeVariant, selectedIngredients, true);
+        public bool CheckCraftingAvailability(RecipeVariant recipeVariant, Item[] selectedIngredients) => CheckIngredientsRequirements(recipeVariant, selectedIngredients, true);
 
-        private bool CheckIngredientsRequirements(RecipeVariant recipeVariant, ItemState[] selectedIngredients, bool isCountMatchingRequired = false)
+        private bool CheckIngredientsRequirements(RecipeVariant recipeVariant, Item[] selectedIngredients, bool isCountMatchingRequired = false)
         {
             return selectedIngredients.All(item =>
             {
@@ -253,20 +247,20 @@ namespace GameLogic.PlayerMenu.Craft
             });
         }
 
-        private bool CheckSelectedItemMatching(RecipeItem requiredIngredient, ItemState selectedIngredient, bool isCountMatchingRequired = false)
+        private bool CheckSelectedItemMatching(RecipeItem requiredIngredient, Item selectedIngredient, bool isCountMatchingRequired = false)
         {
-            if (isCountMatchingRequired && selectedIngredient is StackableItemState stackableIngredient)
+            if (isCountMatchingRequired && selectedIngredient is StackableItem stackableIngredient)
             {
                 return stackableIngredient.Id == requiredIngredient.ItemConfig.Id && stackableIngredient.Count.Value >= requiredIngredient.Count;
             }
             return selectedIngredient.Id == requiredIngredient.ItemConfig.Id;
         }
 
-        public ItemState GetSelectedRecipeResultItem()
+        public Item GetSelectedRecipeResultItem()
         {
             var selectedRecipeResultItemConfig = _craftModel.CurrentRecipeVariant.ResultItem;
             var resultItem = selectedRecipeResultItemConfig.ItemConfig.CreateItem();
-            if (resultItem is StackableItemState stackableItem)
+            if (resultItem is StackableItem stackableItem)
             {
                 stackableItem.Count.Value = selectedRecipeResultItemConfig.Count;
             }

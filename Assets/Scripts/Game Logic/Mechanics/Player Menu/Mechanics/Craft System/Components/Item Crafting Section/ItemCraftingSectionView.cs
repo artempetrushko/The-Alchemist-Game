@@ -6,8 +6,8 @@ namespace GameLogic.PlayerMenu.Craft
     public class ItemCraftingSectionView : MonoBehaviour
 	{
 		[SerializeField] private ItemCraftingPlaceView _itemCraftingPlaceView;
-        [SerializeField] private ItemSlotView[] _energySlotViews;
         [SerializeField] private Image _craftProgressBar;
+        [SerializeField] private ItemSlotView[] _energySlotViews;    
 
 		public ItemCraftingPlaceView ItemCraftingPlaceView => _itemCraftingPlaceView;
 		public ItemSlotView[] EnergySlotViews => _energySlotViews;

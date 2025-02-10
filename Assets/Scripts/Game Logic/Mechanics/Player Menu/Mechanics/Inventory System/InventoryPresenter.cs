@@ -12,7 +12,7 @@ namespace GameLogic.PlayerMenu.Inventory
 {
     public class InventoryPresenter : IDisposable, IPlayerMenuSectionPresenter
     {
-        private InventoryConfig _inventoryConfig;
+        private InventoryConfig _config;
         private InventoryModel _model;
         private InventoryView _mainInventoryView;
         private MinimizedInventoryView _currentMinimizedInventoryView;
@@ -20,32 +20,31 @@ namespace GameLogic.PlayerMenu.Inventory
         private InputManager _inputManager;
         private SignalBus _signalBus;
 
-        public InventoryPresenter(InventoryView mainInventoryView, HUDEquipmentView quickAccessToolbarView, InputManager inputManager, SignalBus signalBus)
+        public InventoryPresenter(InventoryView mainInventoryView, InventoryConfig config, HUDEquipmentView hudEquipmentView, InputManager inputManager, SignalBus signalBus)
         {
+            _config = config;
             _model = new InventoryModel()
             {
-                MainInventorySlots = new MainInventorySlots(_inventoryConfig.InventorySlotsCount),
-                QuickAccessSlots = new QuickAccessSlots(_inventoryConfig.QuickAccessSlotsCount, _signalBus),
+                MainInventorySlots = new MainInventorySlots(_config.InventorySlotsCount),
+                QuickAccessSlots = new QuickAccessSlots(_config.QuickAccessSlotsCount, _signalBus),
                 EquipmentSlots = new EquipmentSlots()
             };
             _mainInventoryView = mainInventoryView;
-            _hudEquipmentView = quickAccessToolbarView;
-            _inputManager = inputManager;
-            _signalBus = signalBus;
+            _hudEquipmentView = hudEquipmentView;
 
-            _inputManager.PlayerActions.PlayerMenuCraftSectionInventory.ChangeInventoryItemsCategory.performed += OnChangeInventoryCategoryActionPerformed;
+            _inputManager = inputManager;
+            _inputManager.PlayerActions.PlayerMenuCraftSection.ChangeInventoryItemsCategory.performed += OnChangeInventoryCategoryActionPerformed;
             _inputManager.PlayerActions.Player.SelectQuickAccessCell.performed += SelectQuickAccessCell;
             _inputManager.PlayerActions.Player.SelectNeighboringQuickAccessCell.performed += SelectNeighboringQuickAccessCell;
 
+            _signalBus = signalBus;
             _signalBus.Subscribe<ItemPickingRequestedSignal>(OnItemPickingRequested);
             _signalBus.Subscribe<PickableItemPickingRequestedSignal>(OnPickableItemPickingRequested);
-
-
         }
 
         public void Dispose()
         {
-            _inputManager.PlayerActions.PlayerMenuCraftSectionInventory.ChangeInventoryItemsCategory.performed -= OnChangeInventoryCategoryActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuCraftSection.ChangeInventoryItemsCategory.performed -= OnChangeInventoryCategoryActionPerformed;
             _inputManager.PlayerActions.Player.SelectQuickAccessCell.performed -= SelectQuickAccessCell;
             _inputManager.PlayerActions.Player.SelectNeighboringQuickAccessCell.performed -= SelectNeighboringQuickAccessCell;
 
@@ -87,12 +86,12 @@ namespace GameLogic.PlayerMenu.Inventory
             _model.EquipmentSlots.MedallionSlot.View = inventoryView.EquipmentCategoryView.MedallionSlotView;
         }
 
-        public bool TryAddItem(ItemState item)
+        public bool TryAddItem(Item item)
         {
             return item switch
             {
-                StackableItemState stackableItem => TryAddStackableItem(stackableItem),
-                EquipmentState equipment => TryEquipOrAddItem(equipment),
+                StackableItem stackableItem => TryAddStackableItem(stackableItem),
+                Equipment equipment => TryEquipOrAddItem(equipment),
                 _ => TryPlaceItemToFreeSlot(item)
             };
         }
@@ -106,7 +105,7 @@ namespace GameLogic.PlayerMenu.Inventory
 
         public void DropItem(ItemSlot slot, int itemsCount)
         {
-            if (slot.ContainedItem is StackableItemState stackableItem)
+            if (slot.ContainedItem is StackableItem stackableItem)
             {
                 if (stackableItem.Count.Value == stackableItem.Count.MaxValue)
                 {
@@ -127,19 +126,19 @@ namespace GameLogic.PlayerMenu.Inventory
             newWeaponSlot?.TryPlaceOrSwapItem(currentWeaponSlot);*/
         }
 
-        public void TakeEquipmentOff(EquipmentState equipment) => TryPlaceItemToFreeSlot(equipment);
+        public void TakeEquipmentOff(Equipment equipment) => TryPlaceItemToFreeSlot(equipment);
 
-        private bool TryAddStackableItem(StackableItemState stackableItem)
+        private bool TryAddStackableItem(StackableItem stackableItem)
         {
             var partialFreeSlots = _model.MainInventorySlots.Slots
                 .Concat(_model.QuickAccessSlots.Slots)
-                .Where(slot => slot.ContainedItem is StackableItemState containedStackableItem
+                .Where(slot => slot.ContainedItem is StackableItem containedStackableItem
                         && stackableItem.Id == containedStackableItem.Id
                         && containedStackableItem.Count.Value > 0
                         && containedStackableItem.Count.Value < containedStackableItem.Count.MaxValue);
             if (partialFreeSlots.Count() > 0)
             {
-                foreach (var containedStackableItem in partialFreeSlots.Select(slot => slot.ContainedItem as StackableItemState).OrderByDescending(item => item.Count))
+                foreach (var containedStackableItem in partialFreeSlots.Select(slot => slot.ContainedItem as StackableItem).OrderByDescending(item => item.Count))
                 {
                     var itemsCountToFillStack = containedStackableItem.Count.MaxValue - containedStackableItem.Count.Value;
                     if (stackableItem.Count.Value > itemsCountToFillStack)
@@ -160,7 +159,7 @@ namespace GameLogic.PlayerMenu.Inventory
                 {
                     return TryPlaceItemToFreeSlot(stackableItem);
                 }
-                var newItemState = stackableItem.Clone() as StackableItemState;
+                var newItemState = stackableItem.Clone() as StackableItem;
                 newItemState.Count.Value = stackableItem.Count.MaxValue;
                 if (TryPlaceItemToFreeSlot(newItemState))
                 {
@@ -174,11 +173,11 @@ namespace GameLogic.PlayerMenu.Inventory
             return true;
         }
 
-        private bool TryEquipOrAddItem(EquipmentState equipment) => _model.EquipmentSlots.TryPlaceItem(equipment) || TryPlaceItemToFreeSlot(equipment);
+        private bool TryEquipOrAddItem(Equipment equipment) => _model.EquipmentSlots.TryPlaceItem(equipment) || TryPlaceItemToFreeSlot(equipment);
 
-        private bool TryPlaceItemToFreeSlot(ItemState item) => _model.MainInventorySlots.TryPlaceItem(item) || _model.QuickAccessSlots.TryPlaceItem(item);
+        private bool TryPlaceItemToFreeSlot(Item item) => _model.MainInventorySlots.TryPlaceItem(item) || _model.QuickAccessSlots.TryPlaceItem(item);
 
-        private bool TryPlaceItem(ItemState item, ItemSlot[] slotGroup) => slotGroup.Any(slot => slot.TryPlaceNewItem(item));
+        private bool TryPlaceItem(Item item, ItemSlot[] slotGroup) => slotGroup.Any(slot => slot.TryPlaceNewItem(item));
 
         private void OnPickableItemPickingRequested(PickableItemPickingRequestedSignal signal)
         {

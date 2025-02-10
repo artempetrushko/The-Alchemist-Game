@@ -697,7 +697,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""HUD (Items Container)"",
+            ""name"": ""Items Container Menu"",
             ""id"": ""d5391b63-19a7-4540-9f74-19ea0428e408"",
             ""actions"": [
                 {
@@ -710,7 +710,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Take"",
+                    ""name"": ""Pick Item"",
                     ""type"": ""Button"",
                     ""id"": ""63acb7df-87f4-474e-9566-27def35764be"",
                     ""expectedControlType"": ""Button"",
@@ -719,7 +719,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Take All"",
+                    ""name"": ""Pick All Items"",
                     ""type"": ""Button"",
                     ""id"": ""b63ade1c-0be1-419f-91a8-ecea372c7496"",
                     ""expectedControlType"": ""Button"",
@@ -745,7 +745,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard;KeyboardMouse"",
-                    ""action"": ""Take"",
+                    ""action"": ""Pick Item"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -756,7 +756,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Take"",
+                    ""action"": ""Pick Item"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -767,7 +767,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard;KeyboardMouse"",
-                    ""action"": ""Take All"",
+                    ""action"": ""Pick All Items"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -778,7 +778,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Take All"",
+                    ""action"": ""Pick All Items"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -873,7 +873,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Player Menu (Inventory Section)"",
+            ""name"": ""Player Menu/Inventory Section"",
             ""id"": ""aeb55280-0dc9-45d7-9797-ccff0fc72e74"",
             ""actions"": [
                 {
@@ -1179,7 +1179,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Player Menu (Inventory Section (Special Interaction))"",
+            ""name"": ""Player Menu/Inventory Section/Special Interaction"",
             ""id"": ""7319507c-0c8e-40c4-a619-589456a5f095"",
             ""actions"": [
                 {
@@ -1368,464 +1368,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Player Menu (Item Cell Actions Menu)"",
-            ""id"": ""ee692d01-3249-48ab-b25e-df23178fc280"",
-            ""actions"": [
-                {
-                    ""name"": ""Navigate"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""bb985127-f51f-4edc-9707-5a89cc12c95f"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Select"",
-                    ""type"": ""Button"",
-                    ""id"": ""e2add2ab-7a70-4eb0-8290-cd70f64444fa"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Close Item Cell Actions Menu"",
-                    ""type"": ""Button"",
-                    ""id"": ""55948617-4731-49d8-afd4-9681f1117b5f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""867bb8b0-2d20-4fbf-8dec-64e4f44a75f2"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse and Keyboard;KeyboardMouse"",
-                    ""action"": ""Close Item Cell Actions Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f879b887-7f67-49db-ab99-f88e530fde7f"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Close Item Cell Actions Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""04413964-5346-4f76-87db-bc2ecc009f61"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""5619748e-578a-42d7-b0ac-a32af30eeffa"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1af3c21c-80dd-4f8b-83e9-5bcef718e25d"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""D-Pad"",
-                    ""id"": ""e3759be3-0840-46e3-a454-c7f83592a80b"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""65d1405b-ccf6-4780-933a-0e772e8a87ee"",
-                    ""path"": ""<Gamepad>/dpad/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""4009a060-4c10-48ce-8b28-b7ca2b5bd46d"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c1bd894c-be63-4f85-866e-a3c0b4b6257c"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fdb17dbb-f875-4831-9545-d7fe088df7cf"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""64feea2c-7914-4a55-9236-9f4cff373554"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Player Menu (Inventory Item Moving)"",
-            ""id"": ""4f9ebedc-158e-4d5f-8b64-e26e434deb45"",
-            ""actions"": [
-                {
-                    ""name"": ""Move Item"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""08438bae-8d4e-4ad4-8aee-875438b405ab"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Put Item Down"",
-                    ""type"": ""Button"",
-                    ""id"": ""e302a326-45fb-4343-9cae-58cb07f4da5f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""54cd68f3-4268-416d-9d8c-a8655220874e"",
-                    ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move Item"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""b06eedcf-c182-4b33-bd88-27a11564a540"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move Item"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""da7e08ad-7ac9-4eb6-ac0e-eb4765df4675"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Move Item"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""bb6ed00b-5439-4bf4-acf4-fc171148e694"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Move Item"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""7e27b1eb-ae3f-460e-af8c-95a00c7753bd"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Move Item"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c2a3dd4d-d624-4fdf-afae-ecf1f6cf9507"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Move Item"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""89e6e916-e906-4061-8561-79e5d21fc7d2"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Put Item Down"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""163fd33f-38ec-4527-88fe-01148cc54dcb"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Put Item Down"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Player Menu (Choose Items Count View)"",
-            ""id"": ""1845fa5d-778d-458e-a8b5-2d0529ec3e17"",
-            ""actions"": [
-                {
-                    ""name"": ""Change Items Count"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""336d657e-035b-4a98-a8f6-edb30c2ecf57"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Confirm"",
-                    ""type"": ""Button"",
-                    ""id"": ""81e69ffb-a023-4473-bd58-dcb2ecf1b433"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Confirm All"",
-                    ""type"": ""Button"",
-                    ""id"": ""c45b165b-b31c-4301-b617-e732d287c704"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Cancel"",
-                    ""type"": ""Button"",
-                    ""id"": ""9eb1c803-2429-45cc-9db6-ac23199ac971"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""b4affb55-e0c5-4d74-ae95-217f870dcd9a"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""51880ad2-3a19-45e7-a34f-55b331ec790f"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""17ce7cca-b475-4a59-ac2a-66214e887e83"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Confirm All"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5b9ba963-5f2b-4000-bd95-66ebfba2a705"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Confirm All"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""AD"",
-                    ""id"": ""c44a5724-70fc-400f-82bc-28bb526a85fc"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Change Items Count"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""9c304268-37d7-47c5-be78-12f7412cc0a0"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Change Items Count"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""dcc6cd6d-357f-4c2d-a46c-44014bd25c7f"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Change Items Count"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""D-Pad"",
-                    ""id"": ""9b553288-7d41-4ae6-aeaa-867d92f06c2c"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Change Items Count"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""b0567e23-9816-4fd0-83ba-f435d92b8ca0"",
-                    ""path"": ""<Gamepad>/dpad/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Change Items Count"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""576f5d58-ae15-4413-9833-fb33953d50f6"",
-                    ""path"": ""<Gamepad>/dpad/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Change Items Count"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a957c217-68ba-4ef9-a9ae-0b3fbc50db8d"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Confirm"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b83c36ea-204d-4fe7-89cb-c393bec0c4af"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Confirm"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9dea819a-c18e-4802-91ba-ed35c142be72"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Confirm"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Player Menu (Craft Section (Recipes))"",
+            ""name"": ""Player Menu/Craft Section"",
             ""id"": ""d2d140e8-9330-4d8a-a127-4762a1b41ef6"",
             ""actions"": [
                 {
@@ -1850,6 +1393,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""name"": ""Select"",
                     ""type"": ""Button"",
                     ""id"": ""cd66219c-f40d-4376-b042-5935312ac91b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Create Item"",
+                    ""type"": ""Button"",
+                    ""id"": ""c67bc478-8e46-4b70-a1da-163622d2bab5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -2149,202 +1701,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Navigate Player Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                }
-            ]
-        },
-        {
-            ""name"": ""Player Menu (Craft Section (Energy Cells))"",
-            ""id"": ""96125acc-96ff-46ad-8d65-83706f3251c3"",
-            ""actions"": [
-                {
-                    ""name"": ""Navigate Player Menu"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""006d0aa5-6cd4-4e49-a950-82652ef47ee5"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Navigate Section"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""7433954d-8c19-4ca9-8366-8af1f0f8201e"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Select"",
-                    ""type"": ""Button"",
-                    ""id"": ""9f6db34c-7a0e-4279-afe0-4a295f9a22e0"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Go To Crafting Item Template"",
-                    ""type"": ""Button"",
-                    ""id"": ""37e12971-a16d-41ec-9e2f-bf0bc4f0705b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Create Item"",
-                    ""type"": ""Button"",
-                    ""id"": ""b91d9370-8afc-4155-823e-504600542bf8"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Change Inventory Items Category"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""62453257-0f9c-42f0-9eb6-a6b15184a023"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Close Player Menu"",
-                    ""type"": ""Button"",
-                    ""id"": ""f74502e6-8331-4c2e-8268-4095ab2c8f9e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""b5c4c40b-322a-40ef-9a4c-ff5effb407a7"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""7e12f27f-995e-499e-81ff-848701a0732b"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""67deb056-131b-4187-9bbb-7d8907153318"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""50760998-6984-414d-bf6e-1433c7c9a161"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""53f0c0d5-9e66-41ba-9aed-18f16436db9e"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""73118235-cffa-41d0-a436-bf6f8348c142"",
-                    ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6d4a44dd-1d67-4aae-99aa-1c39316c075c"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": ""Press(pressPoint=1)"",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6d072a36-2bdb-4ed7-bb94-220eeace7b67"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""845ccd5e-cfe3-475f-80ed-70074f060960"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""198af03b-1b16-494b-8123-890f089ba378"",
-                    ""path"": ""<Keyboard>/g"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Go To Crafting Item Template"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4beef705-9414-414c-8705-5a3a063a4c0b"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Go To Crafting Item Template"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a058ba8f-7b2b-4410-a200-4c6ad469161a"",
+                    ""id"": ""abb1347d-85c3-4a48-b470-9e93babdbf17"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -2355,7 +1715,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d758ec41-d576-4ed6-b928-fcd15dbdf4eb"",
+                    ""id"": ""5e3e74ac-1507-414e-8ca1-b22d3fd88c2e"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -2363,808 +1723,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Create Item"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1/3"",
-                    ""id"": ""9a13caa2-edbb-46f0-82e2-c8154b50a490"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""b92f1a64-5020-44f2-bca0-5996f705452b"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""fb77ba35-34a0-4784-9d8b-ae5bf8f0f901"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""L2/R2"",
-                    ""id"": ""1451dacc-ab09-4c3c-b46d-7e515a1fa3f0"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""b97ef77e-10b1-46d7-b81b-14ab99f4369d"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""f2b9c475-4ff2-46a4-b09c-e3ac8c29f8be"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Q/E"",
-                    ""id"": ""a362844f-f9a8-4408-b84d-83b71ad3a614"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""e464720e-8238-4d52-b422-36d432e97007"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c708667e-53c9-4e3c-803a-c32be2250634"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""LB/RB"",
-                    ""id"": ""f6f7a594-73d4-42f9-92ef-389625925981"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""9cc27ddd-09c1-4dbd-91d5-5d84f37b9e08"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""39a69320-a318-48b6-9f44-c10fef66bb61"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dd729014-6dec-4bc0-84f6-5e05ff19afa6"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Close Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ff65e707-5cfd-41b6-80b8-e6f8f320313d"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Close Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3ebbd34f-b51e-4bc4-9f3c-733293d2fc61"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Close Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""58592de3-b455-45ba-874b-0b96dd925fa7"",
-                    ""path"": ""<Gamepad>/select"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Close Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
         {
-            ""name"": ""Player Menu (Craft Section (Crafting Item Template))"",
-            ""id"": ""c56d633c-e45f-4292-9646-6604c3ff798b"",
-            ""actions"": [
-                {
-                    ""name"": ""Navigate Section"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""8c8b2d62-8be0-44f9-8be1-bf324ce81db7"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Select"",
-                    ""type"": ""Button"",
-                    ""id"": ""6da44022-f34e-4d76-a7f9-5c930cf599a4"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Create Item"",
-                    ""type"": ""Button"",
-                    ""id"": ""072d128a-d06e-4f63-89ce-bb012478a7c0"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Return Item To Inventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""53255159-dc96-4ef5-810a-1f4696d3f829"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Change Inventory Items Category"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""e28df7f4-c72c-48cc-8c4b-7d9ffe8715e4"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Return To Energy Cells"",
-                    ""type"": ""Button"",
-                    ""id"": ""c01f41e9-27be-40f8-bcba-0000fac82344"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""14d9f5f4-8e10-4619-a48f-e0ae7a30ccd9"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f8bc13a5-a0f4-4fab-adb7-a02c546f23a5"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""954b186b-34fa-48cf-8b67-fbe098771438"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Create Item"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5eec14ae-3623-46e2-9675-7276305a44e4"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Create Item"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1607741d-0b82-4fe9-b88a-a6f325a33d82"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Return Item To Inventory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dd7b8663-d262-4145-a958-2634a783dca9"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Return Item To Inventory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1/3"",
-                    ""id"": ""a56d1cab-627b-42fa-9aee-037de5616335"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""4ee45104-f30d-462f-b869-a0e0ac07ed80"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""45ca1ce8-604a-4212-a9c9-1b44f50d3803"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""L2/R2"",
-                    ""id"": ""89f60da8-7309-4c27-8847-687da75ca015"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""47920fd4-dcf5-4dd9-8aaa-415dac39a0bc"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""e656da83-787d-4c6f-8a97-a928363d2e81"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""9391d98b-ec9b-4072-922c-614603306907"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""45a08fdc-fa7d-4fd9-b2a6-5ba56beb9234"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""2829006a-e7fe-4a38-a5e7-03cd182343d9"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""45bb9d77-9c01-46cf-9132-57672ea1a21f"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c826e034-0610-4457-b17d-1b2fcc8e7e91"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9a3a3ef5-9eb1-4516-a0fe-9b7d6738b35b"",
-                    ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""21e75d0c-831d-41bc-8541-bf55308507f7"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": ""Press(pressPoint=1)"",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5041b7ef-987f-45d9-b059-9c6ca76dd18c"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Return To Energy Cells"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a9f90c55-24f9-45b3-8e9c-3a9ceb7b0ba7"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Return To Energy Cells"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Player Menu (Craft Section (Inventory))"",
-            ""id"": ""c9983c09-d1e6-4f57-8ca2-d44874d99dee"",
-            ""actions"": [
-                {
-                    ""name"": ""Navigate Player Menu"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""0ef86edf-167f-488d-9803-74ee39fcf4b6"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Navigate Section"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""a48fb8f0-318b-4bc0-909c-61ea2d4f365e"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Select"",
-                    ""type"": ""Button"",
-                    ""id"": ""41f270e2-b9bf-4dcb-8ec8-56adf77d68a3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Change Inventory Items Category"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""b379b813-6d4d-4696-852c-20ade9a79c94"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Close Player Menu"",
-                    ""type"": ""Button"",
-                    ""id"": ""a6bc3050-d8f9-404e-bf70-7e86423ccab1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""fcd598ec-ef5e-44b9-968a-4abfde6f6dc8"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9e4439e8-8394-4eef-91b1-9db6235ee4f4"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1/3"",
-                    ""id"": ""7ca1f924-7120-4060-8ce9-d518569ea6f2"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""b697fa11-1dda-48b7-96ba-6088746bdc5b"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c23bcd7a-6115-4770-a734-0afcd0206cf0"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""L2/R2"",
-                    ""id"": ""f48b9726-f16c-4100-9364-305729431969"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""bbb03611-b63a-4c1e-968f-07751d550016"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c3bd1fe2-6001-43ec-906e-b146b0be36a1"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Change Inventory Items Category"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Q/E"",
-                    ""id"": ""e511ed2a-834f-4d21-8a10-b56a25e54589"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""6780295e-d19e-4cf2-a5e5-a6ad42aba976"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""0f057d5f-6a56-4eb4-b854-d8c9d60324e6"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""LB/RB"",
-                    ""id"": ""ca7c1228-cfb9-4a86-ab44-ca7383c9cb8e"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""9623bb94-d119-4f48-a8c9-1d78b1606574"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""0ce2305f-4634-4b45-a7b8-ed92f529beda"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""53aa49fb-d3dc-4be7-b53b-8a0f7321a309"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""012604ce-1dc1-4ae4-9568-4a35282eb0fe"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""b0fa63dc-fa84-4e7c-b49e-563f2f4dff29"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""0280ea6e-f281-4f0f-81eb-26aaf9f490d7"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""bf2f7231-f5d9-4629-8858-9a2138ce9c45"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cd0572d2-8766-4fbb-96a9-6cd98eb43fc7"",
-                    ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5aab281f-6550-4b06-8b82-568265a41d27"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": ""Press(pressPoint=1)"",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Navigate Section"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9fa9a0d0-ebf7-459e-80bd-080da2e9c7fd"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Close Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e33b7d93-a415-4f91-bdaa-4169583e9c36"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Close Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c6b1b9b6-accb-428a-a618-6880e29484c5"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Close Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d3273dcc-cbd4-49dc-8339-1d1afcedaa91"",
-                    ""path"": ""<Gamepad>/select"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Close Player Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Player Menu (Alchemistry Section (Recipes))"",
+            ""name"": ""Player Menu/Alchemistry Section"",
             ""id"": ""ef8a6df7-af93-4d72-95a4-f9fa90fd243d"",
             ""actions"": [
                 {
@@ -3300,7 +1863,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Player Menu (Settings)"",
+            ""name"": ""Player Menu/Settings Section"",
             ""id"": ""fb79473d-1ab3-4282-9c3f-05ca9dc82e86"",
             ""actions"": [
                 {
@@ -3425,7 +1988,350 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Run Ending Screen"",
+            ""name"": ""Player Menu/Items Interactions Panel"",
+            ""id"": ""ee692d01-3249-48ab-b25e-df23178fc280"",
+            ""actions"": [
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""bb985127-f51f-4edc-9707-5a89cc12c95f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""e2add2ab-7a70-4eb0-8290-cd70f64444fa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Close Item Cell Actions Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""55948617-4731-49d8-afd4-9681f1117b5f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""867bb8b0-2d20-4fbf-8dec-64e4f44a75f2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard;KeyboardMouse"",
+                    ""action"": ""Close Item Cell Actions Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f879b887-7f67-49db-ab99-f88e530fde7f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Close Item Cell Actions Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""04413964-5346-4f76-87db-bc2ecc009f61"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""5619748e-578a-42d7-b0ac-a32af30eeffa"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1af3c21c-80dd-4f8b-83e9-5bcef718e25d"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""D-Pad"",
+                    ""id"": ""e3759be3-0840-46e3-a454-c7f83592a80b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""65d1405b-ccf6-4780-933a-0e772e8a87ee"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""4009a060-4c10-48ce-8b28-b7ca2b5bd46d"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1bd894c-be63-4f85-866e-a3c0b4b6257c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fdb17dbb-f875-4831-9545-d7fe088df7cf"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64feea2c-7914-4a55-9236-9f4cff373554"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player Menu/Items Count Select Panel"",
+            ""id"": ""1845fa5d-778d-458e-a8b5-2d0529ec3e17"",
+            ""actions"": [
+                {
+                    ""name"": ""Change Items Count"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""336d657e-035b-4a98-a8f6-edb30c2ecf57"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""81e69ffb-a023-4473-bd58-dcb2ecf1b433"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select All"",
+                    ""type"": ""Button"",
+                    ""id"": ""c45b165b-b31c-4301-b617-e732d287c704"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""9eb1c803-2429-45cc-9db6-ac23199ac971"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b4affb55-e0c5-4d74-ae95-217f870dcd9a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51880ad2-3a19-45e7-a34f-55b331ec790f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17ce7cca-b475-4a59-ac2a-66214e887e83"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Select All"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b9ba963-5f2b-4000-bd95-66ebfba2a705"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Select All"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""AD"",
+                    ""id"": ""c44a5724-70fc-400f-82bc-28bb526a85fc"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Change Items Count"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9c304268-37d7-47c5-be78-12f7412cc0a0"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Change Items Count"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""dcc6cd6d-357f-4c2d-a46c-44014bd25c7f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Change Items Count"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""D-Pad"",
+                    ""id"": ""9b553288-7d41-4ae6-aeaa-867d92f06c2c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Change Items Count"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b0567e23-9816-4fd0-83ba-f435d92b8ca0"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Change Items Count"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""576f5d58-ae15-4413-9833-fb33953d50f6"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Change Items Count"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a957c217-68ba-4ef9-a9ae-0b3fbc50db8d"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b83c36ea-204d-4fe7-89cb-c393bec0c4af"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9dea819a-c18e-4802-91ba-ed35c142be72"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Run Ending Panel"",
             ""id"": ""5a4780dc-3421-459f-ad63-3b0e48d9025f"",
             ""actions"": [
                 {
@@ -3561,82 +2467,55 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_SelectQuickAccessCell = m_Player.FindAction("Select Quick Access Cell", throwIfNotFound: true);
         m_Player_ApplyItem = m_Player.FindAction("Apply Item", throwIfNotFound: true);
         m_Player_ShowQuestProgress = m_Player.FindAction("Show Quest Progress", throwIfNotFound: true);
-        // HUD (Items Container)
-        m_HUDItemsContainer = asset.FindActionMap("HUD (Items Container)", throwIfNotFound: true);
-        m_HUDItemsContainer_Navigate = m_HUDItemsContainer.FindAction("Navigate", throwIfNotFound: true);
-        m_HUDItemsContainer_Take = m_HUDItemsContainer.FindAction("Take", throwIfNotFound: true);
-        m_HUDItemsContainer_TakeAll = m_HUDItemsContainer.FindAction("Take All", throwIfNotFound: true);
-        m_HUDItemsContainer_CloseContainer = m_HUDItemsContainer.FindAction("Close Container", throwIfNotFound: true);
-        // Player Menu (Inventory Section)
-        m_PlayerMenuInventorySection = asset.FindActionMap("Player Menu (Inventory Section)", throwIfNotFound: true);
+        // Items Container Menu
+        m_ItemsContainerMenu = asset.FindActionMap("Items Container Menu", throwIfNotFound: true);
+        m_ItemsContainerMenu_Navigate = m_ItemsContainerMenu.FindAction("Navigate", throwIfNotFound: true);
+        m_ItemsContainerMenu_PickItem = m_ItemsContainerMenu.FindAction("Pick Item", throwIfNotFound: true);
+        m_ItemsContainerMenu_PickAllItems = m_ItemsContainerMenu.FindAction("Pick All Items", throwIfNotFound: true);
+        m_ItemsContainerMenu_CloseContainer = m_ItemsContainerMenu.FindAction("Close Container", throwIfNotFound: true);
+        // Player Menu/Inventory Section
+        m_PlayerMenuInventorySection = asset.FindActionMap("Player Menu/Inventory Section", throwIfNotFound: true);
         m_PlayerMenuInventorySection_NavigatePlayerMenu = m_PlayerMenuInventorySection.FindAction("Navigate Player Menu", throwIfNotFound: true);
         m_PlayerMenuInventorySection_NavigateSection = m_PlayerMenuInventorySection.FindAction("Navigate Section", throwIfNotFound: true);
         m_PlayerMenuInventorySection_PressItemCell = m_PlayerMenuInventorySection.FindAction("Press Item Cell", throwIfNotFound: true);
         m_PlayerMenuInventorySection_StartItemMoving = m_PlayerMenuInventorySection.FindAction("Start Item Moving", throwIfNotFound: true);
         m_PlayerMenuInventorySection_ClosePlayerMenu = m_PlayerMenuInventorySection.FindAction("Close Player Menu", throwIfNotFound: true);
-        // Player Menu (Inventory Section (Special Interaction))
-        m_PlayerMenuInventorySectionSpecialInteraction = asset.FindActionMap("Player Menu (Inventory Section (Special Interaction))", throwIfNotFound: true);
+        // Player Menu/Inventory Section/Special Interaction
+        m_PlayerMenuInventorySectionSpecialInteraction = asset.FindActionMap("Player Menu/Inventory Section/Special Interaction", throwIfNotFound: true);
         m_PlayerMenuInventorySectionSpecialInteraction_Navigate = m_PlayerMenuInventorySectionSpecialInteraction.FindAction("Navigate", throwIfNotFound: true);
         m_PlayerMenuInventorySectionSpecialInteraction_Execute = m_PlayerMenuInventorySectionSpecialInteraction.FindAction("Execute", throwIfNotFound: true);
         m_PlayerMenuInventorySectionSpecialInteraction_CancelInteraction = m_PlayerMenuInventorySectionSpecialInteraction.FindAction("Cancel Interaction", throwIfNotFound: true);
-        // Player Menu (Item Cell Actions Menu)
-        m_PlayerMenuItemCellActionsMenu = asset.FindActionMap("Player Menu (Item Cell Actions Menu)", throwIfNotFound: true);
-        m_PlayerMenuItemCellActionsMenu_Navigate = m_PlayerMenuItemCellActionsMenu.FindAction("Navigate", throwIfNotFound: true);
-        m_PlayerMenuItemCellActionsMenu_Select = m_PlayerMenuItemCellActionsMenu.FindAction("Select", throwIfNotFound: true);
-        m_PlayerMenuItemCellActionsMenu_CloseItemCellActionsMenu = m_PlayerMenuItemCellActionsMenu.FindAction("Close Item Cell Actions Menu", throwIfNotFound: true);
-        // Player Menu (Inventory Item Moving)
-        m_PlayerMenuInventoryItemMoving = asset.FindActionMap("Player Menu (Inventory Item Moving)", throwIfNotFound: true);
-        m_PlayerMenuInventoryItemMoving_MoveItem = m_PlayerMenuInventoryItemMoving.FindAction("Move Item", throwIfNotFound: true);
-        m_PlayerMenuInventoryItemMoving_PutItemDown = m_PlayerMenuInventoryItemMoving.FindAction("Put Item Down", throwIfNotFound: true);
-        // Player Menu (Choose Items Count View)
-        m_PlayerMenuChooseItemsCountView = asset.FindActionMap("Player Menu (Choose Items Count View)", throwIfNotFound: true);
-        m_PlayerMenuChooseItemsCountView_ChangeItemsCount = m_PlayerMenuChooseItemsCountView.FindAction("Change Items Count", throwIfNotFound: true);
-        m_PlayerMenuChooseItemsCountView_Confirm = m_PlayerMenuChooseItemsCountView.FindAction("Confirm", throwIfNotFound: true);
-        m_PlayerMenuChooseItemsCountView_ConfirmAll = m_PlayerMenuChooseItemsCountView.FindAction("Confirm All", throwIfNotFound: true);
-        m_PlayerMenuChooseItemsCountView_Cancel = m_PlayerMenuChooseItemsCountView.FindAction("Cancel", throwIfNotFound: true);
-        // Player Menu (Craft Section (Recipes))
-        m_PlayerMenuCraftSectionRecipes = asset.FindActionMap("Player Menu (Craft Section (Recipes))", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionRecipes_NavigatePlayerMenu = m_PlayerMenuCraftSectionRecipes.FindAction("Navigate Player Menu", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionRecipes_NavigateSection = m_PlayerMenuCraftSectionRecipes.FindAction("Navigate Section", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionRecipes_Select = m_PlayerMenuCraftSectionRecipes.FindAction("Select", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionRecipes_ChangeInventoryItemsCategory = m_PlayerMenuCraftSectionRecipes.FindAction("Change Inventory Items Category", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionRecipes_ClosePlayerMenu = m_PlayerMenuCraftSectionRecipes.FindAction("Close Player Menu", throwIfNotFound: true);
-        // Player Menu (Craft Section (Energy Cells))
-        m_PlayerMenuCraftSectionEnergyCells = asset.FindActionMap("Player Menu (Craft Section (Energy Cells))", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionEnergyCells_NavigatePlayerMenu = m_PlayerMenuCraftSectionEnergyCells.FindAction("Navigate Player Menu", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionEnergyCells_NavigateSection = m_PlayerMenuCraftSectionEnergyCells.FindAction("Navigate Section", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionEnergyCells_Select = m_PlayerMenuCraftSectionEnergyCells.FindAction("Select", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionEnergyCells_GoToCraftingItemTemplate = m_PlayerMenuCraftSectionEnergyCells.FindAction("Go To Crafting Item Template", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionEnergyCells_CreateItem = m_PlayerMenuCraftSectionEnergyCells.FindAction("Create Item", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionEnergyCells_ChangeInventoryItemsCategory = m_PlayerMenuCraftSectionEnergyCells.FindAction("Change Inventory Items Category", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionEnergyCells_ClosePlayerMenu = m_PlayerMenuCraftSectionEnergyCells.FindAction("Close Player Menu", throwIfNotFound: true);
-        // Player Menu (Craft Section (Crafting Item Template))
-        m_PlayerMenuCraftSectionCraftingItemTemplate = asset.FindActionMap("Player Menu (Craft Section (Crafting Item Template))", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionCraftingItemTemplate_NavigateSection = m_PlayerMenuCraftSectionCraftingItemTemplate.FindAction("Navigate Section", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionCraftingItemTemplate_Select = m_PlayerMenuCraftSectionCraftingItemTemplate.FindAction("Select", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionCraftingItemTemplate_CreateItem = m_PlayerMenuCraftSectionCraftingItemTemplate.FindAction("Create Item", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionCraftingItemTemplate_ReturnItemToInventory = m_PlayerMenuCraftSectionCraftingItemTemplate.FindAction("Return Item To Inventory", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionCraftingItemTemplate_ChangeInventoryItemsCategory = m_PlayerMenuCraftSectionCraftingItemTemplate.FindAction("Change Inventory Items Category", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionCraftingItemTemplate_ReturnToEnergyCells = m_PlayerMenuCraftSectionCraftingItemTemplate.FindAction("Return To Energy Cells", throwIfNotFound: true);
-        // Player Menu (Craft Section (Inventory))
-        m_PlayerMenuCraftSectionInventory = asset.FindActionMap("Player Menu (Craft Section (Inventory))", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionInventory_NavigatePlayerMenu = m_PlayerMenuCraftSectionInventory.FindAction("Navigate Player Menu", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionInventory_NavigateSection = m_PlayerMenuCraftSectionInventory.FindAction("Navigate Section", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionInventory_Select = m_PlayerMenuCraftSectionInventory.FindAction("Select", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionInventory_ChangeInventoryItemsCategory = m_PlayerMenuCraftSectionInventory.FindAction("Change Inventory Items Category", throwIfNotFound: true);
-        m_PlayerMenuCraftSectionInventory_ClosePlayerMenu = m_PlayerMenuCraftSectionInventory.FindAction("Close Player Menu", throwIfNotFound: true);
-        // Player Menu (Alchemistry Section (Recipes))
-        m_PlayerMenuAlchemistrySectionRecipes = asset.FindActionMap("Player Menu (Alchemistry Section (Recipes))", throwIfNotFound: true);
-        m_PlayerMenuAlchemistrySectionRecipes_NavigatePlayerMenu = m_PlayerMenuAlchemistrySectionRecipes.FindAction("Navigate Player Menu", throwIfNotFound: true);
-        m_PlayerMenuAlchemistrySectionRecipes_ClosePlayerMenu = m_PlayerMenuAlchemistrySectionRecipes.FindAction("Close Player Menu", throwIfNotFound: true);
-        // Player Menu (Settings)
-        m_PlayerMenuSettings = asset.FindActionMap("Player Menu (Settings)", throwIfNotFound: true);
-        m_PlayerMenuSettings_NavigatePlayerMenu = m_PlayerMenuSettings.FindAction("Navigate Player Menu", throwIfNotFound: true);
-        m_PlayerMenuSettings_ClosePlayerMenu = m_PlayerMenuSettings.FindAction("Close Player Menu", throwIfNotFound: true);
-        // Run Ending Screen
-        m_RunEndingScreen = asset.FindActionMap("Run Ending Screen", throwIfNotFound: true);
-        m_RunEndingScreen_ReturnToHub = m_RunEndingScreen.FindAction("Return To Hub", throwIfNotFound: true);
-        m_RunEndingScreen_ExitToMainMenu = m_RunEndingScreen.FindAction("Exit To Main Menu", throwIfNotFound: true);
+        // Player Menu/Craft Section
+        m_PlayerMenuCraftSection = asset.FindActionMap("Player Menu/Craft Section", throwIfNotFound: true);
+        m_PlayerMenuCraftSection_NavigatePlayerMenu = m_PlayerMenuCraftSection.FindAction("Navigate Player Menu", throwIfNotFound: true);
+        m_PlayerMenuCraftSection_NavigateSection = m_PlayerMenuCraftSection.FindAction("Navigate Section", throwIfNotFound: true);
+        m_PlayerMenuCraftSection_Select = m_PlayerMenuCraftSection.FindAction("Select", throwIfNotFound: true);
+        m_PlayerMenuCraftSection_CreateItem = m_PlayerMenuCraftSection.FindAction("Create Item", throwIfNotFound: true);
+        m_PlayerMenuCraftSection_ChangeInventoryItemsCategory = m_PlayerMenuCraftSection.FindAction("Change Inventory Items Category", throwIfNotFound: true);
+        m_PlayerMenuCraftSection_ClosePlayerMenu = m_PlayerMenuCraftSection.FindAction("Close Player Menu", throwIfNotFound: true);
+        // Player Menu/Alchemistry Section
+        m_PlayerMenuAlchemistrySection = asset.FindActionMap("Player Menu/Alchemistry Section", throwIfNotFound: true);
+        m_PlayerMenuAlchemistrySection_NavigatePlayerMenu = m_PlayerMenuAlchemistrySection.FindAction("Navigate Player Menu", throwIfNotFound: true);
+        m_PlayerMenuAlchemistrySection_ClosePlayerMenu = m_PlayerMenuAlchemistrySection.FindAction("Close Player Menu", throwIfNotFound: true);
+        // Player Menu/Settings Section
+        m_PlayerMenuSettingsSection = asset.FindActionMap("Player Menu/Settings Section", throwIfNotFound: true);
+        m_PlayerMenuSettingsSection_NavigatePlayerMenu = m_PlayerMenuSettingsSection.FindAction("Navigate Player Menu", throwIfNotFound: true);
+        m_PlayerMenuSettingsSection_ClosePlayerMenu = m_PlayerMenuSettingsSection.FindAction("Close Player Menu", throwIfNotFound: true);
+        // Player Menu/Items Interactions Panel
+        m_PlayerMenuItemsInteractionsPanel = asset.FindActionMap("Player Menu/Items Interactions Panel", throwIfNotFound: true);
+        m_PlayerMenuItemsInteractionsPanel_Navigate = m_PlayerMenuItemsInteractionsPanel.FindAction("Navigate", throwIfNotFound: true);
+        m_PlayerMenuItemsInteractionsPanel_Select = m_PlayerMenuItemsInteractionsPanel.FindAction("Select", throwIfNotFound: true);
+        m_PlayerMenuItemsInteractionsPanel_CloseItemCellActionsMenu = m_PlayerMenuItemsInteractionsPanel.FindAction("Close Item Cell Actions Menu", throwIfNotFound: true);
+        // Player Menu/Items Count Select Panel
+        m_PlayerMenuItemsCountSelectPanel = asset.FindActionMap("Player Menu/Items Count Select Panel", throwIfNotFound: true);
+        m_PlayerMenuItemsCountSelectPanel_ChangeItemsCount = m_PlayerMenuItemsCountSelectPanel.FindAction("Change Items Count", throwIfNotFound: true);
+        m_PlayerMenuItemsCountSelectPanel_Select = m_PlayerMenuItemsCountSelectPanel.FindAction("Select", throwIfNotFound: true);
+        m_PlayerMenuItemsCountSelectPanel_SelectAll = m_PlayerMenuItemsCountSelectPanel.FindAction("Select All", throwIfNotFound: true);
+        m_PlayerMenuItemsCountSelectPanel_Cancel = m_PlayerMenuItemsCountSelectPanel.FindAction("Cancel", throwIfNotFound: true);
+        // Run Ending Panel
+        m_RunEndingPanel = asset.FindActionMap("Run Ending Panel", throwIfNotFound: true);
+        m_RunEndingPanel_ReturnToHub = m_RunEndingPanel.FindAction("Return To Hub", throwIfNotFound: true);
+        m_RunEndingPanel_ExitToMainMenu = m_RunEndingPanel.FindAction("Exit To Main Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -3830,64 +2709,64 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     }
     public PlayerActions @Player => new PlayerActions(this);
 
-    // HUD (Items Container)
-    private readonly InputActionMap m_HUDItemsContainer;
-    private IHUDItemsContainerActions m_HUDItemsContainerActionsCallbackInterface;
-    private readonly InputAction m_HUDItemsContainer_Navigate;
-    private readonly InputAction m_HUDItemsContainer_Take;
-    private readonly InputAction m_HUDItemsContainer_TakeAll;
-    private readonly InputAction m_HUDItemsContainer_CloseContainer;
-    public struct HUDItemsContainerActions
+    // Items Container Menu
+    private readonly InputActionMap m_ItemsContainerMenu;
+    private IItemsContainerMenuActions m_ItemsContainerMenuActionsCallbackInterface;
+    private readonly InputAction m_ItemsContainerMenu_Navigate;
+    private readonly InputAction m_ItemsContainerMenu_PickItem;
+    private readonly InputAction m_ItemsContainerMenu_PickAllItems;
+    private readonly InputAction m_ItemsContainerMenu_CloseContainer;
+    public struct ItemsContainerMenuActions
     {
         private @PlayerInputActions m_Wrapper;
-        public HUDItemsContainerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Navigate => m_Wrapper.m_HUDItemsContainer_Navigate;
-        public InputAction @Take => m_Wrapper.m_HUDItemsContainer_Take;
-        public InputAction @TakeAll => m_Wrapper.m_HUDItemsContainer_TakeAll;
-        public InputAction @CloseContainer => m_Wrapper.m_HUDItemsContainer_CloseContainer;
-        public InputActionMap Get() { return m_Wrapper.m_HUDItemsContainer; }
+        public ItemsContainerMenuActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Navigate => m_Wrapper.m_ItemsContainerMenu_Navigate;
+        public InputAction @PickItem => m_Wrapper.m_ItemsContainerMenu_PickItem;
+        public InputAction @PickAllItems => m_Wrapper.m_ItemsContainerMenu_PickAllItems;
+        public InputAction @CloseContainer => m_Wrapper.m_ItemsContainerMenu_CloseContainer;
+        public InputActionMap Get() { return m_Wrapper.m_ItemsContainerMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(HUDItemsContainerActions set) { return set.Get(); }
-        public void SetCallbacks(IHUDItemsContainerActions instance)
+        public static implicit operator InputActionMap(ItemsContainerMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IItemsContainerMenuActions instance)
         {
-            if (m_Wrapper.m_HUDItemsContainerActionsCallbackInterface != null)
+            if (m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface != null)
             {
-                @Navigate.started -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnNavigate;
-                @Navigate.performed -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnNavigate;
-                @Navigate.canceled -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnNavigate;
-                @Take.started -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnTake;
-                @Take.performed -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnTake;
-                @Take.canceled -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnTake;
-                @TakeAll.started -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnTakeAll;
-                @TakeAll.performed -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnTakeAll;
-                @TakeAll.canceled -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnTakeAll;
-                @CloseContainer.started -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnCloseContainer;
-                @CloseContainer.performed -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnCloseContainer;
-                @CloseContainer.canceled -= m_Wrapper.m_HUDItemsContainerActionsCallbackInterface.OnCloseContainer;
+                @Navigate.started -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnNavigate;
+                @PickItem.started -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnPickItem;
+                @PickItem.performed -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnPickItem;
+                @PickItem.canceled -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnPickItem;
+                @PickAllItems.started -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnPickAllItems;
+                @PickAllItems.performed -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnPickAllItems;
+                @PickAllItems.canceled -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnPickAllItems;
+                @CloseContainer.started -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnCloseContainer;
+                @CloseContainer.performed -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnCloseContainer;
+                @CloseContainer.canceled -= m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface.OnCloseContainer;
             }
-            m_Wrapper.m_HUDItemsContainerActionsCallbackInterface = instance;
+            m_Wrapper.m_ItemsContainerMenuActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Navigate.started += instance.OnNavigate;
                 @Navigate.performed += instance.OnNavigate;
                 @Navigate.canceled += instance.OnNavigate;
-                @Take.started += instance.OnTake;
-                @Take.performed += instance.OnTake;
-                @Take.canceled += instance.OnTake;
-                @TakeAll.started += instance.OnTakeAll;
-                @TakeAll.performed += instance.OnTakeAll;
-                @TakeAll.canceled += instance.OnTakeAll;
+                @PickItem.started += instance.OnPickItem;
+                @PickItem.performed += instance.OnPickItem;
+                @PickItem.canceled += instance.OnPickItem;
+                @PickAllItems.started += instance.OnPickAllItems;
+                @PickAllItems.performed += instance.OnPickAllItems;
+                @PickAllItems.canceled += instance.OnPickAllItems;
                 @CloseContainer.started += instance.OnCloseContainer;
                 @CloseContainer.performed += instance.OnCloseContainer;
                 @CloseContainer.canceled += instance.OnCloseContainer;
             }
         }
     }
-    public HUDItemsContainerActions @HUDItemsContainer => new HUDItemsContainerActions(this);
+    public ItemsContainerMenuActions @ItemsContainerMenu => new ItemsContainerMenuActions(this);
 
-    // Player Menu (Inventory Section)
+    // Player Menu/Inventory Section
     private readonly InputActionMap m_PlayerMenuInventorySection;
     private IPlayerMenuInventorySectionActions m_PlayerMenuInventorySectionActionsCallbackInterface;
     private readonly InputAction m_PlayerMenuInventorySection_NavigatePlayerMenu;
@@ -3952,7 +2831,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     }
     public PlayerMenuInventorySectionActions @PlayerMenuInventorySection => new PlayerMenuInventorySectionActions(this);
 
-    // Player Menu (Inventory Section (Special Interaction))
+    // Player Menu/Inventory Section/Special Interaction
     private readonly InputActionMap m_PlayerMenuInventorySectionSpecialInteraction;
     private IPlayerMenuInventorySectionSpecialInteractionActions m_PlayerMenuInventorySectionSpecialInteractionActionsCallbackInterface;
     private readonly InputAction m_PlayerMenuInventorySectionSpecialInteraction_Navigate;
@@ -4001,39 +2880,194 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     }
     public PlayerMenuInventorySectionSpecialInteractionActions @PlayerMenuInventorySectionSpecialInteraction => new PlayerMenuInventorySectionSpecialInteractionActions(this);
 
-    // Player Menu (Item Cell Actions Menu)
-    private readonly InputActionMap m_PlayerMenuItemCellActionsMenu;
-    private IPlayerMenuItemCellActionsMenuActions m_PlayerMenuItemCellActionsMenuActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuItemCellActionsMenu_Navigate;
-    private readonly InputAction m_PlayerMenuItemCellActionsMenu_Select;
-    private readonly InputAction m_PlayerMenuItemCellActionsMenu_CloseItemCellActionsMenu;
-    public struct PlayerMenuItemCellActionsMenuActions
+    // Player Menu/Craft Section
+    private readonly InputActionMap m_PlayerMenuCraftSection;
+    private IPlayerMenuCraftSectionActions m_PlayerMenuCraftSectionActionsCallbackInterface;
+    private readonly InputAction m_PlayerMenuCraftSection_NavigatePlayerMenu;
+    private readonly InputAction m_PlayerMenuCraftSection_NavigateSection;
+    private readonly InputAction m_PlayerMenuCraftSection_Select;
+    private readonly InputAction m_PlayerMenuCraftSection_CreateItem;
+    private readonly InputAction m_PlayerMenuCraftSection_ChangeInventoryItemsCategory;
+    private readonly InputAction m_PlayerMenuCraftSection_ClosePlayerMenu;
+    public struct PlayerMenuCraftSectionActions
     {
         private @PlayerInputActions m_Wrapper;
-        public PlayerMenuItemCellActionsMenuActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Navigate => m_Wrapper.m_PlayerMenuItemCellActionsMenu_Navigate;
-        public InputAction @Select => m_Wrapper.m_PlayerMenuItemCellActionsMenu_Select;
-        public InputAction @CloseItemCellActionsMenu => m_Wrapper.m_PlayerMenuItemCellActionsMenu_CloseItemCellActionsMenu;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuItemCellActionsMenu; }
+        public PlayerMenuCraftSectionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @NavigatePlayerMenu => m_Wrapper.m_PlayerMenuCraftSection_NavigatePlayerMenu;
+        public InputAction @NavigateSection => m_Wrapper.m_PlayerMenuCraftSection_NavigateSection;
+        public InputAction @Select => m_Wrapper.m_PlayerMenuCraftSection_Select;
+        public InputAction @CreateItem => m_Wrapper.m_PlayerMenuCraftSection_CreateItem;
+        public InputAction @ChangeInventoryItemsCategory => m_Wrapper.m_PlayerMenuCraftSection_ChangeInventoryItemsCategory;
+        public InputAction @ClosePlayerMenu => m_Wrapper.m_PlayerMenuCraftSection_ClosePlayerMenu;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuCraftSection; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuItemCellActionsMenuActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuItemCellActionsMenuActions instance)
+        public static implicit operator InputActionMap(PlayerMenuCraftSectionActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerMenuCraftSectionActions instance)
         {
-            if (m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface != null)
             {
-                @Navigate.started -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnNavigate;
-                @Navigate.performed -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnNavigate;
-                @Navigate.canceled -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnNavigate;
-                @Select.started -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnSelect;
-                @CloseItemCellActionsMenu.started -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnCloseItemCellActionsMenu;
-                @CloseItemCellActionsMenu.performed -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnCloseItemCellActionsMenu;
-                @CloseItemCellActionsMenu.canceled -= m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface.OnCloseItemCellActionsMenu;
+                @NavigatePlayerMenu.started -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.performed -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @NavigateSection.started -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnNavigateSection;
+                @NavigateSection.performed -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnNavigateSection;
+                @NavigateSection.canceled -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnNavigateSection;
+                @Select.started -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnSelect;
+                @CreateItem.started -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnCreateItem;
+                @CreateItem.performed -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnCreateItem;
+                @CreateItem.canceled -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnCreateItem;
+                @ChangeInventoryItemsCategory.started -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnChangeInventoryItemsCategory;
+                @ChangeInventoryItemsCategory.performed -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnChangeInventoryItemsCategory;
+                @ChangeInventoryItemsCategory.canceled -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnChangeInventoryItemsCategory;
+                @ClosePlayerMenu.started -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnClosePlayerMenu;
+                @ClosePlayerMenu.performed -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnClosePlayerMenu;
+                @ClosePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface.OnClosePlayerMenu;
             }
-            m_Wrapper.m_PlayerMenuItemCellActionsMenuActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerMenuCraftSectionActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @NavigatePlayerMenu.started += instance.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.performed += instance.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.canceled += instance.OnNavigatePlayerMenu;
+                @NavigateSection.started += instance.OnNavigateSection;
+                @NavigateSection.performed += instance.OnNavigateSection;
+                @NavigateSection.canceled += instance.OnNavigateSection;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @CreateItem.started += instance.OnCreateItem;
+                @CreateItem.performed += instance.OnCreateItem;
+                @CreateItem.canceled += instance.OnCreateItem;
+                @ChangeInventoryItemsCategory.started += instance.OnChangeInventoryItemsCategory;
+                @ChangeInventoryItemsCategory.performed += instance.OnChangeInventoryItemsCategory;
+                @ChangeInventoryItemsCategory.canceled += instance.OnChangeInventoryItemsCategory;
+                @ClosePlayerMenu.started += instance.OnClosePlayerMenu;
+                @ClosePlayerMenu.performed += instance.OnClosePlayerMenu;
+                @ClosePlayerMenu.canceled += instance.OnClosePlayerMenu;
+            }
+        }
+    }
+    public PlayerMenuCraftSectionActions @PlayerMenuCraftSection => new PlayerMenuCraftSectionActions(this);
+
+    // Player Menu/Alchemistry Section
+    private readonly InputActionMap m_PlayerMenuAlchemistrySection;
+    private IPlayerMenuAlchemistrySectionActions m_PlayerMenuAlchemistrySectionActionsCallbackInterface;
+    private readonly InputAction m_PlayerMenuAlchemistrySection_NavigatePlayerMenu;
+    private readonly InputAction m_PlayerMenuAlchemistrySection_ClosePlayerMenu;
+    public struct PlayerMenuAlchemistrySectionActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public PlayerMenuAlchemistrySectionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @NavigatePlayerMenu => m_Wrapper.m_PlayerMenuAlchemistrySection_NavigatePlayerMenu;
+        public InputAction @ClosePlayerMenu => m_Wrapper.m_PlayerMenuAlchemistrySection_ClosePlayerMenu;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuAlchemistrySection; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerMenuAlchemistrySectionActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerMenuAlchemistrySectionActions instance)
+        {
+            if (m_Wrapper.m_PlayerMenuAlchemistrySectionActionsCallbackInterface != null)
+            {
+                @NavigatePlayerMenu.started -= m_Wrapper.m_PlayerMenuAlchemistrySectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.performed -= m_Wrapper.m_PlayerMenuAlchemistrySectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuAlchemistrySectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @ClosePlayerMenu.started -= m_Wrapper.m_PlayerMenuAlchemistrySectionActionsCallbackInterface.OnClosePlayerMenu;
+                @ClosePlayerMenu.performed -= m_Wrapper.m_PlayerMenuAlchemistrySectionActionsCallbackInterface.OnClosePlayerMenu;
+                @ClosePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuAlchemistrySectionActionsCallbackInterface.OnClosePlayerMenu;
+            }
+            m_Wrapper.m_PlayerMenuAlchemistrySectionActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @NavigatePlayerMenu.started += instance.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.performed += instance.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.canceled += instance.OnNavigatePlayerMenu;
+                @ClosePlayerMenu.started += instance.OnClosePlayerMenu;
+                @ClosePlayerMenu.performed += instance.OnClosePlayerMenu;
+                @ClosePlayerMenu.canceled += instance.OnClosePlayerMenu;
+            }
+        }
+    }
+    public PlayerMenuAlchemistrySectionActions @PlayerMenuAlchemistrySection => new PlayerMenuAlchemistrySectionActions(this);
+
+    // Player Menu/Settings Section
+    private readonly InputActionMap m_PlayerMenuSettingsSection;
+    private IPlayerMenuSettingsSectionActions m_PlayerMenuSettingsSectionActionsCallbackInterface;
+    private readonly InputAction m_PlayerMenuSettingsSection_NavigatePlayerMenu;
+    private readonly InputAction m_PlayerMenuSettingsSection_ClosePlayerMenu;
+    public struct PlayerMenuSettingsSectionActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public PlayerMenuSettingsSectionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @NavigatePlayerMenu => m_Wrapper.m_PlayerMenuSettingsSection_NavigatePlayerMenu;
+        public InputAction @ClosePlayerMenu => m_Wrapper.m_PlayerMenuSettingsSection_ClosePlayerMenu;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuSettingsSection; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerMenuSettingsSectionActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerMenuSettingsSectionActions instance)
+        {
+            if (m_Wrapper.m_PlayerMenuSettingsSectionActionsCallbackInterface != null)
+            {
+                @NavigatePlayerMenu.started -= m_Wrapper.m_PlayerMenuSettingsSectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.performed -= m_Wrapper.m_PlayerMenuSettingsSectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuSettingsSectionActionsCallbackInterface.OnNavigatePlayerMenu;
+                @ClosePlayerMenu.started -= m_Wrapper.m_PlayerMenuSettingsSectionActionsCallbackInterface.OnClosePlayerMenu;
+                @ClosePlayerMenu.performed -= m_Wrapper.m_PlayerMenuSettingsSectionActionsCallbackInterface.OnClosePlayerMenu;
+                @ClosePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuSettingsSectionActionsCallbackInterface.OnClosePlayerMenu;
+            }
+            m_Wrapper.m_PlayerMenuSettingsSectionActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @NavigatePlayerMenu.started += instance.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.performed += instance.OnNavigatePlayerMenu;
+                @NavigatePlayerMenu.canceled += instance.OnNavigatePlayerMenu;
+                @ClosePlayerMenu.started += instance.OnClosePlayerMenu;
+                @ClosePlayerMenu.performed += instance.OnClosePlayerMenu;
+                @ClosePlayerMenu.canceled += instance.OnClosePlayerMenu;
+            }
+        }
+    }
+    public PlayerMenuSettingsSectionActions @PlayerMenuSettingsSection => new PlayerMenuSettingsSectionActions(this);
+
+    // Player Menu/Items Interactions Panel
+    private readonly InputActionMap m_PlayerMenuItemsInteractionsPanel;
+    private IPlayerMenuItemsInteractionsPanelActions m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface;
+    private readonly InputAction m_PlayerMenuItemsInteractionsPanel_Navigate;
+    private readonly InputAction m_PlayerMenuItemsInteractionsPanel_Select;
+    private readonly InputAction m_PlayerMenuItemsInteractionsPanel_CloseItemCellActionsMenu;
+    public struct PlayerMenuItemsInteractionsPanelActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public PlayerMenuItemsInteractionsPanelActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Navigate => m_Wrapper.m_PlayerMenuItemsInteractionsPanel_Navigate;
+        public InputAction @Select => m_Wrapper.m_PlayerMenuItemsInteractionsPanel_Select;
+        public InputAction @CloseItemCellActionsMenu => m_Wrapper.m_PlayerMenuItemsInteractionsPanel_CloseItemCellActionsMenu;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuItemsInteractionsPanel; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerMenuItemsInteractionsPanelActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerMenuItemsInteractionsPanelActions instance)
+        {
+            if (m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface != null)
+            {
+                @Navigate.started -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnNavigate;
+                @Select.started -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnSelect;
+                @CloseItemCellActionsMenu.started -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnCloseItemCellActionsMenu;
+                @CloseItemCellActionsMenu.performed -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnCloseItemCellActionsMenu;
+                @CloseItemCellActionsMenu.canceled -= m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface.OnCloseItemCellActionsMenu;
+            }
+            m_Wrapper.m_PlayerMenuItemsInteractionsPanelActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Navigate.started += instance.OnNavigate;
@@ -4048,500 +3082,93 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             }
         }
     }
-    public PlayerMenuItemCellActionsMenuActions @PlayerMenuItemCellActionsMenu => new PlayerMenuItemCellActionsMenuActions(this);
+    public PlayerMenuItemsInteractionsPanelActions @PlayerMenuItemsInteractionsPanel => new PlayerMenuItemsInteractionsPanelActions(this);
 
-    // Player Menu (Inventory Item Moving)
-    private readonly InputActionMap m_PlayerMenuInventoryItemMoving;
-    private IPlayerMenuInventoryItemMovingActions m_PlayerMenuInventoryItemMovingActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuInventoryItemMoving_MoveItem;
-    private readonly InputAction m_PlayerMenuInventoryItemMoving_PutItemDown;
-    public struct PlayerMenuInventoryItemMovingActions
+    // Player Menu/Items Count Select Panel
+    private readonly InputActionMap m_PlayerMenuItemsCountSelectPanel;
+    private IPlayerMenuItemsCountSelectPanelActions m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface;
+    private readonly InputAction m_PlayerMenuItemsCountSelectPanel_ChangeItemsCount;
+    private readonly InputAction m_PlayerMenuItemsCountSelectPanel_Select;
+    private readonly InputAction m_PlayerMenuItemsCountSelectPanel_SelectAll;
+    private readonly InputAction m_PlayerMenuItemsCountSelectPanel_Cancel;
+    public struct PlayerMenuItemsCountSelectPanelActions
     {
         private @PlayerInputActions m_Wrapper;
-        public PlayerMenuInventoryItemMovingActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MoveItem => m_Wrapper.m_PlayerMenuInventoryItemMoving_MoveItem;
-        public InputAction @PutItemDown => m_Wrapper.m_PlayerMenuInventoryItemMoving_PutItemDown;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuInventoryItemMoving; }
+        public PlayerMenuItemsCountSelectPanelActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ChangeItemsCount => m_Wrapper.m_PlayerMenuItemsCountSelectPanel_ChangeItemsCount;
+        public InputAction @Select => m_Wrapper.m_PlayerMenuItemsCountSelectPanel_Select;
+        public InputAction @SelectAll => m_Wrapper.m_PlayerMenuItemsCountSelectPanel_SelectAll;
+        public InputAction @Cancel => m_Wrapper.m_PlayerMenuItemsCountSelectPanel_Cancel;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuItemsCountSelectPanel; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuInventoryItemMovingActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuInventoryItemMovingActions instance)
+        public static implicit operator InputActionMap(PlayerMenuItemsCountSelectPanelActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerMenuItemsCountSelectPanelActions instance)
         {
-            if (m_Wrapper.m_PlayerMenuInventoryItemMovingActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface != null)
             {
-                @MoveItem.started -= m_Wrapper.m_PlayerMenuInventoryItemMovingActionsCallbackInterface.OnMoveItem;
-                @MoveItem.performed -= m_Wrapper.m_PlayerMenuInventoryItemMovingActionsCallbackInterface.OnMoveItem;
-                @MoveItem.canceled -= m_Wrapper.m_PlayerMenuInventoryItemMovingActionsCallbackInterface.OnMoveItem;
-                @PutItemDown.started -= m_Wrapper.m_PlayerMenuInventoryItemMovingActionsCallbackInterface.OnPutItemDown;
-                @PutItemDown.performed -= m_Wrapper.m_PlayerMenuInventoryItemMovingActionsCallbackInterface.OnPutItemDown;
-                @PutItemDown.canceled -= m_Wrapper.m_PlayerMenuInventoryItemMovingActionsCallbackInterface.OnPutItemDown;
+                @ChangeItemsCount.started -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnChangeItemsCount;
+                @ChangeItemsCount.performed -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnChangeItemsCount;
+                @ChangeItemsCount.canceled -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnChangeItemsCount;
+                @Select.started -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnSelect;
+                @SelectAll.started -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnSelectAll;
+                @SelectAll.performed -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnSelectAll;
+                @SelectAll.canceled -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnSelectAll;
+                @Cancel.started -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnCancel;
+                @Cancel.performed -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnCancel;
+                @Cancel.canceled -= m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface.OnCancel;
             }
-            m_Wrapper.m_PlayerMenuInventoryItemMovingActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @MoveItem.started += instance.OnMoveItem;
-                @MoveItem.performed += instance.OnMoveItem;
-                @MoveItem.canceled += instance.OnMoveItem;
-                @PutItemDown.started += instance.OnPutItemDown;
-                @PutItemDown.performed += instance.OnPutItemDown;
-                @PutItemDown.canceled += instance.OnPutItemDown;
-            }
-        }
-    }
-    public PlayerMenuInventoryItemMovingActions @PlayerMenuInventoryItemMoving => new PlayerMenuInventoryItemMovingActions(this);
-
-    // Player Menu (Choose Items Count View)
-    private readonly InputActionMap m_PlayerMenuChooseItemsCountView;
-    private IPlayerMenuChooseItemsCountViewActions m_PlayerMenuChooseItemsCountViewActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuChooseItemsCountView_ChangeItemsCount;
-    private readonly InputAction m_PlayerMenuChooseItemsCountView_Confirm;
-    private readonly InputAction m_PlayerMenuChooseItemsCountView_ConfirmAll;
-    private readonly InputAction m_PlayerMenuChooseItemsCountView_Cancel;
-    public struct PlayerMenuChooseItemsCountViewActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public PlayerMenuChooseItemsCountViewActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ChangeItemsCount => m_Wrapper.m_PlayerMenuChooseItemsCountView_ChangeItemsCount;
-        public InputAction @Confirm => m_Wrapper.m_PlayerMenuChooseItemsCountView_Confirm;
-        public InputAction @ConfirmAll => m_Wrapper.m_PlayerMenuChooseItemsCountView_ConfirmAll;
-        public InputAction @Cancel => m_Wrapper.m_PlayerMenuChooseItemsCountView_Cancel;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuChooseItemsCountView; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuChooseItemsCountViewActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuChooseItemsCountViewActions instance)
-        {
-            if (m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface != null)
-            {
-                @ChangeItemsCount.started -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnChangeItemsCount;
-                @ChangeItemsCount.performed -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnChangeItemsCount;
-                @ChangeItemsCount.canceled -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnChangeItemsCount;
-                @Confirm.started -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnConfirm;
-                @Confirm.performed -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnConfirm;
-                @Confirm.canceled -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnConfirm;
-                @ConfirmAll.started -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnConfirmAll;
-                @ConfirmAll.performed -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnConfirmAll;
-                @ConfirmAll.canceled -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnConfirmAll;
-                @Cancel.started -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnCancel;
-                @Cancel.performed -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnCancel;
-                @Cancel.canceled -= m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface.OnCancel;
-            }
-            m_Wrapper.m_PlayerMenuChooseItemsCountViewActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerMenuItemsCountSelectPanelActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @ChangeItemsCount.started += instance.OnChangeItemsCount;
                 @ChangeItemsCount.performed += instance.OnChangeItemsCount;
                 @ChangeItemsCount.canceled += instance.OnChangeItemsCount;
-                @Confirm.started += instance.OnConfirm;
-                @Confirm.performed += instance.OnConfirm;
-                @Confirm.canceled += instance.OnConfirm;
-                @ConfirmAll.started += instance.OnConfirmAll;
-                @ConfirmAll.performed += instance.OnConfirmAll;
-                @ConfirmAll.canceled += instance.OnConfirmAll;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @SelectAll.started += instance.OnSelectAll;
+                @SelectAll.performed += instance.OnSelectAll;
+                @SelectAll.canceled += instance.OnSelectAll;
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
             }
         }
     }
-    public PlayerMenuChooseItemsCountViewActions @PlayerMenuChooseItemsCountView => new PlayerMenuChooseItemsCountViewActions(this);
+    public PlayerMenuItemsCountSelectPanelActions @PlayerMenuItemsCountSelectPanel => new PlayerMenuItemsCountSelectPanelActions(this);
 
-    // Player Menu (Craft Section (Recipes))
-    private readonly InputActionMap m_PlayerMenuCraftSectionRecipes;
-    private IPlayerMenuCraftSectionRecipesActions m_PlayerMenuCraftSectionRecipesActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuCraftSectionRecipes_NavigatePlayerMenu;
-    private readonly InputAction m_PlayerMenuCraftSectionRecipes_NavigateSection;
-    private readonly InputAction m_PlayerMenuCraftSectionRecipes_Select;
-    private readonly InputAction m_PlayerMenuCraftSectionRecipes_ChangeInventoryItemsCategory;
-    private readonly InputAction m_PlayerMenuCraftSectionRecipes_ClosePlayerMenu;
-    public struct PlayerMenuCraftSectionRecipesActions
+    // Run Ending Panel
+    private readonly InputActionMap m_RunEndingPanel;
+    private IRunEndingPanelActions m_RunEndingPanelActionsCallbackInterface;
+    private readonly InputAction m_RunEndingPanel_ReturnToHub;
+    private readonly InputAction m_RunEndingPanel_ExitToMainMenu;
+    public struct RunEndingPanelActions
     {
         private @PlayerInputActions m_Wrapper;
-        public PlayerMenuCraftSectionRecipesActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @NavigatePlayerMenu => m_Wrapper.m_PlayerMenuCraftSectionRecipes_NavigatePlayerMenu;
-        public InputAction @NavigateSection => m_Wrapper.m_PlayerMenuCraftSectionRecipes_NavigateSection;
-        public InputAction @Select => m_Wrapper.m_PlayerMenuCraftSectionRecipes_Select;
-        public InputAction @ChangeInventoryItemsCategory => m_Wrapper.m_PlayerMenuCraftSectionRecipes_ChangeInventoryItemsCategory;
-        public InputAction @ClosePlayerMenu => m_Wrapper.m_PlayerMenuCraftSectionRecipes_ClosePlayerMenu;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuCraftSectionRecipes; }
+        public RunEndingPanelActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ReturnToHub => m_Wrapper.m_RunEndingPanel_ReturnToHub;
+        public InputAction @ExitToMainMenu => m_Wrapper.m_RunEndingPanel_ExitToMainMenu;
+        public InputActionMap Get() { return m_Wrapper.m_RunEndingPanel; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuCraftSectionRecipesActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuCraftSectionRecipesActions instance)
+        public static implicit operator InputActionMap(RunEndingPanelActions set) { return set.Get(); }
+        public void SetCallbacks(IRunEndingPanelActions instance)
         {
-            if (m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface != null)
+            if (m_Wrapper.m_RunEndingPanelActionsCallbackInterface != null)
             {
-                @NavigatePlayerMenu.started -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigateSection.started -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnNavigateSection;
-                @NavigateSection.performed -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnNavigateSection;
-                @NavigateSection.canceled -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnNavigateSection;
-                @Select.started -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnSelect;
-                @ChangeInventoryItemsCategory.started -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.performed -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.canceled -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ClosePlayerMenu.started -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface.OnClosePlayerMenu;
+                @ReturnToHub.started -= m_Wrapper.m_RunEndingPanelActionsCallbackInterface.OnReturnToHub;
+                @ReturnToHub.performed -= m_Wrapper.m_RunEndingPanelActionsCallbackInterface.OnReturnToHub;
+                @ReturnToHub.canceled -= m_Wrapper.m_RunEndingPanelActionsCallbackInterface.OnReturnToHub;
+                @ExitToMainMenu.started -= m_Wrapper.m_RunEndingPanelActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.performed -= m_Wrapper.m_RunEndingPanelActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.canceled -= m_Wrapper.m_RunEndingPanelActionsCallbackInterface.OnExitToMainMenu;
             }
-            m_Wrapper.m_PlayerMenuCraftSectionRecipesActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @NavigatePlayerMenu.started += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled += instance.OnNavigatePlayerMenu;
-                @NavigateSection.started += instance.OnNavigateSection;
-                @NavigateSection.performed += instance.OnNavigateSection;
-                @NavigateSection.canceled += instance.OnNavigateSection;
-                @Select.started += instance.OnSelect;
-                @Select.performed += instance.OnSelect;
-                @Select.canceled += instance.OnSelect;
-                @ChangeInventoryItemsCategory.started += instance.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.performed += instance.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.canceled += instance.OnChangeInventoryItemsCategory;
-                @ClosePlayerMenu.started += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled += instance.OnClosePlayerMenu;
-            }
-        }
-    }
-    public PlayerMenuCraftSectionRecipesActions @PlayerMenuCraftSectionRecipes => new PlayerMenuCraftSectionRecipesActions(this);
-
-    // Player Menu (Craft Section (Energy Cells))
-    private readonly InputActionMap m_PlayerMenuCraftSectionEnergyCells;
-    private IPlayerMenuCraftSectionEnergyCellsActions m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuCraftSectionEnergyCells_NavigatePlayerMenu;
-    private readonly InputAction m_PlayerMenuCraftSectionEnergyCells_NavigateSection;
-    private readonly InputAction m_PlayerMenuCraftSectionEnergyCells_Select;
-    private readonly InputAction m_PlayerMenuCraftSectionEnergyCells_GoToCraftingItemTemplate;
-    private readonly InputAction m_PlayerMenuCraftSectionEnergyCells_CreateItem;
-    private readonly InputAction m_PlayerMenuCraftSectionEnergyCells_ChangeInventoryItemsCategory;
-    private readonly InputAction m_PlayerMenuCraftSectionEnergyCells_ClosePlayerMenu;
-    public struct PlayerMenuCraftSectionEnergyCellsActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public PlayerMenuCraftSectionEnergyCellsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @NavigatePlayerMenu => m_Wrapper.m_PlayerMenuCraftSectionEnergyCells_NavigatePlayerMenu;
-        public InputAction @NavigateSection => m_Wrapper.m_PlayerMenuCraftSectionEnergyCells_NavigateSection;
-        public InputAction @Select => m_Wrapper.m_PlayerMenuCraftSectionEnergyCells_Select;
-        public InputAction @GoToCraftingItemTemplate => m_Wrapper.m_PlayerMenuCraftSectionEnergyCells_GoToCraftingItemTemplate;
-        public InputAction @CreateItem => m_Wrapper.m_PlayerMenuCraftSectionEnergyCells_CreateItem;
-        public InputAction @ChangeInventoryItemsCategory => m_Wrapper.m_PlayerMenuCraftSectionEnergyCells_ChangeInventoryItemsCategory;
-        public InputAction @ClosePlayerMenu => m_Wrapper.m_PlayerMenuCraftSectionEnergyCells_ClosePlayerMenu;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuCraftSectionEnergyCells; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuCraftSectionEnergyCellsActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuCraftSectionEnergyCellsActions instance)
-        {
-            if (m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface != null)
-            {
-                @NavigatePlayerMenu.started -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigateSection.started -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnNavigateSection;
-                @NavigateSection.performed -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnNavigateSection;
-                @NavigateSection.canceled -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnNavigateSection;
-                @Select.started -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnSelect;
-                @GoToCraftingItemTemplate.started -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnGoToCraftingItemTemplate;
-                @GoToCraftingItemTemplate.performed -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnGoToCraftingItemTemplate;
-                @GoToCraftingItemTemplate.canceled -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnGoToCraftingItemTemplate;
-                @CreateItem.started -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnCreateItem;
-                @CreateItem.performed -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnCreateItem;
-                @CreateItem.canceled -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnCreateItem;
-                @ChangeInventoryItemsCategory.started -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.performed -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.canceled -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ClosePlayerMenu.started -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface.OnClosePlayerMenu;
-            }
-            m_Wrapper.m_PlayerMenuCraftSectionEnergyCellsActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @NavigatePlayerMenu.started += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled += instance.OnNavigatePlayerMenu;
-                @NavigateSection.started += instance.OnNavigateSection;
-                @NavigateSection.performed += instance.OnNavigateSection;
-                @NavigateSection.canceled += instance.OnNavigateSection;
-                @Select.started += instance.OnSelect;
-                @Select.performed += instance.OnSelect;
-                @Select.canceled += instance.OnSelect;
-                @GoToCraftingItemTemplate.started += instance.OnGoToCraftingItemTemplate;
-                @GoToCraftingItemTemplate.performed += instance.OnGoToCraftingItemTemplate;
-                @GoToCraftingItemTemplate.canceled += instance.OnGoToCraftingItemTemplate;
-                @CreateItem.started += instance.OnCreateItem;
-                @CreateItem.performed += instance.OnCreateItem;
-                @CreateItem.canceled += instance.OnCreateItem;
-                @ChangeInventoryItemsCategory.started += instance.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.performed += instance.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.canceled += instance.OnChangeInventoryItemsCategory;
-                @ClosePlayerMenu.started += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled += instance.OnClosePlayerMenu;
-            }
-        }
-    }
-    public PlayerMenuCraftSectionEnergyCellsActions @PlayerMenuCraftSectionEnergyCells => new PlayerMenuCraftSectionEnergyCellsActions(this);
-
-    // Player Menu (Craft Section (Crafting Item Template))
-    private readonly InputActionMap m_PlayerMenuCraftSectionCraftingItemTemplate;
-    private IPlayerMenuCraftSectionCraftingItemTemplateActions m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuCraftSectionCraftingItemTemplate_NavigateSection;
-    private readonly InputAction m_PlayerMenuCraftSectionCraftingItemTemplate_Select;
-    private readonly InputAction m_PlayerMenuCraftSectionCraftingItemTemplate_CreateItem;
-    private readonly InputAction m_PlayerMenuCraftSectionCraftingItemTemplate_ReturnItemToInventory;
-    private readonly InputAction m_PlayerMenuCraftSectionCraftingItemTemplate_ChangeInventoryItemsCategory;
-    private readonly InputAction m_PlayerMenuCraftSectionCraftingItemTemplate_ReturnToEnergyCells;
-    public struct PlayerMenuCraftSectionCraftingItemTemplateActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public PlayerMenuCraftSectionCraftingItemTemplateActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @NavigateSection => m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplate_NavigateSection;
-        public InputAction @Select => m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplate_Select;
-        public InputAction @CreateItem => m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplate_CreateItem;
-        public InputAction @ReturnItemToInventory => m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplate_ReturnItemToInventory;
-        public InputAction @ChangeInventoryItemsCategory => m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplate_ChangeInventoryItemsCategory;
-        public InputAction @ReturnToEnergyCells => m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplate_ReturnToEnergyCells;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplate; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuCraftSectionCraftingItemTemplateActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuCraftSectionCraftingItemTemplateActions instance)
-        {
-            if (m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface != null)
-            {
-                @NavigateSection.started -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnNavigateSection;
-                @NavigateSection.performed -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnNavigateSection;
-                @NavigateSection.canceled -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnNavigateSection;
-                @Select.started -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnSelect;
-                @CreateItem.started -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnCreateItem;
-                @CreateItem.performed -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnCreateItem;
-                @CreateItem.canceled -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnCreateItem;
-                @ReturnItemToInventory.started -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnReturnItemToInventory;
-                @ReturnItemToInventory.performed -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnReturnItemToInventory;
-                @ReturnItemToInventory.canceled -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnReturnItemToInventory;
-                @ChangeInventoryItemsCategory.started -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.performed -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.canceled -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ReturnToEnergyCells.started -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnReturnToEnergyCells;
-                @ReturnToEnergyCells.performed -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnReturnToEnergyCells;
-                @ReturnToEnergyCells.canceled -= m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface.OnReturnToEnergyCells;
-            }
-            m_Wrapper.m_PlayerMenuCraftSectionCraftingItemTemplateActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @NavigateSection.started += instance.OnNavigateSection;
-                @NavigateSection.performed += instance.OnNavigateSection;
-                @NavigateSection.canceled += instance.OnNavigateSection;
-                @Select.started += instance.OnSelect;
-                @Select.performed += instance.OnSelect;
-                @Select.canceled += instance.OnSelect;
-                @CreateItem.started += instance.OnCreateItem;
-                @CreateItem.performed += instance.OnCreateItem;
-                @CreateItem.canceled += instance.OnCreateItem;
-                @ReturnItemToInventory.started += instance.OnReturnItemToInventory;
-                @ReturnItemToInventory.performed += instance.OnReturnItemToInventory;
-                @ReturnItemToInventory.canceled += instance.OnReturnItemToInventory;
-                @ChangeInventoryItemsCategory.started += instance.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.performed += instance.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.canceled += instance.OnChangeInventoryItemsCategory;
-                @ReturnToEnergyCells.started += instance.OnReturnToEnergyCells;
-                @ReturnToEnergyCells.performed += instance.OnReturnToEnergyCells;
-                @ReturnToEnergyCells.canceled += instance.OnReturnToEnergyCells;
-            }
-        }
-    }
-    public PlayerMenuCraftSectionCraftingItemTemplateActions @PlayerMenuCraftSectionCraftingItemTemplate => new PlayerMenuCraftSectionCraftingItemTemplateActions(this);
-
-    // Player Menu (Craft Section (Inventory))
-    private readonly InputActionMap m_PlayerMenuCraftSectionInventory;
-    private IPlayerMenuCraftSectionInventoryActions m_PlayerMenuCraftSectionInventoryActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuCraftSectionInventory_NavigatePlayerMenu;
-    private readonly InputAction m_PlayerMenuCraftSectionInventory_NavigateSection;
-    private readonly InputAction m_PlayerMenuCraftSectionInventory_Select;
-    private readonly InputAction m_PlayerMenuCraftSectionInventory_ChangeInventoryItemsCategory;
-    private readonly InputAction m_PlayerMenuCraftSectionInventory_ClosePlayerMenu;
-    public struct PlayerMenuCraftSectionInventoryActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public PlayerMenuCraftSectionInventoryActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @NavigatePlayerMenu => m_Wrapper.m_PlayerMenuCraftSectionInventory_NavigatePlayerMenu;
-        public InputAction @NavigateSection => m_Wrapper.m_PlayerMenuCraftSectionInventory_NavigateSection;
-        public InputAction @Select => m_Wrapper.m_PlayerMenuCraftSectionInventory_Select;
-        public InputAction @ChangeInventoryItemsCategory => m_Wrapper.m_PlayerMenuCraftSectionInventory_ChangeInventoryItemsCategory;
-        public InputAction @ClosePlayerMenu => m_Wrapper.m_PlayerMenuCraftSectionInventory_ClosePlayerMenu;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuCraftSectionInventory; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuCraftSectionInventoryActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuCraftSectionInventoryActions instance)
-        {
-            if (m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface != null)
-            {
-                @NavigatePlayerMenu.started -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigateSection.started -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnNavigateSection;
-                @NavigateSection.performed -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnNavigateSection;
-                @NavigateSection.canceled -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnNavigateSection;
-                @Select.started -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnSelect;
-                @ChangeInventoryItemsCategory.started -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.performed -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.canceled -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnChangeInventoryItemsCategory;
-                @ClosePlayerMenu.started -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface.OnClosePlayerMenu;
-            }
-            m_Wrapper.m_PlayerMenuCraftSectionInventoryActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @NavigatePlayerMenu.started += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled += instance.OnNavigatePlayerMenu;
-                @NavigateSection.started += instance.OnNavigateSection;
-                @NavigateSection.performed += instance.OnNavigateSection;
-                @NavigateSection.canceled += instance.OnNavigateSection;
-                @Select.started += instance.OnSelect;
-                @Select.performed += instance.OnSelect;
-                @Select.canceled += instance.OnSelect;
-                @ChangeInventoryItemsCategory.started += instance.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.performed += instance.OnChangeInventoryItemsCategory;
-                @ChangeInventoryItemsCategory.canceled += instance.OnChangeInventoryItemsCategory;
-                @ClosePlayerMenu.started += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled += instance.OnClosePlayerMenu;
-            }
-        }
-    }
-    public PlayerMenuCraftSectionInventoryActions @PlayerMenuCraftSectionInventory => new PlayerMenuCraftSectionInventoryActions(this);
-
-    // Player Menu (Alchemistry Section (Recipes))
-    private readonly InputActionMap m_PlayerMenuAlchemistrySectionRecipes;
-    private IPlayerMenuAlchemistrySectionRecipesActions m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuAlchemistrySectionRecipes_NavigatePlayerMenu;
-    private readonly InputAction m_PlayerMenuAlchemistrySectionRecipes_ClosePlayerMenu;
-    public struct PlayerMenuAlchemistrySectionRecipesActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public PlayerMenuAlchemistrySectionRecipesActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @NavigatePlayerMenu => m_Wrapper.m_PlayerMenuAlchemistrySectionRecipes_NavigatePlayerMenu;
-        public InputAction @ClosePlayerMenu => m_Wrapper.m_PlayerMenuAlchemistrySectionRecipes_ClosePlayerMenu;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuAlchemistrySectionRecipes; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuAlchemistrySectionRecipesActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuAlchemistrySectionRecipesActions instance)
-        {
-            if (m_Wrapper.m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface != null)
-            {
-                @NavigatePlayerMenu.started -= m_Wrapper.m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed -= m_Wrapper.m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface.OnNavigatePlayerMenu;
-                @ClosePlayerMenu.started -= m_Wrapper.m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed -= m_Wrapper.m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface.OnClosePlayerMenu;
-            }
-            m_Wrapper.m_PlayerMenuAlchemistrySectionRecipesActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @NavigatePlayerMenu.started += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled += instance.OnNavigatePlayerMenu;
-                @ClosePlayerMenu.started += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled += instance.OnClosePlayerMenu;
-            }
-        }
-    }
-    public PlayerMenuAlchemistrySectionRecipesActions @PlayerMenuAlchemistrySectionRecipes => new PlayerMenuAlchemistrySectionRecipesActions(this);
-
-    // Player Menu (Settings)
-    private readonly InputActionMap m_PlayerMenuSettings;
-    private IPlayerMenuSettingsActions m_PlayerMenuSettingsActionsCallbackInterface;
-    private readonly InputAction m_PlayerMenuSettings_NavigatePlayerMenu;
-    private readonly InputAction m_PlayerMenuSettings_ClosePlayerMenu;
-    public struct PlayerMenuSettingsActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public PlayerMenuSettingsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @NavigatePlayerMenu => m_Wrapper.m_PlayerMenuSettings_NavigatePlayerMenu;
-        public InputAction @ClosePlayerMenu => m_Wrapper.m_PlayerMenuSettings_ClosePlayerMenu;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMenuSettings; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMenuSettingsActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMenuSettingsActions instance)
-        {
-            if (m_Wrapper.m_PlayerMenuSettingsActionsCallbackInterface != null)
-            {
-                @NavigatePlayerMenu.started -= m_Wrapper.m_PlayerMenuSettingsActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed -= m_Wrapper.m_PlayerMenuSettingsActionsCallbackInterface.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuSettingsActionsCallbackInterface.OnNavigatePlayerMenu;
-                @ClosePlayerMenu.started -= m_Wrapper.m_PlayerMenuSettingsActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed -= m_Wrapper.m_PlayerMenuSettingsActionsCallbackInterface.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled -= m_Wrapper.m_PlayerMenuSettingsActionsCallbackInterface.OnClosePlayerMenu;
-            }
-            m_Wrapper.m_PlayerMenuSettingsActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @NavigatePlayerMenu.started += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.performed += instance.OnNavigatePlayerMenu;
-                @NavigatePlayerMenu.canceled += instance.OnNavigatePlayerMenu;
-                @ClosePlayerMenu.started += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.performed += instance.OnClosePlayerMenu;
-                @ClosePlayerMenu.canceled += instance.OnClosePlayerMenu;
-            }
-        }
-    }
-    public PlayerMenuSettingsActions @PlayerMenuSettings => new PlayerMenuSettingsActions(this);
-
-    // Run Ending Screen
-    private readonly InputActionMap m_RunEndingScreen;
-    private IRunEndingScreenActions m_RunEndingScreenActionsCallbackInterface;
-    private readonly InputAction m_RunEndingScreen_ReturnToHub;
-    private readonly InputAction m_RunEndingScreen_ExitToMainMenu;
-    public struct RunEndingScreenActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public RunEndingScreenActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ReturnToHub => m_Wrapper.m_RunEndingScreen_ReturnToHub;
-        public InputAction @ExitToMainMenu => m_Wrapper.m_RunEndingScreen_ExitToMainMenu;
-        public InputActionMap Get() { return m_Wrapper.m_RunEndingScreen; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(RunEndingScreenActions set) { return set.Get(); }
-        public void SetCallbacks(IRunEndingScreenActions instance)
-        {
-            if (m_Wrapper.m_RunEndingScreenActionsCallbackInterface != null)
-            {
-                @ReturnToHub.started -= m_Wrapper.m_RunEndingScreenActionsCallbackInterface.OnReturnToHub;
-                @ReturnToHub.performed -= m_Wrapper.m_RunEndingScreenActionsCallbackInterface.OnReturnToHub;
-                @ReturnToHub.canceled -= m_Wrapper.m_RunEndingScreenActionsCallbackInterface.OnReturnToHub;
-                @ExitToMainMenu.started -= m_Wrapper.m_RunEndingScreenActionsCallbackInterface.OnExitToMainMenu;
-                @ExitToMainMenu.performed -= m_Wrapper.m_RunEndingScreenActionsCallbackInterface.OnExitToMainMenu;
-                @ExitToMainMenu.canceled -= m_Wrapper.m_RunEndingScreenActionsCallbackInterface.OnExitToMainMenu;
-            }
-            m_Wrapper.m_RunEndingScreenActionsCallbackInterface = instance;
+            m_Wrapper.m_RunEndingPanelActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @ReturnToHub.started += instance.OnReturnToHub;
@@ -4553,7 +3180,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             }
         }
     }
-    public RunEndingScreenActions @RunEndingScreen => new RunEndingScreenActions(this);
+    public RunEndingPanelActions @RunEndingPanel => new RunEndingPanelActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -4607,11 +3234,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnApplyItem(InputAction.CallbackContext context);
         void OnShowQuestProgress(InputAction.CallbackContext context);
     }
-    public interface IHUDItemsContainerActions
+    public interface IItemsContainerMenuActions
     {
         void OnNavigate(InputAction.CallbackContext context);
-        void OnTake(InputAction.CallbackContext context);
-        void OnTakeAll(InputAction.CallbackContext context);
+        void OnPickItem(InputAction.CallbackContext context);
+        void OnPickAllItems(InputAction.CallbackContext context);
         void OnCloseContainer(InputAction.CallbackContext context);
     }
     public interface IPlayerMenuInventorySectionActions
@@ -4628,70 +3255,39 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnExecute(InputAction.CallbackContext context);
         void OnCancelInteraction(InputAction.CallbackContext context);
     }
-    public interface IPlayerMenuItemCellActionsMenuActions
+    public interface IPlayerMenuCraftSectionActions
+    {
+        void OnNavigatePlayerMenu(InputAction.CallbackContext context);
+        void OnNavigateSection(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+        void OnCreateItem(InputAction.CallbackContext context);
+        void OnChangeInventoryItemsCategory(InputAction.CallbackContext context);
+        void OnClosePlayerMenu(InputAction.CallbackContext context);
+    }
+    public interface IPlayerMenuAlchemistrySectionActions
+    {
+        void OnNavigatePlayerMenu(InputAction.CallbackContext context);
+        void OnClosePlayerMenu(InputAction.CallbackContext context);
+    }
+    public interface IPlayerMenuSettingsSectionActions
+    {
+        void OnNavigatePlayerMenu(InputAction.CallbackContext context);
+        void OnClosePlayerMenu(InputAction.CallbackContext context);
+    }
+    public interface IPlayerMenuItemsInteractionsPanelActions
     {
         void OnNavigate(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnCloseItemCellActionsMenu(InputAction.CallbackContext context);
     }
-    public interface IPlayerMenuInventoryItemMovingActions
-    {
-        void OnMoveItem(InputAction.CallbackContext context);
-        void OnPutItemDown(InputAction.CallbackContext context);
-    }
-    public interface IPlayerMenuChooseItemsCountViewActions
+    public interface IPlayerMenuItemsCountSelectPanelActions
     {
         void OnChangeItemsCount(InputAction.CallbackContext context);
-        void OnConfirm(InputAction.CallbackContext context);
-        void OnConfirmAll(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+        void OnSelectAll(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
     }
-    public interface IPlayerMenuCraftSectionRecipesActions
-    {
-        void OnNavigatePlayerMenu(InputAction.CallbackContext context);
-        void OnNavigateSection(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
-        void OnChangeInventoryItemsCategory(InputAction.CallbackContext context);
-        void OnClosePlayerMenu(InputAction.CallbackContext context);
-    }
-    public interface IPlayerMenuCraftSectionEnergyCellsActions
-    {
-        void OnNavigatePlayerMenu(InputAction.CallbackContext context);
-        void OnNavigateSection(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
-        void OnGoToCraftingItemTemplate(InputAction.CallbackContext context);
-        void OnCreateItem(InputAction.CallbackContext context);
-        void OnChangeInventoryItemsCategory(InputAction.CallbackContext context);
-        void OnClosePlayerMenu(InputAction.CallbackContext context);
-    }
-    public interface IPlayerMenuCraftSectionCraftingItemTemplateActions
-    {
-        void OnNavigateSection(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
-        void OnCreateItem(InputAction.CallbackContext context);
-        void OnReturnItemToInventory(InputAction.CallbackContext context);
-        void OnChangeInventoryItemsCategory(InputAction.CallbackContext context);
-        void OnReturnToEnergyCells(InputAction.CallbackContext context);
-    }
-    public interface IPlayerMenuCraftSectionInventoryActions
-    {
-        void OnNavigatePlayerMenu(InputAction.CallbackContext context);
-        void OnNavigateSection(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
-        void OnChangeInventoryItemsCategory(InputAction.CallbackContext context);
-        void OnClosePlayerMenu(InputAction.CallbackContext context);
-    }
-    public interface IPlayerMenuAlchemistrySectionRecipesActions
-    {
-        void OnNavigatePlayerMenu(InputAction.CallbackContext context);
-        void OnClosePlayerMenu(InputAction.CallbackContext context);
-    }
-    public interface IPlayerMenuSettingsActions
-    {
-        void OnNavigatePlayerMenu(InputAction.CallbackContext context);
-        void OnClosePlayerMenu(InputAction.CallbackContext context);
-    }
-    public interface IRunEndingScreenActions
+    public interface IRunEndingPanelActions
     {
         void OnReturnToHub(InputAction.CallbackContext context);
         void OnExitToMainMenu(InputAction.CallbackContext context);

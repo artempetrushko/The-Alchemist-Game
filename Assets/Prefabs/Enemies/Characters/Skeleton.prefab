@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 430486038975862337}
   - component: {fileID: 664295326687317059}
   - component: {fileID: 664295326687317058}
-  - component: {fileID: 5122684050391142338}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -10166,21 +10165,6 @@ MonoBehaviour:
   abilityWorldTargetIndicatorObj: {fileID: 0}
   abilityMouseTargetIndicatorObj: {fileID: 0}
   foldOutIntegration: 0
---- !u!114 &5122684050391142338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664295326687317069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95dd7193db72aec43b29b409747423aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnChancesTable: {fileID: 11400000, guid: 9bbf1fbeafe77404daacab6431cdd358, type: 2}
-  itemsSpawnPosition: {fileID: 4499427436486928519}
-  spawnAreaRadius: 2
 --- !u!1 &791617968483577622
 GameObject:
   m_ObjectHideFlags: 0

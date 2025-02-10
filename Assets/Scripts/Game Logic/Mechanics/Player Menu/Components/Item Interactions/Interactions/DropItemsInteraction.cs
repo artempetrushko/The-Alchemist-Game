@@ -11,7 +11,7 @@ namespace GameLogic.PlayerMenu
 
         public override void Activate(ItemSlot selectedItemSlot)
         {
-            if (selectedItemSlot.ContainedItem is StackableItemState stackableItem)
+            if (selectedItemSlot.ContainedItem is StackableItem stackableItem)
             {
                 StartItemSlot = selectedItemSlot;
 

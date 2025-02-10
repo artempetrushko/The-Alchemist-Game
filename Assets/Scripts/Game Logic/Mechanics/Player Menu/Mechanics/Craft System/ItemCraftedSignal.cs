@@ -4,9 +4,9 @@ namespace GameLogic.PlayerMenu.Craft
 {
     public class ItemCraftedSignal
     {
-        public readonly ItemState Item;
+        public readonly Item Item;
 
-        public ItemCraftedSignal(ItemState item)
+        public ItemCraftedSignal(Item item)
         {
             Item = item;
         }

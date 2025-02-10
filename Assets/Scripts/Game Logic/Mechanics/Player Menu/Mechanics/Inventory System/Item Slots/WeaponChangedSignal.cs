@@ -4,9 +4,9 @@ namespace GameLogic.PlayerMenu.Inventory
 {
     public class WeaponChangedSignal
     {
-        public readonly WeaponState Weapon;
+        public readonly Weapon Weapon;
 
-        public WeaponChangedSignal(WeaponState weapon)
+        public WeaponChangedSignal(Weapon weapon)
         {
             Weapon = weapon;
         }

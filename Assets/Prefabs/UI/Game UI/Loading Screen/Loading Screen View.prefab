@@ -697,10 +697,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9058f8d0730b3b84aa09ed0c4bce4ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingInfoSection: {fileID: 3253129228172330234}
-  progressBarFillAreaContainer: {fileID: 8387963545250053557}
-  progressBarFillArea: {fileID: 5952774607250397997}
-  continueButtonSection: {fileID: 919296701111880440}
+  _loadingInfoSectionCanvasGroup: {fileID: 6365356964965776887}
+  _progressBarFillAreaContainerRect: {fileID: 7745189076411976501}
+  _progressBarFillArea: {fileID: 5952774607250397997}
+  _continueTipSection: {fileID: 919296701111880440}
 --- !u!1 &3439317414189890449
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ namespace GameLogic.PlayerMenu
 	{
 		[SerializeField] protected CanvasGroup _canvasGroup;
 
-		public abstract void UpdateDisplayedInfo(ItemState item);
+		public abstract void UpdateDisplayedInfo(Item item);
 
 		public void SetActive(bool isActive) => gameObject.SetActive(isActive);
 

@@ -8,11 +8,11 @@ namespace GameLogic.PlayerMenu
 	{
 		[SerializeField] private TMP_Text _energyCounter;
 
-        public override void UpdateDisplayedInfo(ItemState item)
+        public override void UpdateDisplayedInfo(Item item)
         {
             _energyCounter.text = item switch
             {
-                StackableItemState stackableItem => stackableItem.TotalContainedEnergyCount.ToString(),
+                StackableItem stackableItem => stackableItem.TotalContainedEnergyCount.ToString(),
                 _ => item.ContainedEnergyCount.ToString()
             };
         }

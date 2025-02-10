@@ -28,7 +28,7 @@ namespace GameLogic.PlayerMenu
             };
         }
 
-        public bool TryPlaceItem(ItemState item)
+        public bool TryPlaceItem(Item item)
         {
             return false;
         }

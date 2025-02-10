@@ -11,6 +11,6 @@ namespace GameLogic
         public bool PlayerFinishedLevelThrowStabilizedPortal;
         public bool StabilizerCreatedAndAvailable;
         public int StabilizerPartsCount;
-        public List<ItemState> QuestItems = new();
+        public List<Item> QuestItems = new();
     }
 }

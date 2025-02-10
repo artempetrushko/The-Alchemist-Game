@@ -320,13 +320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dde86496652a804a9c8693a40469f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectTransform: {fileID: 788250638615269217}
-  itemTitleText: {fileID: 6013279472602666343}
-  itemDescriptionText: {fileID: 7109169449967458145}
-  parametersSection: {fileID: 5834259101372181977}
-  parameterViewPrefab: {fileID: 642347328289259381, guid: 0be765588e8cc274c94d26c537bd9cb9,
+  _canvasGroup: {fileID: 8814164106936515851}
+  _itemTitleText: {fileID: 6013279472602666343}
+  _itemDescriptionText: {fileID: 7109169449967458145}
+  _parameterViewPrefab: {fileID: 642347328289259381, guid: 0be765588e8cc274c94d26c537bd9cb9,
     type: 3}
-  viewCanvasGroup: {fileID: 8814164106936515851}
+  _parametersContainer: {fileID: 5834259101372181977}
 --- !u!1 &5834259101372181977
 GameObject:
   m_ObjectHideFlags: 0

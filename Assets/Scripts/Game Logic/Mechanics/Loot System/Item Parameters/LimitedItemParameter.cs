@@ -1,8 +1,14 @@
-﻿namespace GameLogic.LootSystem
+﻿using Newtonsoft.Json;
+using UnityEngine;
+
+namespace GameLogic.LootSystem
 {
     public class LimitedItemParameter<T> : ItemParameter<T>
     {
-        public T MaxValue;
+        [JsonProperty]
+        [SerializeField] private T _maxValue;
+
+        public T MaxValue => _maxValue;
 
         public new (string paramName, string formattedParamValue) GetFormattedParamInfo()
         {

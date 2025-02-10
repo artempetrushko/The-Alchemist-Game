@@ -27,18 +27,18 @@ namespace GameLogic.PlayerMenu
             _view.SelectAllItemsActionButton.ButtonComponent.onClick.AddListener(OnSelectAllItemsActionButtonPressed);
             _view.CancelActionButton.ButtonComponent.onClick.AddListener(OnCancelActionButtonPressed);
 
-            _inputManager.PlayerActions.PlayerMenuChooseItemsCountView.ChangeItemsCount.performed += OnChangeItemsCountActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuChooseItemsCountView.Confirm.performed += OnSelectItemsActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuChooseItemsCountView.ConfirmAll.performed += OnSelectAllItemsActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuChooseItemsCountView.Cancel.performed += OnCancelItemsCountSelectionActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.ChangeItemsCount.performed += OnChangeItemsCountActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.Select.performed += OnSelectItemsActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.SelectAll.performed += OnSelectAllItemsActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.Cancel.performed += OnCancelItemsCountSelectionActionPerformed;
         }
 
         public void Dispose()
         {
-            _inputManager.PlayerActions.PlayerMenuChooseItemsCountView.ChangeItemsCount.performed -= OnChangeItemsCountActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuChooseItemsCountView.Confirm.performed -= OnSelectItemsActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuChooseItemsCountView.ConfirmAll.performed -= OnSelectAllItemsActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuChooseItemsCountView.Cancel.performed -= OnCancelItemsCountSelectionActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.ChangeItemsCount.performed -= OnChangeItemsCountActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.Select.performed -= OnSelectItemsActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.SelectAll.performed -= OnSelectAllItemsActionPerformed;
+            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.Cancel.performed -= OnCancelItemsCountSelectionActionPerformed;
         }
 
         public void StartItemsCountSelection(Sprite itemIcon, int minItemsCount, int maxItemsCount, bool isAllItemsSelectionEnabled = true)

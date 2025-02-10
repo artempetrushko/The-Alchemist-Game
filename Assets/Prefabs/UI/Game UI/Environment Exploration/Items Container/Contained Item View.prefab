@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2934510004316297947}
   - component: {fileID: 3933282807626378789}
   - component: {fileID: 3964632634945879679}
-  - component: {fileID: 2146861332138561567}
   - component: {fileID: 6493597476693779006}
   m_Layer: 5
   m_Name: Contained Item View
@@ -126,19 +125,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2146861332138561567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263383549485917403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &6493597476693779006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,15 +134,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1263383549485917403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8df58c08c7e24454d92b152732f6304c, type: 3}
+  m_Script: {fileID: 11500000, guid: 29c6f2618c63bd74ca51c6e4d4949a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTitle: {fileID: 2688361086984034845}
-  itemDescription: {fileID: 7154257728951812124}
-  itemIcon: {fileID: 5243024709333214890}
-  itemsCounter: {fileID: 4892962908666869358}
-  buttonComponent: {fileID: 3964632634945879679}
-  eventTrigger: {fileID: 2146861332138561567}
+  _itemName: {fileID: 2688361086984034845}
+  _itemDescription: {fileID: 7154257728951812124}
+  _itemIcon: {fileID: 5243024709333214890}
+  _itemsCounter: {fileID: 541824267550943999}
+  _buttonComponent: {fileID: 3964632634945879679}
 --- !u!1 &3173995624039679383
 GameObject:
   m_ObjectHideFlags: 0

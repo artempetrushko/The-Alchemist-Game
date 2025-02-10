@@ -8,9 +8,9 @@ namespace GameLogic.PlayerMenu
 	{
 		[SerializeField] private TMP_Text _itemsCounter;
 
-        public override void UpdateDisplayedInfo(ItemState item)
+        public override void UpdateDisplayedInfo(Item item)
         {
-            if (item is StackableItemState stackableItem)
+            if (item is StackableItem stackableItem)
             {
                 SetVisible(true);
                 _itemsCounter.text = $"x{stackableItem.Count.Value}";

@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace GameLogic.QuestSystem
 {
+
     public class QuestPresenter : IDisposable
     {
         private const int QUEST_SHOWING_TIME_IN_SECONDS = 5;
@@ -15,8 +16,11 @@ namespace GameLogic.QuestSystem
         private Quest _currentQuest;
         private bool _isQuestShown;
 
-        public QuestPresenter()
+        public QuestPresenter(QuestProgressView questProgressView, InputManager inputManager)
         {
+            _questProgressView = questProgressView;
+
+            _inputManager = inputManager;
             _inputManager.PlayerActions.Player.ShowQuestProgress.performed += OnShowQuestProgressActionPerformed;
         }
 
