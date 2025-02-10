@@ -54,10 +54,6 @@ public class EnvironmentInteractionsManager : MonoBehaviour
                     itemsContainersManager.OpenContainer(itemsContainer);
                     break;
 
-                case Workbench:
-                    //playerMenuManager.ShowCraftSection(context);
-                    break;
-
                 case DungeonPortal dungeonPortal:
                     InteractDungeonPortal(dungeonPortal);
                     break;
@@ -142,8 +138,8 @@ public class EnvironmentInteractionsManager : MonoBehaviour
         {
             var actionName = currentInteractiveObject switch
             {
-                ItemsContainer or Vault => "Открыть",
-                Workbench or DungeonPortal => "Использовать"
+                ItemsContainer => "Открыть",
+                DungeonPortal => "Использовать"
             };
             inputManager.ShowCurrentControlsTips(currentInteractiveObjectInfoView.ControlsTipsSectionView, new[]
             {
