@@ -11535,6 +11535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnChancesTable: {fileID: 11400000, guid: 9bbf1fbeafe77404daacab6431cdd358, type: 2}
   itemsSpawnPosition: {fileID: 7327166271451715621}
+  spawnAreaRadius: 0
 --- !u!1 &6645124141422429176
 GameObject:
   m_ObjectHideFlags: 0
