@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Controls;
+using EventBus;
 using GameLogic.PlayerMenu.Craft;
 using GameLogic.PlayerMenu.Inventory;
 using UnityEngine;

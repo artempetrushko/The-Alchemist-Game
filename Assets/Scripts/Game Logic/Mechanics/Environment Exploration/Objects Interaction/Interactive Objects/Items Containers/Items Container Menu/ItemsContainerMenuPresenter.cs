@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Controls;
+using EventBus;
 using GameLogic.LootSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;

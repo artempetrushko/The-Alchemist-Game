@@ -1,4 +1,4 @@
-﻿using GameLogic.PlayerMenu.Inventory;
+﻿using EventBus;
 using UnityEngine;
 using Zenject;
 

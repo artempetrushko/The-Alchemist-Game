@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using EventBus;
 using GameLogic.LevelLoading;
 using GameLogic.QuestSystem;
 using Zenject;

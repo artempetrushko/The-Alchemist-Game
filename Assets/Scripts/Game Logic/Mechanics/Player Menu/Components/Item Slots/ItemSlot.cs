@@ -1,3 +1,4 @@
+using EventBus;
 using GameLogic.LootSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;

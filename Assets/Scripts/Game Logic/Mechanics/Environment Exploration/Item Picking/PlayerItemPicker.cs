@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Controls;
+using EventBus;
 using GameLogic.EnvironmentExploration;
 using UnityEngine;
 using UnityEngine.InputSystem;

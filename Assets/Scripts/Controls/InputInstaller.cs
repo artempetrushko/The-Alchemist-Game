@@ -14,8 +14,6 @@ namespace Controls
             Container.Bind<InputManager>().AsSingle().NonLazy();
             Container.Bind<InputConfig>().FromScriptableObject(_config).AsSingle().NonLazy();
             Container.Bind<PlayerInput>().FromInstance(_playerInput).AsSingle().NonLazy();
-
-            Container.DeclareSignal<ControlsChangedSignal>();
         }
     }
 }

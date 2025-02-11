@@ -6,7 +6,7 @@ namespace GameLogic.Player
     {
         public override void InstallBindings()
         {
-            Container.DeclareSignal<PlayerHealthChangedSignal>();
+            
         }
     }
 }

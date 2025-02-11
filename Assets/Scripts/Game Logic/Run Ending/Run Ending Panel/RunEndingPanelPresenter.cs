@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Controls;
 using Cysharp.Threading.Tasks;
+using EventBus;
 using GameLogic.LevelLoading;
 using UnityEngine.InputSystem;
 using Zenject;

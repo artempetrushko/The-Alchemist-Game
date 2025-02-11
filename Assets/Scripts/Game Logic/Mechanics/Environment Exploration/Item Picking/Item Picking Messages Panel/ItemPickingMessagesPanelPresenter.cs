@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using EventBus;
 using GameLogic.LootSystem;
 using Zenject;
 

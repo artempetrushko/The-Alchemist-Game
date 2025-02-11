@@ -13,13 +13,6 @@ namespace GameLogic.PlayerMenu
             Container.Bind<PlayerMenuPresenter>().AsSingle().NonLazy();
             Container.Bind<PlayerMenuView>().FromInstance(_view).AsSingle().NonLazy();
             Container.Bind<PlayerMenuConfig>().FromScriptableObject(_config).AsSingle().NonLazy();
-
-            Container.DeclareSignal<PlayerMenuEnabledSignal>();
-            Container.DeclareSignal<PlayerMenuDisabledSignal>();
-            Container.DeclareSignal<ItemMovingStartedSignal>();
-            Container.DeclareSignal<ItemMovingFinishedSignal>();
-            Container.DeclareSignal<InteractableElementSelectedByPointerSignal>();
-            Container.DeclareSignal<SelectedItemSlotChangedSignal>();
         }
     }
 }

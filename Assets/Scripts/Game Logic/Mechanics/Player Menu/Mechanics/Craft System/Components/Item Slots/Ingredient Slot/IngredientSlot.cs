@@ -1,4 +1,5 @@
-﻿using GameLogic.LootSystem;
+﻿using EventBus;
+using GameLogic.LootSystem;
 using Zenject;
 
 namespace GameLogic.PlayerMenu.Craft

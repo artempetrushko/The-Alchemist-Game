@@ -15,10 +15,6 @@ namespace GameLogic.PlayerMenu.Inventory
             Container.Bind<InventoryView>().FromInstance(_inventoryView).AsSingle().NonLazy();
             Container.Bind<InventoryConfig>().FromScriptableObject(_config).AsSingle().NonLazy();
             Container.Bind<HUDEquipmentView>().FromInstance(_hudEquipmentView).AsSingle().NonLazy();
-
-            Container.DeclareSignal<ItemDroppedSignal>();
-            Container.DeclareSignal<MinimizedInventoryEnabledSignal>();
-            Container.DeclareSignal<MinimizedInventoryDisabledSignal>();
         }
     }
 }

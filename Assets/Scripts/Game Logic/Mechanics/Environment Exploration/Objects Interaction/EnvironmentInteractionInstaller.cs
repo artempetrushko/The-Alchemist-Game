@@ -1,5 +1,4 @@
-﻿using GameLogic.Player;
-using Zenject;
+﻿using Zenject;
 
 namespace GameLogic.EnvironmentExploration
 {
@@ -7,8 +6,7 @@ namespace GameLogic.EnvironmentExploration
     {
         public override void InstallBindings()
         {
-            Container.DeclareSignal<InteractiveObjectDetectedSignal>();
-            Container.DeclareSignal<InteractiveObjectLostSignal>();
+            
         }
     }
 }

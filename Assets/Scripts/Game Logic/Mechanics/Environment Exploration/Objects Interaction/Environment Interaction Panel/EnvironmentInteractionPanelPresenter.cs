@@ -1,5 +1,6 @@
 using System;
 using Controls;
+using EventBus;
 using GameLogic.Player;
 using UnityEngine;
 using Zenject;

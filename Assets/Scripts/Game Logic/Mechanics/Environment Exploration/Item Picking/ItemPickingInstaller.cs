@@ -6,10 +6,7 @@ namespace GameLogic.EnvironmentExploration
     {
         public override void InstallBindings()
         {
-            Container.DeclareSignal<ItemPickingRequestedSignal>();
-            Container.DeclareSignalWithInterfaces<ItemPickedSignal>();
-            Container.DeclareSignal<PickableItemPickingRequestedSignal>();
-            Container.DeclareSignal<PickableItemPickedSignal>();
+            
         }
     }
 }

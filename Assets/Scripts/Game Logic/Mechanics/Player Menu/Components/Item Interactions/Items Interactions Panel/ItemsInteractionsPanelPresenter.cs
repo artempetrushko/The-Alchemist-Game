@@ -1,5 +1,6 @@
 using System;
 using Controls;
+using EventBus;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;

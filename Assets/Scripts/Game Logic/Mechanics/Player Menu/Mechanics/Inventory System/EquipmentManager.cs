@@ -1,4 +1,5 @@
 using System;
+using EventBus;
 using Zenject;
 
 namespace GameLogic.PlayerMenu.Inventory

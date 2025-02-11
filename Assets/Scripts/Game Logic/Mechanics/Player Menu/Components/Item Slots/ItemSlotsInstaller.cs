@@ -11,12 +11,6 @@ namespace GameLogic.PlayerMenu
         {
             Container.Bind<ItemSlotsController>().AsSingle().NonLazy();
             Container.Bind<MovingItemView>().FromInstance(_movingItemView).AsSingle().NonLazy();
-
-            Container.DeclareSignal<FilledItemSlotPointerEnterSignal>();
-            Container.DeclareSignal<FilledItemSlotPointerExitSignal>();
-            Container.DeclareSignal<FilledItemSlotPointerDownSignal>();
-            Container.DeclareSignal<ItemDraggingRequestedSignal>();
-            Container.DeclareSignal<ItemDraggingFinishedSignal>();
         }
     }
 }

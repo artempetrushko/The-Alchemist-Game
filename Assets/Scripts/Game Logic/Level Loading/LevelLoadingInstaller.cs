@@ -13,8 +13,6 @@ namespace GameLogic.LevelLoading
             Container.Bind<LevelLoadingPresenter>().AsSingle().NonLazy();
             Container.Bind<LevelLoadingView>().FromInstance(_view).AsSingle().NonLazy();
             Container.Bind<LevelLoadingConfig>().FromScriptableObject(_config).AsSingle().NonLazy();
-
-            Container.DeclareSignal<NextSceneSelectedSignal>();
         }
     }
 }

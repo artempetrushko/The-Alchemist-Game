@@ -1,4 +1,5 @@
 using Controls;
+using EventBus;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -23,11 +24,11 @@ namespace GameLogic
             _signalBus = signalBus;
         }
 
-        private void OnEnable() => _signalBus.Fire(new ActionButtonControlTipColorChanged(_selectedStateContentColor));
+        private void OnEnable() => _signalBus.Fire(new ActionButtonControlTipColorChangedSignal(_selectedStateContentColor));
 
-        public void OnPointerEnter(PointerEventData eventData) => _signalBus.Fire(new ActionButtonControlTipColorChanged(_selectedStateContentColor));
+        public void OnPointerEnter(PointerEventData eventData) => _signalBus.Fire(new ActionButtonControlTipColorChangedSignal(_selectedStateContentColor));
 
-        public void OnPointerExit(PointerEventData eventData) => _signalBus.Fire(new ActionButtonControlTipColorChanged(_normalStateContentColor));
+        public void OnPointerExit(PointerEventData eventData) => _signalBus.Fire(new ActionButtonControlTipColorChangedSignal(_normalStateContentColor));
 
         public void SetActive(bool isActive) => gameObject.SetActive(isActive);
     }

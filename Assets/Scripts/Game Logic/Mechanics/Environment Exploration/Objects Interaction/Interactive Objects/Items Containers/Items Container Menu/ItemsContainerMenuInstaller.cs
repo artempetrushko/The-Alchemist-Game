@@ -14,8 +14,6 @@ namespace GameLogic.EnvironmentExploration
             Container.Bind<ItemsContainerMenuPresenter>().AsSingle().NonLazy();
             Container.Bind<ItemsContainerMenuView>().FromInstance(_view).AsSingle().NonLazy();
             Container.Bind<ItemsContainerActionMap>().FromScriptableObject(_actionMap).AsSingle().NonLazy();
-
-            Container.DeclareSignalWithInterfaces<ContainedItemPickedSignal>();
         }
     }
 }
