@@ -10,7 +10,6 @@ namespace GameLogic.LootSystem
         public ItemParameter<int> MaxRuneSize;
         public ItemParameter<int> PoweredEnergyCount;
         public ItemParameter<int> EnergyCapacity;
-        public ItemParameter<List<Aspect>> ContainedAspects;
 
         public Equipment(string id, Sprite icon, PickableItem physicalRepresentation) : base(id, icon, physicalRepresentation)
         {

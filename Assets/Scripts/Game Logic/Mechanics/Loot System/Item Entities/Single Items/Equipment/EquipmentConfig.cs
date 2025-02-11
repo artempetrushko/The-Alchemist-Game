@@ -10,6 +10,5 @@ namespace GameLogic.LootSystem
         [SerializeField] protected int maxRuneSize;
         [SerializeField] protected int poweredEnergyCount;
         [SerializeField] protected int energyCapacity;
-        [SerializeField] private List<AspectConfig> containedAspects = new();
     }
 }
