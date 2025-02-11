@@ -9,32 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f8d828ef5754c4f886d28d5ddc61e2, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc32f99458e74b46b573d24c6c29620, type: 3}
   m_Name: Knife_iron_bone
   m_EditorClassIdentifier: 
-  id: 20
-  icon: {fileID: 21300000, guid: eec167a596937f942bb17ea7e094f813, type: 3}
-  physicalRepresentation: {fileID: -3598690617796566425, guid: 0fc76d6a9cef0aa449efafe68fb87396,
-    type: 3}
-  title: "\u041A\u0438\u043D\u0436\u0430\u043B"
-  description: "\u041A\u043B\u0438\u043D\u043E\u043A: \u0436\u0435\u043B\u0435\u0437\u043E\n\u0420\u0443\u043A\u043E\u044F\u0442\u044C:
-    \u043A\u043E\u0441\u0442\u044C"
-  castingDamage: 10
-  containedAspects: []
-  effects: []
+  _id: 0
+  _title: 
+  _description: 
+  _icon: {fileID: 0}
+  physicalRepresentation: {fileID: 0}
   bigIcon: {fileID: 0}
-  endurance: 60
-  maxRuneSize: 0
-  poweredEnergyCount: 0
-  energyCapacity: 0
-  componentParts: []
-  damage: 10
-  range: 1
-  accuracy: 1
-  attackSpeed: 0.1
-  cooldownTime: 0.1
-  penetratingPower: 1
-  isBlocking: 1
-  isCombable: 1
-  animations: {fileID: 22100000, guid: 76a7f8d56cbc80f42846af1492ba4833, type: 2}
-  blockingEfficiency: 1
+  endurance: 0
+  damage: 0
+  range: 0
+  accuracy: 0
+  attackSpeed: 0
+  cooldownTime: 0
+  penetratingPower: 0
+  blockingEfficiency: 0

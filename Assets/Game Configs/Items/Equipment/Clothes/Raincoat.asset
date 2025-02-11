@@ -9,23 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc23ded55e91a4449070e21ac3411c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 29190179e82e5b444941ef894da7a773, type: 3}
   m_Name: Raincoat
   m_EditorClassIdentifier: 
-  id: 1
-  prefab: {fileID: 4889008954342857961, guid: 1fb48c3a80f0bb848947fe0feaeafd9d, type: 3}
-  icon: {fileID: 21300000, guid: 7d444265c659c9a449589c323f17e68a, type: 3}
-  title: "\u041F\u043B\u0430\u0449"
-  description: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u043F\u043B\u0430\u0449"
-  castingDamage: 0
-  containedAspects: []
-  effects: []
-  endurance: 9
-  maxEndurance: 10
-  maxRuneSize: 0
-  poweredEnergyCount: 0
-  energyCapacity: 0
-  componentParts: []
-  clothesType: 1
+  _id: 0
+  _title: 
+  _description: 
+  _icon: {fileID: 0}
+  physicalRepresentation: {fileID: 0}
   bigIcon: {fileID: 0}
+  endurance: 0
+  clothesType: 0
   defence: 0
