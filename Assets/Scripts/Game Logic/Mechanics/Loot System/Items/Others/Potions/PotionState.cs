@@ -12,9 +12,6 @@ namespace GameLogic.LootSystem
             ItemsCount = ItemsCount,
             MaxStackItemsCount = MaxStackItemsCount,
             Description = Description,
-            Aspects = Aspects,
-            CastingDamage = CastingDamage,
-            Effects = Effects,
         };
 
         public override Dictionary<string, string> GetItemParams()

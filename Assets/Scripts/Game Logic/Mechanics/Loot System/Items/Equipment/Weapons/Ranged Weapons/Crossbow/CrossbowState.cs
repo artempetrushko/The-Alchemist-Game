@@ -8,15 +8,8 @@ namespace GameLogic.LootSystem
         {
             //ItemData = ItemData,
             Description = Description,
-            Aspects = Aspects,
-            CastingDamage = CastingDamage,
-            Effects = Effects,
 
             Endurance = Endurance,
-            EnergyCapacity = EnergyCapacity,
-            ImposedRune = ImposedRune,
-            PoweredEnergyCount = PoweredEnergyCount,
-            MaxRuneSize = MaxRuneSize,
 
             Damage = Damage,
             Range = Range,

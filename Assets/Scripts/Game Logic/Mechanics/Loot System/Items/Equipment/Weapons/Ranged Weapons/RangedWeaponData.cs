@@ -7,9 +7,6 @@ namespace GameLogic.LootSystem
         [Header("ѕараметры оружи€ дальнего бо€")]
         [SerializeField]
         protected int missileFlightSpeed;
-        [Header("—нар€д")]
-        [SerializeField]
-        protected Projectile projectile;
         [Header("Ёффект попадани€")]
         [SerializeField]
         protected GameObject effect;
@@ -22,7 +19,6 @@ namespace GameLogic.LootSystem
 
         public int BaseMissileFlightSpeed => missileFlightSpeed;
 
-        public Projectile Projectile => projectile;
         public GameObject Effect => effect;
         public GameObject ShootEffect => shootEffect;
         public bool DestroyOnCollision => destroyOnCollision;

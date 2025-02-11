@@ -17,21 +17,12 @@ namespace GameLogic.LootSystem
         protected float cooldownTime;
         [SerializeField]
         protected int penetratingPower;
-        [SerializeField]
-        protected bool isBlocking;
-        [SerializeField]
-        protected bool isCombable;
-        [SerializeField]
-        protected AnimatorOverrideController animations;
 
-        public bool IsBlocking => isBlocking;
-        public bool IsCombable => isCombable;
         public int BaseDamage => damage;
         public float BaseRange => range;
         public float BaseAccuracy => accuracy;
         public float BaseAttackSpeed => attackSpeed;
         public float BaseCooldownTime => cooldownTime;
         public int BasePenetratingPower => penetratingPower;
-        public AnimatorOverrideController Animations => animations;
     }
 }

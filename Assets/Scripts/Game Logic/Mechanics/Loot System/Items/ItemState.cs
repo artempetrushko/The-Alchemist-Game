@@ -12,9 +12,6 @@ namespace GameLogic.LootSystem
 
         public ItemData BaseParams { get; protected set; }
         public string Description { get; set; }
-        public int CastingDamage { get; set; }
-        public List<AspectState> Aspects { get; set; } = new();
-        public List<ItemEffect> Effects { get; set; } = new();
         public int ContainedEnergyCount => 0;
         public virtual ItemView ItemView
         {
@@ -42,9 +39,6 @@ namespace GameLogic.LootSystem
         {
             BaseParams = itemData;
             Description = itemData.BaseDescription;
-            CastingDamage = itemData.BaseCastingDamage;
-            Aspects = itemData.BaseContainedAspects.Select(aspect => aspect.GetAspectState()).ToList();
-            Effects = itemData.BaseEffects;
         }
 
         protected ItemState() { }

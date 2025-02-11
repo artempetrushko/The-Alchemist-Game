@@ -15,13 +15,7 @@ namespace GameLogic.LootSystem
         [Header("Параметры ресурса")]
         [SerializeField]
         protected RareClass rare;
-        [SerializeField]
-        protected CharacteristicCoeffsSet coefficientsSet;
-        [SerializeField]
-        protected bool isShredded;
 
         public RareClass Rare => rare;
-        public CharacteristicCoeffsSet CoefficientsSet => coefficientsSet;
-        public bool IsShredded => isShredded;
     }
 }

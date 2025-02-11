@@ -17,8 +17,6 @@ namespace GameLogic.LootSystem
         public float AttackSpeed { get; set; }
         public float CooldownTime { get; set; }
         public int PenetratingPower { get; set; }
-        public bool IsCombable { get; set; }
-        public AnimatorOverrideController Animations { get; set; }
 
         public WeaponState(WeaponData weapon) : base(weapon)
         {
@@ -28,8 +26,6 @@ namespace GameLogic.LootSystem
             AttackSpeed = weapon.BaseAttackSpeed;
             CooldownTime = weapon.BaseCooldownTime;
             PenetratingPower = weapon.BasePenetratingPower;
-            Animations = weapon.Animations;
-            IsCombable = weapon.IsCombable;
         }
 
         public override Dictionary<string, string> GetItemParams() => new()

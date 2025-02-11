@@ -5,7 +5,6 @@ namespace GameLogic.LootSystem
     public abstract class RangedWeaponState : WeaponState
     {
         public float MissileFlightSpeed { get; set; }
-        public Projectile Projectile { get; set; }
         public GameObject Effect { get; set; }
         public GameObject ShootEffect { get; set; }
         public bool DestroyOnCollision { get; set; }
@@ -14,7 +13,6 @@ namespace GameLogic.LootSystem
         public RangedWeaponState(RangedWeaponData rangedWeapon) : base(rangedWeapon)
         {
             MissileFlightSpeed = rangedWeapon.BaseMissileFlightSpeed;
-            Projectile = rangedWeapon.Projectile;
             Effect = rangedWeapon.Effect;
             DestroyOnCollision = rangedWeapon.DestroyOnCollision;
             ShootEffect = rangedWeapon.ShootEffect;
