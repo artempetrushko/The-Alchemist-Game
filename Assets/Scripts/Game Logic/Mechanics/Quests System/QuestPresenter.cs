@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 namespace GameLogic.QuestSystem
 {
-
     public class QuestPresenter : IDisposable
     {
         private const int QUEST_SHOWING_TIME_IN_SECONDS = 5;

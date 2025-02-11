@@ -4,25 +4,18 @@ namespace GameLogic.LootSystem
 {
     public abstract class WeaponConfig : EquipmentConfig
     {
-        [Header("Параметры оружия")]
-        [SerializeField] protected int damage;
-        [SerializeField] protected float range;
-        [SerializeField] protected float accuracy;
-        [SerializeField] protected float attackSpeed;
-        [SerializeField] protected float cooldownTime;
-        [SerializeField] protected int penetratingPower;
-        [SerializeField] protected bool isBlocking;
-        [SerializeField] protected bool isCombable;
-        [SerializeField] protected AnimatorOverrideController animations;
+        [SerializeField] private int _damage;
+        [SerializeField] private float _range;
+        [SerializeField] private float _accuracy;
+        [SerializeField] private float _attackSpeed;
+        [SerializeField] private float _cooldownTime;
+        [SerializeField] private int _penetratingPower;
 
-        public bool IsBlocking => isBlocking;
-        public bool IsCombable => isCombable;
-        public int BaseDamage => damage;
-        public float BaseRange => range;
-        public float BaseAccuracy => accuracy;
-        public float BaseAttackSpeed => attackSpeed;
-        public float BaseCooldownTime => cooldownTime;
-        public int BasePenetratingPower => penetratingPower;
-        public AnimatorOverrideController Animations => animations;
+        public int BaseDamage => _damage;
+        public float BaseRange => _range;
+        public float BaseAccuracy => _accuracy;
+        public float BaseAttackSpeed => _attackSpeed;
+        public float BaseCooldownTime => _cooldownTime;
+        public int BasePenetratingPower => _penetratingPower;
     }
 }

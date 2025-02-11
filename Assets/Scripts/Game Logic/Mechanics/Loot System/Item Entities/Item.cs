@@ -15,7 +15,6 @@ namespace GameLogic.LootSystem
         public LocalizedString Title;
         public LocalizedString Description;
         public ItemParameter<int> ContainedEnergyCount;
-        public ItemParameter<int> CastingDamage;
 
         public Item(string id, Sprite icon, PickableItem physicalRepresentation)
         {
