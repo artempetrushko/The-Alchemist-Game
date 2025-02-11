@@ -6,8 +6,6 @@ namespace GameLogic.LootSystem
     public class ResourceConfig : StackableItemConfig
     {
         [SerializeField] private ItemRarity _rarity;
-        [SerializeField] private CharacteristicCoeffsSet _coefficientsSet;
-        [SerializeField] private ItemEffect[] _effects;
 
         public override Item CreateItem()
         {

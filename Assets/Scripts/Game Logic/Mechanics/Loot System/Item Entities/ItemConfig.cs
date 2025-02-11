@@ -13,7 +13,6 @@ namespace GameLogic.LootSystem
         [SerializeField] private LocalizedString _title;
         [SerializeField] private LocalizedString _description;
         [SerializeField] private int _castingDamage;
-        [SerializeField] private ItemEffect[] _effects;
 
         public string Id => _id;
         public Sprite Icon => _icon;
