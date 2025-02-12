@@ -3,7 +3,6 @@ using System.Linq;
 using Controls;
 using Cysharp.Threading.Tasks;
 using EventBus;
-using GameLogic.LevelLoading;
 using UnityEngine.InputSystem;
 using Zenject;
 
@@ -60,8 +59,8 @@ namespace GameLogic
 
         private void OnExitToMainMenuActionPerformed(InputAction.CallbackContext context) => OnExitToMainMenuButtonPressed();
 
-        private void OnReturnToHubButtonPressed() => _signalBus.Fire(new NextSceneSelectedSignal(SceneType.Hub));
+        private void OnReturnToHubButtonPressed() { }
 
-        private void OnExitToMainMenuButtonPressed() => _signalBus.Fire(new NextSceneSelectedSignal(SceneType.MainMenu));
+        private void OnExitToMainMenuButtonPressed() { }
     }
 }

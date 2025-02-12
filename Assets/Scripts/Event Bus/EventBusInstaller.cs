@@ -16,8 +16,6 @@ namespace EventBus
 
             Container.DeclareSignal<PlayerHealthChangedSignal>();
 
-            Container.DeclareSignal<NextSceneSelectedSignal>();
-
             Container.DeclareSignal<ItemDroppedSignal>();
 
             Container.DeclareSignal<ActionButtonControlTipColorChangedSignal>();

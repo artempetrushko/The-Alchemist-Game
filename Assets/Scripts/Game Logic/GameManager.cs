@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using EventBus;
-using GameLogic.LevelLoading;
 using GameLogic.QuestSystem;
 using Zenject;
 
@@ -12,15 +11,13 @@ namespace GameLogic
         private GameProgress _gameProgress;
         private QuestPresenter _questPresenter;
         private HUDPresenter _hudPresenter;
-        private LevelLoadingPresenter _levelLoadingPresenter;
         private SignalBus _signalBus;
 
-        public GameManager(GameConfig config, QuestPresenter questPresenter, HUDPresenter hudPresenter, LevelLoadingPresenter levelLoadingPresenter, SignalBus signalBus)
+        public GameManager(GameConfig config, QuestPresenter questPresenter, HUDPresenter hudPresenter, SignalBus signalBus)
         {
             _config = config;
             _gameProgress = new GameProgress();
             _questPresenter = questPresenter;
-            _levelLoadingPresenter = levelLoadingPresenter;
             _hudPresenter = hudPresenter;
             _signalBus = signalBus;
         }
@@ -29,8 +26,7 @@ namespace GameLogic
         {
             await _hudPresenter.HideStartBlackScreenAsync();
 
-            var locationName = _levelLoadingPresenter.GetCurrentLevelName();
-            await _hudPresenter.ShowLocationNameAsync(locationName);
+            await _hudPresenter.ShowLocationNameAsync(_config.LocationName.GetLocalizedString());
 
             _questPresenter.StartFirstQuest(_config.StartQuest, _gameProgress);
         }
