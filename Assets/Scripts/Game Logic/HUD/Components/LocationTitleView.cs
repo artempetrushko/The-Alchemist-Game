@@ -26,9 +26,9 @@ namespace GameLogic
         public async UniTask HideLocationTitleAsync(float duration)
         {
             var textHidingLatency = duration / _locationTitleText.text.Length;
-            for (var i = 0; i < _locationTitleText.text.Length; i++)
+            while (_locationTitleText.text.Length > 0)
             {
-                _locationTitleText.text.Remove(_locationTitleText.text.Length - 1);
+                _locationTitleText.text = _locationTitleText.text.Remove(_locationTitleText.text.Length - 1);
                 await UniTask.WaitForSeconds(textHidingLatency);
             }
 

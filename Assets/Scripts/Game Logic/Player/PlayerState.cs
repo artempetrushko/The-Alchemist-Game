@@ -1,43 +1,49 @@
-using System;
+using EventBus;
 using UnityEngine;
+using Zenject;
 
 namespace GameLogic.Player
 {
     public class PlayerState : MonoBehaviour
     {
-        public event Action<(int health, int maxHealth)> HealthParamsChanged;
-
         [SerializeField] private ABC_StateManager _stateManager;
 
-        private int health;
-        private int maxHealth;
+        private SignalBus _signalBus;
+        private int _health;
+        private int _maxHealth;
 
         public ABC_StateManager StateManager => _stateManager;
 
         private int Health
         {
-            get => health;
+            get => _health;
             set
             {
-                if (health != value)
+                if (_health != value)
                 {
-                    health = value;
-                    HealthParamsChanged?.Invoke((Health, MaxHealth));
+                    _health = value;
+                    _signalBus.Fire(new PlayerHealthChangedSignal(_health, _maxHealth));
                 }
             }
         }
 
         private int MaxHealth
         {
-            get => maxHealth;
+            get => _maxHealth;
             set
             {
-                if (maxHealth != value)
+                if (_maxHealth != value)
                 {
-                    maxHealth = value;
-                    HealthParamsChanged?.Invoke((Health, MaxHealth));
+                    _maxHealth = value;
+                    _signalBus.Fire(new PlayerHealthChangedSignal(_health, _maxHealth));
                 }
             }
+        }
+
+        [Inject]
+        public void Construct(SignalBus signalBus)
+        {
+            _signalBus = signalBus;
         }
 
         private void Update()

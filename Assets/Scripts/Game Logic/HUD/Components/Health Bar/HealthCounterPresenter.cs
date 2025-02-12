@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using EventBus;
 using Zenject;
 
@@ -18,11 +19,19 @@ namespace GameLogic
             _signalBus = signalBus;
 
             _signalBus.Subscribe<PlayerHealthChangedSignal>(OnPlayerHealthChanged);
+
+            SetDefaultState();
         }
 
         public void Dispose()
         {
             _signalBus.Unsubscribe<PlayerHealthChangedSignal>(OnPlayerHealthChanged);
+        }
+
+        private void SetDefaultState()
+        {
+            var maxStateHealthPercentage = _healthCounterConfig.HealthBarStates.Max(state => state.MaxHealthPercentage);
+            _currentHealthBarState = _healthCounterConfig.HealthBarStates.First(state => state.MaxHealthPercentage == maxStateHealthPercentage);
         }
 
         private void SetCurrentHealthBarState(int health)
