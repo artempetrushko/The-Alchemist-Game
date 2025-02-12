@@ -3,7 +3,7 @@
 namespace EventBus
 {
     public interface IItemPickedSignal
-	{
-		Item Item { get; }
-	}
+    {
+        Item Item { get; }
+    }
 }

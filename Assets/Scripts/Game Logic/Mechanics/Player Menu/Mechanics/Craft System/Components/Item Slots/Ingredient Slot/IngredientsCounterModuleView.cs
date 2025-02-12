@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 namespace GameLogic.PlayerMenu
 {
-	public class IngredientsCounterModuleView : ItemSlotModule
-	{
+    public class IngredientsCounterModuleView : ItemSlotModule
+    {
         [SerializeField] private TMP_Text _itemsCounter;
-		[SerializeField] private Image _progressBarFillingArea;
+        [SerializeField] private Image _progressBarFillingArea;
         [SerializeField] private Color _progressBarNormalColor;
         [SerializeField] private Color _progressBarFilledColor;
 
@@ -19,6 +19,6 @@ namespace GameLogic.PlayerMenu
 
         public void SetProgressBarFillingAreaColor(Color color) => _progressBarFillingArea.color = color;
 
-		public void SetProgressBarFillingAreaFillAmount(float fillAmount) => _progressBarFillingArea.fillAmount = fillAmount;
+        public void SetProgressBarFillingAreaFillAmount(float fillAmount) => _progressBarFillingArea.fillAmount = fillAmount;
     }
 }

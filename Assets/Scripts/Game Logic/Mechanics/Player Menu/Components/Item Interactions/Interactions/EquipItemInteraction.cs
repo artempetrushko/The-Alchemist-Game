@@ -1,6 +1,6 @@
 namespace GameLogic.PlayerMenu.Inventory
 {
-	public class EquipItemInteraction : ItemsInteraction
+    public class EquipItemInteraction : ItemsInteraction
     {
         private InventoryPresenter inventoryManager;
 

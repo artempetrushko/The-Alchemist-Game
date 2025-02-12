@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace GameLogic.EnvironmentExploration
 {
-	public class ItemPickingMessagesPanelView : MonoBehaviour
-	{
+    public class ItemPickingMessagesPanelView : MonoBehaviour
+    {
         [SerializeField] private GameObject _itemPickingMessageViewsContainer;
         [SerializeField] private ItemPickingMessageView _itemPickingMessageViewPrefab;
 

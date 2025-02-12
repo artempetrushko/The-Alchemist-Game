@@ -4,7 +4,7 @@ using UnityEngine.Localization;
 
 namespace GameLogic.PlayerMenu.Craft
 {
-	[Serializable]
+    [Serializable]
     public class CraftingAvailabilityStatusTextsConfig
     {
         [SerializeField] private CraftingAvailabilityStatus _status;

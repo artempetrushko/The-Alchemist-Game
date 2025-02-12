@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace GameLogic.PlayerMenu
 {
-	public class ItemsCounterModule : ItemSlotModule
-	{
-		[SerializeField] private TMP_Text _itemsCounter;
+    public class ItemsCounterModule : ItemSlotModule
+    {
+        [SerializeField] private TMP_Text _itemsCounter;
 
         public override void UpdateDisplayedInfo(Item item)
         {

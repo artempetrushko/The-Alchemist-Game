@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace GameLogic.PlayerMenu
 {
-	public class EnergyCounterModuleView : ItemSlotModule
-	{
-		[SerializeField] private TMP_Text _energyCounter;
+    public class EnergyCounterModuleView : ItemSlotModule
+    {
+        [SerializeField] private TMP_Text _energyCounter;
 
         public override void UpdateDisplayedInfo(Item item)
         {

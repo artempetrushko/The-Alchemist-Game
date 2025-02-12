@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace GameLogic.PlayerMenu
 {
-	public class ItemsInteractionsPanelView : MonoBehaviour
+    public class ItemsInteractionsPanelView : MonoBehaviour
     {
         [SerializeField] private Image _background;
         [SerializeField] private ItemsInteractionButton _interactionButtonPrefab;

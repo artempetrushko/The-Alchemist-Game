@@ -3,7 +3,7 @@ using UnityEngine;
 namespace GameLogic.EnvironmentExploration
 {
     public class DungeonPortal : InteractiveObject
-	{
+    {
         [Space]
         [SerializeField] private GameObject _stabilizationEffectPrefab;
         [SerializeField] private int _stabilizationTimeInSeconds;
@@ -18,5 +18,5 @@ namespace GameLogic.EnvironmentExploration
         }
 
         public void SetInteractionAvailability(bool isInteractable) => GetComponent<Collider>().enabled = isInteractable;
-	}
+    }
 }

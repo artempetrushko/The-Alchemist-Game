@@ -3,12 +3,12 @@
 namespace EventBus
 {
     public abstract class ItemPickedSignal
-	{
-		public readonly Item Item;
+    {
+        public readonly Item Item;
 
-		public ItemPickedSignal(Item item)
-		{
-			Item = item;
-		}
-	}
+        public ItemPickedSignal(Item item)
+        {
+            Item = item;
+        }
+    }
 }

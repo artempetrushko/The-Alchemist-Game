@@ -1,6 +1,6 @@
 ﻿namespace GameLogic.PlayerMenu.Craft
 {
-	public enum CraftingAvailabilityStatus
+    public enum CraftingAvailabilityStatus
     {
         Available,
         NoIngredientsEnough,
