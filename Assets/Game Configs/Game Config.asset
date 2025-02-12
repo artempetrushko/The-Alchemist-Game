@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85487d4ad0bf2a4459b335fc5958660c, type: 3}
   m_Name: Game Config
   m_EditorClassIdentifier: 
+  _locationName:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cd99cdb569ebe64cba5d6d403085f4d
+    m_TableEntryReference:
+      m_KeyId: 43731451904
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _startQuest: {fileID: 11400000, guid: 3543f594f319fd3409f302fadf923c7c, type: 2}
+  references:
+    version: 2
+    RefIds: []

@@ -44,6 +44,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fbffd049916133c4c8324524708180f4, type: 2}
   - {fileID: 11400000, guid: 4c2125c73fb843942b00040c6a869166, type: 2}
   - {fileID: 11400000, guid: 2bb3e2b2a60f52e418ac6ff569aea7f8, type: 2}
+  - {fileID: 11400000, guid: 9eb72fc8295215b4fb5a8be7731c82fa, type: 2}
+  - {fileID: 11400000, guid: 785ba9e50547d2d48ab81441aa027a4c, type: 2}
+  - {fileID: 11400000, guid: ebca34f6dc727d94d8bc45aab71f3e8c, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -86,6 +89,9 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Locale
+    - Locale-en
+    - Preload
+    - Locale-ru
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: d29856df60064a94f89a236ad4c53b94, type: 2}
