@@ -3011,6 +3011,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moving Item View
       objectReference: {fileID: 0}
+    - target: {fileID: 7163133081116363115, guid: 89fbf670bb631b04cae77aa46679d20d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89fbf670bb631b04cae77aa46679d20d, type: 3}
 --- !u!224 &584217612539856899 stripped

@@ -16,7 +16,6 @@ namespace GameLogic.PlayerMenu.Inventory
         private InventoryConfig _config;
         private InventoryModel _model;
         private InventoryView _mainInventoryView;
-        private MinimizedInventoryView _currentMinimizedInventoryView;
         private HUDEquipmentView _hudEquipmentView;
         private InputManager _inputManager;
         private SignalBus _signalBus;
@@ -187,14 +186,6 @@ namespace GameLogic.PlayerMenu.Inventory
 
         private void OnItemPickingRequested(ItemPickingRequestedSignal signal)
         {
-
-        }
-
-        private void OnMinimizedInventoryEnabled(MinimizedInventoryEnabledSignal signal)
-        {
-            _currentMinimizedInventoryView = signal.MinimizedInventoryView;
-            BindItemSlotViews(_currentMinimizedInventoryView);
-
 
         }
 

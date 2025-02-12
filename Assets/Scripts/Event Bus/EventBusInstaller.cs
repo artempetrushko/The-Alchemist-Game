@@ -19,8 +19,6 @@ namespace EventBus
             Container.DeclareSignal<NextSceneSelectedSignal>();
 
             Container.DeclareSignal<ItemDroppedSignal>();
-            Container.DeclareSignal<MinimizedInventoryEnabledSignal>();
-            Container.DeclareSignal<MinimizedInventoryDisabledSignal>();
 
             Container.DeclareSignal<ActionButtonControlTipColorChangedSignal>();
 
