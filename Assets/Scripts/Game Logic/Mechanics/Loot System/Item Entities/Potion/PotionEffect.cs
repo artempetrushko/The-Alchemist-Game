@@ -5,6 +5,6 @@ namespace GameLogic.LootSystem
 {
     public abstract class PotionEffect : ScriptableObject
     {
-        public abstract void Apply(PlayerState player);
+        public abstract void Apply();
     }
 }

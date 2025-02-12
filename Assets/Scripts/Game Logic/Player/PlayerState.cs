@@ -12,8 +12,6 @@ namespace GameLogic.Player
         private int _health;
         private int _maxHealth;
 
-        public ABC_StateManager StateManager => _stateManager;
-
         private int Health
         {
             get => _health;
@@ -46,10 +44,22 @@ namespace GameLogic.Player
             _signalBus = signalBus;
         }
 
+        private void OnEnable()
+        {
+            _signalBus.Subscribe<PlayerStateChangedSignal>(OnPlayerStateChanged);
+        }
+
+        private void OnDisable()
+        {
+            _signalBus.Unsubscribe<PlayerStateChangedSignal>(OnPlayerStateChanged);
+        }
+
         private void Update()
         {
             Health = (int)_stateManager.currentHealth;
             MaxHealth = (int)_stateManager.currentMaxHealth;
         }
+
+        private void OnPlayerStateChanged(PlayerStateChangedSignal signal) => signal.ChangePlayerState(_stateManager);
     }
 }

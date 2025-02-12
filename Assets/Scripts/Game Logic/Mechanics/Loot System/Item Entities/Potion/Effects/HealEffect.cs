@@ -1,6 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
-using GameLogic.Player;
+using EventBus;
 using UnityEngine;
+using Zenject;
 
 namespace GameLogic.LootSystem
 {
@@ -10,28 +11,38 @@ namespace GameLogic.LootSystem
         [SerializeField] private int _power;
         [SerializeField] private int _durationInSeconds;
 
-        public override void Apply(PlayerState player)
+        private SignalBus _signalBus;
+
+        [Inject]
+        public void Construct(SignalBus signalBus)
+        {
+            _signalBus = signalBus;
+        }
+
+        public override void Apply()
         {
             if (_durationInSeconds > 0)
             {
-                ApplyAsync(player).Forget();
+                ApplyAsync().Forget();
             }
             else
             {
-                player.StateManager.AdjustHealth(_power);
+                ApplyEffect();
             }
         }
 
-        private async UniTask ApplyAsync(PlayerState player)
+        private async UniTask ApplyAsync()
         {
             var timer = _durationInSeconds;
             while (timer > 0)
             {
-                player.StateManager.AdjustHealth(_power);
+                ApplyEffect();
 
                 await UniTask.WaitForSeconds(1);
                 timer--;
             }
         }
+
+        private void ApplyEffect() => _signalBus.Fire(new PlayerStateChangedSignal((state) => state.AdjustHealth(_power)));
     }
 }

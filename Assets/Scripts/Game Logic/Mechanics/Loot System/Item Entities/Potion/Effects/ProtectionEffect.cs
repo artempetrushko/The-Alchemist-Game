@@ -1,6 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
-using GameLogic.Player;
+using EventBus;
 using UnityEngine;
+using Zenject;
 
 namespace GameLogic.LootSystem
 {
@@ -10,21 +11,29 @@ namespace GameLogic.LootSystem
         [SerializeField] private int _power;
         [SerializeField] private int _durationInSeconds;
 
-        public override void Apply(PlayerState player)
+        private SignalBus _signalBus;
+
+        [Inject]
+        public void Construct(SignalBus signalBus)
+        {
+            _signalBus = signalBus;
+        }
+
+        public override void Apply()
         {
             if (_durationInSeconds > 0)
             {
-                ApplyAsync(player).Forget();
+                ApplyAsync().Forget();
             }
             else
             {
-                player.StateManager.AdjustMeleeDamageMitigationPercentage(_power);
+                _signalBus.Fire(new PlayerStateChangedSignal((state) => state.AdjustMeleeDamageMitigationPercentage(_power)));
             }
         }
 
-        private async UniTask ApplyAsync(PlayerState player)
+        private async UniTask ApplyAsync()
         {
-            player.StateManager.AdjustMeleeDamageMitigationPercentage(_power);
+            _signalBus.Fire(new PlayerStateChangedSignal((state) => state.AdjustMeleeDamageMitigationPercentage(_power)));
 
             var timer = _durationInSeconds;
             while (timer > 0)
@@ -33,7 +42,7 @@ namespace GameLogic.LootSystem
                 timer--;
             }
 
-            player.StateManager.AdjustMeleeDamageMitigationPercentage(-_power);
+            _signalBus.Fire(new PlayerStateChangedSignal((state) => state.AdjustMeleeDamageMitigationPercentage(-_power)));
         }
     }
 }
