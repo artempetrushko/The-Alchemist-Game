@@ -2,11 +2,8 @@
 using System.Linq;
 using Controls;
 using EventBus;
-using GameLogic.EnvironmentExploration;
 using GameLogic.LootSystem;
-using GameLogic.Player;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Zenject;
 
 namespace GameLogic.PlayerMenu.Inventory
@@ -17,10 +14,9 @@ namespace GameLogic.PlayerMenu.Inventory
         private InventoryModel _model;
         private InventoryView _mainInventoryView;
         private HUDEquipmentView _hudEquipmentView;
-        private InputManager _inputManager;
         private SignalBus _signalBus;
 
-        public InventoryPresenter(InventoryView mainInventoryView, InventoryConfig config, HUDEquipmentView hudEquipmentView, InputManager inputManager, SignalBus signalBus)
+        public InventoryPresenter(InventoryView mainInventoryView, InventoryConfig config, HUDEquipmentView hudEquipmentView, SignalBus signalBus)
         {
             _config = config;
             _model = new InventoryModel()
@@ -32,24 +28,21 @@ namespace GameLogic.PlayerMenu.Inventory
             _mainInventoryView = mainInventoryView;
             _hudEquipmentView = hudEquipmentView;
 
-            _inputManager = inputManager;
-            _inputManager.PlayerActions.PlayerMenuCraftSection.ChangeInventoryItemsCategory.performed += OnChangeInventoryCategoryActionPerformed;
-            _inputManager.PlayerActions.Player.SelectQuickAccessCell.performed += SelectQuickAccessCell;
-            _inputManager.PlayerActions.Player.SelectNeighboringQuickAccessCell.performed += SelectNeighboringQuickAccessCell;
-
             _signalBus = signalBus;
             _signalBus.Subscribe<ItemPickingRequestedSignal>(OnItemPickingRequested);
             _signalBus.Subscribe<PickableItemPickingRequestedSignal>(OnPickableItemPickingRequested);
+
+            _signalBus.Subscribe<Player_SelectQuickAccessCellPerformedSignal>(SelectQuickAccessCell);
+            _signalBus.Subscribe<Player_SelectNeighboringQuickAccessCellPerformedSignal>(SelectNeighboringQuickAccessCell);
         }
 
         public void Dispose()
         {
-            _inputManager.PlayerActions.PlayerMenuCraftSection.ChangeInventoryItemsCategory.performed -= OnChangeInventoryCategoryActionPerformed;
-            _inputManager.PlayerActions.Player.SelectQuickAccessCell.performed -= SelectQuickAccessCell;
-            _inputManager.PlayerActions.Player.SelectNeighboringQuickAccessCell.performed -= SelectNeighboringQuickAccessCell;
-
             _signalBus.Unsubscribe<ItemPickingRequestedSignal>(OnItemPickingRequested);
             _signalBus.Unsubscribe<PickableItemPickingRequestedSignal>(OnPickableItemPickingRequested);
+
+            _signalBus.Unsubscribe<Player_SelectQuickAccessCellPerformedSignal>(SelectQuickAccessCell);
+            _signalBus.Unsubscribe<Player_SelectNeighboringQuickAccessCellPerformedSignal>(SelectNeighboringQuickAccessCell);
         }
 
         public void Show()
@@ -189,8 +182,6 @@ namespace GameLogic.PlayerMenu.Inventory
 
         }
 
-        private void OnChangeInventoryCategoryActionPerformed(InputAction.CallbackContext context) => CurrentItemCellsCategoryNumber += (int)context.ReadValue<Vector2>().x;
-
 
 
 
@@ -284,17 +275,17 @@ namespace GameLogic.PlayerMenu.Inventory
 
         public ISelectableCollection DefaultSelectableCollection => throw new NotImplementedException();
 
-        private void SelectQuickAccessCell(InputAction.CallbackContext context)
+        private void SelectQuickAccessCell(Player_SelectQuickAccessCellPerformedSignal signal)
         {
-            if (int.TryParse(context.control.name, out int cellNumber))
+            if (int.TryParse(signal.Context.control.name, out int cellNumber))
             {
                 CurrentQuickAccessCellNumber = cellNumber - 3;
             }
         }
 
-        private void SelectNeighboringQuickAccessCell(InputAction.CallbackContext context)
+        private void SelectNeighboringQuickAccessCell(Player_SelectNeighboringQuickAccessCellPerformedSignal signal)
         {
-            var inputValue = context.ReadValue<Vector2>().x;
+            var inputValue = signal.Context.ReadValue<Vector2>().x;
             if (Mathf.Abs(inputValue) == 1)
             {
                 CurrentQuickAccessCellNumber += (int)inputValue;

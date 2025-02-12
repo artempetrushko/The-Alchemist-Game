@@ -1,7 +1,7 @@
 using System;
-using Controls;
 using Cysharp.Threading.Tasks;
-using UnityEngine.InputSystem;
+using EventBus;
+using Zenject;
 
 namespace GameLogic.QuestSystem
 {
@@ -10,22 +10,22 @@ namespace GameLogic.QuestSystem
         private const int QUEST_SHOWING_TIME_IN_SECONDS = 5;
 
         private QuestProgressView _questProgressView;
-        private InputManager _inputManager;
+        private SignalBus _signalBus;
 
         private Quest _currentQuest;
         private bool _isQuestShown;
 
-        public QuestPresenter(QuestProgressView questProgressView, InputManager inputManager)
+        public QuestPresenter(QuestProgressView questProgressView, SignalBus signalBus)
         {
             _questProgressView = questProgressView;
+            _signalBus = signalBus;
 
-            _inputManager = inputManager;
-            _inputManager.PlayerActions.Player.ShowQuestProgress.performed += OnShowQuestProgressActionPerformed;
+            _signalBus.Subscribe<Player_ShowQuestProgressPerformedSignal>(OnShowQuestProgressActionPerformed);
         }
 
         public void Dispose()
         {
-            _inputManager.PlayerActions.Player.ShowQuestProgress.performed -= OnShowQuestProgressActionPerformed;
+            _signalBus.Unsubscribe<Player_ShowQuestProgressPerformedSignal>(OnShowQuestProgressActionPerformed);
         }
 
         public void StartFirstQuest(Quest quest, GameProgress gameProgress)
@@ -68,6 +68,6 @@ namespace GameLogic.QuestSystem
             }
         }
 
-        private void OnShowQuestProgressActionPerformed(InputAction.CallbackContext context) => ShowQuestProgressAsync().Forget();
+        private void OnShowQuestProgressActionPerformed(Player_ShowQuestProgressPerformedSignal signal) => ShowQuestProgressAsync().Forget();
     }
 }

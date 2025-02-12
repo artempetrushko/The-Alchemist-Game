@@ -1,7 +1,5 @@
 using System;
-using Controls;
 using EventBus;
-using GameLogic.Player;
 using UnityEngine;
 using Zenject;
 
@@ -13,13 +11,11 @@ namespace GameLogic.EnvironmentExploration
 
         private EnvironmentInteractionPanelModel _model;
         private EnvironmentInteractionPanelView _view;
-        private InputManager _inputManager;
         private SignalBus _signalBus;
 
-        public EnvironmentInteractionPanelPresenter(EnvironmentInteractionPanelView view, InputManager inputManager, SignalBus signalBus)
+        public EnvironmentInteractionPanelPresenter(EnvironmentInteractionPanelView view, SignalBus signalBus)
         {
             _view = view;
-            _inputManager = inputManager;
             _signalBus = signalBus;
 
             _signalBus.Subscribe<InteractiveObjectDetectedSignal>(OnInteractiveObjectDetected);
@@ -45,10 +41,10 @@ namespace GameLogic.EnvironmentExploration
 
         private void ShowCurrentInteractiveObjectControlsTips()
         {
-            var controlsTips = _inputManager.GetControlTips(new[]
+            /*var controlsTips = _inputManager.GetControlTips(new[]
             {
                 (_model.InteractionDescription.GetLocalizedString(), _inputManager.PlayerActions.Player.Interact)
-            });
+            });*/
 
             //TODO: реализовать подсказки по управлению
             //_view.ControlsTipsSectionView

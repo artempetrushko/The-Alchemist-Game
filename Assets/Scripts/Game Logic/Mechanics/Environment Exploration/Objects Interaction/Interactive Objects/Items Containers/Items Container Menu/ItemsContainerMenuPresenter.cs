@@ -5,7 +5,6 @@ using EventBus;
 using GameLogic.LootSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using Zenject;
 using Object = UnityEngine.Object;
 
@@ -16,30 +15,28 @@ namespace GameLogic.EnvironmentExploration
         private ItemsContainerMenuModel _model;
         private ItemsContainerMenuView _view;
         private ItemsContainerActionMap _actionMap;
-        private InputManager _inputManager;
         private SignalBus _signalBus;
 
-        public ItemsContainerMenuPresenter(ItemsContainerMenuView view, ItemsContainerActionMap actionMap, InputManager inputManager, SignalBus signalBus)
+        public ItemsContainerMenuPresenter(ItemsContainerMenuView view, ItemsContainerActionMap actionMap, SignalBus signalBus)
         {
             _view = view;
             _actionMap = actionMap;
-            _inputManager = inputManager;
             _signalBus = signalBus;
 
-            _inputManager.PlayerActions.ItemsContainerMenu.CloseContainer.performed += OnCloseContainerActionPerformed;
-            _inputManager.PlayerActions.ItemsContainerMenu.Navigate.performed += OnNavigateActionPerformed;
-            _inputManager.PlayerActions.ItemsContainerMenu.PickItem.performed += OnPickItemActionPerformed;
-            _inputManager.PlayerActions.ItemsContainerMenu.PickAllItems.performed += OnPickAllItemsActionPerformed;
+            _signalBus.Subscribe<ItemsContainerMenu_CloseContainerPerformedSignal>(OnCloseContainerActionPerformed);
+            _signalBus.Subscribe<ItemsContainerMenu_NavigatePerformedSignal>(OnNavigateActionPerformed);
+            _signalBus.Subscribe<ItemsContainerMenu_PickItemPerformedSignal>(OnPickItemActionPerformed);
+            _signalBus.Subscribe<ItemsContainerMenu_PickAllItemsPerformedSignal>(OnPickAllItemsActionPerformed);
 
             _signalBus.Subscribe<ContainedItemPickedSignal>(OnContainedItemPicked);
         }
 
         public void Dispose()
         {
-            _inputManager.PlayerActions.ItemsContainerMenu.CloseContainer.performed -= OnCloseContainerActionPerformed;
-            _inputManager.PlayerActions.ItemsContainerMenu.Navigate.performed -= OnNavigateActionPerformed;
-            _inputManager.PlayerActions.ItemsContainerMenu.PickItem.performed -= OnPickItemActionPerformed;
-            _inputManager.PlayerActions.ItemsContainerMenu.PickAllItems.performed -= OnPickAllItemsActionPerformed;
+            _signalBus.Unsubscribe<ItemsContainerMenu_CloseContainerPerformedSignal>(OnCloseContainerActionPerformed);
+            _signalBus.Unsubscribe<ItemsContainerMenu_NavigatePerformedSignal>(OnNavigateActionPerformed);
+            _signalBus.Unsubscribe<ItemsContainerMenu_PickItemPerformedSignal>(OnPickItemActionPerformed);
+            _signalBus.Unsubscribe<ItemsContainerMenu_PickAllItemsPerformedSignal>(OnPickAllItemsActionPerformed);
 
             _signalBus.Unsubscribe<ContainedItemPickedSignal>(OnContainedItemPicked);
         }
@@ -52,8 +49,7 @@ namespace GameLogic.EnvironmentExploration
             _view.SetActive(true);
             _view.SetContainerTitleText(_model.Container.Name.GetLocalizedString());
 
-
-            _inputManager.SetActionMap(_actionMap);
+            _signalBus.Fire(new ActionMapRequestedSignal(_actionMap));
 
             _signalBus.Subscribe<ControlsChangedSignal>(OnControlsChanged);
         }
@@ -94,7 +90,7 @@ namespace GameLogic.EnvironmentExploration
 
         }
 
-        private void OnCloseContainerActionPerformed(InputAction.CallbackContext context)
+        private void OnCloseContainerActionPerformed(ItemsContainerMenu_CloseContainerPerformedSignal signal)
         {
             _view.DisableAllContainedItemViews();
             _view.SetActive(false);
@@ -106,12 +102,12 @@ namespace GameLogic.EnvironmentExploration
             }
 
             _signalBus.Unsubscribe<ControlsChangedSignal>(OnControlsChanged);
-            _inputManager.SetPreviousActionMap();
+            _signalBus.Fire(new PreviousActionMapRequestedSignal());
         }
 
-        private void OnNavigateActionPerformed(InputAction.CallbackContext context)
+        private void OnNavigateActionPerformed(ItemsContainerMenu_NavigatePerformedSignal signal)
         {
-            var inputValue = context.ReadValue<Vector2>().y;
+            var inputValue = signal.Context.ReadValue<Vector2>().y;
             if (Mathf.Abs(inputValue) == 1)
             {
                 _model.SelectedItemNumber += (int)inputValue;
@@ -126,9 +122,9 @@ namespace GameLogic.EnvironmentExploration
             _view.SetScrollRectVerticalNormalizedPosition(1 - (float)selectedItemNumber / _model.ContainedItems.Length);
         }
 
-        private void OnPickItemActionPerformed(InputAction.CallbackContext context) => PickItem(_model.ContainedItems[_model.SelectedItemNumber].item);
+        private void OnPickItemActionPerformed(ItemsContainerMenu_PickItemPerformedSignal signal) => PickItem(_model.ContainedItems[_model.SelectedItemNumber].item);
 
-        private void OnPickAllItemsActionPerformed(InputAction.CallbackContext context)
+        private void OnPickAllItemsActionPerformed(ItemsContainerMenu_PickAllItemsPerformedSignal signal)
         {
             foreach (var containedItemData in _model.ContainedItems)
             {

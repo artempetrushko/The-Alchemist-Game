@@ -19,14 +19,12 @@ namespace GameLogic.PlayerMenu.Craft
         private CraftView _craftView;
         private RecipesMenuPresenter _recipesMenuPresenter;
         private ItemCraftingStatusPanelConfig _itemCraftingStatusPanelConfig;
-        private InputManager _inputManager;
         private SignalBus _signalBus;
         private bool _isCraftingStarted = false;
 
-        public CraftPresenter(CraftView craftView, InputManager inputManager, SignalBus signalBus)
+        public CraftPresenter(CraftView craftView, SignalBus signalBus)
         {
             _craftView = craftView;
-            _inputManager = inputManager;
             _signalBus = signalBus;
 
             _craftModel = new CraftModel()
@@ -39,10 +37,10 @@ namespace GameLogic.PlayerMenu.Craft
 
             _recipesMenuPresenter.RecipeSelected += OnRecipeSelected;
 
-            _inputManager.PlayerActions.PlayerMenuCraftSection.CreateItem.performed += OnCreateItemActionPerformed;
-
             _signalBus.Subscribe<EnergySlotItemChangedSignal>(OnEnergySlotItemChanged);
             _signalBus.Subscribe<IngredientSlotItemChangedSignal>(OnIngredientSlotItemChanged);
+
+            _signalBus.Subscribe<PlayerMenuCraftSection_CreateItemPerformedSignal>(OnCreateItemActionPerformed);
         }
 
         public void Dispose()
@@ -52,10 +50,10 @@ namespace GameLogic.PlayerMenu.Craft
 
             _recipesMenuPresenter.RecipeSelected -= OnRecipeSelected;
 
-            _inputManager.PlayerActions.PlayerMenuCraftSection.CreateItem.performed -= OnCreateItemActionPerformed;
-
             _signalBus.Unsubscribe<EnergySlotItemChangedSignal>(OnEnergySlotItemChanged);
             _signalBus.Unsubscribe<IngredientSlotItemChangedSignal>(OnIngredientSlotItemChanged);
+
+            _signalBus.Unsubscribe<PlayerMenuCraftSection_CreateItemPerformedSignal>(OnCreateItemActionPerformed);
         }
 
         public void UpdateRequiredItemsProgress()
@@ -300,7 +298,7 @@ namespace GameLogic.PlayerMenu.Craft
 
         private void OnItemCraftingPlacePointerUp(PointerEventData eventData) => StopCraftingProcess();
 
-        private void OnCreateItemActionPerformed(InputAction.CallbackContext context) => StartCraftingProcess();
+        private void OnCreateItemActionPerformed(PlayerMenuCraftSection_CreateItemPerformedSignal signal) => StartCraftingProcess();
 
         private void OnCreateItemActionCanceled(InputAction.CallbackContext context) => StopCraftingProcess();
     }

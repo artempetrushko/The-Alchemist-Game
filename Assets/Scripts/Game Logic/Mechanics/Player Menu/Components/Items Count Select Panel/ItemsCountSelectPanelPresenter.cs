@@ -1,7 +1,8 @@
 using System;
 using Controls;
+using EventBus;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using Zenject;
 
 namespace GameLogic.PlayerMenu
 {
@@ -12,33 +13,33 @@ namespace GameLogic.PlayerMenu
         public event Action ItemsCountSelectionCanceled;
 
         private ItemsCountSelectPanelConfig _config;
-        private ItemsCountSelectPanelView _view;
-        private InputManager _inputManager;   
+        private ItemsCountSelectPanelView _view;  
+        private SignalBus _signalBus;
         private int _selectedItemsCount;
 
-        public ItemsCountSelectPanelPresenter(ItemsCountSelectPanelConfig config, ItemsCountSelectPanelView view, InputManager inputManager)
+        public ItemsCountSelectPanelPresenter(ItemsCountSelectPanelConfig config, ItemsCountSelectPanelView view, SignalBus signalBus)
         {
             _config = config;
             _view = view;
-            _inputManager = inputManager;
+            _signalBus = signalBus;
 
             _view.ItemsCounterSlider.onValueChanged.AddListener(OnItemsCounterSliderValueChanged);
             _view.SelectItemsCountActionButton.ButtonComponent.onClick.AddListener(OnSelectItemsCountActionButtonPressed);
             _view.SelectAllItemsActionButton.ButtonComponent.onClick.AddListener(OnSelectAllItemsActionButtonPressed);
             _view.CancelActionButton.ButtonComponent.onClick.AddListener(OnCancelActionButtonPressed);
 
-            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.ChangeItemsCount.performed += OnChangeItemsCountActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.Select.performed += OnSelectItemsActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.SelectAll.performed += OnSelectAllItemsActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.Cancel.performed += OnCancelItemsCountSelectionActionPerformed;
+            _signalBus.Subscribe<PlayerMenuItemsCountSelectPanel_CancelPerformedSignal>(OnCancelItemsCountSelectionActionPerformed);
+            _signalBus.Subscribe<PlayerMenuItemsCountSelectPanel_ChangeItemsCountPerformedSignal>(OnChangeItemsCountActionPerformed);
+            _signalBus.Subscribe<PlayerMenuItemsCountSelectPanel_SelectPerformedSignal>(OnSelectItemsActionPerformed);
+            _signalBus.Subscribe<PlayerMenuItemsCountSelectPanel_SelectAllPerformedSignal>(OnSelectAllItemsActionPerformed);
         }
 
         public void Dispose()
         {
-            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.ChangeItemsCount.performed -= OnChangeItemsCountActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.Select.performed -= OnSelectItemsActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.SelectAll.performed -= OnSelectAllItemsActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuItemsCountSelectPanel.Cancel.performed -= OnCancelItemsCountSelectionActionPerformed;
+            _signalBus.Unsubscribe<PlayerMenuItemsCountSelectPanel_CancelPerformedSignal>(OnCancelItemsCountSelectionActionPerformed);
+            _signalBus.Unsubscribe<PlayerMenuItemsCountSelectPanel_ChangeItemsCountPerformedSignal>(OnChangeItemsCountActionPerformed);
+            _signalBus.Unsubscribe<PlayerMenuItemsCountSelectPanel_SelectPerformedSignal>(OnSelectItemsActionPerformed);
+            _signalBus.Unsubscribe<PlayerMenuItemsCountSelectPanel_SelectAllPerformedSignal>(OnSelectAllItemsActionPerformed);
         }
 
         public void StartItemsCountSelection(Sprite itemIcon, int minItemsCount, int maxItemsCount, bool isAllItemsSelectionEnabled = true)
@@ -51,14 +52,14 @@ namespace GameLogic.PlayerMenu
             _view.ItemsCounterSlider.value = minItemsCount;
             _view.SelectAllItemsActionButton.SetActive(isAllItemsSelectionEnabled);
 
-            _inputManager.SetActionMap(_config.ActionMap);
+            _signalBus.Fire(new ActionMapRequestedSignal(_config.ActionMap));
         }
 
         private void FinishItemsCountSelection()
         {
             _view.SetActive(false);
 
-            _inputManager.SetPreviousActionMap();
+            _signalBus.Fire(new PreviousActionMapRequestedSignal());
         }
 
         private void SelectItemsCount()
@@ -91,18 +92,18 @@ namespace GameLogic.PlayerMenu
 
         private void OnCancelActionButtonPressed() => CancelItemsCountSelection();
 
-        private void OnChangeItemsCountActionPerformed(InputAction.CallbackContext context)
+        private void OnChangeItemsCountActionPerformed(PlayerMenuItemsCountSelectPanel_ChangeItemsCountPerformedSignal signal)
         {
-            var inputValue = context.ReadValue<Vector2>().x;
+            var inputValue = signal.Context.ReadValue<Vector2>().x;
             if (Mathf.Abs(inputValue) == 1)
             {
                 _view.ItemsCounterSlider.value += (int)inputValue;
             }
         }
 
-        private void OnSelectItemsActionPerformed(InputAction.CallbackContext context) => SelectItemsCount();
+        private void OnSelectItemsActionPerformed(PlayerMenuItemsCountSelectPanel_SelectPerformedSignal signal) => SelectItemsCount();
 
-        private void OnSelectAllItemsActionPerformed(InputAction.CallbackContext context)
+        private void OnSelectAllItemsActionPerformed(PlayerMenuItemsCountSelectPanel_SelectAllPerformedSignal signal)
         {
             if (_view.SelectAllItemsActionButton.isActiveAndEnabled)
             {
@@ -110,6 +111,6 @@ namespace GameLogic.PlayerMenu
             }
         }
 
-        private void OnCancelItemsCountSelectionActionPerformed(InputAction.CallbackContext context) => CancelItemsCountSelection();
+        private void OnCancelItemsCountSelectionActionPerformed(PlayerMenuItemsCountSelectPanel_CancelPerformedSignal signal) => CancelItemsCountSelection();
     }
 }

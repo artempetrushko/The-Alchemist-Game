@@ -17,7 +17,6 @@ namespace GameLogic.PlayerMenu
         private PlayerMenuView _view;
         private InventoryPresenter _mainInventoryPresenter;
         private CraftPresenter _craftPresenter;
-        private InputManager _inputManager;
         private SignalBus _signalBus;
 
         private (IPlayerMenuSectionPresenter section, PlayerMenuSectionSelectButton linkedButton)[] _sectionInfos;
@@ -68,33 +67,26 @@ namespace GameLogic.PlayerMenu
             }
         }
 
-        public PlayerMenuPresenter(PlayerMenuView view, InputManager inputManager, SignalBus signalBus)
+        public PlayerMenuPresenter(PlayerMenuView view, SignalBus signalBus)
         {
             _view = view;
             _signalBus = signalBus;
 
-            _inputManager = inputManager;
-            _inputManager.PlayerActions.Player.ShowPlayerMenu.performed += ShowPlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuInventorySection.NavigatePlayerMenu.performed += OnNavigatePlayerMenuActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuInventorySection.NavigateSection.performed += OnNavigateSectionActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuInventorySection.ClosePlayerMenu.performed += HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuAlchemistrySection.ClosePlayerMenu.performed += HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuCraftSection.ClosePlayerMenu.performed += HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuSettingsSection.ClosePlayerMenu.performed += HidePlayerMenu;           
+            _signalBus.Subscribe<ShowPlayerMenuPerformedSignal>(ShowPlayerMenu);
+            _signalBus.Subscribe<HidePlayerMenuPerformedSignal>(HidePlayerMenu);
+            _signalBus.Subscribe<PlayerMenuInventorySection_NavigatePlayerMenuPerformedSignal>(OnNavigatePlayerMenuActionPerformed);
+            _signalBus.Subscribe<PlayerMenuInventorySection_NavigateSectionPerformedSignal>(OnNavigateSectionActionPerformed); 
         }
 
         public void Dispose()
         {
-            _inputManager.PlayerActions.Player.ShowPlayerMenu.performed -= ShowPlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuInventorySection.NavigatePlayerMenu.performed -= OnNavigatePlayerMenuActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuInventorySection.NavigateSection.performed -= OnNavigateSectionActionPerformed;
-            _inputManager.PlayerActions.PlayerMenuInventorySection.ClosePlayerMenu.performed -= HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuAlchemistrySection.ClosePlayerMenu.performed -= HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuCraftSection.ClosePlayerMenu.performed -= HidePlayerMenu;
-            _inputManager.PlayerActions.PlayerMenuSettingsSection.ClosePlayerMenu.performed -= HidePlayerMenu;       
+            _signalBus.Unsubscribe<ShowPlayerMenuPerformedSignal>(ShowPlayerMenu);
+            _signalBus.Unsubscribe<HidePlayerMenuPerformedSignal>(HidePlayerMenu);
+            _signalBus.Unsubscribe<PlayerMenuInventorySection_NavigatePlayerMenuPerformedSignal>(OnNavigatePlayerMenuActionPerformed);
+            _signalBus.Unsubscribe<PlayerMenuInventorySection_NavigateSectionPerformedSignal>(OnNavigateSectionActionPerformed);
         }
 
-        private void ShowPlayerMenu(InputAction.CallbackContext context)
+        private void ShowPlayerMenu(ShowPlayerMenuPerformedSignal signal)
         {
             _signalBus.Fire<PlayerMenuEnabledSignal>();
 
@@ -103,7 +95,7 @@ namespace GameLogic.PlayerMenu
             CurrentSectionButtonNumber = 1;
         }
 
-        private void HidePlayerMenu(InputAction.CallbackContext context)
+        private void HidePlayerMenu(HidePlayerMenuPerformedSignal signal)
         {
             CurrentSectionButtonNumber = 0;
 
@@ -116,20 +108,20 @@ namespace GameLogic.PlayerMenu
         private void SetCurrentSelectableCollection(ISelectableCollection selectableCollection, IPlayerMenuInteractable selectedElement = null)
         {
             _currentSelectableCollection = selectableCollection;
-            _inputManager.SetActionMap(selectableCollection.InputActionMap);
+            _signalBus.Fire(new ActionMapRequestedSignal(selectableCollection.InputActionMap));
 
             _selectedInteractableElement = selectedElement ?? _currentSelectableCollection.GetStartSelectedElement();
         }
 
-        private void OnNavigatePlayerMenuActionPerformed(InputAction.CallbackContext context)
+        private void OnNavigatePlayerMenuActionPerformed(PlayerMenuInventorySection_NavigatePlayerMenuPerformedSignal signal)
         {
-            var inputValue = context.ReadValue<Vector2>().x;
+            var inputValue = signal.Context.ReadValue<Vector2>().x;
             //CurrentSectionButtonNumber = Mathf.Clamp(CurrentSectionButtonNumber + (int)inputValue, 1, playerMenuNavigationSectionView.SectionButtonsCount);
         }
 
-        private void OnNavigateSectionActionPerformed(InputAction.CallbackContext context)
+        private void OnNavigateSectionActionPerformed(PlayerMenuInventorySection_NavigateSectionPerformedSignal signal)
         {
-            var inputValue = context.ReadValue<Vector2>();
+            var inputValue = signal.Context.ReadValue<Vector2>();
             if (Mathf.Abs(inputValue.x) == 1)
             {
                 SelectedInteractableElement = inputValue.x switch

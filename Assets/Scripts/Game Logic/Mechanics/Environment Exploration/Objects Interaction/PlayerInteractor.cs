@@ -2,32 +2,29 @@ using Controls;
 using EventBus;
 using GameLogic.EnvironmentExploration;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Zenject;
 
 namespace GameLogic.Player
 {
     public class PlayerInteractor : MonoBehaviour
     {
-        private InputManager _inputManager;
         private SignalBus _signalBus;
         private InteractiveObject _currentInteractiveObject;
 
         [Inject]
-        public void Construct(InputManager inputManager, SignalBus signalBus)
+        public void Construct(SignalBus signalBus)
         {
-            _inputManager = inputManager;
             _signalBus = signalBus;
         }
 
         private void OnEnable()
         {
-            _inputManager.PlayerActions.Player.Interact.performed += OnInteractActionPerformed;
+            _signalBus.Subscribe<Player_InteractPerformedSignal>(OnInteractActionPerformed);
         }
 
         private void OnDisable()
         {
-            _inputManager.PlayerActions.Player.Interact.performed -= OnInteractActionPerformed;
+            _signalBus.Unsubscribe<Player_InteractPerformedSignal>(OnInteractActionPerformed);
         }
 
         private void OnTriggerStay(Collider other)
@@ -47,6 +44,6 @@ namespace GameLogic.Player
             }
         }
 
-        private void OnInteractActionPerformed(InputAction.CallbackContext context) => _currentInteractiveObject.Interact();
+        private void OnInteractActionPerformed(Player_InteractPerformedSignal signal) => _currentInteractiveObject.Interact();
     }
 }
